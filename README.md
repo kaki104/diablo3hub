@@ -10,3 +10,7 @@ Template 10
 원드라이브로 넘어가서 다운로드 받아서 설치한다.
 * 현재 VS 2017 - Extensions에서는 검색이 않됨
 
+
+2. ApiKeys.publishsettings 파일 내용 구성, 아래 문장에서 []는 삭제하고 만들어야함
+Key=[https://dev.battle.net/에서 받은 API Key]
+Secret=[https://dev.battle.net/에서 받은 API Secret]
