@@ -93,5 +93,21 @@
                    RelativePanel.Below="parameterResizer"
                    Text="Current Visual State" />
 
+        <TextBox x:Name="battleTagTextBox" RelativePanel.Below="stateTextBox" Margin="16,16,16,0"
+                 Header="Input Battle Tag"
+                 Text="{Binding InputBattleTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBox x:Name="heroIdTextBox" RelativePanel.Below="stateTextBox" RelativePanel.AlignRightWith="" Margin="16,16,16,0"
+                 Header="Input Hero Id"
+                 Text="{Binding InputHeroId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 RelativePanel.RightOf="battleTagTextBox"/>
+
+        <Button x:Name="careerProfileButton" RelativePanel.Below="battleTagTextBox"  Margin="16,16,16,0"
+                Content="Career Profile"
+                Command="{Binding CareerProfileCommand}"/>
+
+        <Button x:Name="heroProfileButton" RelativePanel.Below="careerProfileButton"  Margin="16,16,16,0"
+                Content="Hero Profile"
+                Command="{Binding HeroProfileCommand}"/>
     </RelativePanel>
 </Page>
