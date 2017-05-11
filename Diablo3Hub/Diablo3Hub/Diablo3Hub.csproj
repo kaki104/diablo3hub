@@ -90,6 +90,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="ApiKeys.publishsettings" />
+    <None Include="..\..\README.md">
+      <Link>README.md</Link>
+    </None>
     <None Include="Diabol3 Hub.pptx" />
     <None Include="Hamburger_TemporaryKey.pfx" />
   </ItemGroup>
@@ -100,6 +103,7 @@
     <Compile Include="Commons\GameConfigs.cs" />
     <Compile Include="Models\BattleTag.cs" />
     <Compile Include="Models\CareerProfile.cs" />
+    <Compile Include="Models\FavoriteHero.cs" />
     <Compile Include="Models\HeroProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ApiHelper.cs" />

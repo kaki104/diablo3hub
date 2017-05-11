@@ -11,6 +11,7 @@ namespace Diablo3Hub.Services
 {
     public class DBHelper
     {
+        private const string DB_NAME = "diablo3hub";
         private static DBHelper _instance;
         private bool _initDb;
 
@@ -27,8 +28,11 @@ namespace Diablo3Hub.Services
         /// <returns></returns>
         public async Task InitAsync()
         {
-            var conn = new SQLiteAsyncConnection("diablo3hub");
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            //배틀테그 테이블
             await conn.CreateTableAsync<BattleTag>();
+            //즐겨찾기 히어로 테이블
+            await conn.CreateTableAsync<FavoriteHero>();
             _initDb = true;
         }
         /// <summary>
@@ -42,8 +46,52 @@ namespace Diablo3Hub.Services
                 Debug.WriteLine("Init first!");
                 return null;
             }
-            var conn = new SQLiteAsyncConnection("diablo3hub");
+            var conn = new SQLiteAsyncConnection(DB_NAME);
             return conn.Table<BattleTag>();
+        }
+
+        public AsyncTableQuery<FavoriteHero> FavoriteHeroTable()
+        {
+            if (!_initDb)
+            {
+                Debug.WriteLine("Init first!");
+                return null;
+            }
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            return conn.Table<FavoriteHero>();
+        }
+        /// <summary>
+        /// 아이템 추가
+        /// </summary>
+        /// <param name="addItem"></param>
+        /// <returns></returns>
+        public async Task<int> InsertAsync(object addItem)
+        {
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            var result = await conn.InsertAsync(addItem);
+            return result;
+        }
+        /// <summary>
+        /// 아이템 업데이트
+        /// </summary>
+        /// <param name="updateItem"></param>
+        /// <returns></returns>
+        public async Task<int> UpdateAsync(object updateItem)
+        {
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            var result = await conn.UpdateAsync(updateItem);
+            return result;
+        }
+        /// <summary>
+        /// 아이템 삭제
+        /// </summary>
+        /// <param name="deleteItem"></param>
+        /// <returns></returns>
+        public async Task<int> DeleteAsync(object deleteItem)
+        {
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            var result = await conn.DeleteAsync(deleteItem);
+            return result;
         }
     }
 }
