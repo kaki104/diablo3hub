@@ -93,6 +93,7 @@
     <None Include="..\..\README.md">
       <Link>README.md</Link>
     </None>
+    <None Include="ApiKeys.publishsettings.temp" />
     <None Include="Diabol3 Hub.pptx" />
     <None Include="Hamburger_TemporaryKey.pfx" />
   </ItemGroup>
@@ -219,6 +220,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>9.0.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

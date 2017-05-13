@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
@@ -15,24 +12,12 @@ namespace Diablo3Hub.ViewModels
     public class BattleTagPageViewModel : ViewModelBase
     {
         private IList<BattleTag> _battleTags;
-        /// <summary>
-        /// 배틀 테그 목록
-        /// </summary>
-        public IList<BattleTag> BattleTags
-        {
-            get { return _battleTags; }
-            set { Set(ref _battleTags ,value); }
-        }
 
         public BattleTagPageViewModel()
         {
             if (!DesignMode.DesignModeEnabled)
-            {
                 Init();
-            }
             else
-            {
-                //디자인 타임 데이터
                 BattleTags = new List<BattleTag>
                 {
                     new BattleTag
@@ -40,12 +25,26 @@ namespace Diablo3Hub.ViewModels
                         Server = GameConfigs.ServerKR,
                         Locale = GameConfigs.LocaleKR,
                         Tag = "SuperOwl-1417",
-                        Description = "카키입니다.",
+                        Description = "카키입니다."
                     }
                 };
-            }
         }
 
+        /// <summary>
+        ///     배틀 테그 목록
+        /// </summary>
+        public IList<BattleTag> BattleTags
+        {
+            get => _battleTags;
+            set => Set(ref _battleTags, value);
+        }
+        /// <summary>
+        /// 베틀테그 추가 커맨드
+        /// </summary>
+        public ICommand AddBattleTagCommand { get; set; }
+        /// <summary>
+        /// 초기화
+        /// </summary>
         private void Init()
         {
             AddBattleTagCommand = new DelegateCommand(() =>
@@ -59,15 +58,14 @@ namespace Diablo3Hub.ViewModels
                         Server = GameConfigs.ServerKR,
                         Locale = GameConfigs.LocaleKR,
                         Tag = "SuperOwl-1417",
-                        Description = "카키입니다.",
+                        Description = "카키입니다."
                     }
                 };
             });
         }
 
-        public ICommand AddBattleTagCommand { get; set; }
-
-        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode,
+            IDictionary<string, object> state)
         {
             await Task.CompletedTask;
         }
