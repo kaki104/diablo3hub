@@ -102,6 +102,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commons\GameConfigs.cs" />
+    <Compile Include="Controls\BattleTagManagementDialog.xaml.cs">
+      <DependentUpon>BattleTagManagementDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\BattleTag.cs" />
     <Compile Include="Models\CareerProfile.cs" />
     <Compile Include="Models\FavoriteHero.cs" />
@@ -161,6 +164,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\BattleTagManagementDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Custom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -221,9 +228,7 @@
       <Version>9.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

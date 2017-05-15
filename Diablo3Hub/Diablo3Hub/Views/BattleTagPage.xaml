@@ -78,8 +78,9 @@
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True" 
-                             Text="BattleTag List" >
+                             Text="BattleTag" >
             <AppBarButton Icon="Add" Command="{Binding AddBattleTagCommand}"/>
+            <AppBarButton Icon="Bullets" Command="{Binding SelectCommand}"/>
         </controls:PageHeader>
 
         <!--  content  -->
@@ -88,7 +89,9 @@
                       RelativePanel.AlignRightWithPanel="True"
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
-            <ListView ItemsSource="{Binding BattleTags}" ItemContainerStyle="{StaticResource ListViewItemStyle1}">
+            <ListView ItemsSource="{Binding BattleTags}" 
+                      ItemContainerStyle="{StaticResource ListViewItemStyle1}"
+                      SelectionMode="Extended">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Height="30">

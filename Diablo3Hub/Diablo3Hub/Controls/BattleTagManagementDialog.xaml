@@ -1,0 +1,56 @@
+﻿<ContentDialog
+    x:Class="Diablo3Hub.Controls.BattleTagManagementDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diablo3Hub.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="BattleTag Management"
+    PrimaryButtonText="OK"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <RelativePanel Margin="0,10,0,0">
+        <Grid x:Name="Server" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Releam"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch"/>
+        </Grid>
+        <Grid x:Name="BattleTag" 
+              RelativePanel.AlignRightWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="Server" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Battle Tag"/>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox/>
+                <TextBlock Grid.Column="1" Text="#" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="2"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Description" Margin="0 10 0 0"
+              RelativePanel.AlignRightWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True" 
+              RelativePanel.Below="BattleTag">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Description"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch"/>
+        </Grid>
+
+    </RelativePanel>
+</ContentDialog>
