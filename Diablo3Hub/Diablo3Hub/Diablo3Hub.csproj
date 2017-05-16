@@ -101,6 +101,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commons\CommonData.cs" />
     <Compile Include="Commons\GameConfigs.cs" />
     <Compile Include="Controls\BattleTagManagementDialog.xaml.cs">
       <DependentUpon>BattleTagManagementDialog.xaml</DependentUpon>
@@ -113,6 +114,7 @@
     <Compile Include="Services\ApiHelper.cs" />
     <Compile Include="Services\DBHelper.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="ViewModels\BattleTagManagementDialogViewModel.cs" />
     <Compile Include="ViewModels\BattleTagPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
