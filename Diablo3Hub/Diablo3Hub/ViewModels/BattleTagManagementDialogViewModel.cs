@@ -1,7 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
 using Diablo3Hub.Commons;
+using Diablo3Hub.Models;
+using Diablo3Hub.Services;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
@@ -13,6 +18,10 @@ namespace Diablo3Hub.ViewModels
         private string _description;
         private IList<CommonData> _realms;
         private CommonData _selectedServer;
+        /// <summary>
+        /// 현재 편집 중인 배틀테그 - 직접 프로퍼티에 접근하는 것을 막기 위해 private으로 사용
+        /// </summary>
+        private BattleTag _currentBattleTag;
 
         /// <summary>
         ///     생성자
@@ -81,9 +90,13 @@ namespace Diablo3Hub.ViewModels
         /// Cancel커맨드
         /// </summary>
         public ICommand CancelCommand { get; set; }
-
+        /// <summary>
+        /// 초기화
+        /// </summary>
         private void Init()
         {
+            _currentBattleTag = new BattleTag();
+
             Realms = new List<CommonData>
             {
                 new CommonData {Id = GameConfigs.ServerUS, Name = "US"},
@@ -91,14 +104,57 @@ namespace Diablo3Hub.ViewModels
                 new CommonData {Id = GameConfigs.ServerKR, Name = "KR"}
             };
 
-            OkCommand = new DelegateCommand<object>(obj =>
-            {
-                
-            });
+            OkCommand = new DelegateCommand(ExecuteOkCommand);
+
             CancelCommand = new DelegateCommand<object>(obj =>
             {
 
             });
+        }
+        /// <summary>
+        /// ok 커맨드 실행
+        /// </summary>
+        private async void ExecuteOkCommand()
+        {
+            _currentBattleTag.Server = SelectedServer?.Id;
+            _currentBattleTag.Tag = $"{BattleTagHead}-{BattleTagTail}";
+            if (string.IsNullOrEmpty(_currentBattleTag.Locale))
+                _currentBattleTag.Locale = GameConfigs.LocaleKR;
+            _currentBattleTag.Description = Description;
+            //db에 업데이트
+            if (IsEdit)
+                await DBHelper.Instance.UpdateAsync(_currentBattleTag);
+            else
+                await DBHelper.Instance.InsertAsync(_currentBattleTag);
+        }
+
+        /// <summary>
+        /// 편집 여부
+        /// </summary>
+        public bool IsEdit { get; private set; }
+
+        /// <summary>
+        /// 수정할 배틀테그 입력
+        /// </summary>
+        /// <param name="editTag"></param>
+        public void SetBattleTag(BattleTag editTag)
+        {
+            _currentBattleTag = editTag;
+            IsEdit = true;
+            SelectedServer = Realms.FirstOrDefault(p => p.Id == editTag.Server);
+            var splits = editTag.Tag.Split('-');
+            if (splits.Length != 2) return;
+            BattleTagHead = splits.First();
+            BattleTagTail = splits.Last();
+            Description = editTag.Description;
+        }
+        /// <summary>
+        /// 작업 중인 배틀테그 반환
+        /// </summary>
+        /// <returns></returns>
+        public BattleTag GetBattleTag()
+        {
+            return _currentBattleTag;
         }
     }
 }

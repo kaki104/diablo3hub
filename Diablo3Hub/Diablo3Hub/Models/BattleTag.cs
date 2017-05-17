@@ -37,6 +37,7 @@ namespace Diablo3Hub.Models
 
         /// <summary>
         ///     BattleTag 클래스명과 겹쳐서 그냥 Tag로
+        ///     원래 중간에 #이 들어있지만, 조회할 때는 -를 사용하므로 데이터로 가지고 있을 때는 -를 사용한다.
         /// </summary>
         public string Tag
         {
