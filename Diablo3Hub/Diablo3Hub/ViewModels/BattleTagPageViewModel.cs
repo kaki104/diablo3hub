@@ -105,6 +105,18 @@ namespace Diablo3Hub.ViewModels
                     ? ListViewSelectionMode.Multiple
                     : ListViewSelectionMode.Single;
             });
+            //기본 선택 모드
+            SelectionMode = ListViewSelectionMode.Single;
+            //수정
+            EditBattleTagCommand = new DelegateCommand<object>(obj =>
+            {
+                
+            });
+            //삭제
+            DeleteBattleTagCommand = new DelegateCommand<object>(obj =>
+            {
+                
+            });
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode,
