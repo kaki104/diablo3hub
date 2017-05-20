@@ -7,6 +7,7 @@ using Windows.Storage;
 using Diablo3Hub.Commons;
 using Diablo3Hub.Models;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace Diablo3Hub.Services
 {
@@ -53,14 +54,28 @@ namespace Diablo3Hub.Services
         public async Task InitAsync()
         {
             var uri = new Uri("ms-appx:///ApiKeys.publishsettings");
-            var apiFile = await StorageFile.GetFileFromApplicationUriAsync(uri);
-            var content = await FileIO.ReadTextAsync(apiFile);
-            string[] stringSeparators = {"\r\n"};
-            var lines = content.Split(stringSeparators, StringSplitOptions.None);
-            _apiKeys = (from kkk in lines
-                let key = kkk.Split('=')
-                select new KeyValuePair<string, string>(key[0], key[1])).ToList();
-
+            try
+            {
+                var apiFile = await StorageFile.GetFileFromApplicationUriAsync(uri);
+                var content = await FileIO.ReadTextAsync(apiFile);
+                string[] stringSeparators = { "\r\n" };
+                var lines = content.Split(stringSeparators, StringSplitOptions.None);
+                _apiKeys = (from kkk in lines
+                            where kkk.Length > 0  //Apikey 파일 편집시 new line이 들어가는 경우, outofbound Exception이 발생하여 이 부분을 처리하였습니다.
+                            let key = kkk.Split('=')
+                            select new KeyValuePair<string, string>(key[0], key[1])).ToList();
+            }
+            catch (FileNotFoundException)
+            {
+                await new Windows.UI.Popups.MessageDialog("ApiKeys 파일을 찾지 못햇습니다. \n다시 확인해 주세요.").ShowAsync();
+                return;
+            }
+            catch (Exception)
+            {
+                await new Windows.UI.Popups.MessageDialog("ApiKeys 파일을 읽는 중에 문제가 발생하였습니다. \n 다시 확인해 주세요.").ShowAsync();
+                return;
+            }
+            
             SelectedGameServer = GameConfigs.ServerKR;
             SelectedLocale = GameConfigs.LocaleKR;
         }
