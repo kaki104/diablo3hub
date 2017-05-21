@@ -37,6 +37,15 @@ diablo3 hub uwp app
 * 화면 작업의 기준은 Guide for Diablo라는 앱의 화면을 기준으로 우선 작업을 합니다.
 
 
+6. UWP Community Toolkit을 이용해서 화면 디자인 합니다.
+* 주소 : https://github.com/Microsoft/UWPCommunityToolkit
+* Manage NuGet Package에서 uwp toolkit으로 검색해서 나오는 녀석들을 추가했습니다.
+* 이 녀석을 이용해서 어떤 컨트롤이나 서비스를 이용할 수 있는지 살펴 보려면, Store에서 Community Toolkit으로 검색하시면 UWP Community Toolkit Sample app이 나오고, 설치하시면 됩니다.
+* 누겟으로 추가를 하고나면, 디자인 타임에 아무것도 나오지 않을 수 있습니다. 비주얼스튜디오를 재시작하면 됩니다.
+* 현재 ScrollHeader를 추가해 보았는데..원하는 기능이 않되고 있습니다. 확인 중입니다.
+
+
+
 PS. Diablo 3 시즌 10이 진행 중입니다.
 * 저의 배틀테그는 아시아 - SuperOwl#1417 입니다. 접속하셔서 귓주시면 무료 만렙 버스 운행합니다.
 * 접속 시간은 평일 10~12시 정도 입니다.

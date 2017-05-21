@@ -9,6 +9,7 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core" 
     xmlns:behaviors="using:Template10.Behaviors"
+    xmlns:controls1="using:Microsoft.Toolkit.Uwp.UI.Controls"
     x:Name="rootPage"
     x:Class="Diablo3Hub.Views.BattleTagPage"
     mc:Ignorable="d">
@@ -86,9 +87,25 @@
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
             
-            <ListView ItemsSource="{Binding BattleTags}" 
-                      SelectionMode="{Binding SelectionMode, Mode=TwoWay}" 
-                      ItemContainerStyle="{StaticResource ListViewItemStretchStyle}">
+            <ListView x:Name="ListView" ItemsSource="{Binding BattleTags}" 
+                      SelectionMode="{Binding SelectionMode, Mode=TwoWay}">
+                <ListView.Header>
+                    <controls1:ScrollHeader TargetListViewBase="{x:Bind ListView}" Mode="{Binding ScrollHeaderMode}">
+                        <Grid x:Name="MyHeaderGrid" MinHeight="88"
+                              Background="{StaticResource Brush-Blue-01}">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Margin="12"
+                                           FontSize="48"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource Brush-White}"
+                                           Text="Scroll Header"
+                                           TextAlignment="Center"
+                                           TextWrapping="WrapWholeWords" />
+                            </StackPanel>
+                        </Grid>
+                    </controls1:ScrollHeader>
+                </ListView.Header>
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Height="30">
@@ -123,6 +140,13 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="Padding" Value="12,12,24,12" />
+                    </Style>
+                </ListView.ItemContainerStyle>
             </ListView>
         </ScrollViewer>
 
