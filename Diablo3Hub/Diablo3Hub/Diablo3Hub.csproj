@@ -89,11 +89,10 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="ApiKeys.publishsettings" />
     <None Include="..\..\README.md">
       <Link>README.md</Link>
     </None>
-    <None Include="ApiKeys.publishsettings.temp" />
+    <Content Include="ApiKeys.publishsettings" />
     <None Include="Diabol3 Hub.pptx" />
     <None Include="Hamburger_TemporaryKey.pfx" />
   </ItemGroup>
