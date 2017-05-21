@@ -6,10 +6,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
     xmlns:controls="using:Template10.Controls"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core" 
+    xmlns:behaviors="using:Template10.Behaviors"
+    xmlns:controls1="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    x:Name="rootPage"
     x:Class="Diablo3Hub.Views.BattleTagPage"
     mc:Ignorable="d">
     <Page.Resources>
-        <Style x:Key="ListViewItemStyle1" TargetType="ListViewItem">
+        <Style x:Key="ListViewItemStretchStyle" TargetType="ListViewItem">
             <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
             <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
             <Setter Property="Background" Value="{ThemeResource ListViewItemBackground}"/>
@@ -43,32 +48,22 @@
     </Page.DataContext>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
                 <VisualState x:Name="VisualStateNarrow">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
                     </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!--  TODO: change properties for narrow view  -->
-                    </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateNormal">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
                     </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!--  TODO: change properties for normal view  -->
-                    </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateWide">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
                     </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!--  TODO: change properties for wide view  -->
-                    </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
@@ -91,23 +86,67 @@
                       RelativePanel.AlignRightWithPanel="True"
                       RelativePanel.Below="pageHeader"
                       VerticalScrollBarVisibility="Auto">
-            <ListView ItemsSource="{Binding BattleTags}" 
-                      ItemContainerStyle="{StaticResource ListViewItemStyle1}"
+            
+            <ListView x:Name="ListView" ItemsSource="{Binding BattleTags}" 
                       SelectionMode="{Binding SelectionMode, Mode=TwoWay}">
+                <ListView.Header>
+                    <controls1:ScrollHeader TargetListViewBase="{x:Bind ListView}" Mode="{Binding ScrollHeaderMode}">
+                        <Grid x:Name="MyHeaderGrid" MinHeight="88"
+                              Background="{StaticResource Brush-Blue-01}">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Margin="12"
+                                           FontSize="48"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource Brush-White}"
+                                           Text="Scroll Header"
+                                           TextAlignment="Center"
+                                           TextWrapping="WrapWholeWords" />
+                            </StackPanel>
+                        </Grid>
+                    </controls1:ScrollHeader>
+                </ListView.Header>
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Height="30">
+                            <FlyoutBase.AttachedFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="Edit" 
+                                                    Command="{Binding ViewModel.EditBattleTagCommand, ElementName=rootPage}"
+                                                    CommandParameter="{Binding}"/>
+                                    <MenuFlyoutItem Text="Delete" 
+                                                    Command="{Binding ViewModel.DeleteBattleTagCommand, ElementName=rootPage}"
+                                                    CommandParameter="{Binding}"/>
+                                </MenuFlyout>
+                            </FlyoutBase.AttachedFlyout>
+                            <interactivity:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Holding">
+                                    <behaviors:OpenFlyoutAction/>
+                                </core:EventTriggerBehavior>
+                                <core:EventTriggerBehavior EventName="RightTapped">
+                                    <behaviors:OpenFlyoutAction/>
+                                </core:EventTriggerBehavior>
+                            </interactivity:Interaction.Behaviors>
+
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
+
                             <TextBlock Grid.Column="0" Text="{Binding Tag}"/>
                             <TextBlock Grid.Column="1" Text="{Binding Server}" Margin="6 0"/>
                             <TextBlock Grid.Column="2" Text="{Binding Locale}" Margin="6 0"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="Padding" Value="12,12,24,12" />
+                    </Style>
+                </ListView.ItemContainerStyle>
             </ListView>
         </ScrollViewer>
 

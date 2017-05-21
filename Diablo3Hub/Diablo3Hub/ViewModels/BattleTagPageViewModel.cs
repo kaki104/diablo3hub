@@ -9,6 +9,7 @@ using Diablo3Hub.Commons;
 using Diablo3Hub.Controls;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
+using Microsoft.Toolkit.Uwp.UI.Controls;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
@@ -17,6 +18,7 @@ namespace Diablo3Hub.ViewModels
     {
         private IList<BattleTag> _battleTags;
         private bool _isChecked;
+        private ScrollHeaderMode _scrollHeaderMode;
         private ListViewSelectionMode _selectionMode;
 
         public BattleTagPageViewModel()
@@ -82,12 +84,22 @@ namespace Diablo3Hub.ViewModels
             get => _isChecked;
             set => Set(ref _isChecked, value);
         }
+        /// <summary>
+        /// 스크롤헤더 모드
+        /// </summary>
+        public ScrollHeaderMode ScrollHeaderMode
+        {
+            get => _scrollHeaderMode;
+            set => Set(ref _scrollHeaderMode, value);
+        }
 
         /// <summary>
         ///     초기화
         /// </summary>
         private void Init()
         {
+            ScrollHeaderMode = ScrollHeaderMode.None;
+
             AddBattleTagCommand = new DelegateCommand(async () =>
             {
                 //등록 팝업 출력
@@ -105,12 +117,19 @@ namespace Diablo3Hub.ViewModels
                     ? ListViewSelectionMode.Multiple
                     : ListViewSelectionMode.Single;
             });
+            //기본 선택 모드
+            SelectionMode = ListViewSelectionMode.Single;
+            //수정
+            EditBattleTagCommand = new DelegateCommand<object>(obj => { });
+            //삭제
+            DeleteBattleTagCommand = new DelegateCommand<object>(obj => { });
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode,
             IDictionary<string, object> state)
         {
             //네비게이트되면..
+            ScrollHeaderMode = ScrollHeaderMode.Sticky;
 
             //저장 되어있는 배틀테그 목록을 조회
             BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
