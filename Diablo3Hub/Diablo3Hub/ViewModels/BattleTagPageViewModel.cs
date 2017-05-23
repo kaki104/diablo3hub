@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
+using Windows.Data.Json;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Diablo3Hub.Commons;
 using Diablo3Hub.Controls;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
+using Diablo3Hub.Views;
 using Microsoft.Toolkit.Uwp.UI.Controls;
+using Newtonsoft.Json;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
@@ -92,6 +95,10 @@ namespace Diablo3Hub.ViewModels
             get => _scrollHeaderMode;
             set => Set(ref _scrollHeaderMode, value);
         }
+        /// <summary>
+        /// 아이템 클릭 커맨드
+        /// </summary>
+        public ICommand ItemClickCommand { get; set; }
 
         /// <summary>
         ///     초기화
@@ -115,14 +122,25 @@ namespace Diablo3Hub.ViewModels
             {
                 SelectionMode = IsChecked
                     ? ListViewSelectionMode.Multiple
-                    : ListViewSelectionMode.Single;
+                    : ListViewSelectionMode.None;
             });
             //기본 선택 모드
-            SelectionMode = ListViewSelectionMode.Single;
+            SelectionMode = ListViewSelectionMode.None;
             //수정
             EditBattleTagCommand = new DelegateCommand<object>(obj => { });
             //삭제
             DeleteBattleTagCommand = new DelegateCommand<object>(obj => { });
+
+            ItemClickCommand = new DelegateCommand<object>(obj =>
+            {
+                var args = obj as ItemClickEventArgs;
+                var item = args.ClickedItem as BattleTag;
+                if (item == null) return;
+
+                var serializeItem = JsonConvert.SerializeObject(item);
+                //히어로 페이지로 네비게이션, 네비게이션 파라메터도 넘기고..
+                NavigationService.Navigate(typeof(HeroPage), serializeItem);
+            });
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode,
