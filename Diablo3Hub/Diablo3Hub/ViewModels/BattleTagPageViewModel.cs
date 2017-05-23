@@ -11,6 +11,7 @@ using Diablo3Hub.Models;
 using Diablo3Hub.Services;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 using Template10.Mvvm;
+using System.Diagnostics;
 
 namespace Diablo3Hub.ViewModels
 {
@@ -34,7 +35,48 @@ namespace Diablo3Hub.ViewModels
                         Locale = GameConfigs.LocaleKR,
                         Tag = "SuperOwl-1417",
                         Description = "카키입니다."
+                    },
+
+                     new BattleTag
+                    {
+                        Server = GameConfigs.ServerKR,
+                        Locale = GameConfigs.LocaleKR,
+                        Tag = "SuperOwl-1418",
+                        Description = "heeya18입니다."
+                    },
+
+                     new BattleTag
+                    {
+                        Server = GameConfigs.ServerKR,
+                        Locale = GameConfigs.LocaleKR,
+                        Tag = "SuperOwl-1419",
+                        Description = "heeya19입니다."
+                    },
+
+                      new BattleTag
+                    {
+                        Server = GameConfigs.ServerKR,
+                        Locale = GameConfigs.LocaleKR,
+                        Tag = "SuperOwl-1420",
+                        Description = "heeya20입니다."
+                    },
+
+                     new BattleTag
+                    {
+                        Server = GameConfigs.ServerKR,
+                        Locale = GameConfigs.LocaleKR,
+                        Tag = "SuperOwl-1421",
+                        Description = "heeya21입니다."
+                    },
+
+                     new BattleTag
+                    {
+                        Server = GameConfigs.ServerKR,
+                        Locale = GameConfigs.LocaleKR,
+                        Tag = "SuperOwl-1422",
+                        Description = "heeya22입니다."
                     }
+
                 };
         }
 
@@ -120,9 +162,39 @@ namespace Diablo3Hub.ViewModels
             //기본 선택 모드
             SelectionMode = ListViewSelectionMode.Single;
             //수정
-            EditBattleTagCommand = new DelegateCommand<object>(obj => { });
+            EditBattleTagCommand = new DelegateCommand<object>( async obj => {
+
+                var battelTag = obj as BattleTag;
+                if (battelTag != null)
+                {
+                    var battleTagDialog = new BattleTagManagementDialog();
+                    battleTagDialog.ViewModel.SetBattleTag(battelTag);
+
+                    var result = await battleTagDialog.ShowAsync();
+                    if (result != ContentDialogResult.Primary) return;
+                }
+                else
+                {
+                    await new Windows.UI.Popups.MessageDialog("내부적인 오류로 인해 Tag Item을 업데이트 할 수 없습니다.").ShowAsync();
+                    return;
+                }
+
+            });
             //삭제
-            DeleteBattleTagCommand = new DelegateCommand<object>(obj => { });
+            DeleteBattleTagCommand = new DelegateCommand<object>( async obj => {
+                try
+                {
+                    var result = await DBHelper.Instance.DeleteAsync(obj);
+                    Debug.WriteLine("Delete Row Item Index : {0}", result);
+                    BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
+                }
+                catch (Exception)
+                {
+                    //To-do : 지우지 못한 Row Index에 대한 표시 필요.
+                    await new Windows.UI.Popups.MessageDialog("내부적인 오류로 인해 Tag Item을 삭제 할 수 없습니다.").ShowAsync();
+                    return;
+                }
+            });
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode,
