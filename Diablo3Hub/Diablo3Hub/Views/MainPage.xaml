@@ -61,6 +61,8 @@
 
         </controls:PageHeader>
 
+        <TextBlock Text="테스트 및 연습용 페이지 입니다."/>
+        
         <controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0"
                           RelativePanel.AlignLeftWithPanel="True"
                           RelativePanel.Below="pageHeader">

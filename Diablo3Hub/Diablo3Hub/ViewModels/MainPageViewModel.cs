@@ -8,6 +8,7 @@ using Diablo3Hub.Services;
 using Diablo3Hub.Views;
 using Template10.Mvvm;
 using Template10.Services.NavigationService;
+using Diablo3Hub.Models;
 
 namespace Diablo3Hub.ViewModels
 {
@@ -53,6 +54,8 @@ namespace Diablo3Hub.ViewModels
             set => Set(ref _inputHeroId, value);
         }
 
+        public IList<Hero> Heros { get; set; }
+
         /// <summary>
         ///     초기화
         /// </summary>
@@ -64,6 +67,7 @@ namespace Diablo3Hub.ViewModels
             {
                 var result = await ApiHelper.Instance.GetCareerProfileAsync(InputBattleTag);
                 if (result == null) return;
+                var cls = result.Heroes.First().Class;
             });
 
             HeroProfileCommand = new DelegateCommand(async () =>
