@@ -116,11 +116,15 @@
     <Compile Include="Services\ApiHelper.cs" />
     <Compile Include="Services\DBHelper.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="ViewModels\BattleTagDetailPageViewModel.cs" />
     <Compile Include="ViewModels\BattleTagManagementDialogViewModel.cs" />
     <Compile Include="ViewModels\BattleTagPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="Views\BattleTagDetailPage.xaml.cs">
+      <DependentUpon>BattleTagDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BattleTagPage.xaml.cs">
       <DependentUpon>BattleTagPage.xaml</DependentUpon>
     </Compile>
@@ -176,6 +180,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\BattleTagDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BattleTagPage.xaml">
       <SubType>Designer</SubType>
