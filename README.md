@@ -1,51 +1,53 @@
-# diablo3hub
-diablo3 hub uwp app
+ï»¿# diablo3hub
+## diablo3 hub uwp app
 
-1. ±âº» °³¹ß È¯°æ
+0. ê¸°ë³¸ ê°œë°œ í™˜ê²½
 * Windows 10 version 1607
 * UWP SDK 14393, 15063 installed
 * Visual Studio 2017
 * C# 7.0
-* GitHub Source °ü¸® - SourceTree(https://www.sourcetreeapp.com/) ¼³Ä¡ÇÏ¸é GitHub¿Í ¿¬µ¿ÇØ¼­ ÀÛ¾÷ÇÏ±â°¡ ½±½À´Ï´Ù.
-* Template 10 - MVVM pattern
-. https://github.com/Windows-XAML/Template10/issues/1442 ÁÖ¼Ò·Î ÀÌµ¿ÇØ¼­ JerryNixon ¾ÆÀú¾¾°¡ Ã³À½¿¡ ÀÛ¼ºÇÑ ±ÛÀÇ ¸µÅ©¸¦ Å¸°í
-¿øµå¶óÀÌºê·Î ³Ñ¾î°¡¼­ ´Ù¿î·Îµå ¹Þ¾Æ¼­ ¼³Ä¡ÇÑ´Ù.
-. ÇöÀç VS 2017 - Extensions¿¡¼­´Â °Ë»öÀÌ ¾ÊµÊ
-* ÇÁ·ÎÁ§Æ® Coding Conventions - ReSharperÀÇ ±âº» ÄÚµù ±ÔÄ¢À» »ç¿ëÇÕ´Ï´Ù.
-* ÇÁ·ÎÆÛÆ¼¿Í ¸Þ¼Òµå¿¡ °£´ÜÇÏ°Ô¶óµµ ÁÖ¼®À» ²À ´Þ¾Æ ÁÖ¼Å¾ß ÇÕ´Ï´Ù.
+* GitHub Source Tool - SourceTree(https://www.sourcetreeapp.com/) ì„¤ì¹˜í•˜ë©´ GitHubì™€ ì—°ë™í•´ì„œ ìž‘ì—…í•˜ê¸°ê°€ ì‰½ìŠµë‹ˆë‹¤.
+* í”„ë¡œì íŠ¸ Coding Conventions - ReSharperì˜ ê¸°ë³¸ ì½”ë”© ê·œì¹™ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
+* í”„ë¡œí¼í‹°ì™€ ë©”ì†Œë“œì— ê°„ë‹¨í•˜ê²Œë¼ë„ ì£¼ì„ì„ ê¼­ ë‹¬ì•„ ì£¼ì…”ì•¼ í•©ë‹ˆë‹¤.
 
 
-2. ApiKeys.publishsettings ÆÄÀÏ ³»¿ë ±¸¼º, ¾Æ·¡ ¹®Àå¿¡¼­ []´Â »èÁ¦ÇÏ°í ¸¸µé¾î¾ßÇÔ
-* ApiKeys.publishsettings.temp ÆÄÀÏÀ» Âü°í ÇÑ´Ù.
-* Key=[https://dev.battle.net/¿¡¼­ ¹ÞÀº API Key]
-* Secret=[https://dev.battle.net/¿¡¼­ ¹ÞÀº API Secret]
+1. Template 10 - MVVM pattern
+* https://github.com/Windows-XAML/Template10/issues/1442 ì£¼ì†Œë¡œ ì´ë™í•´ì„œ JerryNixon ì•„ì €ì”¨ê°€ ì²˜ìŒì— ìž‘ì„±í•œ ê¸€ì˜ 
+* https://1drv.ms/f/s!Aq5BEHo6GlC-t7Nq2MfoysgSaZknJA ë§í¬ë¥¼ íƒ€ê³  ì›ë“œë¼ì´ë¸Œë¡œ ë„˜ì–´ê°€ì„œ ë‹¤ìš´ë¡œë“œ ë°›ì•„ì„œ ì„¤ì¹˜í•œë‹¤.
+* í˜„ìž¬ VS 2017 - Extensionsì—ì„œëŠ” ê²€ìƒ‰ì´ ì•Šë¨
 
 
-3. SQLite¸¦ ÀÌ¿ëÇØ¼­ BattleTag ¸ñ·ÏÀ» °ü¸®
-* SQLite for Universal Windows Platform 3.18.0 -> Extensions ¼³Ä¡ ÇÊ¿ä
-* Nugget Package sqlite-net-pcl ¹öÀüÀ¸·Î »ç¿ë -> ÀÚµ¿ ¼³Ä¡
+2. ApiKeys.publishsettings íŒŒì¼ ë‚´ìš© êµ¬ì„±, ì•„ëž˜ ê° ë¼ì¸ì—ì„œ [ ]ëŠ” ì‚­ì œí•˜ê³  ë§Œë“¤ì–´ì•¼í•¨
+* ApiKeys.publishsettings.temp íŒŒì¼ì„ ì°¸ê³  í•œë‹¤.
+* Key=[https://dev.battle.net/ ì—ì„œ ë°›ì€ API Key]
+* Secret=[https://dev.battle.net/ ì—ì„œ ë°›ì€ API Secret]
+* í•´ë‹¹ íŒŒì¼ì˜ Build Action, Copy to Output Directory ì†ì„± ê°’ì— ìœ ì˜í•œë‹¤. Content / Copy
 
 
-4. ¾ð¾î ¸®¼Ò½º °ü¸®
-* Multilingual App Toolkit 4.0.6799.0 ¹öÀü »ç¿ë ¿¹Á¤ -> ¹Ì¼³Ä¡½Ã ¿À·ù°¡ ¹ß»ýÇÒ ¼ö ÀÖÀ¸´Ï ¹Ì¸® ¼³Ä¡ ÇÊ¿ä
+3. SQLiteë¥¼ ì´ìš©í•´ì„œ BattleTag ëª©ë¡ì„ ê´€ë¦¬
+* SQLite for Universal Windows Platform 3.18.0 -> Extensions ìˆ˜ë™ ì„¤ì¹˜ í•„ìš”
+* Nugget Package sqlite-net-pcl ë²„ì „ìœ¼ë¡œ ì‚¬ìš© -> ìžë™ ì„¤ì¹˜
 
 
-5. ÀÛ¾÷(To do)
-* ÀÛ¾÷À» ÇÏ½Ã·Á¸é https://github.com/kaki104/diablo3hub/projects/1 ÆäÀÌÁö¸¦ ¿±´Ï´Ù.
-* µî·ÏµÇ¾î ÀÖ´Â Æ¼ÄÏÀ» ¸¶¿ì½º·Î µå·¹±× µå·ÓÇØ¼­ In Progress·Î ÀÌµ¿À» ÇÑ ÈÄ ÁøÇàÇÒ ¼ö ÀÖ½À´Ï´Ù.
-* »õ·Î¿î ÀÛ¾÷ »ý¼ºÀº To do¿¡ ÇÏ½Ã°í, In Progress·Î ÀÌµ¿ÇÏ½Å ÈÄ ÁøÇàÇÒ ¼ö ÀÖ½À´Ï´Ù.
-* È­¸é ÀÛ¾÷ÀÇ ±âÁØÀº Guide for Diablo¶ó´Â ¾ÛÀÇ È­¸éÀ» ±âÁØÀ¸·Î ¿ì¼± ÀÛ¾÷À» ÇÕ´Ï´Ù.
+4. ì–¸ì–´ ë¦¬ì†ŒìŠ¤ ê´€ë¦¬
+* Multilingual App Toolkit 4.0.6799.0 ë²„ì „ ì‚¬ìš© ì˜ˆì • -> ë¯¸ì„¤ì¹˜ì‹œ ì˜¤ë¥˜ê°€ ë°œìƒí•  ìˆ˜ ìžˆìœ¼ë‹ˆ ë¯¸ë¦¬ ì„¤ì¹˜ í•„ìš”
 
 
-6. UWP Community ToolkitÀ» ÀÌ¿ëÇØ¼­ È­¸é µðÀÚÀÎ ÇÕ´Ï´Ù.
-* ÁÖ¼Ò : https://github.com/Microsoft/UWPCommunityToolkit
-* Manage NuGet Package¿¡¼­ uwp toolkitÀ¸·Î °Ë»öÇØ¼­ ³ª¿À´Â ³à¼®µéÀ» Ãß°¡Çß½À´Ï´Ù.
-* ÀÌ ³à¼®À» ÀÌ¿ëÇØ¼­ ¾î¶² ÄÁÆ®·ÑÀÌ³ª ¼­ºñ½º¸¦ ÀÌ¿ëÇÒ ¼ö ÀÖ´ÂÁö »ìÆì º¸·Á¸é, Store¿¡¼­ Community ToolkitÀ¸·Î °Ë»öÇÏ½Ã¸é UWP Community Toolkit Sample appÀÌ ³ª¿À°í, ¼³Ä¡ÇÏ½Ã¸é µË´Ï´Ù.
-* ´©°ÙÀ¸·Î Ãß°¡¸¦ ÇÏ°í³ª¸é, µðÀÚÀÎ Å¸ÀÓ¿¡ ¾Æ¹«°Íµµ ³ª¿ÀÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù. ºñÁÖ¾ó½ºÆ©µð¿À¸¦ Àç½ÃÀÛÇÏ¸é µË´Ï´Ù.
-* ÇöÀç ScrollHeader¸¦ Ãß°¡ÇØ º¸¾Ò´Âµ¥..¿øÇÏ´Â ±â´ÉÀÌ ¾ÊµÇ°í ÀÖ½À´Ï´Ù. È®ÀÎ ÁßÀÔ´Ï´Ù.
+5. ìž‘ì—…(To do)
+* ìž‘ì—…ì„ í•˜ì‹œë ¤ë©´ https://github.com/kaki104/diablo3hub/projects/1 íŽ˜ì´ì§€ë¥¼ ì—½ë‹ˆë‹¤.
+* ë“±ë¡ë˜ì–´ ìžˆëŠ” í‹°ì¼“ì„ ë§ˆìš°ìŠ¤ë¡œ ë“œë ˆê·¸ ë“œë¡­í•´ì„œ In Progressë¡œ ì´ë™ì„ í•œ í›„ ì§„í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+* ìƒˆë¡œìš´ ìž‘ì—… ìƒì„±ì€ To doì— í•˜ì‹œê³ , In Progressë¡œ ì´ë™í•˜ì‹  í›„ ì§„í–‰í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+* í™”ë©´ ìž‘ì—…ì˜ ê¸°ì¤€ì€ Guide for Diabloë¼ëŠ” ì•±ì˜ í™”ë©´ì„ ê¸°ì¤€ìœ¼ë¡œ ìš°ì„  ìž‘ì—…ì„ í•©ë‹ˆë‹¤.
 
 
+6. UWP Community Toolkitì„ ì´ìš©í•´ì„œ í™”ë©´ ë””ìžì¸ í•©ë‹ˆë‹¤.
+* ì£¼ì†Œ : https://github.com/Microsoft/UWPCommunityToolkit
+* Manage NuGet Packageì—ì„œ uwp toolkitìœ¼ë¡œ ê²€ìƒ‰í•´ì„œ ë‚˜ì˜¤ëŠ” ë…€ì„ë“¤ì„ ì¶”ê°€í–ˆìŠµë‹ˆë‹¤.
+* ì´ ë…€ì„ì„ ì´ìš©í•´ì„œ ì–´ë–¤ ì»¨íŠ¸ë¡¤ì´ë‚˜ ì„œë¹„ìŠ¤ë¥¼ ì´ìš©í•  ìˆ˜ ìžˆëŠ”ì§€ ì‚´íŽ´ ë³´ë ¤ë©´, Storeì—ì„œ Community Toolkitìœ¼ë¡œ ê²€ìƒ‰í•˜ì‹œë©´ UWP Community Toolkit Sample appì´ ë‚˜ì˜¤ê³ , ì„¤ì¹˜í•˜ì‹œë©´ ë©ë‹ˆë‹¤.
+* ëˆ„ê²Ÿìœ¼ë¡œ ì¶”ê°€ë¥¼ í•˜ê³ ë‚˜ë©´, ë””ìžì¸ íƒ€ìž„ì— ì•„ë¬´ê²ƒë„ ë‚˜ì˜¤ì§€ ì•Šì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë¹„ì£¼ì–¼ìŠ¤íŠœë””ì˜¤ë¥¼ ìž¬ì‹œìž‘í•˜ë©´ ë©ë‹ˆë‹¤.
+* í˜„ìž¬ ScrollHeaderë¥¼ ì¶”ê°€í•´ ë³´ì•˜ëŠ”ë°..ì›í•˜ëŠ” ê¸°ëŠ¥ì´ ì•Šë˜ê³  ìžˆìŠµë‹ˆë‹¤. í™•ì¸ ì¤‘ìž…ë‹ˆë‹¤.
 
-PS. Diablo 3 ½ÃÁð 10ÀÌ ÁøÇà ÁßÀÔ´Ï´Ù.
-* ÀúÀÇ ¹èÆ²Å×±×´Â ¾Æ½Ã¾Æ - SuperOwl#1417 ÀÔ´Ï´Ù. Á¢¼ÓÇÏ¼Å¼­ ±ÓÁÖ½Ã¸é ¹«·á ¸¸·¾ ¹ö½º ¿îÇàÇÕ´Ï´Ù.
-* Á¢¼Ó ½Ã°£Àº ÆòÀÏ 10~12½Ã Á¤µµ ÀÔ´Ï´Ù.
+
+PS. Diablo 3 ì‹œì¦Œ 10ì´ ì§„í–‰ ì¤‘ìž…ë‹ˆë‹¤.
+* ì €ì˜ ë°°í‹€í…Œê·¸ëŠ” ì•„ì‹œì•„ - SuperOwl#1417 ìž…ë‹ˆë‹¤. ì ‘ì†í•˜ì…”ì„œ ê·“ì£¼ì‹œë©´ ë¬´ë£Œ ë§Œë ™ ë²„ìŠ¤ ìš´í–‰í•©ë‹ˆë‹¤.
+* ì ‘ì† ì‹œê°„ì€ í‰ì¼ 10~12ì‹œ ì •ë„ ìž…ë‹ˆë‹¤.

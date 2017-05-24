@@ -101,6 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commons\CommonData.cs" />
+    <Compile Include="Converters\BooleanToReverseConverter.cs" />
     <Compile Include="Services\FlyoutHelper.cs" />
     <Compile Include="Commons\GameConfigs.cs" />
     <Compile Include="Controls\BattleTagManagementDialog.xaml.cs">
