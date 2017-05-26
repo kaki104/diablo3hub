@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 using Diablo3Hub.Services;
@@ -29,6 +31,8 @@ namespace Diablo3Hub
             ShowShellBackButton = settings.UseShellBackButton;
 
             #endregion
+            //현재 앱이 사용 중인 로컬 폴더 경로 출력 - DB 삭제 및 기타 용도로 사용할 때 필요
+            Debug.WriteLine(ApplicationData.Current.LocalFolder.Path);
         }
         /// <summary>
         /// Shell 생성
@@ -52,6 +56,8 @@ namespace Diablo3Hub
 
             //db 초기화
             await DBHelper.Instance.InitAsync();
+            //API 초기화
+            await ApiHelper.Instance.InitAsync();
 
             //MainPage로 네비게이션
             await NavigationService.NavigateAsync(typeof(MainPage));

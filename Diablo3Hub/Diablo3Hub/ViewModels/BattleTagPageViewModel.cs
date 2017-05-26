@@ -14,7 +14,6 @@ using Diablo3Hub.Views;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 using Newtonsoft.Json;
 using Template10.Mvvm;
-using System.Diagnostics;
 
 namespace Diablo3Hub.ViewModels
 {
@@ -22,7 +21,6 @@ namespace Diablo3Hub.ViewModels
     {
         private IList<BattleTag> _battleTags;
         private bool _isChecked;
-        private ScrollHeaderMode _scrollHeaderMode;
         private ListViewSelectionMode _selectionMode;
 
         public BattleTagPageViewModel()
@@ -38,48 +36,7 @@ namespace Diablo3Hub.ViewModels
                         Locale = GameConfigs.LocaleKR,
                         Tag = "SuperOwl-1417",
                         Description = "카키입니다."
-                    },
-
-                     new BattleTag
-                    {
-                        Server = GameConfigs.ServerKR,
-                        Locale = GameConfigs.LocaleKR,
-                        Tag = "SuperOwl-1418",
-                        Description = "heeya18입니다."
-                    },
-
-                     new BattleTag
-                    {
-                        Server = GameConfigs.ServerKR,
-                        Locale = GameConfigs.LocaleKR,
-                        Tag = "SuperOwl-1419",
-                        Description = "heeya19입니다."
-                    },
-
-                      new BattleTag
-                    {
-                        Server = GameConfigs.ServerKR,
-                        Locale = GameConfigs.LocaleKR,
-                        Tag = "SuperOwl-1420",
-                        Description = "heeya20입니다."
-                    },
-
-                     new BattleTag
-                    {
-                        Server = GameConfigs.ServerKR,
-                        Locale = GameConfigs.LocaleKR,
-                        Tag = "SuperOwl-1421",
-                        Description = "heeya21입니다."
-                    },
-
-                     new BattleTag
-                    {
-                        Server = GameConfigs.ServerKR,
-                        Locale = GameConfigs.LocaleKR,
-                        Tag = "SuperOwl-1422",
-                        Description = "heeya22입니다."
                     }
-
                 };
         }
 
@@ -129,14 +86,7 @@ namespace Diablo3Hub.ViewModels
             get => _isChecked;
             set => Set(ref _isChecked, value);
         }
-        /// <summary>
-        /// 스크롤헤더 모드
-        /// </summary>
-        public ScrollHeaderMode ScrollHeaderMode
-        {
-            get => _scrollHeaderMode;
-            set => Set(ref _scrollHeaderMode, value);
-        }
+
         /// <summary>
         /// 아이템 클릭 커맨드
         /// </summary>
@@ -147,8 +97,6 @@ namespace Diablo3Hub.ViewModels
         /// </summary>
         private void Init()
         {
-            ScrollHeaderMode = ScrollHeaderMode.None;
-
             AddBattleTagCommand = new DelegateCommand(async () =>
             {
                 //등록 팝업 출력
@@ -169,31 +117,9 @@ namespace Diablo3Hub.ViewModels
             //기본 선택 모드
             SelectionMode = ListViewSelectionMode.None;
             //수정
-            EditBattleTagCommand = new DelegateCommand<object>( async obj => {
-
-                var battleTag = obj as BattleTag;
-                if (battleTag != null)
-                {
-                    var battleTagDialog = new BattleTagManagementDialog(battleTag);
-
-                    var result = await battleTagDialog.ShowAsync();
-                    if (result != ContentDialogResult.Primary) return;
-                    else
-                    {
-                        BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
-                    }
-                }
-
-            });
-
-
+            EditBattleTagCommand = new DelegateCommand<object>(obj => { });
             //삭제
-            DeleteBattleTagCommand = new DelegateCommand<object>(async obj =>
-           {
-               //개발 알림용
-               await new Windows.UI.Popups.MessageDialog("기능이 구현되지 않았습니다.").ShowAsync();
-               return;
-           });
+            DeleteBattleTagCommand = new DelegateCommand<object>(obj => { });
 
             ItemClickCommand = new DelegateCommand<object>(obj =>
             {
@@ -203,8 +129,7 @@ namespace Diablo3Hub.ViewModels
 
                 var serializeItem = JsonConvert.SerializeObject(item);
                 //히어로 페이지로 네비게이션, 네비게이션 파라메터도 넘기고..
-                NavigationService.Navigate(typeof(HeroPage), serializeItem);
-
+                NavigationService.Navigate(typeof(BattleTagDetailPage), serializeItem);
             });
         }
 
@@ -212,7 +137,6 @@ namespace Diablo3Hub.ViewModels
             IDictionary<string, object> state)
         {
             //네비게이트되면..
-            ScrollHeaderMode = ScrollHeaderMode.Sticky;
 
             //저장 되어있는 배틀테그 목록을 조회
             BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();

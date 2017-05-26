@@ -59,9 +59,10 @@ namespace Diablo3Hub.ViewModels
         /// <summary>
         ///     초기화
         /// </summary>
-        private async void Init()
+        private void Init()
         {
-            await ApiHelper.Instance.InitAsync();
+            InputBattleTag = "SuperOwl#1417";
+            InputHeroId = "62357234";
 
             CareerProfileCommand = new DelegateCommand(async () =>
             {

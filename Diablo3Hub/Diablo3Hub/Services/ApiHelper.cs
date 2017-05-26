@@ -88,18 +88,23 @@ namespace Diablo3Hub.Services
         {
             using (var hc = new HttpClient())
             {
-                var url = $"https://{SelectedGameServer}.api.battle.net/d3/profile/{battleTag}/?locale={SelectedLocale}&apikey={ApiKey}";
+                var url = $"https://{SelectedGameServer}.api.battle.net/d3/profile/{battleTag.Replace("#","-")}/?locale={SelectedLocale}&apikey={ApiKey}";
                 var content = await hc.GetStringAsync(url);
                 var jsonResult = JsonConvert.DeserializeObject<CareerProfile>(content);
                 return jsonResult;
             }
         }
-
+        /// <summary>
+        /// 히어로 프로파일
+        /// </summary>
+        /// <param name="battleTag"></param>
+        /// <param name="heroId"></param>
+        /// <returns></returns>
         public async Task<HeroProfile> GetHeroProfileAsync(string battleTag, string heroId)
         {
             using (var hc = new HttpClient())
             {
-                var url = $"https://{SelectedGameServer}.api.battle.net/d3/profile/{battleTag}/hero/{heroId}?locale={SelectedLocale}&apikey={ApiKey}";
+                var url = $"https://{SelectedGameServer}.api.battle.net/d3/profile/{battleTag.Replace("#", "-")}/hero/{heroId}?locale={SelectedLocale}&apikey={ApiKey}";
                 var content = await hc.GetStringAsync(url);
                 var jsonResult = JsonConvert.DeserializeObject<HeroProfile>(content);
                 return jsonResult;
