@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
+using Windows.Data.Json;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Diablo3Hub.Commons;
 using Diablo3Hub.Controls;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
+using Diablo3Hub.Views;
 using Microsoft.Toolkit.Uwp.UI.Controls;
+using Newtonsoft.Json;
 using Template10.Mvvm;
 using System.Diagnostics;
 
@@ -134,6 +137,10 @@ namespace Diablo3Hub.ViewModels
             get => _scrollHeaderMode;
             set => Set(ref _scrollHeaderMode, value);
         }
+        /// <summary>
+        /// 아이템 클릭 커맨드
+        /// </summary>
+        public ICommand ItemClickCommand { get; set; }
 
         /// <summary>
         ///     초기화
@@ -157,33 +164,55 @@ namespace Diablo3Hub.ViewModels
             {
                 SelectionMode = IsChecked
                     ? ListViewSelectionMode.Multiple
-                    : ListViewSelectionMode.Single;
+                    : ListViewSelectionMode.None;
             });
             //기본 선택 모드
-            SelectionMode = ListViewSelectionMode.Single;
+            SelectionMode = ListViewSelectionMode.None;
             //수정
             EditBattleTagCommand = new DelegateCommand<object>( async obj => {
 
-                var battleTag = obj as BattleTag;
-                if (battleTag != null)
+                var battelTag = obj as BattleTag;
+                if (battelTag != null)
                 {
-                    var battleTagDialog = new BattleTagManagementDialog(battleTag);
+                    var battleTagDialog = new BattleTagManagementDialog();
+                    battleTagDialog.ViewModel.SetBattleTag(battelTag);
+
                     var result = await battleTagDialog.ShowAsync();
-                    if (result != ContentDialogResult.Primary)
-                    {
-                        return;
-                    } else
-                    {
-                        BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
-                    }
+                    if (result != ContentDialogResult.Primary) return;
+                }
+                else
+                {
+                    await new Windows.UI.Popups.MessageDialog("내부적인 오류로 인해 Tag Item을 업데이트 할 수 없습니다.").ShowAsync();
+                    return;
                 }
 
             });
             //삭제
+
             DeleteBattleTagCommand = new DelegateCommand<object>( async obj => {
-                //개발, 알림용 코드
-                await new Windows.UI.Popups.MessageDialog("기능이 구현되지 않았습니다. 변경이 있을 예정입니다.").ShowAsync();
-                return;
+                try
+                {
+                    var result = await DBHelper.Instance.DeleteAsync(obj);
+                    Debug.WriteLine("Delete Row Item Index : {0}", result);
+                    BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
+                }
+                catch (Exception)
+                {
+                    //To-do : 지우지 못한 Row Index에 대한 표시 필요.
+                    await new Windows.UI.Popups.MessageDialog("내부적인 오류로 인해 Tag Item을 삭제 할 수 없습니다.").ShowAsync();
+                    return;
+                }
+
+            ItemClickCommand = new DelegateCommand<object>(obj =>
+            {
+                var args = obj as ItemClickEventArgs;
+                var item = args.ClickedItem as BattleTag;
+                if (item == null) return;
+
+                var serializeItem = JsonConvert.SerializeObject(item);
+                //히어로 페이지로 네비게이션, 네비게이션 파라메터도 넘기고..
+                NavigationService.Navigate(typeof(HeroPage), serializeItem);
+
             });
         }
 
