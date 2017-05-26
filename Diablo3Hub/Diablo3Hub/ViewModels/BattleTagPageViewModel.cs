@@ -117,9 +117,28 @@ namespace Diablo3Hub.ViewModels
             //기본 선택 모드
             SelectionMode = ListViewSelectionMode.None;
             //수정
-            EditBattleTagCommand = new DelegateCommand<object>(obj => { });
+            EditBattleTagCommand = new DelegateCommand<object>( async obj => {
+
+                var battleTag = obj as BattleTag;
+                if (battleTag != null)
+                {
+                    var battleTagDialog = new BattleTagManagementDialog(battleTag);
+                    var result = await battleTagDialog.ShowAsync();
+
+                    if (result != ContentDialogResult.Primary)
+                    {
+                        return;
+                    } else {
+                        BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
+                    }
+                }
+            });
             //삭제
-            DeleteBattleTagCommand = new DelegateCommand<object>(obj => { });
+            DeleteBattleTagCommand = new DelegateCommand<object>(async obj => {
+                await new Windows.UI.Popups.MessageDialog("기능이 구현되지 않았습니다. 변경이 있을 예정입니다.").ShowAsync();
+                return;
+
+            });
 
             ItemClickCommand = new DelegateCommand<object>(obj =>
             {
