@@ -1,7 +1,8 @@
 ﻿<common:BootStrapper x:Class="Diablo3Hub.App"
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:common="using:Template10.Common">
+                     xmlns:common="using:Template10.Common"
+                     xmlns:vm="using:Diablo3Hub.ViewModels">
 
     <Application.Resources>
         <ResourceDictionary>
@@ -10,7 +11,8 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!--  custom resources  -->
-
+            <vm:ViewModelLocator x:Key="Locator" />
+            
         </ResourceDictionary>
     </Application.Resources>
 

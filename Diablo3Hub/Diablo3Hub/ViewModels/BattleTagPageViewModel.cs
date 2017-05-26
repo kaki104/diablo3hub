@@ -164,36 +164,26 @@ namespace Diablo3Hub.ViewModels
             //수정
             EditBattleTagCommand = new DelegateCommand<object>( async obj => {
 
-                var battelTag = obj as BattleTag;
-                if (battelTag != null)
+                var battleTag = obj as BattleTag;
+                if (battleTag != null)
                 {
-                    var battleTagDialog = new BattleTagManagementDialog();
-                    battleTagDialog.ViewModel.SetBattleTag(battelTag);
-
+                    var battleTagDialog = new BattleTagManagementDialog(battleTag);
                     var result = await battleTagDialog.ShowAsync();
-                    if (result != ContentDialogResult.Primary) return;
-                }
-                else
-                {
-                    await new Windows.UI.Popups.MessageDialog("내부적인 오류로 인해 Tag Item을 업데이트 할 수 없습니다.").ShowAsync();
-                    return;
+                    if (result != ContentDialogResult.Primary)
+                    {
+                        return;
+                    } else
+                    {
+                        BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
+                    }
                 }
 
             });
             //삭제
             DeleteBattleTagCommand = new DelegateCommand<object>( async obj => {
-                try
-                {
-                    var result = await DBHelper.Instance.DeleteAsync(obj);
-                    Debug.WriteLine("Delete Row Item Index : {0}", result);
-                    BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
-                }
-                catch (Exception)
-                {
-                    //To-do : 지우지 못한 Row Index에 대한 표시 필요.
-                    await new Windows.UI.Popups.MessageDialog("내부적인 오류로 인해 Tag Item을 삭제 할 수 없습니다.").ShowAsync();
-                    return;
-                }
+                //개발, 알림용 코드
+                await new Windows.UI.Popups.MessageDialog("기능이 구현되지 않았습니다. 변경이 있을 예정입니다.").ShowAsync();
+                return;
             });
         }
 

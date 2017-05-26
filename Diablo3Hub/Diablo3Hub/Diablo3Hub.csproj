@@ -101,6 +101,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commons\CommonData.cs" />
+    <Compile Include="Controls\BattleTagItemDelConfirmDialog.xaml.cs">
+      <DependentUpon>BattleTagItemDelConfirmDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\FlyoutHelper.cs" />
     <Compile Include="Commons\GameConfigs.cs" />
     <Compile Include="Controls\BattleTagManagementDialog.xaml.cs">
@@ -114,11 +117,13 @@
     <Compile Include="Services\ApiHelper.cs" />
     <Compile Include="Services\DBHelper.cs" />
     <Compile Include="Services\SettingsServices\SettingsService.cs" />
+    <Compile Include="ViewModels\BattleTagItemDelConfirmDialogViewModel.cs" />
     <Compile Include="ViewModels\BattleTagManagementDialogViewModel.cs" />
     <Compile Include="ViewModels\BattleTagPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\BattleTagPage.xaml.cs">
       <DependentUpon>BattleTagPage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +172,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\BattleTagManagementDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BattleTagItemDelConfirmDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
