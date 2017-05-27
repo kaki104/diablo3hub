@@ -21,7 +21,7 @@ namespace Diablo3Hub.Controls
         /// <param name="editTag"></param>
         public BattleTagManagementDialog(BattleTag editTag) : this()
         {
-            
+            ViewModel.SetBattleTag(editTag);
         }
 
         public BattleTagManagementDialogViewModel ViewModel
