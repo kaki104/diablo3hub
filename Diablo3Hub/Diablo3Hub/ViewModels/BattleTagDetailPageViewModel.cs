@@ -174,10 +174,19 @@ namespace Diablo3Hub.ViewModels
                 //평범한 네비게이션
                 var result = await ApiHelper.Instance.GetCareerProfileAsync(battleTag.Tag);
                 if (result == null) goto ExitRtn;
-                CurrentBattleTag = result;
+                if (string.IsNullOrEmpty(result.BattleTag))
+                {
+                    //배틀테그를 찾을 수 없었을 때
+                    //배틀테그를 찾을 수 없다는 메시지 출력하고 CurrentBattleTag = null로 입력
+                }
+                else
+                {
+                    //제대로된 배틀테그라면..
+                    CurrentBattleTag = result;
+                }
 
 
-                ExitRtn:
+            ExitRtn:
                 Busy.SetBusy(false);
             }
         }

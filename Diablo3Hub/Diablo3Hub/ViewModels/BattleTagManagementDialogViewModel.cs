@@ -116,6 +116,7 @@ namespace Diablo3Hub.ViewModels
         /// </summary>
         private async void ExecuteOkCommand()
         {
+            //커런트 배틀테그 수정
             _currentBattleTag.Server = SelectedServer?.Id;
             _currentBattleTag.Tag = $"{BattleTagHead}-{BattleTagTail}";
             if (string.IsNullOrEmpty(_currentBattleTag.Locale))
@@ -139,11 +140,13 @@ namespace Diablo3Hub.ViewModels
         /// <param name="editTag"></param>
         public void SetBattleTag(BattleTag editTag)
         {
+            var splits = editTag.Tag.Split('#');
+            if (splits.Length != 2) return;
+
+            //수정할 배틀테그를 커런트 배틀테그에 입력
             _currentBattleTag = editTag;
             IsEdit = true;
             SelectedServer = Realms.FirstOrDefault(p => p.Id == editTag.Server);
-            var splits = editTag.Tag.Split('-');
-            if (splits.Length != 2) return;
             BattleTagHead = splits.First();
             BattleTagTail = splits.Last();
             Description = editTag.Description;

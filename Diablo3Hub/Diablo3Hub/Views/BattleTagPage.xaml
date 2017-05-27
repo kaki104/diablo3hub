@@ -11,6 +11,7 @@
     xmlns:behaviors="using:Template10.Behaviors"
     xmlns:controls1="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:Converters="using:Diablo3Hub.Converters"
+    xmlns:Behaviors="using:Diablo3Hub.Behaviors"
     x:Name="rootPage"
     x:Class="Diablo3Hub.Views.BattleTagPage"
     mc:Ignorable="d">
@@ -46,6 +47,7 @@
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True">
             <AppBarButton Icon="Add" Command="{Binding AddBattleTagCommand}"/>
+            <AppBarButton Icon="Delete" Command="{Binding DeleteSelectedBattleTagsCommand}"/>
             <AppBarToggleButton Icon="Bullets" 
                                 IsChecked="{Binding IsChecked, Mode=TwoWay}" 
                                 Command="{Binding SelectCommand}"/>
@@ -64,6 +66,10 @@
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="ItemClick">
                     <core:InvokeCommandAction Command="{Binding ItemClickCommand}"/>
+                </core:EventTriggerBehavior>
+                <Behaviors:SelectedItemsBehavior SelectedItems="{Binding SelectedBattleTags}"/>
+                <core:EventTriggerBehavior EventName="SelectionChanged">
+                    <core:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
 
