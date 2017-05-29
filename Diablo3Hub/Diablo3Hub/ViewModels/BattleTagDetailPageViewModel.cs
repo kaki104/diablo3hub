@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.UI.Xaml.Navigation;
@@ -158,6 +159,13 @@ namespace Diablo3Hub.ViewModels
             set => Set(ref _currentBattleTag, value);
         }
 
+        /// <summary>
+        /// 네비게이션
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <param name="mode"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode,
             IDictionary<string, object> state)
         {
@@ -183,6 +191,8 @@ namespace Diablo3Hub.ViewModels
                 {
                     //제대로된 배틀테그라면..
                     CurrentBattleTag = result;
+
+                    
                 }
 
 
