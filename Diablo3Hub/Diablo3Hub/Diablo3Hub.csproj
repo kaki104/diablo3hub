@@ -107,6 +107,7 @@
       <DependentUpon>BattleTagItemDelConfirmDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanToReverseConverter.cs" />
+    <Compile Include="Converters\LongToDateTimeConverter.cs" />
     <Compile Include="Services\CommonHelper.cs" />
     <Compile Include="Services\FlyoutHelper.cs" />
     <Compile Include="Commons\GameConfigs.cs" />
