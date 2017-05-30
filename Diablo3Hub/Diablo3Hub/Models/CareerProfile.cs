@@ -26,10 +26,10 @@ namespace Diablo3Hub.Models
         public Hero[] Heroes { get; set; }
 
         [JsonProperty(PropertyName = "lastHeroPlayed")]
-        public int LastHeroPlayed { get; set; }
+        public long LastHeroPlayed { get; set; }
 
         [JsonProperty(PropertyName = "lastUpdated")]
-        public int LastUpdated { get; set; }
+        public long LastUpdated { get; set; }
 
         [JsonProperty(PropertyName = "kills")]
         public Kills Kills { get; set; }
@@ -246,6 +246,6 @@ namespace Diablo3Hub.Models
         public bool Dead { get; set; }
 
         [JsonProperty(PropertyName = "lastupdated")]
-        public int Lastupdated { get; set; }
+        public long Lastupdated { get; set; }
     }
 }

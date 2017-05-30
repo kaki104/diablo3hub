@@ -56,7 +56,7 @@ namespace Diablo3Hub.Models
         public bool Dead { get; set; }
 
         [JsonProperty(PropertyName = "lastupdated")]
-        public int Lastupdated { get; set; }
+        public long Lastupdated { get; set; }
     }
 
     public class Skills
