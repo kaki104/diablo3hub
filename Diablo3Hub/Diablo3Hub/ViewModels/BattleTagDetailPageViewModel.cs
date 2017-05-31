@@ -44,7 +44,7 @@ namespace Diablo3Hub.ViewModels
                             Hardcore = false,
                             Seasonal = false,
                             Dead = false,
-                            Lastupdated = 1490517844
+                            Lastupdated = 1490517844,
                         },
                         new Hero
                         {
@@ -108,46 +108,48 @@ namespace Diablo3Hub.ViewModels
                     ParagonLevelSeason = 721,
                     ParagonLevelHardcore = 0,
                     ParagonLevelSeasonHardcore = 0,
-                    SeasonalProfiles = new Seasonalprofiles
-                    {
-                        Season0 = new Season
-                        {
-                            SeasonId = 0,
-                            ParagonLevel = 264,
-                            ParagonLevelHardcore = 0,
-                            Kills = {Monsters = 1184577, Elites = 51163},
-                            TimePlayed =
-                            {
-                                Barbarian = 1.0f,
-                                Crusader = 0.479f,
-                                Demonhunter = 0.93f,
-                                Monk = 0.089f,
-                                Witchdoctor = 0.133f,
-                                Wizard = 0.8f
-                            },
-                            HighestHardcoreLevel = 0,
-                            Progression = {Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false}
-                        },
-                        Season10 = new Season
-                        {
-                            SeasonId = 10,
-                            ParagonLevel = 826,
-                            ParagonLevelHardcore = 0,
-                            Kills = {Monsters = 351582, Elites = 17591},
-                            TimePlayed =
-                            {
-                                Barbarian = 0f,
-                                Crusader = 1.0f,
-                                Demonhunter = 0.628f,
-                                Monk = 0f,
-                                Witchdoctor = 0.008f,
-                                Wizard = 0f
-                            },
-                            HighestHardcoreLevel = 0,
-                            Progression = {Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false}
-                        }
-                    }
                 };
+
+            //SeasonalProfiles = new Seasonalprofiles
+            //{
+            //    Season0 = new Season
+            //    {
+            //        SeasonId = 0,
+            //        ParagonLevel = 264,
+            //        ParagonLevelHardcore = 0,
+            //        Kills = { Monsters = 1184577, Elites = 51163 },
+            //        TimePlayed =
+            //        {
+            //            Barbarian = 1.0f,
+            //            Crusader = 0.479f,
+            //            Demonhunter = 0.93f,
+            //            Monk = 0.089f,
+            //            Witchdoctor = 0.133f,
+            //            Wizard = 0.8f
+            //        },
+            //        HighestHardcoreLevel = 0,
+            //        Progression = { Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false }
+            //    },
+            //    Season10 = new Season
+            //    {
+            //        SeasonId = 10,
+            //        ParagonLevel = 826,
+            //        ParagonLevelHardcore = 0,
+            //        Kills = { Monsters = 351582, Elites = 17591 },
+            //        TimePlayed =
+            //        {
+            //            Barbarian = 0f,
+            //            Crusader = 1.0f,
+            //            Demonhunter = 0.628f,
+            //            Monk = 0f,
+            //            Witchdoctor = 0.008f,
+            //            Wizard = 0f
+            //        },
+            //        HighestHardcoreLevel = 0,
+            //        Progression = { Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false }
+            //    }
+            //}
+
         }
 
         /// <summary>

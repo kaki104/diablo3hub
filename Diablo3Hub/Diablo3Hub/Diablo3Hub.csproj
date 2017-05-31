@@ -164,6 +164,19 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Heads\barbarian_female.png" />
+    <Content Include="Assets\Heads\barbarian_male.png" />
+    <Content Include="Assets\Heads\crusader_female.png" />
+    <Content Include="Assets\Heads\crusader_male.png" />
+    <Content Include="Assets\Heads\demon-hunter_female.png" />
+    <Content Include="Assets\Heads\demon-hunter_male.png" />
+    <Content Include="Assets\Heads\monk_female.png" />
+    <Content Include="Assets\Heads\monk_male.png" />
+    <Content Include="Assets\Heads\witch-doctor_female.png" />
+    <Content Include="Assets\Heads\witch-doctor_male.png" />
+    <Content Include="Assets\Heads\wizard_female.png" />
+    <Content Include="Assets\Heads\wizard_male.png" />
+    <Content Include="Assets\SeasonIcon.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
