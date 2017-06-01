@@ -7,14 +7,13 @@
     xmlns:controls="using:Template10.Controls"
     xmlns:uwpControls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="Diablo3Hub.Views.BattleTagDetailPage"
     mc:Ignorable="d">
 
-    <Page.Resources>
-    </Page.Resources>
-
     <Page.DataContext>
-        <viewModels:BattleTagDetailPageViewModel/>
+        <viewModels:BattleTagDetailPageViewModel />
     </Page.DataContext>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -42,17 +41,18 @@
         <controls:PageHeader x:Name="pageHeader" Frame="{x:Bind Frame}"
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
-                             RelativePanel.AlignTopWithPanel="True"/>
+                             RelativePanel.AlignTopWithPanel="True" />
 
-        <Pivot RelativePanel.Below="pageHeader" 
-               RelativePanel.AlignBottomWithPanel="True" 
-               RelativePanel.AlignLeftWithPanel="True" 
+        <Pivot RelativePanel.Below="pageHeader"
+               RelativePanel.AlignBottomWithPanel="True"
+               RelativePanel.AlignLeftWithPanel="True"
                RelativePanel.AlignRightWithPanel="True">
             <PivotItem Header="General">
                 <ScrollViewer>
                     <StackPanel Margin="0 0 10 0">
                         <!--Total-->
-                        <uwpControls:Expander Margin="0 0 0 10" Header="Total" IsExpanded="True" HorizontalContentAlignment="Stretch">
+                        <uwpControls:Expander Margin="0 0 0 10" Header="Total" IsExpanded="True"
+                                              HorizontalContentAlignment="Stretch">
                             <Grid Background="{ThemeResource AppBarBackground}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
@@ -64,60 +64,78 @@
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <!--최근업데이트일시-->
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Last Updated"/>
-                                <TextBlock Grid.Column="1" Grid.Row="0" 
-                                           Text="{Binding CurrentBattleTag.LastUpdated, Converter={StaticResource LongToDateTimeConverter}}" 
-                                           HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Last Updated" />
+                                <TextBlock Grid.Column="1" Grid.Row="0"
+                                           Text="{Binding CurrentBattleTag.LastUpdated, Converter={StaticResource LongToDateTimeConverter}}"
+                                           HorizontalAlignment="Right" />
                                 <!--최근플레이한일시-->
-                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Last Hero Played"/>
-                                <TextBlock Grid.Column="1" Grid.Row="1" 
-                                           Text="{Binding CurrentBattleTag.LastHeroPlayed, Converter={StaticResource LongToDateTimeConverter}}" 
-                                           HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Last Hero Played" />
+                                <TextBlock Grid.Column="1" Grid.Row="1"
+                                           Text="{Binding CurrentBattleTag.LastHeroPlayed, Converter={StaticResource LongToDateTimeConverter}}"
+                                           HorizontalAlignment="Right" />
                                 <!--정복자레벨-->
-                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Paragon Level"/>
-                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding CurrentBattleTag.ParagonLevel}" HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Paragon Level" />
+                                <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding CurrentBattleTag.ParagonLevel}"
+                                           HorizontalAlignment="Right" />
                                 <!--몬츠터처치수-->
-                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Kill Monster"/>
-                                <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding CurrentBattleTag.Kills.Monsters, Converter={StaticResource ValueConverter}}" HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Kill Monster" />
+                                <TextBlock Grid.Column="1" Grid.Row="3"
+                                           Text="{Binding CurrentBattleTag.Kills.Monsters, Converter={StaticResource ValueConverter}}"
+                                           HorizontalAlignment="Right" />
                                 <!--엘리트몬스터처치수-->
-                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Kill Elite"/>
-                                <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding CurrentBattleTag.Kills.Elites, Converter={StaticResource ValueConverter}}" HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Kill Elite" />
+                                <TextBlock Grid.Column="1" Grid.Row="4"
+                                           Text="{Binding CurrentBattleTag.Kills.Elites, Converter={StaticResource ValueConverter}}"
+                                           HorizontalAlignment="Right" />
                                 <!--하드코어몬스터처치수-->
-                                <TextBlock Grid.Column="0" Grid.Row="5" Text="Hardcore Monsters"/>
-                                <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding CurrentBattleTag.Kills.HardcoreMonsters, Converter={StaticResource ValueConverter}}" HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="5" Text="Hardcore Monsters" />
+                                <TextBlock Grid.Column="1" Grid.Row="5"
+                                           Text="{Binding CurrentBattleTag.Kills.HardcoreMonsters, Converter={StaticResource ValueConverter}}"
+                                           HorizontalAlignment="Right" />
                                 <!--길드명-->
-                                <TextBlock Grid.Column="0" Grid.Row="6" Text="Guild Name"/>
-                                <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding CurrentBattleTag.GuildName, Converter={StaticResource ValueConverter}}" HorizontalAlignment="Right"/>
+                                <TextBlock Grid.Column="0" Grid.Row="6" Text="Guild Name" />
+                                <TextBlock Grid.Column="1" Grid.Row="6"
+                                           Text="{Binding CurrentBattleTag.GuildName, Converter={StaticResource ValueConverter}}"
+                                           HorizontalAlignment="Right" />
 
                             </Grid>
                         </uwpControls:Expander>
 
                         <!--Heros-->
-                        <uwpControls:Expander Margin="0 0 0 10" Header="Heros" IsExpanded="True" HorizontalContentAlignment="Stretch">
-                            <ListView ItemsSource="{Binding CurrentBattleTag.Heroes}">
+                        <uwpControls:Expander Margin="0 0 0 10" Header="Heros" IsExpanded="True"
+                                              HorizontalContentAlignment="Stretch">
+                            <ListView ItemsSource="{Binding CurrentBattleTag.Heroes}"
+                                      IsItemClickEnabled="True">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition/>
-                                                <ColumnDefinition Width="20"/>
-                                                <ColumnDefinition Width="17"/>
-                                                <ColumnDefinition/>
-                                                <ColumnDefinition x:Name="KillElitesColumn" Width="0"/>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="17" />
+                                                <ColumnDefinition />
+                                                <ColumnDefinition x:Name="KillElitesColumn" Width="0" />
                                             </Grid.ColumnDefinitions>
                                             <Image Source="{Binding HeadImagePath}" Height="40" />
-                                            <TextBlock Grid.Column="1" Text="{Binding Name}" 
-                                                       VerticalAlignment="Center" Margin="5 0 0 0"/>
-                                            <Image Grid.Column="2" Source="ms-appx:///Assets/SeasonIcon.png" VerticalAlignment="Center" 
-                                                   Visibility="{Binding Seasonal, Converter={StaticResource BoolToVisibilityConverter}}"/>
-                                            <TextBlock Grid.Column="3" Text="{Binding Level}" VerticalAlignment="Center"/>
-                                            <TextBlock Grid.Column="4" Text="{Binding Class}" VerticalAlignment="Center" Margin="4 0 0 0"/>
-                                            <TextBlock Grid.Column="5" Text="{Binding Kills.Elites, Converter={StaticResource ValueConverter}}" VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Name}"
+                                                       VerticalAlignment="Center" Margin="5 0 0 0" />
+                                            <Image Grid.Column="2" Source="ms-appx:///Assets/SeasonIcon.png"
+                                                   VerticalAlignment="Center"
+                                                   Visibility="{Binding Seasonal, Converter={StaticResource BoolToVisibilityConverter}}" />
+                                            <TextBlock Grid.Column="3" Text="{Binding Level}"
+                                                       VerticalAlignment="Center" 
+                                                       Foreground="{Binding Hardcore, Converter={StaticResource TrueWhenRedColorConverter}}" />
+                                            <TextBlock Grid.Column="4" Text="{Binding Class}"
+                                                       VerticalAlignment="Center" Margin="4 0 0 0" 
+                                                       Foreground="{Binding Hardcore, Converter={StaticResource TrueWhenRedColorConverter}}" />
+                                            <TextBlock Grid.Column="5"
+                                                       Text="{Binding Kills.Elites, Converter={StaticResource ValueConverter}}"
+                                                       VerticalAlignment="Center" />
                                         </Grid>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -127,13 +145,18 @@
                                         <Setter Property="Padding" Value="12,12,24,12" />
                                     </Style>
                                 </ListView.ItemContainerStyle>
+                                <interactivity:Interaction.Behaviors>
+                                    <core:EventTriggerBehavior EventName="ItemClick">
+                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" />
+                                    </core:EventTriggerBehavior>
+                                </interactivity:Interaction.Behaviors>
                             </ListView>
                         </uwpControls:Expander>
                     </StackPanel>
                 </ScrollViewer>
             </PivotItem>
-            <PivotItem Header="Season" Content="Season"/>
-            <PivotItem Header="Standard" Content="Standard"/>
+            <PivotItem Header="Season" Content="Season" />
+            <PivotItem Header="Standard" Content="Standard" />
         </Pivot>
     </RelativePanel>
 </Page>

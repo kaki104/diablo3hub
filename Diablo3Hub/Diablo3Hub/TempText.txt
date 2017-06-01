@@ -1,0 +1,506 @@
+﻿            //SeasonalProfiles = new Seasonalprofiles
+            //{
+            //    Season0 = new Season
+            //    {
+            //        SeasonId = 0,
+            //        ParagonLevel = 264,
+            //        ParagonLevelHardcore = 0,
+            //        Kills = { Monsters = 1184577, Elites = 51163 },
+            //        TimePlayed =
+            //        {
+            //            Barbarian = 1.0f,
+            //            Crusader = 0.479f,
+            //            Demonhunter = 0.93f,
+            //            Monk = 0.089f,
+            //            Witchdoctor = 0.133f,
+            //            Wizard = 0.8f
+            //        },
+            //        HighestHardcoreLevel = 0,
+            //        Progression = { Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false }
+            //    },
+            //    Season10 = new Season
+            //    {
+            //        SeasonId = 10,
+            //        ParagonLevel = 826,
+            //        ParagonLevelHardcore = 0,
+            //        Kills = { Monsters = 351582, Elites = 17591 },
+            //        TimePlayed =
+            //        {
+            //            Barbarian = 0f,
+            //            Crusader = 1.0f,
+            //            Demonhunter = 0.628f,
+            //            Monk = 0f,
+            //            Witchdoctor = 0.008f,
+            //            Wizard = 0f
+            //        },
+            //        HighestHardcoreLevel = 0,
+            //        Progression = { Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false }
+            //    }
+            //}
+
+
+{
+  "id" : 63702937,
+  "name" : "KakiHardDIII",
+  "class" : "demon-hunter",
+  "gender" : 1,
+  "level" : 70,
+  "kills" : {
+    "elites" : 373
+  },
+  "paragonLevel" : 165,
+  "hardcore" : true,
+  "seasonal" : true,
+  "seasonCreated" : 10,
+  "skills" : {
+    "active" : [ {
+      "skill" : {
+        "slug" : "grenade",
+        "name" : "수류탄",
+        "icon" : "demonhunter_grenades",
+        "level" : 15,
+        "categorySlug" : "primary",
+        "tooltipUrl" : "skill/demon-hunter/grenade",
+        "description" : "생성: 증오 4\r\n\r\n통통 튀는 수류탄을 던집니다. 수류탄은 폭발하여 무기 공격력의 160%만큼 화염 피해를 줍니다.",
+        "simpleDescription" : "생성: 증오 4\r\n\r\n통통 튀다 폭발하는 수류탄을 던집니다.",
+        "skillCalcId" : "g"
+      },
+      "rune" : {
+        "slug" : "grenade-c",
+        "type" : "c",
+        "name" : "상비 수류탄",
+        "level" : 40,
+        "description" : "수류탄을 3개 던집니다. 수류탄은 폭발하면서 각각 무기 공격력의 160%만큼 화염 피해를 줍니다.",
+        "simpleDescription" : "수류탄을 2개 더 던집니다.",
+        "tooltipParams" : "rune/grenade/c",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    }, {
+      "skill" : {
+        "slug" : "chakram",
+        "name" : "회전 표창",
+        "icon" : "demonhunter_chakram",
+        "level" : 12,
+        "categorySlug" : "secondary",
+        "tooltipUrl" : "skill/demon-hunter/chakram",
+        "description" : "소모: 증오 10\r\n\r\n소용돌이치듯 회전하는 표창을 날립니다. 표창은 경로에 있는 모든 적에게 무기 공격력의 380%만큼 물리 피해를 줍니다.",
+        "simpleDescription" : "소모: 증오 10\r\n\r\n소용돌이치듯 회전하며 적들을 베는 죽음의 표창을 날립니다.",
+        "skillCalcId" : "e"
+      },
+      "rune" : {
+        "slug" : "chakram-a",
+        "type" : "a",
+        "name" : "쌍표창",
+        "level" : 18,
+        "description" : "대칭을 이루며 회전하는 표창을 두 개 던집니다. 표창은 각각 무기 공격력의 220%만큼 화염 피해를 줍니다.",
+        "simpleDescription" : "표창을 두 개 던집니다.",
+        "tooltipParams" : "rune/chakram/a",
+        "skillCalcId" : "a",
+        "order" : 0
+      }
+    }, {
+      "skill" : {
+        "slug" : "vault",
+        "name" : "도약",
+        "icon" : "demonhunter_vault",
+        "level" : 9,
+        "categorySlug" : "hunting",
+        "tooltipUrl" : "skill/demon-hunter/vault",
+        "description" : "소모: 절제 8\r\n\r\n공중제비를 넘으며 35미터 이동합니다.",
+        "simpleDescription" : "소모: 절제 8\r\n\r\n공중제비를 넘어 적의 공격을 피합니다.",
+        "skillCalcId" : "d"
+      },
+      "rune" : {
+        "slug" : "vault-d",
+        "type" : "d",
+        "name" : "이중 도약",
+        "level" : 33,
+        "description" : "도약을 사용한 후 6초 내에 또 도약을 사용할 때 소모되는 절제가 50% 감소합니다.",
+        "simpleDescription" : "착지 후 바로 도약을 사용할 때 소모되는 절제가 감소합니다.",
+        "tooltipParams" : "rune/vault/d",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    }, {
+      "skill" : {
+        "slug" : "companion",
+        "name" : "동료",
+        "icon" : "x1_demonhunter_companion",
+        "level" : 17,
+        "categorySlug" : "hunting",
+        "tooltipUrl" : "skill/demon-hunter/companion",
+        "description" : "재사용 대기시간: 30초\r\n\r\n사용 효과: 큰까마귀의 다음 공격은 추가 피해를 500% 줍니다.\r\n\r\n지속 효과: 전투를 도와줄 큰까마귀를 소환합니다. 큰까마귀는 주기적으로 적을 쪼아 무기 공격력의 100%만큼 물리 피해를 줍니다.",
+        "simpleDescription" : "재사용 대기시간: 30초\r\n\r\n사용 효과: 큰까마귀의 다음 공격이 추가 피해를 줍니다.\r\n\r\n지속 효과: 어둠 속에서 큰까마귀를 소환합니다.",
+        "skillCalcId" : "S"
+      },
+      "rune" : {
+        "slug" : "companion-b",
+        "type" : "b",
+        "name" : "멧돼지 동료",
+        "level" : 41,
+        "description" : "사용 효과: 멧돼지가 당신을 향해 돌진한 후 5초 동안 20미터 내의 적을 도발합니다.\r\n\r\n지속 효과: 큰까마귀 대신 멧돼지를 불러냅니다. 멧돼지는 적을 공격해 무기 공격력의 100%만큼 물리 피해를 줍니다.\r\n\r\n멧돼지와 함께하는 동안 자신과 아군의 생명력 회복량이 10728 증가하며, 모든 원소 저항이 20% 증가합니다.",
+        "simpleDescription" : "사용 효과: 멧돼지가 당신을 향해 돌진한 후 근처의 적들을 도발합니다.\r\n\r\n지속 효과: 자신과 아군에게 생명력 회복 효과를 주고 저항을 증가시키는 멧돼지를 불러냅니다.",
+        "tooltipParams" : "rune/companion/b",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    }, {
+      "skill" : {
+        "slug" : "sentry",
+        "name" : "자동 쇠뇌",
+        "icon" : "demonhunter_sentry",
+        "level" : 25,
+        "categorySlug" : "devices",
+        "tooltipUrl" : "skill/demon-hunter/sentry",
+        "description" : "소모: 증오 20\r\n\r\n근처의 적을 자동으로 공격하는 쇠뇌를 설치합니다. 쇠뇌는 무기 공격력의 280%만큼 피해를 주며 30초 동안 지속됩니다.\r\n\r\n쇠뇌는 한 번에 2개 설치할 수 있습니다.\r\n\r\n자동 쇠뇌는 8초마다 충전되고 최대 충전 횟수는 2회입니다.",
+        "simpleDescription" : "소모: 증오 20\r\n\r\n자동으로 근처의 적을 공격하는 쇠뇌를 설치합니다.\r\n\r\n자동 쇠뇌는 8초마다 충전되고 최대 충전 횟수는 2회입니다.",
+        "skillCalcId" : "k"
+      },
+      "rune" : {
+        "slug" : "sentry-e",
+        "type" : "e",
+        "name" : "보호 쇠뇌",
+        "level" : 60,
+        "description" : "쇠뇌 주위에 보호막이 생겨나 아군이 받는 피해를 25% 감소시킵니다.",
+        "simpleDescription" : "쇠뇌 주위에 보호막이 생겨나 아군이 받는 피해를 감소시킵니다.",
+        "tooltipParams" : "rune/sentry/e",
+        "skillCalcId" : "c",
+        "order" : 4
+      }
+    }, {
+      "skill" : {
+        "slug" : "vengeance",
+        "name" : "복수",
+        "icon" : "x1_demonhunter_vengeance",
+        "level" : 61,
+        "categorySlug" : "devices",
+        "tooltipUrl" : "skill/demon-hunter/vengeance",
+        "description" : "재사용 대기시간: 90초\r\n\r\n20초 동안 불타는 복수의 화신이 됩니다.\r\n\r\n 이중 사격: 공격할 때마다 무기 공격력의 60%만큼 피해를 주는 4발의 관통 화살을 발사합니다.\r\n 유도탄: 공격할 때마다 무기 공격력의 80%만큼 피해를 주는 2발의 유도탄을 발사합니다.\r\n 복수: 공격력이 40% 증가합니다.",
+        "simpleDescription" : "재사용 대기시간: 90초\r\n\r\n20초 동안 불타는 복수의 화신이 됩니다.",
+        "skillCalcId" : "O"
+      },
+      "rune" : {
+        "slug" : "vengeance-a",
+        "type" : "a",
+        "name" : "어둠 속에서",
+        "level" : 69,
+        "description" : "유도탄을 쏘는 대신 어둠 속에서 동료들을 불러냅니다. 동료들은 적에게 무기 공격력의 120%만큼 냉기 피해를 주고 3초 동안 빙결시킵니다.",
+        "simpleDescription" : "유도탄을 쏘는 대신 어둠 속에서 동료들을 불러냅니다. 동료들은 적을 공격하고 빙결시킵니다.",
+        "tooltipParams" : "rune/vengeance/a",
+        "skillCalcId" : "c",
+        "order" : 4
+      }
+    } ],
+    "passive" : [ {
+      "skill" : {
+        "slug" : "awareness",
+        "name" : "기민함",
+        "icon" : "x1_demonhunter_passive_awareness",
+        "level" : 66,
+        "tooltipUrl" : "skill/demon-hunter/awareness",
+        "description" : "죽음에 달하는 피해를 받으면, 2초 동안 모습을 감추고 최대 생명력의 50%만큼 생명력을 회복합니다.\r\n\r\n이 효과는 60초에 한 번만 발동됩니다.",
+        "flavor" : "\"모든 것은 시험이다. 주변을 잘 파악하는 것만으로도 합격은 문제 없다. \" - 사냥의 대가 조센",
+        "skillCalcId" : "R"
+      }
+    }, {
+      "skill" : {
+        "slug" : "cull-the-weak",
+        "name" : "약자 도태",
+        "icon" : "demonhunter_passive_culltheweak",
+        "level" : 20,
+        "tooltipUrl" : "skill/demon-hunter/cull-the-weak",
+        "description" : "이동 속도가 감소한 적이나 오한을 느끼는 적에게 주는 피해가 20% 증가합니다.",
+        "flavor" : "\"무력한 우리 가족에게 네가 베푼 자비를 그대로 되돌려 주지.\" - 타일라 슈라이크윙",
+        "skillCalcId" : "c"
+      }
+    }, {
+      "skill" : {
+        "slug" : "tactical-advantage",
+        "name" : "전술적 우위",
+        "icon" : "demonhunter_passive_tacticaladvantage",
+        "level" : 10,
+        "tooltipUrl" : "skill/demon-hunter/tactical-advantage",
+        "description" : "도약, 어둠의 힘, 연막을 사용하거나, 회피 사격으로 공중제비를 넘을 때마다 2초 동안 이동 속도가 60% 증가합니다.",
+        "flavor" : "공정한 싸움은 없다.",
+        "skillCalcId" : "Z"
+      }
+    }, {
+      "skill" : {
+        "slug" : "thrill-of-the-hunt",
+        "name" : "사냥의 전율",
+        "icon" : "demonhunter_passive_thrillofthehunt",
+        "level" : 10,
+        "tooltipUrl" : "skill/demon-hunter/thrill-of-the-hunt",
+        "description" : "증오 소모 기술에 적중당한 적의 이동 속도가 2초 동안 80% 감소합니다.",
+        "flavor" : "\"처음 셋은 쓰러지기도 전에 죽었소. 나머지는 그렇게 운이 좋지 않았지.\" - 대장 럼퍼드",
+        "skillCalcId" : "a"
+      }
+    } ]
+  },
+  "items" : {
+    "mainHand" : {
+      "id" : "P4_Unique_Sword_1H_01",
+      "name" : "앙심의 칼",
+      "icon" : "p4_unique_sword_1h_01_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CoUBCK75q78KEgcIBBWgNMiPHVSlvI0dZiMGUB3Q7mgxHZWx9vIdyfq8oDCL0gI4nANAAFASWARgsgNqLAoMCAAQ4tHnpoKAgIAJEhwIyPCxrgoSBwgEFSotN6kwi9ICOABAAVgEkAEKgAFGpQHQ7mgxrQGeT4PctQGb2dnvuAG2w8m0BcABAhi_rb6DDlAAWAI"
+    },
+    "offHand" : {
+      "id" : "Unique_Quiver_005_p1",
+      "name" : "끓어오르는 증오의 가시",
+      "icon" : "unique_quiver_005_p1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClcI6NrTvwwSBwgEFYbWIegdgGZcRh1YRuHZHXRFp4kdmwYAyx3J-rygMIvSAjieAkAAUBJYBGC0AoABRqUBWEbh2a0BuLwgerUBVOq-W7gBuIq4qw3AAQgY86Xx_QJQAFgC"
+    },
+    "waist" : {
+      "id" : "Unique_Belt_010_x1",
+      "name" : "금박 허리띠",
+      "icon" : "unique_belt_010_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClMIpIPNvAgSBwgEFTUGnWkdZz7s5B1DTkRRHTsnbyQd8dNq1R0_8gnYMInSAjjaAkAAUBJYBmDwAoABRrUBwKdC1MgB3tv9BMgBvp2gBcgB-v21CxjqmOiZDVAAWAI"
+    },
+    "rightFinger" : {
+      "id" : "Unique_Ring_015_x1",
+      "name" : "의연한 자의 호칭기도",
+      "icon" : "unique_ring_015_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CnkIutzaoQUSBwgEFUNvNrkdS7X5Sx0_8gnYHTsnbyQd0p-eRB3x02rVHWYjBlAwi9ICOJgDQABQElgEYK4DajEKDAgAENWCgIuIgICgBxIhCLbHgpAGEgcIBBWHWaDBMIvSAjgAQABQElgEkAEK2AEKgAFGtQE2VV1EGPnCzOwIUABYAqABu_TQ7AigAfnCzOwI",
+      "setItemsEquipped" : [ "Unique_Ring_014_x1", "Unique_Ring_015_x1" ]
+    },
+    "leftFinger" : {
+      "id" : "Unique_Ring_014_x1",
+      "name" : "으뜸가는 주인",
+      "icon" : "unique_ring_014_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CnkI-q7DygwSBwgEFeLiNbkdS7X5Sx1_jofMHYvxekIdQ05EUR3x02rVHWYjBlAwi9ICOKgDQABQElgEYL4DajEKDAgAEN6t9NKGgIDALxIhCOjZ7YEPEgcIBBVp_rLBMIvSAjgAQABQElgEkAEK2AEogAFGtQE2VV1EGLv00OwIUABYAqABu_TQ7AigAfnCzOwI",
+      "setItemsEquipped" : [ "Unique_Ring_014_x1", "Unique_Ring_015_x1" ]
+    },
+    "neck" : {
+      "id" : "Unique_Amulet_016_x1",
+      "name" : "블랙손의 던크레이그 십자가",
+      "icon" : "unique_amulet_016_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CkYIhJrvhwkSBwgEFdx2G1sdrNOZOR2x5OoRHXRFp4kdsMEJch1-VrMuHcn6vKAwi9ICOKICQABQElgEYLgCgAFGtQGwxURkGLjb27ELUABYAqABuNvbsQs",
+      "setItemsEquipped" : [ "Unique_Amulet_016_x1" ]
+    },
+    "torso" : {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_female",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CuUBCNn_j_wLEgcIBBVEd4APHXGLd_AdoSncBR04neQEHUNORFEdcyMGUB3x02rVMIvSAjiTA0AAUBJYBGCpA2orCgwIABD50eemgoCAgAkSGwiGq6UpEgcIBBWLvhzCMIvSAjgAQAFYBJABCmosCgwIABD60eemgoCAgAkSHAjl05HrDhIHCAQVi74cwjCL0gI4AEABWASQAQpqLAoMCAAQ-9HnpoKAgIAJEhwI_bWr0QoSBwgEFYu-HMIwi9ICOABAAVgEkAEKgAFGpQGhKdwFrQF_jofMtQExIhlguAHNlOTvBsABAhiI3YP4AVAAWAKgAdnP7uAOoAGI3YP4AaAB-o6RrA8",
+      "setItemsEquipped" : [ "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "feet" : {
+      "id" : "Unique_Boots_011_x1",
+      "name" : "나탈랴의 핏빛 발자국",
+      "icon" : "unique_boots_011_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClgIm-KThQwSBwgEFTaztXMdco4dIR1xi3fwHWCeJkcdQ05EUR3x02rVHTsnbyQwidICOJ0DQABQElgGYLMDgAFGtQGgRZt_yAHe2_0EyAG-naAFyAH6_bULGOzMrbsOUABYAqAB7Mytuw4",
+      "setItemsEquipped" : [ "Unique_Boots_011_x1" ]
+    },
+    "hands" : {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClwI2cnq2QQSBwgEFb0jwnodyfq8oB1-VrMuHZsGAMsdEC_KKh2SEP4fHUV7xt0wi9ICOLcCQABQElgEYNECgAFGpQGbBgDLrQGYp47AtQHJW5KkuAGKltfPDMABDRj6jpGsD1AAWAKgAdnP7uAOoAGI3YP4AaAB-o6RrA8",
+      "setItemsEquipped" : [ "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "shoulders" : {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClwIst7L5woSBwgEFRMs8okdP_IJ2B1xi3fwHUNORFEdF--abh07J28kHfHTatUwi9ICOKgCQABQElgEYL4CgAFGpQEX75purQG4vCB6tQHS-MgVuAHBmIPTA8ABCBjZz-7gDlAAWAKgAdnP7uAOoAGI3YP4AaAB-o6RrA8",
+      "setItemsEquipped" : [ "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "legs" : {
+      "id" : "Unique_Pants_Set_07_x1",
+      "name" : "습격자의 아랫바지",
+      "icon" : "unique_pants_set_07_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CqIBCNWm3YYGEgcIBBX1AD0xHfPVR7QdP_IJ2B1DTkRRHTid5AQdj5DKUB3x02rVMIvSAjivAkAAUBJYBGDFAmosCgwIABCy0-emgoCAgAkSHAjCofbiCRIHCAQVi74cwjCL0gI4AEABWASQAQpqLAoMCAAQu9PnpoKAgIAJEhwI3970ywsSBwgEFYu-HMIwi9ICOABAAVgEkAEKgAFGtQGfktWlGOqD6JMGUABYAqAB6oPokwY",
+      "setItemsEquipped" : [ "Unique_Pants_Set_07_x1" ]
+    },
+    "bracers" : {
+      "id" : "Unique_Bracer_107_x1",
+      "name" : "커스테리안 손목 보호구",
+      "icon" : "unique_bracer_107_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClcIgMvypAYSBwgEFcQCXjkdII03VB0-dXkFHUNORFEd5hXbDR0_8gnYMIvSAjigAkAAUBJYBGC8AoABRqUBII03VK0B8dNq1bUB2yzKy7gB-8rZpAnAAQEYiIvwlQdQAFgC"
+    },
+    "head" : {
+      "id" : "P4_Unique_Helm_103",
+      "name" : "구네스의 얼굴",
+      "icon" : "p4_unique_helm_103_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/Cm8It4fWnQ0SBwgEFZLsVecdf46HzB04neQEHdKfnkQdZiMGUB3J-rygMIvSAjjxAkAAUBJYBGCHA2osCgwIABDx0eemgoCAgAkSHAiSiYieCxIHCAQVi74cwjCL0gI4AEABWASQAQqAAUa1AX_5Tl0Y283QigNQAFgC"
+    }
+  },
+  "followers" : {
+    "enchantress" : {
+      "slug" : "enchantress",
+      "level" : 70,
+      "items" : {
+        "mainHand" : {
+          "id" : "P41_Unique_Dagger_102_x1",
+          "name" : "그린스톤 경의 부채",
+          "icon" : "p41_unique_dagger_102_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkEIxLym7AkSBwgEFc4oGgAdTLTSZR2bBgDLHZ5Pg9wdO8mhYh3J-rygMIvSAjiYAkAAUBJYBGCYAoABRrUBvoJPshico9EB"
+        },
+        "rightFinger" : {
+          "id" : "Unique_Ring_017_p4",
+          "name" : "눈동자 반지",
+          "icon" : "unique_ring_017_p4_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CnEI0J-g5QgSBwgEFQCHN7kdrNOZOR1DTkRRHX52VaEdi_F6Qh1mIwZQMIvSAjiMAkAAUBJYBGCMAmouCgwIABDOycmejICAgDcSHgjrj4jDDhIHCAQVzaOjwTCL0gI4AEAAUBJYBJABCoABRrUBNlVdRBj_48PsCA"
+        },
+        "leftFinger" : {
+          "id" : "Unique_Ring_001_x1",
+          "name" : "공허한 속삭임의 가락지",
+          "icon" : "unique_ring_001_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkEIw6b16AkSBwgEFT4lIrkd8dNq1R0QL8oqHUNORFEdZiMGUB0_8gnYMIvSAjjbAkAAUBJYBGDbAoABRrUBNlVdRBiD6-7tCA"
+        },
+        "neck" : {
+          "id" : "Unique_Amulet_103_x1",
+          "name" : "여백작 줄리아의 돋을새김 목걸이",
+          "icon" : "unique_amulet_103_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkEIwZ_4xQ0SBwgEFdnhXF0df46HzB1qSWnqHXRFp4kdfnZVoR3J-rygMIvSAji5AkAAUBJYBGC5AoABRrUBsMVEZBiyh-fVCw"
+        },
+        "special" : {
+          "id" : "Enchantress_Special_206",
+          "name" : "신화 여행자의",
+          "icon" : "enchantress_special_206_demonhunter_male",
+          "displayColor" : "yellow",
+          "tooltipParams" : "item/CkMI2cHCKxIHCAQVNaNiLR3A3IcbHZoGAMsd8nAHrR1pSWnqHU8ZrAwd6XAvuyILCAEVckIDABgiICIwjdICOABAAFAQGOqMldYF"
+        }
+      },
+      "stats" : {
+        "experienceBonus" : 22,
+        "goldFind" : 6,
+        "magicFind" : 0
+      },
+      "skills" : [ {
+        "skill" : {
+          "slug" : "charm",
+          "name" : "매혹",
+          "icon" : "enchantress_charm",
+          "level" : 15,
+          "tooltipUrl" : "skill/enchantress/charm",
+          "description" : "재사용 대기시간: 18초\r\n\r\n적을 매혹시켜 8초 동안 플레이어를 위해 싸우게 합니다.",
+          "simpleDescription" : "재사용 대기시간: 18초\r\n\r\n일시적으로 적을 매혹시켜 영웅을 위해 싸우게 합니다.",
+          "skillCalcId" : "a"
+        }
+      }, {
+        "skill" : {
+          "slug" : "missile-ward",
+          "name" : "투사체 감시",
+          "icon" : "enchantress_missileward",
+          "level" : 20,
+          "tooltipUrl" : "skill/enchantress/missile-ward",
+          "description" : "플레이어와 요술사가 이로운 효과를 받아 원거리 공격으로 받는 피해가 6% 감소합니다.",
+          "simpleDescription" : "플레이어와 요술사가 원거리 공격으로 받는 피해가 감소합니다.",
+          "skillCalcId" : "b"
+        }
+      }, {
+        "skill" : {
+          "slug" : "erosion",
+          "name" : "침식",
+          "icon" : "enchantress_scorchedearth",
+          "level" : 25,
+          "tooltipUrl" : "skill/enchantress/erosion",
+          "description" : "재사용 대기시간: 15초\r\n\r\n마력으로 땅을 뒤덮어 5초에 걸쳐 무기 공격력의 330%만큼 비전 피해를 줍니다. 영향을 받은 적은 추가 피해를 3% 받습니다.",
+          "simpleDescription" : "재사용 대기시간: 15초\r\n\r\n마력으로 땅을 뒤덮어 피해를 줍니다. 영향을 받은 적은 추가 피해를 받습니다.\r\n",
+          "skillCalcId" : "X"
+        }
+      }, {
+        "skill" : {
+          "slug" : "focused-mind",
+          "name" : "정신 집중",
+          "icon" : "enchantress_focusedmind",
+          "level" : 30,
+          "tooltipUrl" : "skill/enchantress/focused-mind",
+          "description" : "40미터의 오라가 생겨 플레이어와 요술사의 공격 속도가 3% 증가합니다.",
+          "simpleDescription" : "오라가 생겨 플레이어와 요술사의 공격 속도가 증가합니다.",
+          "skillCalcId" : "d"
+        }
+      } ]
+    }
+  },
+  "legendaryPowers" : [ {
+    "id" : "Unique_HandXBow_002_x1",
+    "name" : "다네타의 보복",
+    "icon" : "unique_handxbow_002_x1_demonhunter_male",
+    "displayColor" : "green",
+    "tooltipParams" : "item/danettas-revenge",
+    "setItemsEquipped" : [ "Unique_HandXBow_002_x1" ]
+  }, {
+    "id" : "Unique_Helm_002_p3",
+    "name" : "레오릭의 왕관",
+    "icon" : "unique_helm_002_p3_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/leorics-crown-mCg1x"
+  }, null ],
+  "stats" : {
+    "life" : 468068,
+    "damage" : 424233.0,
+    "toughness" : 9481220.0,
+    "healing" : 874273.0,
+    "attackSpeed" : 1.399999976158142,
+    "armor" : 13868,
+    "strength" : 77,
+    "dexterity" : 7415,
+    "vitality" : 4067,
+    "intelligence" : 77,
+    "physicalResist" : 747,
+    "fireResist" : 747,
+    "coldResist" : 747,
+    "lightningResist" : 1197,
+    "poisonResist" : 904,
+    "arcaneResist" : 902,
+    "critDamage" : 4.02,
+    "damageIncrease" : 0.0,
+    "critChance" : 0.29000000075000004,
+    "damageReduction" : 0.0,
+    "lifeSteal" : 0.0,
+    "lifePerKill" : 7683.0,
+    "goldFind" : 1.67,
+    "magicFind" : 0.0,
+    "thorns" : 0.0,
+    "blockChance" : 0.0,
+    "blockAmountMin" : 0,
+    "blockAmountMax" : 0,
+    "lifeOnHit" : 17369.0,
+    "primaryResource" : 125,
+    "secondaryResource" : 42
+  },
+  "progression" : {
+    "act1" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act2" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act3" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act4" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act5" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    }
+  },
+  "dead" : false,
+  "last-updated" : 1496265207
+}

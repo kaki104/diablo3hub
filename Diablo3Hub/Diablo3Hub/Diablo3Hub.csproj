@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -90,6 +90,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="ApiKeys.publishsettings" />
+    <Content Include="TempText.txt" />
     <None Include="..\..\README.md">
       <Link>README.md</Link>
     </None>
@@ -126,6 +127,7 @@
     <Compile Include="ViewModels\BattleTagItemDelConfirmDialogViewModel.cs" />
     <Compile Include="ViewModels\BattleTagManagementDialogViewModel.cs" />
     <Compile Include="ViewModels\BattleTagPageViewModel.cs" />
+    <Compile Include="ViewModels\HeroPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
