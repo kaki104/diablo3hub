@@ -24,12 +24,10 @@ namespace Diablo3Hub.Controls
             this.InitializeComponent();
         }
 
-        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        public BattleTagItemDelConfirmDialog ViewModel
         {
-        }
-
-        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
-        {
+            get => DataContext as BattleTagItemDelConfirmDialog;
+            set => DataContext = value;
         }
     }
 }
