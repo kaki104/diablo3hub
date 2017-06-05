@@ -28,7 +28,7 @@
 
         <ListView.ItemTemplate>
             <DataTemplate>
-                <Grid d:DesignWidth="50" d:DesignHeight="50" Height="50" Width="50" Background="{StaticResource Brush-White}">
+                <Grid d:DesignWidth="50" d:DesignHeight="50" Height="50" Width="50">
                     <TextBlock Margin="10" TextWrapping="Wrap" Text="{Binding Tag}" FontSize="10"/>
                 </Grid>
             </DataTemplate>
