@@ -2,12 +2,24 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="using:Template10.Controls"
                     xmlns:converters="using:Diablo3Hub.Converters"
-                    xmlns:convertersT10="using:Template10.Converters">
+                    xmlns:convertersT10="using:Template10.Converters"
+                    xmlns:convertersToolkit="using:Microsoft.Toolkit.Uwp.UI.Converters">
 
     <converters:BooleanToReverseConverter x:Key="BooleanToReverseConverter"/>
     <converters:LongToDateTimeConverter x:Key="LongToDateTimeConverter"/>
     <convertersT10:StringFormatConverter x:Key="ValueConverter" Format="{}{0:N0}"/>
-    
+    <convertersToolkit:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <convertersT10:ValueWhenConverter x:Key="TrueWhenRedColorConverter">
+        <convertersT10:ValueWhenConverter.When>
+            <x:Boolean>True</x:Boolean>
+        </convertersT10:ValueWhenConverter.When>
+        <convertersT10:ValueWhenConverter.Value>
+            <SolidColorBrush>Red</SolidColorBrush>
+        </convertersT10:ValueWhenConverter.Value>
+        <convertersT10:ValueWhenConverter.Otherwise>
+            <SolidColorBrush>Black</SolidColorBrush>
+        </convertersT10:ValueWhenConverter.Otherwise>
+    </convertersT10:ValueWhenConverter>
     <x:Double x:Key="NarrowMinWidth">0</x:Double>
     <x:Double x:Key="NormalMinWidth">521</x:Double>
     <x:Double x:Key="WideMinWidth">1200</x:Double>

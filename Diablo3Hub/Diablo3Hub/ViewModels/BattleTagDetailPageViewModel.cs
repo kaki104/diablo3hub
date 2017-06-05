@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Windows.ApplicationModel;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
@@ -44,7 +46,7 @@ namespace Diablo3Hub.ViewModels
                             Hardcore = false,
                             Seasonal = false,
                             Dead = false,
-                            Lastupdated = 1490517844
+                            Lastupdated = 1490517844,
                         },
                         new Hero
                         {
@@ -108,46 +110,26 @@ namespace Diablo3Hub.ViewModels
                     ParagonLevelSeason = 721,
                     ParagonLevelHardcore = 0,
                     ParagonLevelSeasonHardcore = 0,
-                    SeasonalProfiles = new Seasonalprofiles
-                    {
-                        Season0 = new Season
-                        {
-                            SeasonId = 0,
-                            ParagonLevel = 264,
-                            ParagonLevelHardcore = 0,
-                            Kills = {Monsters = 1184577, Elites = 51163},
-                            TimePlayed =
-                            {
-                                Barbarian = 1.0f,
-                                Crusader = 0.479f,
-                                Demonhunter = 0.93f,
-                                Monk = 0.089f,
-                                Witchdoctor = 0.133f,
-                                Wizard = 0.8f
-                            },
-                            HighestHardcoreLevel = 0,
-                            Progression = {Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false}
-                        },
-                        Season10 = new Season
-                        {
-                            SeasonId = 10,
-                            ParagonLevel = 826,
-                            ParagonLevelHardcore = 0,
-                            Kills = {Monsters = 351582, Elites = 17591},
-                            TimePlayed =
-                            {
-                                Barbarian = 0f,
-                                Crusader = 1.0f,
-                                Demonhunter = 0.628f,
-                                Monk = 0f,
-                                Witchdoctor = 0.008f,
-                                Wizard = 0f
-                            },
-                            HighestHardcoreLevel = 0,
-                            Progression = {Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false}
-                        }
-                    }
                 };
+            else
+                Init();
+
+        }
+
+        private void Init()
+        {
+            ItemClickCommand = new DelegateCommand<object>(obj =>
+            {
+                var args = obj as ItemClickEventArgs;
+                var item = args?.ClickedItem as Hero;
+                if (item == null) return;
+
+                //네비게이션 파라메터로 사용할 녀석 생성
+                var para = new KeyValuePair<string, string>(CurrentBattleTag.BattleTag, item.Id.ToString());
+
+                var serialPara = JsonConvert.SerializeObject(para);
+                NavigationService.Navigate(typeof(HeroPage), serialPara);
+            });
         }
 
         /// <summary>
@@ -158,6 +140,10 @@ namespace Diablo3Hub.ViewModels
             get => _currentBattleTag;
             set => Set(ref _currentBattleTag, value);
         }
+        /// <summary>
+        /// 히어로 클릭 커맨드
+        /// </summary>
+        public ICommand ItemClickCommand { get; set; }
 
         /// <summary>
         /// 네비게이션
@@ -191,8 +177,6 @@ namespace Diablo3Hub.ViewModels
                 {
                     //제대로된 배틀테그라면..
                     CurrentBattleTag = result;
-
-                    
                 }
 
 

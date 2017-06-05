@@ -247,5 +247,17 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "lastupdated")]
         public long Lastupdated { get; set; }
+
+        /// <summary>
+        /// 헤드이미지 패스 ms-appx:///Assets/Heads/barbarian_male.png
+        /// </summary>
+        public string HeadImagePath
+        {
+            get
+            {
+                var gender = Gender == 0 ? "male" : "female";
+                return $@"ms-appx:///Assets/Heads/{Class}_{gender}.png";
+            }
+        }
     }
 }
