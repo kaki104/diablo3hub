@@ -161,11 +161,18 @@ namespace Diablo3Hub.ViewModels
                 BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
             });
             //선택 삭제, 실행 조건은 선택된 녀석이 1개 이상이여야함
-            DeleteSelectedBattleTagsCommand = new DelegateCommand(() =>
+            DeleteSelectedBattleTagsCommand = new DelegateCommand(async () =>
             {
                 //선택된 배틀테그를 삭제할지 확인하고
                 //삭제한다고 하면 삭제 처리
-                
+                var viewModelLocator = (App.Current.Resources["Locator"] as ViewModelLocator);
+                var btItemDelConfirmViewModel = viewModelLocator.BattleTagItemDelConfirmDialogViewModel;
+                btItemDelConfirmViewModel.SelectedBattleTags = this.SelectedBattleTags;
+                var result = await new BattleTagItemDelConfirmDialog().ShowAsync();
+                if (result != ContentDialogResult.Primary)
+                    return;
+                BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
+
             }, () => SelectedBattleTags.Count > 0);
 
             ItemClickCommand = new DelegateCommand<object>(obj =>

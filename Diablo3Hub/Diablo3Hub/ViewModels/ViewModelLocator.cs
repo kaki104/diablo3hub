@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +10,48 @@ namespace Diablo3Hub.ViewModels
 {
     public class ViewModelLocator
     {
-        private BattleTagPageViewModel _battleTagPageViewModel;
-        private BattleTagItemDelConfirmDialogViewModel _battleTagItemDelConfirmDialogViewModel;
 
-        public BattleTagPageViewModel BattleTagPageViewModel =>
+        static ViewModelLocator()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            SimpleIoc.Default.Register<BattleTagPageViewModel>();
+            SimpleIoc.Default.Register<BattleTagItemDelConfirmDialogViewModel>();
+        }
 
-                _battleTagPageViewModel ?? (_battleTagPageViewModel = new BattleTagPageViewModel());
+        // <summary>
+        // Gets the  BattleTagPageViewModel view model.
+        // </summary>
+        // <value>
+        // The BattleTagPageViewModel.
+        // </value>
+        public BattleTagPageViewModel BattleTagPageViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<BattleTagPageViewModel>();
+            }
+        }
 
-        public BattleTagItemDelConfirmDialogViewModel BattleTagItemDelConfirmDialogViewModel =>
+        // <summary>
+        // Gets the  BattleTagItemDelConfirmDialogViewModel view model.
+        // </summary>
+        // <value>
+        // The BattleTagItemDelConfirmDialogViewModel.
+        // </value>
+        public BattleTagItemDelConfirmDialogViewModel BattleTagItemDelConfirmDialogViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<BattleTagItemDelConfirmDialogViewModel>();
+            }
+        }
 
-                _battleTagItemDelConfirmDialogViewModel ?? (_battleTagItemDelConfirmDialogViewModel = new BattleTagItemDelConfirmDialogViewModel());
+        // <summary>
+        // The cleanup.
+        // </summary>
+        public static void Cleanup()
+        {
+            // TODO Clear the ViewModels
+        }
     }
 }
