@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Diablo3Hub.Models;
+﻿using Diablo3Hub.Models;
 
 namespace Diablo3Hub.DesignDatas
 {
-    class HeroProfileData
+    internal class HeroProfileData
     {
         public static HeroProfile GetHeroProfile()
         {
@@ -18,61 +13,11 @@ namespace Diablo3Hub.DesignDatas
                 Class = "demon-hunter",
                 Gender = 1,
                 Level = 70,
-                Kills = {Elites = 373},
+                Kills = new Kills {Elites = 375},
                 ParagonLevel = 165,
                 Hardcore = true,
                 Seasonal = true,
                 SeasonCreated = 10,
-                Skills = new Skills
-                {
-                    Active = new []
-                    {
-                        new Active
-                        {
-                            Skill = new Skill
-                            {
-                                Slug = "grenade",
-                                Name = "수류탄",
-                                Icon = "demonhunter_grenades",
-                                Level = 15,
-                                CategorySlug = "primary",
-                                TooltipUrl = "skill/demon-hunter/grenade",
-                                Description = "생성: 증오 4\r\n\r\n통통 튀는 수류탄을 던집니다. 수류탄은 폭발하여 무기 공격력의 160%만큼 화염 피해를 줍니다.",
-                                SimpleDescription = "생성: 증오 4\r\n\r\n통통 튀다 폭발하는 수류탄을 던집니다.",
-                                SkillCalcId = "g"
-                            },
-                            Rune = new Rune
-                            {
-                                Slug = "grenade-c",
-                                Type = "c",
-                                Name = "상비 수류탄",
-                                Level = 40,
-                                Description = "수류탄을 3개 던집니다. 수류탄은 폭발하면서 각각 무기 공격력의 160%만큼 화염 피해를 줍니다.",
-                                SimpleDescription = "수류탄을 2개 더 던집니다.",
-                                TooltipParams = "rune/grenade/c",
-                                SkillCalcId = "b",
-                                Order = 2
-                            }
-                        }
-                    },
-                    Passive = new []
-                    {
-                        new Passive
-                        {
-                            Skill = new Skill
-                            {
-                                Slug = "awareness",
-                                Name = "기민함",
-                                Icon = "x1_demonhunter_passive_awareness",
-                                Level = 66,
-                                TooltipUrl = "skill/demon-hunter/awareness",
-                                Description = "죽음에 달하는 피해를 받으면, 2초 동안 모습을 감추고 최대 생명력의 50%만큼 생명력을 회복합니다.\r\n\r\n이 효과는 60초에 한 번만 발동됩니다.",
-                                Flavor = "\"모든 것은 시험이다. 주변을 잘 파악하는 것만으로도 합격은 문제 없다. \" - 사냥의 대가 조센",
-                                SkillCalcId = "R"
-                            }
-                        }, 
-                    }
-                },
                 Items = new Items
                 {
                     MainHand = new Equipment
@@ -81,7 +26,8 @@ namespace Diablo3Hub.DesignDatas
                         Name = "앙심의 칼",
                         Icon = "p4_unique_sword_1h_01_demonhunter_male",
                         DisplayColor = "orange",
-                        TooltipParams = "item/CoUBCK75q78KEgcIBBWgNMiPHVSlvI0dZiMGUB3Q7mgxHZWx9vIdyfq8oDCL0gI4nANAAFASWARgsgNqLAoMCAAQ4tHnpoKAgIAJEhwIyPCxrgoSBwgEFSotN6kwi9ICOABAAVgEkAEKgAFGpQHQ7mgxrQGeT4PctQGb2dnvuAG2w8m0BcABAhi_rb6DDlAAWAI"
+                        TooltipParams =
+                            "item/CoUBCK75q78KEgcIBBWgNMiPHVSlvI0dZiMGUB3Q7mgxHZWx9vIdyfq8oDCL0gI4nANAAFASWARgsgNqLAoMCAAQ4tHnpoKAgIAJEhwIyPCxrgoSBwgEFSotN6kwi9ICOABAAVgEkAEKgAFGpQHQ7mgxrQGeT4PctQGb2dnvuAG2w8m0BcABAhi_rb6DDlAAWAI"
                     },
                     Head = new Equipment
                     {
@@ -89,7 +35,8 @@ namespace Diablo3Hub.DesignDatas
                         Name = "구네스의 얼굴",
                         Icon = "p4_unique_helm_103_demonhunter_male",
                         DisplayColor = "orange",
-                        TooltipParams = "item/Cm8It4fWnQ0SBwgEFZLsVecdf46HzB04neQEHdKfnkQdZiMGUB3J-rygMIvSAjjxAkAAUBJYBGCHA2osCgwIABDx0eemgoCAgAkSHAiSiYieCxIHCAQVi74cwjCL0gI4AEABWASQAQqAAUa1AX_5Tl0Y283QigNQAFgC"
+                        TooltipParams =
+                            "item/Cm8It4fWnQ0SBwgEFZLsVecdf46HzB04neQEHdKfnkQdZiMGUB3J-rygMIvSAjjxAkAAUBJYBGCHA2osCgwIABDx0eemgoCAgAkSHAiSiYieCxIHCAQVi74cwjCL0gI4AEABWASQAQqAAUa1AX_5Tl0Y283QigNQAFgC"
                     }
                 },
                 Followers = new Followers
@@ -106,7 +53,8 @@ namespace Diablo3Hub.DesignDatas
                                 Name = "그린스톤 경의 부채",
                                 Icon = "p41_unique_dagger_102_x1_demonhunter_male",
                                 DisplayColor = "orange",
-                                TooltipParams = "item/CkEIxLym7AkSBwgEFc4oGgAdTLTSZR2bBgDLHZ5Pg9wdO8mhYh3J-rygMIvSAjiYAkAAUBJYBGCYAoABRrUBvoJPshico9EB"
+                                TooltipParams =
+                                    "item/CkEIxLym7AkSBwgEFc4oGgAdTLTSZR2bBgDLHZ5Pg9wdO8mhYh3J-rygMIvSAjiYAkAAUBJYBGCYAoABRrUBvoJPshico9EB"
                             },
                             Special = new Equipment
                             {
@@ -114,7 +62,8 @@ namespace Diablo3Hub.DesignDatas
                                 Name = "신화 여행자의",
                                 Icon = "enchantress_special_206_demonhunter_male",
                                 DisplayColor = "yellow",
-                                TooltipParams = "item/CkMI2cHCKxIHCAQVNaNiLR3A3IcbHZoGAMsd8nAHrR1pSWnqHU8ZrAwd6XAvuyILCAEVckIDABgiICIwjdICOABAAFAQGOqMldYF"
+                                TooltipParams =
+                                    "item/CkMI2cHCKxIHCAQVNaNiLR3A3IcbHZoGAMsd8nAHrR1pSWnqHU8ZrAwd6XAvuyILCAEVckIDABgiICIwjdICOABAAFAQGOqMldYF"
                             }
                         },
                         Stats = new Stats
@@ -123,7 +72,7 @@ namespace Diablo3Hub.DesignDatas
                             GoldFind = 6,
                             MagicFind = 0
                         },
-                        Skills = new []
+                        Skills = new[]
                         {
                             new Skill
                             {
@@ -138,9 +87,8 @@ namespace Diablo3Hub.DesignDatas
                             }
                         }
                     }
-                    
                 },
-                LegendaryPowers = new []
+                LegendaryPowers = new[]
                 {
                     new Legendarypower
                     {
@@ -149,7 +97,7 @@ namespace Diablo3Hub.DesignDatas
                         Icon = "unique_handxbow_002_x1_demonhunter_male",
                         DisplayColor = "green",
                         TooltipParams = "item/danettas-revenge",
-                        SetItemsEquipped = new []
+                        SetItemsEquipped = new[]
                         {
                             "Unique_HandXBow_002_x1"
                         }
@@ -219,7 +167,7 @@ namespace Diablo3Hub.DesignDatas
                     Act5 = new Act
                     {
                         Completed = false
-                    },
+                    }
                 },
                 Dead = false,
                 Lastupdated = 1496265207

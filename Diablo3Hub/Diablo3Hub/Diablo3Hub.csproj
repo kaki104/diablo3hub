@@ -121,6 +121,8 @@
       <DependentUpon>BattleTagItemDelConfirmDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanToReverseConverter.cs" />
+    <Compile Include="Converters\DisplayColorToColorBrushConverter.cs" />
+    <Compile Include="Converters\IconToImageConverter.cs" />
     <Compile Include="Converters\LongToDateTimeConverter.cs" />
     <Compile Include="DesignDatas\CareerProfileData.cs" />
     <Compile Include="DesignDatas\HeroProfileData.cs" />
