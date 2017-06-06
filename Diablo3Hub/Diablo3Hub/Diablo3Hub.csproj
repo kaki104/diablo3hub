@@ -92,6 +92,7 @@
     <Content Include="ApiKeys.publishsettings" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.jpg" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.png" />
+    <Content Include="Assets\p4_unique_sword_1h_01_demonhunter_male.png" />
     <Content Include="DesignDatas\barbarian-female.jpg" />
     <Content Include="DesignDatas\barbarian-male.jpg" />
     <Content Include="DesignDatas\demon-hunter-female.jpg" />
