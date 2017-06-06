@@ -90,6 +90,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="ApiKeys.publishsettings" />
+    <Content Include="Assets\Backgrounds\demon-hunter-female-item.jpg" />
+    <Content Include="Assets\Backgrounds\demon-hunter-female-item.png" />
+    <Content Include="DesignDatas\barbarian-female.jpg" />
+    <Content Include="DesignDatas\barbarian-male.jpg" />
+    <Content Include="DesignDatas\demon-hunter-female.jpg" />
+    <Content Include="DesignDatas\demon-hunter-male.jpg" />
+    <Content Include="DesignDatas\monk-female.jpg" />
+    <Content Include="DesignDatas\monk-male.jpg" />
+    <Content Include="DesignDatas\witch-doctor-female.jpg" />
+    <Content Include="DesignDatas\witch-doctor-male.jpg" />
+    <Content Include="DesignDatas\wizard-female.jpg" />
+    <Content Include="DesignDatas\wizard-male.jpg" />
     <Content Include="TempText.txt" />
     <None Include="..\..\README.md">
       <Link>README.md</Link>
@@ -109,6 +121,8 @@
     </Compile>
     <Compile Include="Converters\BooleanToReverseConverter.cs" />
     <Compile Include="Converters\LongToDateTimeConverter.cs" />
+    <Compile Include="DesignDatas\CareerProfileData.cs" />
+    <Compile Include="DesignDatas\HeroProfileData.cs" />
     <Compile Include="Services\CommonHelper.cs" />
     <Compile Include="Services\FlyoutHelper.cs" />
     <Compile Include="Commons\GameConfigs.cs" />

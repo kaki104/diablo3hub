@@ -40,6 +40,30 @@
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True"/>
 
+        <Pivot RelativePanel.Below="pageHeader"
+               RelativePanel.AlignBottomWithPanel="True"
+               RelativePanel.AlignLeftWithPanel="True"
+               RelativePanel.AlignRightWithPanel="True">
+            <PivotItem Header="Stat">
+                <Canvas>
+                    <Canvas.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/Backgrounds/demon-hunter-female-item.png"/>
+                    </Canvas.Background>
+                    <Rectangle Width="74" Height="149" Fill="#FF3A220A" Stroke="#FF110A05" Canvas.Left="6" Canvas.Top="354"/>
+                    <Image Source="ms-appx:///Assets/p4_unique_sword_1h_01_demonhunter_male.png" 
+                           Canvas.Left="10" Canvas.Top="365"/>
+                </Canvas>
+            </PivotItem>
+            <PivotItem Header="Item">
 
+            </PivotItem>
+            <PivotItem Header="Skill">
+
+            </PivotItem>
+            <PivotItem Header="Follower">
+
+            </PivotItem>
+
+        </Pivot>
     </RelativePanel>
 </Page>

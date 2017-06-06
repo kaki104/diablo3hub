@@ -504,3 +504,281 @@
   "dead" : false,
   "last-updated" : 1496265207
 }
+
+
+
+https://kr.api.battle.net/d3/data/item/P4_Unique_Sword_1H_01?locale=ko_KR&apikey=[your api key]
+
+{
+    "id": "P4_Unique_Sword_1H_01",
+    "name": "앙심의 칼",
+    "icon": "p4_unique_sword_1h_01_demonhunter_male",
+    "displayColor": "orange",
+    "tooltipParams": "item/sword-of-ill-will",
+    "requiredLevel": 70,
+    "itemLevel": 70,
+    "stackSizeMax": 0,
+    "bonusAffixes": 3,
+    "bonusAffixesMax": 3,
+    "accountBound": true,
+    "flavorText": "증오는 우리 중 가장 뛰어난 자조차도 쓰러트릴 수 있는 강력한 무기입니다. 그러니 신중해야 합니다.",
+    "typeName": "전설 도검",
+    "type": {
+        "twoHanded": false,
+        "id": "Sword"
+    },
+    "damageRange": "무기 공격력 168~392",
+    "dps": {
+        "min": 391.9999933242798,
+        "max": 391.9999933242798
+    },
+    "attacksPerSecond": {
+        "min": 1.399999976158142,
+        "max": 1.399999976158142
+    },
+    "attacksPerSecondText": "초당 공격 횟수 1.40",
+    "minDamage": {
+        "min": 168.0,
+        "max": 168.0
+    },
+    "maxDamage": {
+        "min": 392.0,
+        "max": 392.0
+    },
+    "slots": ["left-hand", "follower-left-hand", "right-hand", "follower-right-hand"],
+    "attributes": {
+        "primary": [],
+        "secondary": [],
+        "passive": [{
+            "color": "orange",
+            "text": "회전 표창의 공격력이 증오 1당 1.0–1.4% 증가 ",
+            "affixType": "default"
+        }]
+    },
+    "attributesRaw": {
+        "Durability_Cur": {
+            "min": 500.0,
+            "max": 1000.0
+        },
+        "Damage_Weapon_Delta#Physical": {
+            "min": 224.0,
+            "max": 224.0
+        },
+        "Durability_Max": {
+            "min": 500.0,
+            "max": 1000.0
+        },
+        "Damage_Weapon_Min#Physical": {
+            "min": 168.0,
+            "max": 168.0
+        },
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_040": {
+            "min": 0.01,
+            "max": 0.014
+        },
+        "Attacks_Per_Second_Item": {
+            "min": 1.399999976158142,
+            "max": 1.399999976158142
+        }
+    },
+    "randomAffixes": [{
+        "oneOf": [{
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "민첩 +626–750",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Dexterity_Item": {
+                    "min": 626.0,
+                    "max": 750.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "힘 +626–750",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Strength_Item": {
+                    "min": 626.0,
+                    "max": 750.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "지능 +626–750",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Intelligence_Item": {
+                    "min": 626.0,
+                    "max": 750.0
+                }
+            }
+        }]
+    }, {
+        "oneOf": [{
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "비전 무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Min#Arcane": {
+                    "min": 981.0,
+                    "max": 1199.0
+                },
+                "Damage_Weapon_Delta#Arcane": {
+                    "min": 194.0,
+                    "max": 291.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "독 무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Min#Poison": {
+                    "min": 981.0,
+                    "max": 1199.0
+                },
+                "Damage_Weapon_Delta#Poison": {
+                    "min": 194.0,
+                    "max": 291.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "번개 무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Min#Lightning": {
+                    "min": 981.0,
+                    "max": 1199.0
+                },
+                "Damage_Weapon_Delta#Lightning": {
+                    "min": 194.0,
+                    "max": 291.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "신성 무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Min#Holy": {
+                    "min": 981.0,
+                    "max": 1199.0
+                },
+                "Damage_Weapon_Delta#Holy": {
+                    "min": 194.0,
+                    "max": 291.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "냉기 무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Delta#Cold": {
+                    "min": 194.0,
+                    "max": 291.0
+                },
+                "Damage_Weapon_Min#Cold": {
+                    "min": 981.0,
+                    "max": 1199.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "화염 무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Min#Fire": {
+                    "min": 981.0,
+                    "max": 1199.0
+                },
+                "Damage_Weapon_Delta#Fire": {
+                    "min": 194.0,
+                    "max": 291.0
+                }
+            }
+        }, {
+            "attributes": {
+                "primary": [{
+                    "color": "blue",
+                    "text": "무기 공격력 +(981–1199)~(1175–1490)",
+                    "affixType": "default"
+                }],
+                "secondary": [],
+                "passive": []
+            },
+            "attributesRaw": {
+                "Damage_Weapon_Bonus_Min_X1#Physical": {
+                    "min": 981.0,
+                    "max": 1199.0
+                },
+                "Damage_Weapon_Bonus_Delta_X1#Physical": {
+                    "min": 194.0,
+                    "max": 291.0
+                }
+            }
+        }]
+    }],
+    "gems": [],
+    "socketEffects": [],
+    "craftedBy": [],
+    "seasonRequiredToDrop": -1,
+    "isSeasonRequiredToDrop": false,
+    "description": null,
+    "blockChance": "방패막기 확률 +0.0%"
+}
