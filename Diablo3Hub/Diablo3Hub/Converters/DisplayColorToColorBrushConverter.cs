@@ -15,7 +15,7 @@ namespace Diablo3Hub.Converters
         {
             if (value is string == false) return null;
             var displayColor = (string) value;
-            var colorBrush = new SolidColorBrush(Colors.White);
+            var colorBrush = new SolidColorBrush(Colors.Transparent);
             switch (displayColor)
             {
                 case "blue":

@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <viewModels:HeroPageViewModel/>
+        <viewModels:HeroPageViewModel />
     </Page.DataContext>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -38,34 +38,106 @@
         <controls:PageHeader x:Name="pageHeader" Frame="{x:Bind Frame}"
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
-                             RelativePanel.AlignTopWithPanel="True"/>
+                             RelativePanel.AlignTopWithPanel="True"
+                             Text="{Binding CurrentHeroProfile.Name}" />
 
         <Pivot RelativePanel.Below="pageHeader"
                RelativePanel.AlignBottomWithPanel="True"
                RelativePanel.AlignLeftWithPanel="True"
                RelativePanel.AlignRightWithPanel="True">
-            <PivotItem Header="Stat">
-
-            </PivotItem>
+            <PivotItem Header="Stat" />
             <PivotItem Header="Item">
-                <Canvas>
-                    <Canvas.Background>
-                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/Backgrounds/demon-hunter-female-item.png"/>
-                    </Canvas.Background>
-                    <!--main hand-->
-                    <Rectangle Width="74" Height="149" 
-                               Fill="{Binding CurrentHeroProfile.Items.MainHand.DisplayColor}" 
-                               Stroke="#FF110A05" Canvas.Left="6" Canvas.Top="354"/>
-                    <Image Source="{Binding CurrentHeroProfile.Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" 
-                           Canvas.Left="10" Canvas.Top="365"/>
-                </Canvas>
+                <Viewbox>
+                    <Canvas Height="544" Width="336">
+                        <Canvas.Background>
+                            <ImageBrush Stretch="Uniform"
+                                        ImageSource="ms-appx:///Assets/Backgrounds/demon-hunter-female-item.png" />
+                        </Canvas.Background>
+                        <Border x:Name="Head" Width="74" Height="75"
+                                Background="{Binding CurrentHeroProfile.Items.Head.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="131" Canvas.Top="35">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Head.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Shoulders" Width="75" Height="100"
+                                Background="{Binding CurrentHeroProfile.Items.Shoulders.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="36" Canvas.Top="63">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Shoulders.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Neck" Width="64" Height="64"
+                                Background="{Binding CurrentHeroProfile.Items.Neck.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="227" Canvas.Top="86">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Torso" Width="94" Height="132"
+                                Background="{Binding CurrentHeroProfile.Items.Torso.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="116">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Torso.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Hands" Width="76" Height="100"
+                                Background="{Binding CurrentHeroProfile.Items.Hands.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="6" Canvas.Top="177">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Hands.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Bracers" Width="76" Height="100"
+                                Background="{Binding CurrentHeroProfile.Items.Bracers.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="177">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Bracers.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Waist" Width="94" Height="38"
+                                Background="{Binding CurrentHeroProfile.Items.Waist.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="253">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Waist.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="LeftFinger" Width="47" Height="47"
+                                Background="{Binding CurrentHeroProfile.Items.LeftFinger.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="20" Canvas.Top="292">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="RightFinger" Width="47" Height="47"
+                                Background="{Binding CurrentHeroProfile.Items.RightFinger.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="269" Canvas.Top="292">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Legs" Width="76" Height="101"
+                                Background="{Binding CurrentHeroProfile.Items.Legs.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="296">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Legs.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <!--main hand-->
+                        <Border x:Name="MainHand" Width="75" Height="149" UseLayoutRounding="True"
+                                Background="{Binding CurrentHeroProfile.Items.MainHand.DisplayColor}"
+                                BorderBrush="#FF110A05" BorderThickness="1" Canvas.Left="6" Canvas.Top="354">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <!--OffHand-->
+                        <Border x:Name="OffHand" Width="74" Height="149"
+                                Background="{Binding CurrentHeroProfile.Items.OffHand.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="354">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                        <Border x:Name="Feet" Width="76" Height="101"
+                                Background="{Binding CurrentHeroProfile.Items.Feet.DisplayColor}"
+                                BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="402">
+                            <Image
+                                Source="{Binding CurrentHeroProfile.Items.Feet.Icon, Converter={StaticResource IconToImageConverter}}" />
+                        </Border>
+                    </Canvas>
+                </Viewbox>
             </PivotItem>
-            <PivotItem Header="Skill">
-
-            </PivotItem>
-            <PivotItem Header="Follower">
-
-            </PivotItem>
+            <PivotItem Header="Skill" />
+            <PivotItem Header="Follower" />
 
         </Pivot>
     </RelativePanel>
