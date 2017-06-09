@@ -6,8 +6,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Template10.Controls"
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
+    xmlns:controlsToolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
     x:Class="Diablo3Hub.Views.HeroPage"
     mc:Ignorable="d">
+
+    <Page.Resources>
+    </Page.Resources>
 
     <Page.DataContext>
         <viewModels:HeroPageViewModel />
@@ -45,7 +49,126 @@
                RelativePanel.AlignBottomWithPanel="True"
                RelativePanel.AlignLeftWithPanel="True"
                RelativePanel.AlignRightWithPanel="True">
-            <PivotItem Header="Stat" />
+            <PivotItem Header="Stat">
+                <ScrollViewer VerticalScrollMode="Auto">
+                    <StackPanel>
+                        <controlsToolkit:Expander Margin="0 0 0 10" Header="Basic" IsExpanded="True"
+                                              HorizontalContentAlignment="Stretch">
+                            <Grid Background="{ThemeResource AppBarBackground}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Level" />
+                                <TextBlock Grid.Column="1" Grid.Row="0"
+                                           HorizontalAlignment="Right">
+                                    <Run Text="{Binding CurrentHeroProfile.Level}"/>
+                                    <Run Text="{Binding CurrentHeroProfile.ParagonLevel, ConverterParameter=(\{0:N0\}), Converter={StaticResource StringFormatConverter}}"
+                                         Foreground="Blue"/>
+                                </TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Strength" />
+                                <TextBlock Grid.Column="1" Grid.Row="1"
+                                           Text="{Binding CurrentHeroProfile.Stats.Strength, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Dexterity" />
+                                <TextBlock Grid.Column="1" Grid.Row="2" 
+                                           Text="{Binding CurrentHeroProfile.Stats.Dexterity, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Intelligence" />
+                                <TextBlock Grid.Column="1" Grid.Row="3"
+                                           Text="{Binding CurrentHeroProfile.Stats.Intelligence, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Vitality" />
+                                <TextBlock Grid.Column="1" Grid.Row="4"
+                                           Text="{Binding CurrentHeroProfile.Stats.Vitality, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="5" Text="Damage" />
+                                <TextBlock Grid.Column="1" Grid.Row="5"
+                                           Text="{Binding CurrentHeroProfile.Stats.Damage, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="6" Text="Toughness" />
+                                <TextBlock Grid.Column="1" Grid.Row="6"
+                                           Text="{Binding CurrentHeroProfile.Stats.Toughness, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="7" Text="Healing" />
+                                <TextBlock Grid.Column="1" Grid.Row="7"
+                                           Text="{Binding CurrentHeroProfile.Stats.Healing, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                            </Grid>
+                        </controlsToolkit:Expander>
+
+                        <controlsToolkit:Expander Margin="0 0 0 10" Header="Demege" IsExpanded="True"
+                                                  HorizontalContentAlignment="Stretch">
+                            <Grid Background="{ThemeResource AppBarBackground}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Text="민첩으로 증가하는 공격력" />
+                                <TextBlock Grid.Column="1" Grid.Row="0"
+                                           HorizontalAlignment="Right"
+                                           />
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="기술로 증가하는 공격력" />
+                                <TextBlock Grid.Column="1" Grid.Row="1"
+                                           Text="{Binding CurrentHeroProfile.Stats.DamageIncrease, ConverterParameter=\{0:P2\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="2" Text="정예에게 주는 추가 피해" />
+                                <TextBlock Grid.Column="1" Grid.Row="2" 
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="3" Text="초당 공격 횟수" />
+                                <TextBlock Grid.Column="1" Grid.Row="3"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="4" Text="공격 속도 증가" />
+                                <TextBlock Grid.Column="1" Grid.Row="4"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="5" Text="극대화 확률" />
+                                <TextBlock Grid.Column="1" Grid.Row="5"
+                                           Text="{Binding CurrentHeroProfile.Stats.CritChance, ConverterParameter=\{0:P\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="6" Text="극대화 피해" />
+                                <TextBlock Grid.Column="1" Grid.Row="6"
+                                           Text="{Binding CurrentHeroProfile.Stats.CritDamage, ConverterParameter=\{0:P\}, Converter={StaticResource StringFormatConverter}}"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="7" Text="광역 피해" />
+                                <TextBlock Grid.Column="1" Grid.Row="7"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="8" Text="재사용 대기시간 감소" />
+                                <TextBlock Grid.Column="1" Grid.Row="8"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="9" Text="물리 피해 증가" />
+                                <TextBlock Grid.Column="1" Grid.Row="9"
+                                           HorizontalAlignment="Right" />
+                                <TextBlock Grid.Column="0" Grid.Row="10" Text="다발 사격 피해 증가" />
+                                <TextBlock Grid.Column="1" Grid.Row="10"
+                                           HorizontalAlignment="Right" />
+                            </Grid>
+                        </controlsToolkit:Expander>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
             <PivotItem Header="Item">
                 <Viewbox>
                     <Canvas Height="544" Width="336">
