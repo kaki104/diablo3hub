@@ -103,9 +103,7 @@ namespace Diablo3Hub.Services
         public async Task<List<BattleTag>> DeleteTagItemsAsync(List<BattleTag> Items)
         {
             List<string> tagIds = Items.Select(e => e.Id.ToString()).ToList();
-            var paramStr = tagIds.Aggregate((startTagId, nextTagId) =>
-                startTagId + "," + nextTagId
-                );
+            var paramStr = string.Join(",", tagIds);
 
             var conn = new SQLiteAsyncConnection(DB_NAME);
             var quryStr = string.Format("DELETE FROM  BattleTag WHERE ID IN ({0})", paramStr);

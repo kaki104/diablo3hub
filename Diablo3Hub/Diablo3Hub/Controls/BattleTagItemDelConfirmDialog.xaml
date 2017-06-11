@@ -10,9 +10,12 @@
     Title="Tag Item들을 지우시겠습니까?"
     PrimaryButtonText="OK"
     SecondaryButtonText="Cancel"
-    DataContext="{Binding BattleTagItemDelConfirmDialogViewModel, Source={StaticResource Locator}}"
     PrimaryButtonCommand="{Binding OkCommand}" 
     SecondaryButtonCommand="{Binding CancelCommand}">
+
+    <ContentDialog.DataContext>
+        <viewModels:BattleTagItemDelConfirmDialogViewModel/>
+    </ContentDialog.DataContext>
 
     <ListView 
         ScrollViewer.HorizontalScrollMode="Enabled"

@@ -165,10 +165,7 @@ namespace Diablo3Hub.ViewModels
             {
                 //선택된 배틀테그를 삭제할지 확인하고
                 //삭제한다고 하면 삭제 처리
-                var viewModelLocator = (App.Current.Resources["Locator"] as ViewModelLocator);
-                var btItemDelConfirmViewModel = viewModelLocator.BattleTagItemDelConfirmDialogViewModel;
-                btItemDelConfirmViewModel.SelectedBattleTags = this.SelectedBattleTags;
-                var result = await new BattleTagItemDelConfirmDialog().ShowAsync();
+                var result = await new BattleTagItemDelConfirmDialog(this.SelectedBattleTags).ShowAsync();
                 if (result != ContentDialogResult.Primary)
                     return;
                 BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
