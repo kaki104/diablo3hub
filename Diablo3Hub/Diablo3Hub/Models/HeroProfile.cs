@@ -381,5 +381,8 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "tooltipParams")]
         public string TooltipParams { get; set; }
+
+        [JsonProperty(PropertyName = "setItemsEquipped")]
+        public string[] SetItemsEquipped { get; set; }
     }
 }

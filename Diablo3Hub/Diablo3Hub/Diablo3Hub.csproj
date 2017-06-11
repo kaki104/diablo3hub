@@ -90,13 +90,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="ApiKeys.publishsettings" />
+    <Content Include="Assets\Backgrounds\demon-hunter-female-item.jpg" />
+    <Content Include="Assets\Backgrounds\demon-hunter-female-item.png" />
+    <Content Include="Assets\p4_unique_sword_1h_01_demonhunter_male.png" />
+    <Content Include="DesignDatas\barbarian-female.jpg" />
+    <Content Include="DesignDatas\barbarian-male.jpg" />
+    <Content Include="DesignDatas\demon-hunter-female.jpg" />
+    <Content Include="DesignDatas\demon-hunter-male.jpg" />
+    <Content Include="DesignDatas\monk-female.jpg" />
+    <Content Include="DesignDatas\monk-male.jpg" />
+    <Content Include="DesignDatas\witch-doctor-female.jpg" />
+    <Content Include="DesignDatas\witch-doctor-male.jpg" />
+    <Content Include="DesignDatas\wizard-female.jpg" />
+    <Content Include="DesignDatas\wizard-male.jpg" />
     <Content Include="TempText.txt" />
     <None Include="..\..\README.md">
       <Link>README.md</Link>
     </None>
     <None Include="ApiKeys.publishsettings.temp" />
     <None Include="Diabol3 Hub.pptx" />
-    <None Include="Hamburger_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -108,7 +120,11 @@
       <DependentUpon>BattleTagItemDelConfirmDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\BooleanToReverseConverter.cs" />
+    <Compile Include="Converters\DisplayColorToColorBrushConverter.cs" />
+    <Compile Include="Converters\IconToImageConverter.cs" />
     <Compile Include="Converters\LongToDateTimeConverter.cs" />
+    <Compile Include="DesignDatas\CareerProfileData.cs" />
+    <Compile Include="DesignDatas\HeroProfileData.cs" />
     <Compile Include="Services\CommonHelper.cs" />
     <Compile Include="Services\FlyoutHelper.cs" />
     <Compile Include="Commons\GameConfigs.cs" />
@@ -131,6 +147,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\BattleTagDetailPage.xaml.cs">
       <DependentUpon>BattleTagDetailPage.xaml</DependentUpon>
     </Compile>
@@ -246,7 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.3.3</Version>
+      <Version>5.2.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp">
       <Version>1.4.1</Version>
@@ -283,8 +300,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.19.3">
-      <Name>SQLite for Universal Windows Platform %28SQLite.UWP.2015, Version=3.19.3%29</Name>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.19.2">
+      <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
