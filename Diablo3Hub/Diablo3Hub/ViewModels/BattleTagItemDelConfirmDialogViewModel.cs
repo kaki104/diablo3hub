@@ -14,7 +14,7 @@ namespace Diablo3Hub.ViewModels
     public class BattleTagItemDelConfirmDialogViewModel: ViewModelBase
     {
 
-        private BattleTagPageViewModel _battleTagPageViewModel;
+        private IList<BattleTag> _selectedBattleTags;
 
         /// <summary>
         ///     생성자
@@ -32,6 +32,15 @@ namespace Diablo3Hub.ViewModels
         }
 
         /// <summary>
+        ///     선택한 배틀테그들
+        /// </summary>
+        public IList<BattleTag> SelectedBattleTags
+        {
+            get => _selectedBattleTags;
+            set => Set(ref _selectedBattleTags, value);
+        }
+
+        /// <summary>
         /// OK커맨드
         /// </summary>
         public ICommand OkCommand { get; set; }
@@ -46,8 +55,6 @@ namespace Diablo3Hub.ViewModels
         /// </summary>
         private void Init()
         {
-
-            _battleTagPageViewModel = (App.Current.Resources["Locator"] as ViewModelLocator).BattleTagPageViewModel;
             OkCommand = new DelegateCommand(ExecuteOkCommand);
 
             CancelCommand = new DelegateCommand<object>(obj =>
@@ -59,8 +66,13 @@ namespace Diablo3Hub.ViewModels
         /// <summary>
         /// ok 커맨드 실행
         /// </summary>
-        private void ExecuteOkCommand()
+        private async void ExecuteOkCommand()
         {
+            if (SelectedBattleTags.Count > 0)
+            {
+                var selTags = SelectedBattleTags.ToList<BattleTag>();
+                await DBHelper.Instance.DeleteTagItemsAsync(selTags);
+            }
 
         }
     }

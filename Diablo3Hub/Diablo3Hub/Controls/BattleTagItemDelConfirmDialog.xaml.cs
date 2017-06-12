@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Diablo3Hub.Models;
+using Diablo3Hub.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,12 +26,19 @@ namespace Diablo3Hub.Controls
             this.InitializeComponent();
         }
 
-        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        /// <summary>
+        /// 추가 생성자
+        /// </summary>
+        /// <param name="selectedBattleTag"></param>
+        public BattleTagItemDelConfirmDialog(IList<BattleTag> selectedBattleTag) : this()
         {
+            ViewModel.SelectedBattleTags = selectedBattleTag;
         }
 
-        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        public BattleTagItemDelConfirmDialogViewModel ViewModel
         {
+            get => DataContext as BattleTagItemDelConfirmDialogViewModel;
+            set => DataContext = value;
         }
     }
 }

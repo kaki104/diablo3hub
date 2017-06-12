@@ -122,6 +122,9 @@ namespace Diablo3Hub.ViewModels
                 if (result != ContentDialogResult.Primary) return;
 
                 //저장 되어있는 배틀테그 목록을 조회
+
+
+
                 BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
             });
             //셀렉트 상태로 변환
@@ -153,14 +156,20 @@ namespace Diablo3Hub.ViewModels
                 var result = await CommonStaticHelper.ShowConfirmBoxAsync($"{item.Tag}를 삭제 하시겠습니까?");
                 if (!result.Equals(1)) return;
                 //단일 삭제 작업
+                await DBHelper.Instance.DeleteAsync(item);
                 //화면 데이터 갱신
+                BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
             });
             //선택 삭제, 실행 조건은 선택된 녀석이 1개 이상이여야함
-            DeleteSelectedBattleTagsCommand = new DelegateCommand(() =>
+            DeleteSelectedBattleTagsCommand = new DelegateCommand(async () =>
             {
                 //선택된 배틀테그를 삭제할지 확인하고
                 //삭제한다고 하면 삭제 처리
-                
+                var result = await new BattleTagItemDelConfirmDialog(this.SelectedBattleTags).ShowAsync();
+                if (result != ContentDialogResult.Primary)
+                    return;
+                BattleTags = await DBHelper.Instance.BattleTagTable().ToListAsync();
+
             }, () => SelectedBattleTags.Count > 0);
 
             ItemClickCommand = new DelegateCommand<object>(obj =>
