@@ -6,110 +6,152 @@
       xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:controls="using:Template10.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="using:Diablo3Hub.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:vm="using:Diablo3Hub.ViewModels" mc:Ignorable="d">
+      xmlns:vm="using:Diablo3Hub.ViewModels" 
+      mc:Ignorable="d"
+      Foreground="White">
+
+    <Page.Resources>
+        <DataTemplate x:Key="HeaderTemplate">
+            <TextBlock Text="{Binding}" Foreground="White"/>
+        </DataTemplate>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HeaderTemplate" Value="{StaticResource HeaderTemplate}"/>
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="White"/>
+        </Style>
+    </Page.Resources>
 
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="Root">
+        <Image Margin="0" Stretch="UniformToFill" 
+               Source="ms-appx:///Assets/Images/body-bg-1680px-900px.jpg" />
+        <RelativePanel>
 
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
-                <VisualState x:Name="VisualStateNarrow">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!--  TODO: change properties for narrow view  -->
-                        <Setter Target="stateTextBox.Text" Value="Narrow Visual State" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="VisualStateNormal">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!--  TODO: change properties for normal view  -->
-                        <Setter Target="stateTextBox.Text" Value="Normal Visual State" />
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="VisualStateWide">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!--  TODO: change properties for wide view  -->
-                        <Setter Target="stateTextBox.Text" Value="Wide Visual State" />
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
+                    <VisualState x:Name="VisualStateNarrow">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <!--  TODO: change properties for narrow view  -->
+                            <Setter Target="stateTextBox.Text" Value="Narrow Visual State" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="VisualStateNormal">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <!--  TODO: change properties for normal view  -->
+                            <Setter Target="stateTextBox.Text" Value="Normal Visual State" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="VisualStateWide">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <!--  TODO: change properties for wide view  -->
+                            <Setter Target="stateTextBox.Text" Value="Wide Visual State" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
 
-        <controls:PageHeader x:Name="pageHeader" RelativePanel.AlignLeftWithPanel="True"
-                             RelativePanel.AlignRightWithPanel="True"
-                             RelativePanel.AlignTopWithPanel="True" Text="Main Page">
+            <controls:PageHeader x:Name="pageHeader" 
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.AlignTopWithPanel="True" 
+                Text="HOME">
 
-            <!--  secondary commands  -->
-            <controls:PageHeader.SecondaryCommands>
-                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" Label="Settings" />
-                <AppBarButton Click="{x:Bind ViewModel.GotoPrivacy}" Label="Privacy" />
-                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
-            </controls:PageHeader.SecondaryCommands>
+                <!--  secondary commands  -->
+                <controls:PageHeader.SecondaryCommands>
+                    <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" Label="Settings" />
+                    <AppBarButton Click="{x:Bind ViewModel.GotoPrivacy}" Label="Privacy" />
+                    <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
+                </controls:PageHeader.SecondaryCommands>
 
-        </controls:PageHeader>
+            </controls:PageHeader>
 
-        <TextBlock Text="테스트 및 연습용 페이지 입니다."/>
-        
-        <controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0"
+            <!--<controls:Resizer x:Name="parameterResizer" Margin="16,16,16,0"
                           RelativePanel.AlignLeftWithPanel="True"
                           RelativePanel.Below="pageHeader">
 
-            <TextBox MinWidth="150" MinHeight="62"
+                <TextBox MinWidth="150" MinHeight="62"
                      Header="Parameter to pass"
                      Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      TextWrapping="Wrap">
-                <Interactivity:Interaction.Behaviors>
-                    <!--  enable submit on enter key  -->
-                    <Behaviors:KeyBehavior Key="Enter">
-                        <Core:CallMethodAction MethodName="GotoDetailsPage" TargetObject="{Binding}" />
-                    </Behaviors:KeyBehavior>
-                    <!--  focus on textbox when page loads  -->
-                    <Core:EventTriggerBehavior>
-                        <Behaviors:FocusAction />
-                    </Core:EventTriggerBehavior>
-                </Interactivity:Interaction.Behaviors>
-            </TextBox>
+                    <Interactivity:Interaction.Behaviors>
+                        --><!--  enable submit on enter key  --><!--
+                        <Behaviors:KeyBehavior Key="Enter">
+                            <Core:CallMethodAction MethodName="GotoDetailsPage" TargetObject="{Binding}" />
+                        </Behaviors:KeyBehavior>
+                        --><!--  focus on textbox when page loads  --><!--
+                        <Core:EventTriggerBehavior>
+                            <Behaviors:FocusAction />
+                        </Core:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                </TextBox>
 
-        </controls:Resizer>
+            </controls:Resizer>-->
 
-        <Button x:Name="submitButton"
-                Click="{x:Bind ViewModel.GotoDetailsPage}" Content="Submit"
-                RelativePanel.AlignBottomWith="parameterResizer"
-                RelativePanel.RightOf="parameterResizer" />
+            <Button x:Name="submitButton"
+                RelativePanel.AlignBottomWith="pageHeader"
+                RelativePanel.RightOf="pageHeader" 
+                Content="Submit" 
+                Click="{x:Bind ViewModel.GotoDetailsPage}" />
+            
+            <TextBlock x:Name="stateTextBox" Margin="16,16,0,0"
+                RelativePanel.AlignLeftWith="pageHeader"
+                RelativePanel.Below="pageHeader"
+                Text="Current Visual State" />
 
-        <TextBlock x:Name="stateTextBox" Margin="16,16,0,0"
-                   RelativePanel.AlignLeftWith="parameterResizer"
-                   RelativePanel.Below="parameterResizer"
-                   Text="Current Visual State" />
+            <TextBox x:Name="battleTagTextBox" 
+                RelativePanel.Below="stateTextBox" Margin="16,16,16,0"
+                Header="Input Battle Tag"
+                Text="{Binding InputBattleTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBox x:Name="battleTagTextBox" RelativePanel.Below="stateTextBox" Margin="16,16,16,0"
-                 Header="Input Battle Tag"
-                 Text="{Binding InputBattleTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="heroIdTextBox" 
+                RelativePanel.Below="stateTextBox" 
+                RelativePanel.AlignRightWith="" Margin="16,16,16,0"
+                Header="Input Hero Id" 
+                Text="{Binding InputHeroId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                RelativePanel.RightOf="battleTagTextBox"/>
 
-        <TextBox x:Name="heroIdTextBox" RelativePanel.Below="stateTextBox" RelativePanel.AlignRightWith="" Margin="16,16,16,0"
-                 Header="Input Hero Id"
-                 Text="{Binding InputHeroId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                 RelativePanel.RightOf="battleTagTextBox"/>
-
-        <Button x:Name="careerProfileButton" RelativePanel.Below="battleTagTextBox"  Margin="16,16,16,0"
+            <Button x:Name="careerProfileButton" 
+                RelativePanel.Below="battleTagTextBox" Margin="16,16,16,0"
                 Content="Career Profile"
                 Command="{Binding CareerProfileCommand}"/>
 
-        <Button x:Name="heroProfileButton" RelativePanel.Below="careerProfileButton"  Margin="16,16,16,0"
+            <Button x:Name="heroProfileButton" 
+                RelativePanel.Below="careerProfileButton" Margin="16,16,16,0"
                 Content="Hero Profile"
                 Command="{Binding HeroProfileCommand}"/>
-    </RelativePanel>
+            
+            <!--  태스트  -->
+            <!--<Rectangle Margin="0,357,-196,-525" HorizontalAlignment="Right" Width="83" Fill="#FFD63E3E"/>
+
+            <ListBox Width="134" Height="132" 
+                 Margin="17,0,0,-502" 
+                 VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <ListBoxItem Content="ListBoxItem"/>
+                <ListBoxItem Content="ListBoxItem"/>
+                <ListBoxItem Content="ListBoxItem"/>
+                <ListBoxItem Content="ListBoxItem"/>
+            </ListBox>
+
+            <ScrollBar Margin="0,372,-181,-502" HorizontalAlignment="Right" Width="19"/>-->
+        </RelativePanel>
+    </Grid>
 </Page>
