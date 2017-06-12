@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
-using Diablo3Hub.Commons;
+using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
 {
-    public class BattleTagItemDelConfirmDialogViewModel: ViewModelBase
+    public class BattleTagItemDelConfirmDialogViewModel : ViewModelBase
     {
-
-        private BattleTagPageViewModel _battleTagPageViewModel;
+        private IList<BattleTag> _selectedBattleTags;
 
         /// <summary>
         ///     생성자
@@ -24,6 +21,7 @@ namespace Diablo3Hub.ViewModels
             if (DesignMode.DesignModeEnabled)
             {
                 //디자인 데이터
+                SelectedBattleTags = BattleTagData.GetBattleTags();
             }
             else
             {
@@ -32,36 +30,34 @@ namespace Diablo3Hub.ViewModels
         }
 
         /// <summary>
-        /// OK커맨드
+        ///     선택한 배틀테그들
+        /// </summary>
+        public IList<BattleTag> SelectedBattleTags
+        {
+            get => _selectedBattleTags;
+            set => Set(ref _selectedBattleTags, value);
+        }
+
+        /// <summary>
+        ///     OK커맨드
         /// </summary>
         public ICommand OkCommand { get; set; }
 
         /// <summary>
-        /// Cancel커맨드
-        /// </summary>
-        public ICommand CancelCommand { get; set; }
-        
-        /// <summary>
-        /// 초기화
+        ///     초기화
         /// </summary>
         private void Init()
         {
-
-            _battleTagPageViewModel = (App.Current.Resources["Locator"] as ViewModelLocator).BattleTagPageViewModel;
             OkCommand = new DelegateCommand(ExecuteOkCommand);
-
-            CancelCommand = new DelegateCommand<object>(obj =>
-            {
-
-            });
         }
 
         /// <summary>
-        /// ok 커맨드 실행
+        ///     ok 커맨드 실행
         /// </summary>
-        private void ExecuteOkCommand()
+        private async void ExecuteOkCommand()
         {
-
+            if (SelectedBattleTags.Any() == false) return;
+            await DBHelper.Instance.DeleteTagItemsAsync(SelectedBattleTags);
         }
     }
 }

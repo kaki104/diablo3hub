@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Diablo3Hub.Models;
 using SQLite;
+using System.Collections;
 
 namespace Diablo3Hub.Services
 {
@@ -93,5 +94,21 @@ namespace Diablo3Hub.Services
             var result = await conn.DeleteAsync(deleteItem);
             return result;
         }
+
+        /// <summary>
+        /// Battle Tag 아이템 여러개 삭제
+        /// </summary>
+        public async Task<int> DeleteTagItemsAsync(IList<BattleTag> items)
+        {
+            if (items == null || items.Any() == false) return 0;
+            var tagIds = items.Select(e => e.Id.ToString()).ToList();
+            var paramStr = string.Join(",", tagIds);
+
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            var quryStr = string.Format("DELETE FROM BATTLETAG WHERE ID IN ({0})", paramStr);
+            var result = await conn.ExecuteAsync(quryStr);
+            return result;
+        }
+
     }
 }

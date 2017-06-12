@@ -177,6 +177,7 @@
     <Compile Include="Converters\DisplayColorToColorBrushConverter.cs" />
     <Compile Include="Converters\IconToImageConverter.cs" />
     <Compile Include="Converters\LongToDateTimeConverter.cs" />
+    <Compile Include="DesignDatas\BattleTagData.cs" />
     <Compile Include="DesignDatas\CareerProfileData.cs" />
     <Compile Include="DesignDatas\HeroProfileData.cs" />
     <Compile Include="Services\CommonHelper.cs" />
@@ -201,7 +202,6 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\BattleTagDetailPage.xaml.cs">
       <DependentUpon>BattleTagDetailPage.xaml</DependentUpon>
     </Compile>
@@ -359,7 +359,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.19.2">
+    <SDKReference Include="SQLite.UWP.2015, Version=3.19.3">
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>

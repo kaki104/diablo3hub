@@ -1,13 +1,13 @@
-﻿<Page x:Class="Diablo3Hub.Views.HeroPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="using:Template10.Controls"
-    xmlns:viewModels="using:Diablo3Hub.ViewModels"
-    xmlns:controlsToolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    mc:Ignorable="d">
-
+<Page x:Class="Diablo3Hub.Views.HeroPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:controls="using:Template10.Controls"
+      xmlns:viewModels="using:Diablo3Hub.ViewModels"
+      xmlns:controlsToolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      mc:Ignorable="d">
+  
     <Page.DataContext>
         <viewModels:HeroPageViewModel />
     </Page.DataContext>
@@ -15,6 +15,23 @@
     <Page.Resources>
         <!--  미리보기 미지원  -->
         <Style TargetType="PivotHeaderItem" BasedOn="{StaticResource BasedPivotHeaderItemStyle}"/>
+        
+        <DataTemplate x:Key="SkillDataTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.RowSpan="2" 
+                       Source="{Binding Skill.Icon, ConverterParameter=skills|64, Converter={StaticResource IconToImageConverter}}" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Skill.Name}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Rune.Name}"/>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Grid x:Name="Root">
@@ -85,10 +102,10 @@
                                     </Grid.Resources>
 
                                     <TextBlock Grid.Column="0" Grid.Row="0" Text="Level" />
-                                    <TextBlock Grid.Column="1" Grid.Row="0"
-                                           HorizontalAlignment="Right">
-                                    <Run Text="{Binding CurrentHeroProfile.Level}"/>
-                                    <Run Text="{Binding CurrentHeroProfile.ParagonLevel, ConverterParameter=(\{0:N0\}), Converter={StaticResource StringFormatConverter}}"
+                                    <TextBlock Grid.Column="1" Grid.Row="0" 
+                                        HorizontalAlignment="Right">
+                                      <Run Text="{Binding CurrentHeroProfile.Level}"/>
+                                      <Run Text="{Binding CurrentHeroProfile.ParagonLevel, ConverterParameter=(\{0:N0\}), Converter={StaticResource StringFormatConverter}}"
                                          Foreground="Blue"/>
                                     </TextBlock>
                                     <TextBlock Grid.Column="0" Grid.Row="1" Text="Strength" />
@@ -204,6 +221,7 @@
                                     <TextBlock Grid.Column="0" Grid.Row="10" Text="다발 사격 피해 증가" />
                                     <TextBlock Grid.Column="1" Grid.Row="10"
                                            HorizontalAlignment="Right" />
+
                                 </Grid>
                             </controlsToolkit:Expander>
                         </StackPanel>
@@ -309,7 +327,51 @@
                         </StackPanel>
                     </ScrollViewer>
                 </PivotItem>
-                <PivotItem Header="Skills" />
+                <PivotItem Header="Skill">
+                 <ScrollViewer VerticalScrollMode="Auto">
+                      <StackPanel>
+                          <controlsToolkit:Expander Margin="0 0 0 10" Header="Active Skills" IsExpanded="True"
+                                                    HorizontalContentAlignment="Stretch">
+                              <Grid Background="{ThemeResource AppBarBackground}">
+                                  <Grid.RowDefinitions>
+                                      <RowDefinition/>
+                                      <RowDefinition/>
+                                      <RowDefinition/>
+                                  </Grid.RowDefinitions>
+                                  <Grid.ColumnDefinitions>
+                                      <ColumnDefinition/>
+                                      <ColumnDefinition/>
+                                  </Grid.ColumnDefinitions>
+
+                                  <Button Grid.Row="0" Grid.Column="0" 
+                                          ContentTemplate="{StaticResource SkillDataTemplate}" 
+                                          Content="{Binding CurrentHeroProfile.Skills.Active[0]}"/>
+                                  <Button Grid.Row="0" Grid.Column="1"
+                                          ContentTemplate="{StaticResource SkillDataTemplate}" 
+                                          Content="{Binding CurrentHeroProfile.Skills.Active[1]}"/>
+
+                                  <Button Grid.Row="1" Grid.Column="0" 
+                                          ContentTemplate="{StaticResource SkillDataTemplate}" 
+                                          Content="{Binding CurrentHeroProfile.Skills.Active[2]}"/>
+                                  <Button Grid.Row="1" Grid.Column="1"
+                                          ContentTemplate="{StaticResource SkillDataTemplate}" 
+                                          Content="{Binding CurrentHeroProfile.Skills.Active[3]}"/>
+
+                                  <Button Grid.Row="2" Grid.Column="0" 
+                                          ContentTemplate="{StaticResource SkillDataTemplate}" 
+                                          Content="{Binding CurrentHeroProfile.Skills.Active[4]}"/>
+                                  <Button Grid.Row="2" Grid.Column="1"
+                                          ContentTemplate="{StaticResource SkillDataTemplate}" 
+                                          Content="{Binding CurrentHeroProfile.Skills.Active[5]}"/>
+                              </Grid>
+                          </controlsToolkit:Expander>
+                          <controlsToolkit:Expander Margin="0 0 0 10" Header="Passive Skills" IsExpanded="True"
+                                                    HorizontalContentAlignment="Stretch">
+
+                          </controlsToolkit:Expander>
+                      </StackPanel>
+                  </ScrollViewer>
+                </PivotItem>
                 <PivotItem Header="Followers" />
             </Pivot>
         </RelativePanel>

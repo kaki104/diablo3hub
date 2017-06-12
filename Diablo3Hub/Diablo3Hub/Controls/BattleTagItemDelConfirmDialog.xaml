@@ -7,13 +7,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
     mc:Ignorable="d"
-    Title="Tag Item을 지우시겠습니까?"
+    Title="아이템들을 삭제하시겠습니까?"
     PrimaryButtonText="OK"
     SecondaryButtonText="Cancel"
-    DataContext="{Binding BattleTagItemDelConfirmDialogViewModel, Source={StaticResource Locator}}"
-    PrimaryButtonCommand="{Binding OkCommand}" 
-    SecondaryButtonCommand="{Binding CancelCommand}">
+    PrimaryButtonCommand="{Binding OkCommand}" >
 
-    <Grid>
-    </Grid>
+    <ContentDialog.DataContext>
+        <viewModels:BattleTagItemDelConfirmDialogViewModel/>
+    </ContentDialog.DataContext>
+
+    <ListView 
+        ItemsSource="{Binding SelectedBattleTags}" Height="100" 
+        >
+        <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <ItemsWrapGrid />
+            </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Tag}" TextWrapping="Wrap" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentDialog>

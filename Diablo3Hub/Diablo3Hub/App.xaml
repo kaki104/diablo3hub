@@ -11,8 +11,6 @@
                 <ResourceDictionary Source="Styles\Common.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <!--  custom resources  -->
-            <vm:ViewModelLocator x:Key="Locator" />
             
         </ResourceDictionary>
     </Application.Resources>
