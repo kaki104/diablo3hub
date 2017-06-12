@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
-using Diablo3Hub.Commons;
+using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
 {
-    public class BattleTagItemDelConfirmDialogViewModel: ViewModelBase
+    public class BattleTagItemDelConfirmDialogViewModel : ViewModelBase
     {
-
         private IList<BattleTag> _selectedBattleTags;
 
         /// <summary>
@@ -24,6 +21,7 @@ namespace Diablo3Hub.ViewModels
             if (DesignMode.DesignModeEnabled)
             {
                 //디자인 데이터
+                SelectedBattleTags = BattleTagData.GetBattleTags();
             }
             else
             {
@@ -41,39 +39,25 @@ namespace Diablo3Hub.ViewModels
         }
 
         /// <summary>
-        /// OK커맨드
+        ///     OK커맨드
         /// </summary>
         public ICommand OkCommand { get; set; }
 
         /// <summary>
-        /// Cancel커맨드
-        /// </summary>
-        public ICommand CancelCommand { get; set; }
-        
-        /// <summary>
-        /// 초기화
+        ///     초기화
         /// </summary>
         private void Init()
         {
             OkCommand = new DelegateCommand(ExecuteOkCommand);
-
-            CancelCommand = new DelegateCommand<object>(obj =>
-            {
-
-            });
         }
 
         /// <summary>
-        /// ok 커맨드 실행
+        ///     ok 커맨드 실행
         /// </summary>
         private async void ExecuteOkCommand()
         {
-            if (SelectedBattleTags.Count > 0)
-            {
-                var selTags = SelectedBattleTags.ToList<BattleTag>();
-                await DBHelper.Instance.DeleteTagItemsAsync(selTags);
-            }
-
+            if (SelectedBattleTags.Any() == false) return;
+            await DBHelper.Instance.DeleteTagItemsAsync(SelectedBattleTags);
         }
     }
 }

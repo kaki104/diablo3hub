@@ -118,7 +118,7 @@ namespace Diablo3Hub.ViewModels
         {
             //커런트 배틀테그 수정
             _currentBattleTag.Server = SelectedServer?.Id;
-            _currentBattleTag.Tag = $"{BattleTagHead}-{BattleTagTail}";
+            _currentBattleTag.Tag = $"{BattleTagHead}#{BattleTagTail}";
             if (string.IsNullOrEmpty(_currentBattleTag.Locale))
                 _currentBattleTag.Locale = GameConfigs.LocaleKR;
             _currentBattleTag.Description = Description;

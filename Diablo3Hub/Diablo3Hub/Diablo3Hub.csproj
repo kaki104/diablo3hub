@@ -123,6 +123,7 @@
     <Compile Include="Converters\DisplayColorToColorBrushConverter.cs" />
     <Compile Include="Converters\IconToImageConverter.cs" />
     <Compile Include="Converters\LongToDateTimeConverter.cs" />
+    <Compile Include="DesignDatas\BattleTagData.cs" />
     <Compile Include="DesignDatas\CareerProfileData.cs" />
     <Compile Include="DesignDatas\HeroProfileData.cs" />
     <Compile Include="Services\CommonHelper.cs" />
