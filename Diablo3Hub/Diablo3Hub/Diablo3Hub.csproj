@@ -92,6 +92,58 @@
     <Content Include="ApiKeys.publishsettings" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.jpg" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.png" />
+    <Content Include="Assets\Images\body-bg-1680px-900px.jpg" />
+    <Content Include="Assets\Images\game-logo-d3.png" />
+    <Content Include="Assets\Images\Icons\barbarian_female.png" />
+    <Content Include="Assets\Images\Icons\barbarian_male.png" />
+    <Content Include="Assets\Images\Icons\demonhunter_female.png" />
+    <Content Include="Assets\Images\Icons\demonhunter_male.png" />
+    <Content Include="Assets\Images\Icons\monk_female.png" />
+    <Content Include="Assets\Images\Icons\monk_male.png" />
+    <Content Include="Assets\Images\Icons\witchdoctor_female.png" />
+    <Content Include="Assets\Images\Icons\witchdoctor_male.png" />
+    <Content Include="Assets\Images\Icons\wizard_female.png" />
+    <Content Include="Assets\Images\Icons\wizard_male.png" />
+    <Content Include="Assets\Images\Icons\x1_crusader_female.png" />
+    <Content Include="Assets\Images\Icons\x1_crusader_male.png" />
+    <Content Include="Assets\Images\logo.png" />
+    <Content Include="Assets\Images\Reference\act5.mp4" />
+    <Content Include="Assets\Images\Reference\avatar-border.png" />
+    <Content Include="Assets\Images\Reference\bg-ros-ultimate-evil.jpg" />
+    <Content Include="Assets\Images\Reference\body-bg-1280px.jpg" />
+    <Content Include="Assets\Images\Reference\body-bg-1680px.jpg" />
+    <Content Include="Assets\Images\Reference\body-bg-1920px.jpg" />
+    <Content Include="Assets\Images\Reference\breadcrumb-sprite.png" />
+    <Content Include="Assets\Images\Reference\career-artisans.jpg" />
+    <Content Include="Assets\Images\Reference\career-bg.jpg" />
+    <Content Include="Assets\Images\Reference\career-portraits.jpg" />
+    <Content Include="Assets\Images\Reference\content-bot-bg.jpg" />
+    <Content Include="Assets\Images\Reference\directory-divider.png" />
+    <Content Include="Assets\Images\Reference\game-logo-d3.png" />
+    <Content Include="Assets\Images\Reference\guide-top2.png" />
+    <Content Include="Assets\Images\Reference\introduction.jpg" />
+    <Content Include="Assets\Images\Reference\logo.png" />
+    <Content Include="Assets\Images\Reference\lower-bg.jpg" />
+    <Content Include="Assets\Images\Reference\malthael.mp4" />
+    <Content Include="Assets\Images\Reference\MZDW52W4RRA81491359747812.jpg" />
+    <Content Include="Assets\Images\Reference\section-adventuremode.jpg" />
+    <Content Include="Assets\Images\Reference\section-crusader.jpg" />
+    <Content Include="Assets\Images\Reference\section-media.jpg" />
+    <Content Include="Assets\Images\Reference\section-news.jpg" />
+    <Content Include="Assets\Images\Reference\sidebar-bot.jpg" />
+    <Content Include="Assets\Images\Reference\table-header.png" />
+    <Content Include="Assets\Images\Reference\untitled.png" />
+    <Content Include="Assets\Images\Reference\untitled2.png" />
+    <Content Include="Assets\Images\Reference\untitled3.png" />
+    <Content Include="Assets\Images\Reference\untitled4.png" />
+    <Content Include="Assets\Images\Reference\witchdoctor_piranhas.png" />
+    <Content Include="Assets\Images\Reference\wizard-female.jpg" />
+    <Content Include="Assets\Images\Reference\x1_barbarian_avalanche_v2.png" />
+    <Content Include="Assets\Images\Reference\x1_demonhunter_vengeance.png" />
+    <Content Include="Assets\Images\Reference\x1_monk_epiphany.png" />
+    <Content Include="Assets\Images\Reference\x1_wizard_wormhole.png" />
+    <Content Include="Assets\Images\Reference\Y1VYE65IHJB31496305980626.jpg" />
+    <Content Include="Assets\Images\wizard-female.jpg" />
     <Content Include="Assets\p4_unique_sword_1h_01_demonhunter_male.png" />
     <Content Include="DesignDatas\barbarian-female.jpg" />
     <Content Include="DesignDatas\barbarian-male.jpg" />
@@ -108,6 +160,8 @@
       <Link>README.md</Link>
     </None>
     <None Include="ApiKeys.publishsettings.temp" />
+    <Content Include="Assets\Fonts\Exocet Heavy.ttf" />
+    <Content Include="Assets\Fonts\Exocet Light.ttf" />
     <None Include="Diabol3 Hub.pptx" />
   </ItemGroup>
   <ItemGroup>
@@ -219,7 +273,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Custom.xaml">
+    <Page Include="Styles\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Styles\Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

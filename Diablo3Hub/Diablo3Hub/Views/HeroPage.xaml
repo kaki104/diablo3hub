@@ -1,267 +1,317 @@
-﻿<Page
+﻿<Page x:Class="Diablo3Hub.Views.HeroPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Diablo3Hub.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Template10.Controls"
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
     xmlns:controlsToolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    x:Class="Diablo3Hub.Views.HeroPage"
     mc:Ignorable="d">
-
-    <Page.Resources>
-    </Page.Resources>
 
     <Page.DataContext>
         <viewModels:HeroPageViewModel />
     </Page.DataContext>
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
-                <VisualState x:Name="VisualStateNarrow">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
-                    </VisualState.StateTriggers>
-                </VisualState>
-                <VisualState x:Name="VisualStateNormal">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
-                    </VisualState.StateTriggers>
-                </VisualState>
-                <VisualState x:Name="VisualStateWide">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
-                    </VisualState.StateTriggers>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+    <Page.Resources>
+        <!--  미리보기 미지원  -->
+        <Style TargetType="PivotHeaderItem" BasedOn="{StaticResource BasedPivotHeaderItemStyle}"/>
+    </Page.Resources>
 
-        <!--  header  -->
-        <controls:PageHeader x:Name="pageHeader" Frame="{x:Bind Frame}"
-                             RelativePanel.AlignLeftWithPanel="True"
-                             RelativePanel.AlignRightWithPanel="True"
-                             RelativePanel.AlignTopWithPanel="True"
-                             Text="{Binding CurrentHeroProfile.Name}" />
+    <Grid x:Name="Root">
+        <Image Margin="0" Stretch="UniformToFill" 
+               Source="ms-appx:///Assets/Images/body-bg-1680px-900px.jpg" />
 
-        <Pivot RelativePanel.Below="pageHeader"
-               RelativePanel.AlignBottomWithPanel="True"
-               RelativePanel.AlignLeftWithPanel="True"
-               RelativePanel.AlignRightWithPanel="True">
-            <PivotItem Header="Stat">
-                <ScrollViewer VerticalScrollMode="Auto">
-                    <StackPanel>
-                        <controlsToolkit:Expander Margin="0 0 0 10" Header="Basic" IsExpanded="True"
-                                              HorizontalContentAlignment="Stretch">
-                            <Grid Background="{ThemeResource AppBarBackground}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="Level" />
-                                <TextBlock Grid.Column="1" Grid.Row="0"
+        <RelativePanel>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
+                    <VisualState x:Name="VisualStateNarrow">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                    <VisualState x:Name="VisualStateNormal">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                    <VisualState x:Name="VisualStateWide">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
+                        </VisualState.StateTriggers>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <controls:PageHeader x:Name="pageHeader" Frame="{x:Bind Frame}"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.AlignTopWithPanel="True"
+                Text="{Binding CurrentHeroProfile.Name}" />
+
+            <Pivot RelativePanel.Below="pageHeader"
+                RelativePanel.AlignBottomWithPanel="True"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                FontFamily="{StaticResource ExocetLightFontFamily}">
+                <PivotItem Header="Stats">
+                    <ScrollViewer VerticalScrollMode="Auto" Padding="0,0,0,13">
+                        <StackPanel>
+                            <controlsToolkit:Expander Header="Basic" 
+                                Margin="0 0 0 10" HorizontalContentAlignment="Stretch"
+                                IsExpanded="True">
+                                <Grid Margin="0 10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="#FFF3E6D0"/>
+                                            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                            <Setter Property="Margin" Value="10 5 10 0"/>
+                                        </Style>
+                                    </Grid.Resources>
+
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Level" />
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
                                            HorizontalAlignment="Right">
                                     <Run Text="{Binding CurrentHeroProfile.Level}"/>
                                     <Run Text="{Binding CurrentHeroProfile.ParagonLevel, ConverterParameter=(\{0:N0\}), Converter={StaticResource StringFormatConverter}}"
                                          Foreground="Blue"/>
-                                </TextBlock>
-                                <TextBlock Grid.Column="0" Grid.Row="1" Text="Strength" />
-                                <TextBlock Grid.Column="1" Grid.Row="1"
+                                    </TextBlock>
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Strength" />
+                                    <TextBlock Grid.Column="1" Grid.Row="1"
                                            Text="{Binding CurrentHeroProfile.Stats.Strength, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="2" Text="Dexterity" />
-                                <TextBlock Grid.Column="1" Grid.Row="2" 
+                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Dexterity" />
+                                    <TextBlock Grid.Column="1" Grid.Row="2" 
                                            Text="{Binding CurrentHeroProfile.Stats.Dexterity, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="3" Text="Intelligence" />
-                                <TextBlock Grid.Column="1" Grid.Row="3"
+                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Intelligence" />
+                                    <TextBlock Grid.Column="1" Grid.Row="3"
                                            Text="{Binding CurrentHeroProfile.Stats.Intelligence, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="4" Text="Vitality" />
-                                <TextBlock Grid.Column="1" Grid.Row="4"
+                                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Vitality" />
+                                    <TextBlock Grid.Column="1" Grid.Row="4"
                                            Text="{Binding CurrentHeroProfile.Stats.Vitality, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="5" Text="Damage" />
-                                <TextBlock Grid.Column="1" Grid.Row="5"
+
+                                    <Rectangle Grid.ColumnSpan="2" Grid.Row="5" Margin="0,10,0,5"
+                                               Height="1">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <CompositeTransform CenterY="0.5" CenterX="0.5" Rotation="90"/>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Transparent" Offset="1"/>
+                                                <GradientStop Color="White" Offset="0.3"/>
+                                                <GradientStop Color="White" Offset="0.7"/>
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+
+                                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Damage" />
+                                    <TextBlock Grid.Column="1" Grid.Row="6"
                                            Text="{Binding CurrentHeroProfile.Stats.Damage, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="6" Text="Toughness" />
-                                <TextBlock Grid.Column="1" Grid.Row="6"
+                                    <TextBlock Grid.Column="0" Grid.Row="7" Text="Toughness" />
+                                    <TextBlock Grid.Column="1" Grid.Row="7"
                                            Text="{Binding CurrentHeroProfile.Stats.Toughness, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="7" Text="Healing" />
-                                <TextBlock Grid.Column="1" Grid.Row="7"
+                                    <TextBlock Grid.Column="0" Grid.Row="8" Text="Healing" />
+                                    <TextBlock Grid.Column="1" Grid.Row="8"
                                            Text="{Binding CurrentHeroProfile.Stats.Healing, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                            </Grid>
-                        </controlsToolkit:Expander>
+                                </Grid>
+                            </controlsToolkit:Expander>
 
-                        <controlsToolkit:Expander Margin="0 0 0 10" Header="Demege" IsExpanded="True"
-                                                  HorizontalContentAlignment="Stretch">
-                            <Grid Background="{ThemeResource AppBarBackground}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="민첩으로 증가하는 공격력" />
-                                <TextBlock Grid.Column="1" Grid.Row="0"
-                                           HorizontalAlignment="Right"
-                                           />
-                                <TextBlock Grid.Column="0" Grid.Row="1" Text="기술로 증가하는 공격력" />
-                                <TextBlock Grid.Column="1" Grid.Row="1"
+                            <controlsToolkit:Expander Header="Damage" 
+                                Margin="0 0 0 10" HorizontalContentAlignment="Stretch"
+                                IsExpanded="True">
+                                <Grid Margin="0 10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="#FFF3E6D0"/>
+                                            <Setter Property="FontFamily" Value="NanumGothic Light"/>
+                                            <Setter Property="FontSize" Value="13"/>
+                                            <Setter Property="Margin" Value="10 5 10 0"/>
+                                        </Style>
+                                    </Grid.Resources>
+
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="민첩으로 증가하는 공격력" />
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
+                                           HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="기술로 증가하는 공격력" />
+                                    <TextBlock Grid.Column="1" Grid.Row="1"
                                            Text="{Binding CurrentHeroProfile.Stats.DamageIncrease, ConverterParameter=\{0:P2\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="2" Text="정예에게 주는 추가 피해" />
-                                <TextBlock Grid.Column="1" Grid.Row="2" 
+                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="정예에게 주는 추가 피해" />
+                                    <TextBlock Grid.Column="1" Grid.Row="2" 
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="3" Text="초당 공격 횟수" />
-                                <TextBlock Grid.Column="1" Grid.Row="3"
+                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="초당 공격 횟수" />
+                                    <TextBlock Grid.Column="1" Grid.Row="3"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="4" Text="공격 속도 증가" />
-                                <TextBlock Grid.Column="1" Grid.Row="4"
+                                    <TextBlock Grid.Column="0" Grid.Row="4" Text="공격 속도 증가" />
+                                    <TextBlock Grid.Column="1" Grid.Row="4"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="5" Text="극대화 확률" />
-                                <TextBlock Grid.Column="1" Grid.Row="5"
+                                    <TextBlock Grid.Column="0" Grid.Row="5" Text="극대화 확률" />
+                                    <TextBlock Grid.Column="1" Grid.Row="5"
                                            Text="{Binding CurrentHeroProfile.Stats.CritChance, ConverterParameter=\{0:P\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="6" Text="극대화 피해" />
-                                <TextBlock Grid.Column="1" Grid.Row="6"
+                                    <TextBlock Grid.Column="0" Grid.Row="6" Text="극대화 피해" />
+                                    <TextBlock Grid.Column="1" Grid.Row="6"
                                            Text="{Binding CurrentHeroProfile.Stats.CritDamage, ConverterParameter=\{0:P\}, Converter={StaticResource StringFormatConverter}}"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="7" Text="광역 피해" />
-                                <TextBlock Grid.Column="1" Grid.Row="7"
+                                    <TextBlock Grid.Column="0" Grid.Row="7" Text="광역 피해" />
+                                    <TextBlock Grid.Column="1" Grid.Row="7"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="8" Text="재사용 대기시간 감소" />
-                                <TextBlock Grid.Column="1" Grid.Row="8"
+                                    <TextBlock Grid.Column="0" Grid.Row="8" Text="재사용 대기시간 감소" />
+                                    <TextBlock Grid.Column="1" Grid.Row="8"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="9" Text="물리 피해 증가" />
-                                <TextBlock Grid.Column="1" Grid.Row="9"
+                                    <TextBlock Grid.Column="0" Grid.Row="9" Text="물리 피해 증가" />
+                                    <TextBlock Grid.Column="1" Grid.Row="9"
                                            HorizontalAlignment="Right" />
-                                <TextBlock Grid.Column="0" Grid.Row="10" Text="다발 사격 피해 증가" />
-                                <TextBlock Grid.Column="1" Grid.Row="10"
+                                    <TextBlock Grid.Column="0" Grid.Row="10" Text="다발 사격 피해 증가" />
+                                    <TextBlock Grid.Column="1" Grid.Row="10"
                                            HorizontalAlignment="Right" />
-                            </Grid>
-                        </controlsToolkit:Expander>
-                    </StackPanel>
-                </ScrollViewer>
-            </PivotItem>
-            <PivotItem Header="Item">
-                <Viewbox>
-                    <Canvas Height="544" Width="336">
-                        <Canvas.Background>
-                            <ImageBrush Stretch="Uniform"
-                                        ImageSource="ms-appx:///Assets/Backgrounds/demon-hunter-female-item.png" />
-                        </Canvas.Background>
-                        <Border x:Name="Head" Width="74" Height="75"
-                                Background="{Binding CurrentHeroProfile.Items.Head.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="131" Canvas.Top="35">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Head.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Shoulders" Width="75" Height="100"
-                                Background="{Binding CurrentHeroProfile.Items.Shoulders.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="36" Canvas.Top="63">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Shoulders.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Neck" Width="64" Height="64"
-                                Background="{Binding CurrentHeroProfile.Items.Neck.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="227" Canvas.Top="86">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Torso" Width="94" Height="132"
-                                Background="{Binding CurrentHeroProfile.Items.Torso.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="116">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Torso.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Hands" Width="76" Height="100"
-                                Background="{Binding CurrentHeroProfile.Items.Hands.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="6" Canvas.Top="177">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Hands.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Bracers" Width="76" Height="100"
-                                Background="{Binding CurrentHeroProfile.Items.Bracers.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="177">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Bracers.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Waist" Width="94" Height="38"
-                                Background="{Binding CurrentHeroProfile.Items.Waist.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="253">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Waist.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="LeftFinger" Width="47" Height="47"
-                                Background="{Binding CurrentHeroProfile.Items.LeftFinger.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="20" Canvas.Top="292">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="RightFinger" Width="47" Height="47"
-                                Background="{Binding CurrentHeroProfile.Items.RightFinger.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="269" Canvas.Top="292">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Legs" Width="76" Height="101"
-                                Background="{Binding CurrentHeroProfile.Items.Legs.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="296">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Legs.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <!--main hand-->
-                        <Border x:Name="MainHand" Width="75" Height="149" UseLayoutRounding="True"
-                                Background="{Binding CurrentHeroProfile.Items.MainHand.DisplayColor}"
-                                BorderBrush="#FF110A05" BorderThickness="1" Canvas.Left="6" Canvas.Top="354">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <!--OffHand-->
-                        <Border x:Name="OffHand" Width="74" Height="149"
-                                Background="{Binding CurrentHeroProfile.Items.OffHand.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="354">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                        <Border x:Name="Feet" Width="76" Height="101"
-                                Background="{Binding CurrentHeroProfile.Items.Feet.DisplayColor}"
-                                BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="402">
-                            <Image
-                                Source="{Binding CurrentHeroProfile.Items.Feet.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Border>
-                    </Canvas>
-                </Viewbox>
-            </PivotItem>
-            <PivotItem Header="Skill" />
-            <PivotItem Header="Follower" />
+                                </Grid>
+                            </controlsToolkit:Expander>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                
+                <!--TODO : 배경이미지 교체, 아이템 위치 재조정--> 
+                <PivotItem Header="Items">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <Viewbox>
+                                <Canvas Width="336" Height="544">
+                                    <Canvas.Background>
+                                        <ImageBrush Stretch="Uniform"
+                                            ImageSource="ms-appx:///Assets/Backgrounds/demon-hunter-female-item.png" />
+                                    </Canvas.Background>
 
-        </Pivot>
-    </RelativePanel>
+                                    <Border x:Name="Head" Width="74" Height="75"
+                                            Background="{Binding CurrentHeroProfile.Items.Head.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="131" Canvas.Top="35">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Head.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Shoulders" Width="75" Height="100"
+                                            Background="{Binding CurrentHeroProfile.Items.Shoulders.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="36" Canvas.Top="63">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Shoulders.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Neck" Width="64" Height="64"
+                                            Background="{Binding CurrentHeroProfile.Items.Neck.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="227" Canvas.Top="86">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Torso" Width="94" Height="132"
+                                            Background="{Binding CurrentHeroProfile.Items.Torso.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="116">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Torso.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Hands" Width="76" Height="100"
+                                            Background="{Binding CurrentHeroProfile.Items.Hands.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="6" Canvas.Top="177">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Hands.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Bracers" Width="76" Height="100"
+                                            Background="{Binding CurrentHeroProfile.Items.Bracers.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="177">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Bracers.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Waist" Width="94" Height="38"
+                                            Background="{Binding CurrentHeroProfile.Items.Waist.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="253">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Waist.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="LeftFinger" Width="47" Height="47"
+                                            Background="{Binding CurrentHeroProfile.Items.LeftFinger.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="20" Canvas.Top="292">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="RightFinger" Width="47" Height="47"
+                                            Background="{Binding CurrentHeroProfile.Items.RightFinger.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="269" Canvas.Top="292">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Legs" Width="76" Height="101"
+                                            Background="{Binding CurrentHeroProfile.Items.Legs.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="296">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Legs.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <!--main hand-->
+                                    <Border x:Name="MainHand" Width="75" Height="149" UseLayoutRounding="True"
+                                            Background="{Binding CurrentHeroProfile.Items.MainHand.DisplayColor}"
+                                            BorderBrush="#FF110A05" BorderThickness="1" Canvas.Left="6" Canvas.Top="354">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <!--OffHand-->
+                                    <Border x:Name="OffHand" Width="74" Height="149"
+                                            Background="{Binding CurrentHeroProfile.Items.OffHand.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="354">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                    <Border x:Name="Feet" Width="76" Height="101"
+                                            Background="{Binding CurrentHeroProfile.Items.Feet.DisplayColor}"
+                                            BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="402">
+                                        <Image
+                                            Source="{Binding CurrentHeroProfile.Items.Feet.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                    </Border>
+                                </Canvas>
+                            </Viewbox>
+                            <Grid Height="500">
+
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </PivotItem>
+                <PivotItem Header="Skills" />
+                <PivotItem Header="Followers" />
+            </Pivot>
+        </RelativePanel>
+    </Grid>
 </Page>
