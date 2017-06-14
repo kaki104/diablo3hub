@@ -180,7 +180,9 @@
     <Compile Include="DesignDatas\BattleTagData.cs" />
     <Compile Include="DesignDatas\CareerProfileData.cs" />
     <Compile Include="DesignDatas\HeroProfileData.cs" />
-    <Compile Include="Services\CommonHelper.cs" />
+    <Compile Include="Models\ApiCacheData.cs" />
+    <Compile Include="Models\ItemDetail.cs" />
+    <Compile Include="Services\CommonStaticHelper.cs" />
     <Compile Include="Services\FlyoutHelper.cs" />
     <Compile Include="Commons\GameConfigs.cs" />
     <Compile Include="Controls\BattleTagManagementDialog.xaml.cs">

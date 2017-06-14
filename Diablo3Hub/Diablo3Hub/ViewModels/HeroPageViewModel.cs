@@ -8,6 +8,7 @@ using Diablo3Hub.Services;
 using Diablo3Hub.Views;
 using Newtonsoft.Json;
 using Template10.Mvvm;
+using Template10.Services.NavigationService;
 
 namespace Diablo3Hub.ViewModels
 {
@@ -44,6 +45,16 @@ namespace Diablo3Hub.ViewModels
             get => _currentHeroProfile;
             set => Set(ref _currentHeroProfile, value);
         }
+
+        public override Task OnNavigatedFromAsync(IDictionary<string, object> pageState, bool suspending)
+        {
+            ////다른 페이지로 네비게이션 되기전에 중요 데이터 저장
+            //var serialHeroProfile = JsonConvert.SerializeObject(CurrentHeroProfile);
+            //pageState.Add("CurrentHeroProfile", serialHeroProfile);
+
+            return base.OnNavigatedFromAsync(pageState, suspending);
+        }
+
         /// <summary>
         /// 네비게이션
         /// </summary>
@@ -60,19 +71,23 @@ namespace Diablo3Hub.ViewModels
             if (mode == NavigationMode.Back)
             {
                 //네비게이션 백
+                object serialHeroProfile;
+                if(state.TryGetValue("CurrentHeroProfile", out serialHeroProfile))
+                {
+                    CurrentHeroProfile = JsonConvert.DeserializeObject<HeroProfile>(serialHeroProfile.ToString());
+                    if (CurrentHeroProfile != null) return;
+                }
             }
-            else
-            {
-                Busy.SetBusy(true, "Please wait...");
-                //평범한 네비게이션
-                var result = await ApiHelper.Instance.GetHeroProfileAsync(para.Key, para.Value);
-                if (result == null) goto ExitRtn;
-                //제대로된 배틀테그라면..
-                CurrentHeroProfile = result;
 
-                ExitRtn:
-                Busy.SetBusy(false);
-            }
+            Busy.SetBusy(true, "Please wait...");
+            //평범한 네비게이션
+            var result = await ApiHelper.Instance.GetHeroProfileAsync(para.Key, para.Value);
+            if (result == null) goto ExitRtn;
+            //제대로된 배틀테그라면..
+            CurrentHeroProfile = result;
+
+            ExitRtn:
+            Busy.SetBusy(false);
         }
     }
 }

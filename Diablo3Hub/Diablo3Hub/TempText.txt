@@ -516,3 +516,211 @@
   "dead" : false,
   "last-updated" : 1496923249
 }
+
+
+{
+    "id": "Unique_Bow_104_x1",
+    "name": "양의 만곡궁",
+    "icon": "unique_bow_104_x1_demonhunter_male",
+    "displayColor": "orange",
+    "tooltipParams": "item/CoUBCM3TgNoFEgcIBBV6DDF3HYBmXEYdnAYAyx2eT4PcHeRvzIQdyvq8oDCL3gI42gFAAFASWARg_QFqLAoMCAAQ4tHnpoKAgIAJEhwIyPCxrgoSBwgEFSotN6kwi9ICOABAAVgEkAEKgAFGpQGcBgDLrQEoEzfntQH8OlaDuAHCm53CBsABBxj0sYjzDlAAWAA",
+    "requiredLevel": 70,
+    "itemLevel": 70,
+    "stackSizeMax": 0,
+    "bonusAffixes": 0,
+    "bonusAffixesMax": 0,
+    "accountBound": true,
+    "flavorText": "시안사이 출신의 무서운 악마사냥꾼 양은 재치와 다발 사격 실력, 실패에 대한 차가운 경멸로 유명했습니다.",
+    "typeName": "고대 전설 활",
+    "type": {
+        "twoHanded": true,
+        "id": "Bow"
+    },
+    "damageRange": "무기 공격력 1590~2613",
+    "dps": {
+        "min": 2942.0299498975273,
+        "max": 2942.0299498975273
+    },
+    "attacksPerSecond": {
+        "min": 1.399999976158142,
+        "max": 1.399999976158142
+    },
+    "attacksPerSecondText": "초당 공격 횟수 1.40",
+    "minDamage": {
+        "min": 1590.0,
+        "max": 1590.0
+    },
+    "maxDamage": {
+        "min": 2612.9,
+        "max": 2612.9
+    },
+    "slots": ["left-hand", "follower-left-hand"],
+    "attributes": {
+        "primary": [{
+            "color": "blue",
+            "text": "무기 공격력 +1357~1650",
+            "affixType": "default"
+        }, {
+            "color": "blue",
+            "text": "피해 +6%",
+            "affixType": "default"
+        }, {
+            "color": "blue",
+            "text": "민첩 +888",
+            "affixType": "default"
+        }, {
+            "color": "blue",
+            "text": "적중 시 일정 확률로 23%의 광역 피해",
+            "affixType": "enchant"
+        }, {
+            "color": "blue",
+            "text": "모든 자원 소모량 44.0% 감소",
+            "affixType": "utility"
+        }],
+        "secondary": [{
+            "color": "blue",
+            "text": "최대 절제 +11 (악마사냥꾼 전용)",
+            "affixType": "utility"
+        }],
+        "passive": [{
+            "color": "orange",
+            "text": "다발 사격의 공격 속도 50% 증가",
+            "affixType": "default"
+        }]
+    },
+    "attributesRaw": {
+        "Damage_Weapon_Min#Physical": {
+            "min": 143.0,
+            "max": 143.0
+        },
+        "Damage_Weapon_Bonus_Delta_X1#Physical": {
+            "min": 293.0,
+            "max": 293.0
+        },
+        "Season": {
+            "min": 0.0,
+            "max": 0.0
+        },
+        "Item_Power_Passive#P3_ItemPassive_Unique_Ring_005": {
+            "min": 0.5,
+            "max": 0.5
+        },
+        "Durability_Cur": {
+            "min": 218.0,
+            "max": 218.0
+        },
+        "Post_2_1_2_Drop": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Damage_Weapon_Delta#Physical": {
+            "min": 672.0,
+            "max": 672.0
+        },
+        "Bow": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Post_2_5_0_Drop": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Sockets": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Item_LegendaryItem_Level_Override": {
+            "min": 70.0,
+            "max": 70.0
+        },
+        "ConsumableAddSockets": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Resource_Max_Bonus#Discipline": {
+            "min": 11.0,
+            "max": 11.0
+        },
+        "Damage_Weapon_Bonus_Min_X1#Physical": {
+            "min": 1357.0,
+            "max": 1357.0
+        },
+        "Attacks_Per_Second_Item": {
+            "min": 1.399999976158142,
+            "max": 1.399999976158142
+        },
+        "Ancient_Rank": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Splash_Damage_Effect_Percent": {
+            "min": 0.23,
+            "max": 0.23
+        },
+        "Resource_Cost_Reduction_Percent_All": {
+            "min": 0.43999999999999995,
+            "max": 0.43999999999999995
+        },
+        "Durability_Max": {
+            "min": 253.0,
+            "max": 253.0
+        },
+        "Item_Binding_Level_Override": {
+            "min": 2.0,
+            "max": 2.0
+        },
+        "Item_Legendary_Item_Base_Item": {
+            "min": -2.091500804E9,
+            "max": -2.091500804E9
+        },
+        "Damage_Weapon_Percent_All": {
+            "min": 0.06,
+            "max": 0.06
+        },
+        "Dexterity_Item": {
+            "min": 888.0,
+            "max": 888.0
+        },
+        "Loot_2_0_Drop": {
+            "min": 1.0,
+            "max": 1.0
+        },
+        "Post_2_1_2_Drop": {
+            "min": 1.0,
+            "max": 1.0
+        }
+    },
+    "randomAffixes": [],
+    "gems": [{
+        "item": {
+            "id": "x1_Emerald_09",
+            "name": "왕실 에메랄드",
+            "icon": "x1_emerald_09_demonhunter_male",
+            "displayColor": "blue",
+            "tooltipParams": "item/ChwIyPCxrgoSBwgEFSotN6kwi9ICOABAAVgEkAEKGKvLxuwK"
+        },
+        "isGem": true,
+        "isJewel": false,
+        "attributes": {
+            "primary": [{
+                "color": "blue",
+                "text": "극대화 피해 120.0% 증가",
+                "affixType": "default"
+            }],
+            "secondary": [],
+            "passive": []
+        },
+        "attributesRaw": {
+            "Crit_Damage_Percent": {
+                "min": 1.2,
+                "max": 1.2
+            }
+        }
+    }],
+    "socketEffects": [],
+    "craftedBy": [],
+    "seasonRequiredToDrop": -1,
+    "isSeasonRequiredToDrop": false,
+    "description": null,
+    "blockChance": "방패막기 확률 +0.0%"
+}

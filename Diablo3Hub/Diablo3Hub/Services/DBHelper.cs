@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Diablo3Hub.Models;
 using SQLite;
-using System.Collections;
 
 namespace Diablo3Hub.Services
 {
@@ -17,14 +14,15 @@ namespace Diablo3Hub.Services
         private bool _initDb;
 
         /// <summary>
-        /// 인스턴스
+        ///     인스턴스
         /// </summary>
         public static DBHelper Instance
         {
             get { return _instance = _instance ?? new DBHelper(); }
         }
+
         /// <summary>
-        /// DB 초기화
+        ///     DB 초기화
         /// </summary>
         /// <returns></returns>
         public async Task InitAsync()
@@ -34,10 +32,13 @@ namespace Diablo3Hub.Services
             await conn.CreateTableAsync<BattleTag>();
             //즐겨찾기 히어로 테이블
             await conn.CreateTableAsync<FavoriteHero>();
+            //API 캐쉬 테이블 생성
+            await conn.CreateTableAsync<ApiCacheData>();
             _initDb = true;
         }
+
         /// <summary>
-        /// 배틀테그 테이블 반환
+        ///     배틀테그 테이블 반환
         /// </summary>
         /// <returns></returns>
         public AsyncTableQuery<BattleTag> BattleTagTable()
@@ -50,7 +51,10 @@ namespace Diablo3Hub.Services
             var conn = new SQLiteAsyncConnection(DB_NAME);
             return conn.Table<BattleTag>();
         }
-
+        /// <summary>
+        /// 즐겨찾기 히어로
+        /// </summary>
+        /// <returns></returns>
         public AsyncTableQuery<FavoriteHero> FavoriteHeroTable()
         {
             if (!_initDb)
@@ -61,8 +65,20 @@ namespace Diablo3Hub.Services
             var conn = new SQLiteAsyncConnection(DB_NAME);
             return conn.Table<FavoriteHero>();
         }
+
+        public AsyncTableQuery<ApiCacheData> ApiCacheTable()
+        {
+            if (!_initDb)
+            {
+                Debug.WriteLine("Init first!");
+                return null;
+            }
+            var conn = new SQLiteAsyncConnection(DB_NAME);
+            return conn.Table<ApiCacheData>();
+        }
+
         /// <summary>
-        /// 아이템 추가
+        ///     아이템 추가
         /// </summary>
         /// <param name="addItem"></param>
         /// <returns></returns>
@@ -72,8 +88,9 @@ namespace Diablo3Hub.Services
             var result = await conn.InsertAsync(addItem);
             return result;
         }
+
         /// <summary>
-        /// 아이템 업데이트
+        ///     아이템 업데이트
         /// </summary>
         /// <param name="updateItem"></param>
         /// <returns></returns>
@@ -83,8 +100,9 @@ namespace Diablo3Hub.Services
             var result = await conn.UpdateAsync(updateItem);
             return result;
         }
+
         /// <summary>
-        /// 아이템 삭제
+        ///     아이템 삭제
         /// </summary>
         /// <param name="deleteItem"></param>
         /// <returns></returns>
@@ -96,7 +114,7 @@ namespace Diablo3Hub.Services
         }
 
         /// <summary>
-        /// Battle Tag 아이템 여러개 삭제
+        ///     Battle Tag 아이템 여러개 삭제
         /// </summary>
         public async Task<int> DeleteTagItemsAsync(IList<BattleTag> items)
         {
@@ -109,6 +127,5 @@ namespace Diablo3Hub.Services
             var result = await conn.ExecuteAsync(quryStr);
             return result;
         }
-
     }
 }

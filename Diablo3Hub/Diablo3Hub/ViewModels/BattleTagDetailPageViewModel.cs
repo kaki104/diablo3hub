@@ -61,6 +61,15 @@ namespace Diablo3Hub.ViewModels
             });
         }
 
+        public override Task OnNavigatedFromAsync(IDictionary<string, object> pageState, bool suspending)
+        {
+            ////다른 페이지로 네비게이션 되기전에 중요 데이터 저장
+            //var serialHeroProfile = JsonConvert.SerializeObject(CurrentBattleTag);
+            //pageState.Add("CurrentBattleTag", serialHeroProfile);
+
+            return base.OnNavigatedFromAsync(pageState, suspending);
+        }
+
         /// <summary>
         ///     네비게이션
         /// </summary>
@@ -78,27 +87,23 @@ namespace Diablo3Hub.ViewModels
             {
                 //네비게이션 백
             }
+
+            Busy.SetBusy(true, "Please wait...");
+            //평범한 네비게이션
+            var result = await ApiHelper.Instance.GetCareerProfileAsync(battleTag.Tag);
+            if (result == null) goto ExitRtn;
+            if (string.IsNullOrEmpty(result.BattleTag))
+            {
+                //배틀테그를 찾을 수 없었을 때
+                //배틀테그를 찾을 수 없다는 메시지 출력하고 CurrentBattleTag = null로 입력
+            }
             else
             {
-                Busy.SetBusy(true, "Please wait...");
-                //평범한 네비게이션
-                var result = await ApiHelper.Instance.GetCareerProfileAsync(battleTag.Tag);
-                if (result == null) goto ExitRtn;
-                if (string.IsNullOrEmpty(result.BattleTag))
-                {
-                    //배틀테그를 찾을 수 없었을 때
-                    //배틀테그를 찾을 수 없다는 메시지 출력하고 CurrentBattleTag = null로 입력
-                }
-                else
-                {
-                    //제대로된 배틀테그라면..
-                    CurrentBattleTag = result;
-                }
-
-
-                ExitRtn:
-                Busy.SetBusy(false);
+                //제대로된 배틀테그라면..
+                CurrentBattleTag = result;
             }
+            ExitRtn:
+            Busy.SetBusy(false);
         }
     }
 }
