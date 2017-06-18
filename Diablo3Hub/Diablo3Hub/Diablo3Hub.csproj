@@ -155,7 +155,7 @@
     <Content Include="DesignDatas\witch-doctor-male.jpg" />
     <Content Include="DesignDatas\wizard-female.jpg" />
     <Content Include="DesignDatas\wizard-male.jpg" />
-    <Content Include="TempText.txt" />
+    <Content Include="카키디.txt" />
     <None Include="..\..\README.md">
       <Link>README.md</Link>
     </None>

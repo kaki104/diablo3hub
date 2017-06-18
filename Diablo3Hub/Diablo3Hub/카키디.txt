@@ -1,0 +1,3268 @@
+﻿            //SeasonalProfiles = new Seasonalprofiles
+            //{
+            //    Season0 = new Season
+            //    {
+            //        SeasonId = 0,
+            //        ParagonLevel = 264,
+            //        ParagonLevelHardcore = 0,
+            //        Kills = { Monsters = 1184577, Elites = 51163 },
+            //        TimePlayed =
+            //        {
+            //            Barbarian = 1.0f,
+            //            Crusader = 0.479f,
+            //            Demonhunter = 0.93f,
+            //            Monk = 0.089f,
+            //            Witchdoctor = 0.133f,
+            //            Wizard = 0.8f
+            //        },
+            //        HighestHardcoreLevel = 0,
+            //        Progression = { Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false }
+            //    },
+            //    Season10 = new Season
+            //    {
+            //        SeasonId = 10,
+            //        ParagonLevel = 826,
+            //        ParagonLevelHardcore = 0,
+            //        Kills = { Monsters = 351582, Elites = 17591 },
+            //        TimePlayed =
+            //        {
+            //            Barbarian = 0f,
+            //            Crusader = 1.0f,
+            //            Demonhunter = 0.628f,
+            //            Monk = 0f,
+            //            Witchdoctor = 0.008f,
+            //            Wizard = 0f
+            //        },
+            //        HighestHardcoreLevel = 0,
+            //        Progression = { Act1 = true, Act2 = true, Act3 = true, Act4 = true, Act5 = false }
+            //    }
+            //}
+
+
+
+{
+  "id" : 62681397,
+  "name" : "카키디",
+  "class" : "demon-hunter",
+  "gender" : 0,
+  "level" : 70,
+  "kills" : {
+    "elites" : 8495
+  },
+  "paragonLevel" : 832,
+  "hardcore" : false,
+  "seasonal" : true,
+  "seasonCreated" : 10,
+  "skills" : {
+    "active" : [ {
+      "skill" : {
+        "slug" : "marked-for-death",
+        "name" : "죽음의 표식",
+        "icon" : "demonhunter_markedfordeath",
+        "level" : 21,
+        "categorySlug" : "hunting",
+        "tooltipUrl" : "skill/demon-hunter/marked-for-death",
+        "description" : "소모: 절제 3\r\n\r\n적에게 죽음의 표식을 남깁니다. 표식의 대상은 30초 동안 추가 피해를 15% 받습니다.",
+        "simpleDescription" : "소모: 절제 3\r\n\r\n적에게 표식을 남겨 추가 피해를 받게 합니다.",
+        "skillCalcId" : "j"
+      },
+      "rune" : {
+        "slug" : "marked-for-death-a",
+        "type" : "a",
+        "name" : "사신의 낫",
+        "level" : 39,
+        "description" : "표식이 붙은 적에게 주는 피해의 15%를 20미터 내의 모든 적에게도 나누어 줍니다.",
+        "simpleDescription" : "표식이 붙은 적에게 주는 피해의 일부를 근처의 적에게도 나누어 줍니다.",
+        "tooltipParams" : "rune/marked-for-death/a",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    }, {
+      "skill" : {
+        "slug" : "impale",
+        "name" : "투검",
+        "icon" : "demonhunter_impale",
+        "level" : 2,
+        "categorySlug" : "secondary",
+        "tooltipUrl" : "skill/demon-hunter/impale",
+        "description" : "소모: 증오 20\r\n\r\n대상을 꿰뚫는 칼을 던져 무기 공격력의 750%만큼 피해를 줍니다.",
+        "simpleDescription" : "소모: 증오 20\r\n\r\n적을 꿰뚫는 칼을 던집니다.",
+        "skillCalcId" : "Z"
+      },
+      "rune" : {
+        "slug" : "impale-d",
+        "type" : "d",
+        "name" : "튕기기",
+        "level" : 53,
+        "description" : "칼이 서로 20미터 내에 있는 적 2마리 사이를 추가로 오가며 피해를 줍니다.\r\n\r\n투검으로 주는 피해가 번개 피해로 바뀝니다.",
+        "simpleDescription" : "칼이 근처의 적 사이를 추가로 오가며 피해를 줍니다.",
+        "tooltipParams" : "rune/impale/d",
+        "skillCalcId" : "Y",
+        "order" : 3
+      }
+    }, {
+      "skill" : {
+        "slug" : "vault",
+        "name" : "도약",
+        "icon" : "demonhunter_vault",
+        "level" : 9,
+        "categorySlug" : "hunting",
+        "tooltipUrl" : "skill/demon-hunter/vault",
+        "description" : "소모: 절제 8\r\n\r\n공중제비를 넘으며 35미터 이동합니다.",
+        "simpleDescription" : "소모: 절제 8\r\n\r\n공중제비를 넘어 적의 공격을 피합니다.",
+        "skillCalcId" : "d"
+      },
+      "rune" : {
+        "slug" : "vault-d",
+        "type" : "d",
+        "name" : "이중 도약",
+        "level" : 33,
+        "description" : "도약을 사용한 후 6초 내에 또 도약을 사용할 때 소모되는 절제가 50% 감소합니다.",
+        "simpleDescription" : "착지 후 바로 도약을 사용할 때 소모되는 절제가 감소합니다.",
+        "tooltipParams" : "rune/vault/d",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    }, {
+      "skill" : {
+        "slug" : "vengeance",
+        "name" : "복수",
+        "icon" : "x1_demonhunter_vengeance",
+        "level" : 61,
+        "categorySlug" : "devices",
+        "tooltipUrl" : "skill/demon-hunter/vengeance",
+        "description" : "재사용 대기시간: 90초\r\n\r\n20초 동안 불타는 복수의 화신이 됩니다.\r\n\r\n 이중 사격: 공격할 때마다 무기 공격력의 60%만큼 피해를 주는 4발의 관통 화살을 발사합니다.\r\n 유도탄: 공격할 때마다 무기 공격력의 80%만큼 피해를 주는 2발의 유도탄을 발사합니다.\r\n 복수: 공격력이 40% 증가합니다.",
+        "simpleDescription" : "재사용 대기시간: 90초\r\n\r\n20초 동안 불타는 복수의 화신이 됩니다.",
+        "skillCalcId" : "O"
+      },
+      "rune" : {
+        "slug" : "vengeance-a",
+        "type" : "a",
+        "name" : "어둠 속에서",
+        "level" : 69,
+        "description" : "유도탄을 쏘는 대신 어둠 속에서 동료들을 불러냅니다. 동료들은 적에게 무기 공격력의 120%만큼 냉기 피해를 주고 3초 동안 빙결시킵니다.",
+        "simpleDescription" : "유도탄을 쏘는 대신 어둠 속에서 동료들을 불러냅니다. 동료들은 적을 공격하고 빙결시킵니다.",
+        "tooltipParams" : "rune/vengeance/a",
+        "skillCalcId" : "c",
+        "order" : 4
+      }
+    }, {
+      "skill" : {
+        "slug" : "companion",
+        "name" : "동료",
+        "icon" : "x1_demonhunter_companion",
+        "level" : 17,
+        "categorySlug" : "hunting",
+        "tooltipUrl" : "skill/demon-hunter/companion",
+        "description" : "재사용 대기시간: 30초\r\n\r\n사용 효과: 큰까마귀의 다음 공격은 추가 피해를 500% 줍니다.\r\n\r\n지속 효과: 전투를 도와줄 큰까마귀를 소환합니다. 큰까마귀는 주기적으로 적을 쪼아 무기 공격력의 100%만큼 물리 피해를 줍니다.",
+        "simpleDescription" : "재사용 대기시간: 30초\r\n\r\n사용 효과: 큰까마귀의 다음 공격이 추가 피해를 줍니다.\r\n\r\n지속 효과: 어둠 속에서 큰까마귀를 소환합니다.",
+        "skillCalcId" : "S"
+      },
+      "rune" : {
+        "slug" : "companion-c",
+        "type" : "c",
+        "name" : "늑대 동료",
+        "level" : 59,
+        "description" : "사용 효과: 늑대가 울부짖어 10초 동안 당신과 60미터 내에 있는 아군의 공격력을 15% 증가시킵니다.\r\n\r\n지속 효과: 큰까마귀 대신 늑대를 불러냅니다. 늑대는 전방의 적들을 공격해 무기 공격력의 100%만큼 물리 피해를 줍니다.",
+        "simpleDescription" : "사용 효과: 늑대가 울부짖어 짧은 시간 동안 당신과 아군의 공격력을 증가시킵니다.\r\n\r\n지속 효과: 함께 싸우는 늑대 동료를 불러냅니다.",
+        "tooltipParams" : "rune/companion/c",
+        "skillCalcId" : "c",
+        "order" : 4
+      }
+    }, {
+      "skill" : {
+        "slug" : "shadow-power",
+        "name" : "어둠의 힘",
+        "icon" : "demonhunter_shadowpower",
+        "level" : 16,
+        "categorySlug" : "defensive",
+        "tooltipUrl" : "skill/demon-hunter/shadow-power",
+        "description" : "소모: 절제 14\r\n\r\n어둠의 힘을 이끌어내, 적중당 생명력 회복량을 5초 동안 26821 증가시킵니다.\r\n\r\n적중당 생명력 회복량 증가량은 처치 시 생명력 회복량의 25%만큼 증가합니다.",
+        "simpleDescription" : "소모: 절제 14\r\n\r\n5초 동안, 적에게 주는 피해의 일부만큼 생명력을 회복합니다.",
+        "skillCalcId" : "T"
+      },
+      "rune" : {
+        "slug" : "shadow-power-b",
+        "type" : "b",
+        "name" : "그림자 밟기",
+        "level" : 58,
+        "description" : "어둠의 힘이 활성화되어 있는 동안 이동 속도가 30% 증가합니다.",
+        "simpleDescription" : "어둠의 힘이 활성화되어 있는 동안 이동 속도가 증가합니다.",
+        "tooltipParams" : "rune/shadow-power/b",
+        "skillCalcId" : "c",
+        "order" : 4
+      }
+    } ],
+    "passive" : [ {
+      "skill" : {
+        "slug" : "awareness",
+        "name" : "기민함",
+        "icon" : "x1_demonhunter_passive_awareness",
+        "level" : 66,
+        "tooltipUrl" : "skill/demon-hunter/awareness",
+        "description" : "죽음에 달하는 피해를 받으면, 2초 동안 모습을 감추고 최대 생명력의 50%만큼 생명력을 회복합니다.\r\n\r\n이 효과는 60초에 한 번만 발동됩니다.",
+        "flavor" : "\"모든 것은 시험이다. 주변을 잘 파악하는 것만으로도 합격은 문제 없다. \" - 사냥의 대가 조센",
+        "skillCalcId" : "R"
+      }
+    }, {
+      "skill" : {
+        "slug" : "cull-the-weak",
+        "name" : "약자 도태",
+        "icon" : "demonhunter_passive_culltheweak",
+        "level" : 20,
+        "tooltipUrl" : "skill/demon-hunter/cull-the-weak",
+        "description" : "이동 속도가 감소한 적이나 오한을 느끼는 적에게 주는 피해가 20% 증가합니다.",
+        "flavor" : "\"무력한 우리 가족에게 네가 베푼 자비를 그대로 되돌려 주지.\" - 타일라 슈라이크윙",
+        "skillCalcId" : "c"
+      }
+    }, {
+      "skill" : {
+        "slug" : "thrill-of-the-hunt",
+        "name" : "사냥의 전율",
+        "icon" : "demonhunter_passive_thrillofthehunt",
+        "level" : 10,
+        "tooltipUrl" : "skill/demon-hunter/thrill-of-the-hunt",
+        "description" : "증오 소모 기술에 적중당한 적의 이동 속도가 2초 동안 80% 감소합니다.",
+        "flavor" : "\"처음 셋은 쓰러지기도 전에 죽었소. 나머지는 그렇게 운이 좋지 않았지.\" - 대장 럼퍼드",
+        "skillCalcId" : "a"
+      }
+    }, {
+      "skill" : {
+        "slug" : "ambush",
+        "name" : "매복",
+        "icon" : "x1_demonhunter_passive_ambush",
+        "level" : 64,
+        "tooltipUrl" : "skill/demon-hunter/ambush",
+        "description" : "생명력이 75% 이상인 적을 공격할 때 공격력이 40% 증가합니다.",
+        "flavor" : "\"기습의 진수는 습득하기 어렵지만, 그 노력은 톡톡히 보상 받는다.\" - 악마사냥꾼 민턴",
+        "skillCalcId" : "i"
+      }
+    } ]
+  },
+  "items" : {
+    "mainHand" : {
+      "id" : "Unique_Dagger_101_x1",
+      "name" : "카를레이의 주장",
+      "icon" : "unique_dagger_101_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CowBCKmp1OgGEgcIBBUZHEbIHRtdz0Qdnk-D3B2cBgDLHdzx9mQdyvq8oDCL3gI47AJAAFASWARg8QJqLAoMCAAQjamLxYOAgOAPEhwIyv_2pA8SBwgEFUItN6kwj9ICOABAAVgEkAEKgAFGpQGcBgDLrQEWmWc7tQG-gk-yuAGlqaCqB8ABBoACAogClAEYzY_P-wZQAFgA"
+    },
+    "offHand" : {
+      "id" : "P5_Unique_Quiver_004_x1",
+      "name" : "성스러운 살상",
+      "icon" : "p5_unique_quiver_004_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CmMIr4S8hA4SBwgEFdEoE1EdQA1VCx3K-rygHZwGAMsdXO-sPB2AZlxGHdxVUcEwi9oCONoCQABQElgEYN8CgAFGpQFc76w8rQF-VrMutQFU6r5buAHA5aW0BcABFIACAogCjgEYoqOZkQpQAFgA"
+    },
+    "waist" : {
+      "id" : "P4_Unique_Belt_01",
+      "name" : "어둠의 굴레",
+      "icon" : "p4_unique_belt_01_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClcIyo_nuAsSBwgEFYDGMFgdtE-Jbh3egvzlHYyBXYUdhAOh1h0yicdaMIvaAjiBA0AAUBJYBGCGA4ABRqUBjIFdha0BZz7s5LUBwKdC1LgB48HhswvAAQYYgJqGgwtQAFgA"
+    },
+    "rightFinger" : {
+      "id" : "P2_Unique_Ring_04",
+      "name" : "원소의 회동",
+      "icon" : "p2_unique_ring_04_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CosBCLHgoNgIEgcIBBVq-dsYHfPVR7Qdi_F6Qh1mIwZQHeYV2w0d8dNq1TCL0gI4_AJAAFASWARggQNqMgoMCAAQ0fCXq4mAgOAeEiII8uKHuwwSBwgEFYdZoMEwi9ICOABAAFASWASQAQrYAZYBgAFGpQGL8XpCrQGYp47AtQE2VV1EuAHYnb-ZAsABTBjU5d-NA1AAWAA"
+    },
+    "leftFinger" : {
+      "id" : "Unique_Ring_013_x1",
+      "name" : "나침도",
+      "icon" : "unique_ring_013_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CpABCNPO_o0BEgcIBBWBVjW5HXKOHSEdZiMGUB0gjTdUHeYV2w0d6-LkBR3x02rVMIvSAjj-AUAAUBJYBGCDAmoyCgwIABC46eGMjYCAwDwSIgi75o68BBIHCAQV6OWgwTCL0gI4AEAAUBJYBJABCtgBogGAAUalASCNN1StAZinjsC1ATZVXUS4AbDUurILwAEVGP2l1ewIUABYAKAB_aXV7AigAbrc07AL",
+      "setItemsEquipped" : [ "Unique_Ring_013_x1", "Unique_Amulet_008_x1" ]
+    },
+    "neck" : {
+      "id" : "Unique_Amulet_008_x1",
+      "name" : "모험가의 서약",
+      "icon" : "unique_amulet_008_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CpABCPu2oJENEgcIBBUddwpbHbHk6hEdrNOZOR2L8XpCHX5Wsy4dsMEJch3J-rygMIvSAji-AkAAUBJYBGDDAmoyCgwIABC0yIvFg4CA4A8SIgiGrO_ODRIHCAQVLjCkwTCL0gI4AEAAUBJYBJABCtgBoAGAAUalAcn6vKCtAWYjBlC1AbDFRGS4Aay-kcUHwAEHGLrc07ALUABYAKAB_aXV7AigAbrc07AL",
+      "setItemsEquipped" : [ "Unique_Ring_013_x1", "Unique_Amulet_008_x1" ]
+    },
+    "torso" : {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CuYBCJ_mjcUBEgcIBBVEd4APHWU61OAdcYt38B1DTkRRHRfvmm4dcyMGUB3x02rVMIvSAjj6AUAAUBJYBGD_AWosCgwIABDQupjKg4CA4A8SHAiY3ueABRIHCAQVpL4cwjCL0gI4AEABWASQAQpqLAoMCAAQubqYyoOAgOAPEhwI_ryJuQgSBwgEFaS-HMIwi9ICOABAAVgEkAEKaiwKDAgAELjm6dGGgICgLxIcCLqajLoMEgcIBBWkvhzCMIvSAjgAQAFYBJABCoABRqUBF--abq0BOydvJLUBMSIZYLgBkZaYsAnAARUYiN2D-AFQAFgAoAGZzt7rDqAB2c_u4A6gAdfvwvsFoAGI3YP4AaABptHrlAagAfqOkawP",
+      "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "feet" : {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClsI_bX12AMSBwgEFRSkR9Ad08wHYx0_8gnYHd6C_OUdXIlRdh2EA6HWHTKJx1owi9oCOP0CQABQElgEYP0CgAFGpQFciVF2rQGrDwKHtQGgRZt_uAGx9Zt7wAEBGNfvwvsFUABYAKABmc7e6w6gAdnP7uAOoAHX78L7BaABiN2D-AGgAabR65QGoAH6jpGsDw",
+      "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "hands" : {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClsI7pzFHBIHCAQVvSPCeh0_8gnYHfPVR7QddEWniR1-dlWhHX5Wsy4dyfq8oDCL0gI43QJAAFASWARg4gKAAUalAXRFp4mtAZinjsC1AclbkqS4Adm4zOYKwAEMGPqOkawPUABYAKABmc7e6w6gAdnP7uAOoAHX78L7BaABiN2D-AGgAabR65QGoAH6jpGsDw",
+      "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "shoulders" : {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClwInKfQ4g8SBwgEFRMs8okdcYt38B1yjh0hHbi8IHodQ05EUR07J28kHfHTatUwi9ICOKMDQABQElgEYKgDgAFGpQFyjh0hrQGs05k5tQHS-MgVuAHHmLq4B8ABBhjZz-7gDlAAWACgAZnO3usOoAHZz-7gDqAB1-_C-wWgAYjdg_gBoAGm0euUBqAB-o6RrA8",
+      "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "legs" : {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CrgBCKPnp7wNEgcIBBVTdE0xHfHTatUdj5DKUB3FRGRTHTsnbyQdP_IJ2B1xi3fwMIvSAjiWA0AAUBJYBGCbA2osCgwIABCt5unRhoCAoC8SHAjlteDRCRIHCAQVpL4cwjCL0gI4AEABWASQAQpqLAoMCAAQuuXp0YaAgKAvEhwI2YiS2AkSBwgEFaS-HMIwi9ICOABAAVgEkAEKgAFGpQHFRGRTrQFDTkRRtQGfktWluAHwo5_eDMABCRim0euUBlAAWACgAZnO3usOoAHZz-7gDqAB1-_C-wWgAYjdg_gBoAGm0euUBqAB-o6RrA8",
+      "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    },
+    "bracers" : {
+      "id" : "Unique_Bracer_106_x1",
+      "name" : "천벌의 손목 방어구",
+      "icon" : "unique_bracer_106_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClcI3cKbiAUSBwgEFWN2XTkdOLLA1R0gjTdUHT51eQUdOnXajB3x02rVMIvSAjjAAkAAUBJYBGDFAoABRqUBOnXajK0B5hXbDbUB2yzKy7gBndetiAXAARIYxtnrlQdQAFgA"
+    },
+    "head" : {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CooBCLSl2aQLEgcIBBVzLESJHay801MdOLLA1R3qmxzaHZsGAMsdZiMGUB3J-rygMIvSAjizAkAAUBJYBGC4AmosCgwIABC6upjKg4CA4A8SHAicp57cChIHCAQVpL4cwjCL0gI4AEABWASQAQqAAUalAeqbHNqtAeYV2w21AX_5Tl24AZ22ztQJwAEPGJnO3usOUABYAKABmc7e6w6gAdnP7uAOoAHX78L7BaABiN2D-AGgAabR65QGoAH6jpGsDw",
+      "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ]
+    }
+  },
+  "followers" : {
+    "enchantress" : {
+      "slug" : "enchantress",
+      "level" : 70,
+      "items" : {
+        "mainHand" : {
+          "id" : "Unique_Sword_1H_101_x1",
+          "name" : "우레폭풍 - 바람추적자의 성검",
+          "icon" : "unique_sword_1h_101_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CoUBCL6cnugFEgcIBBVWt3pQHXKOHSEdmwYAyx1mIwZQHY9Y1h4d83AHrTCL0gI47wFAAFASWARgigJqLAoMCAAQ-tiX9YKAgKAoEhwIrKK02woSBwgEFUItN6kwj9ICOABAAVgEkAEKgAFGpQGbBgDLrQEWmWc7tQGb2dnvuAGj87P8AcABDxis3dWHCg"
+        },
+        "rightFinger" : {
+          "id" : "Unique_Ring_102_p2",
+          "name" : "운명막이",
+          "icon" : "unique_ring_102_p2_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CooBCNCc1KoIEgcIBBU52Xe7HfPVR7QdmKeOwB3mFdsNHRAvyiodqSA2ujCL0gI4vANAAFASWARgvANqMQoMCAAQ6vT-5Y2AgMA-EiEIhe7EzwUSBwgEFQuLosEwi9ICOABAAFASWASQAQrYATKAAUalAakgNrqtAWYjBlC1ATZVXUS4AfrJgJENwAEEGI2bwcgI"
+        },
+        "leftFinger" : {
+          "id" : "Unique_Ring_017_p4",
+          "name" : "눈동자 반지",
+          "icon" : "unique_ring_017_p4_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CokBCMy9i8gNEgcIBBUAhze5HUV7xt0d8dNq1R2Yp47AHUNORFEdZiMGUDCL0gI4ggJAAFASWARgmAJqMAoMCAAQv8r55oGAgMASEiAIpvGVERIHCAQVqv6hwTCL0gI4AEAAUBJYBJABCtgBMoABRqUBQ05EUa0B5hXbDbUBNlVdRLgB8rHQ6gHAAQMY_-PD7Ag"
+        },
+        "neck" : {
+          "id" : "Unique_Amulet_104_x1",
+          "name" : "요한의 정수",
+          "icon" : "unique_amulet_104_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CooBCJ-Ul7kDEgcIBBU6bl1dHfPVR7QdfnZVoR1qSWnqHbi8IHodyfq8oDCL0gI45wJAAFASWARg5wJqMQoMCAAQrfXp0YaAgKAvEiEIx_Ln3QESBwgEFWn-ssEwi9ICOABAAFASWASQAQrYAQqAAUalAcn6vKCtAWYjBlC1AbDFRGS4AZHavvwLwAEGGPS469UL"
+        },
+        "special" : {
+          "id" : "x1_FollowerItem_Enchantress_Legendary_01",
+          "name" : "연기나는 향로",
+          "icon" : "x1_followeritem_enchantress_legendary_01_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkEIjP6K8AcSBwgEFfgkI-Udco4dIR1qSWnqHZsGAMsdOydvJB3zcAetMIvSAjjIAkAAUBJYBGDIAoABRrUBNaNiLRiP7OatAw"
+        }
+      },
+      "stats" : {
+        "experienceBonus" : 68,
+        "goldFind" : 0,
+        "magicFind" : 0
+      },
+      "skills" : [ {
+        "skill" : {
+          "slug" : "charm",
+          "name" : "매혹",
+          "icon" : "enchantress_charm",
+          "level" : 15,
+          "tooltipUrl" : "skill/enchantress/charm",
+          "description" : "재사용 대기시간: 18초\r\n\r\n적을 매혹시켜 8초 동안 플레이어를 위해 싸우게 합니다.",
+          "simpleDescription" : "재사용 대기시간: 18초\r\n\r\n일시적으로 적을 매혹시켜 영웅을 위해 싸우게 합니다.",
+          "skillCalcId" : "a"
+        }
+      }, {
+        "skill" : {
+          "slug" : "missile-ward",
+          "name" : "투사체 감시",
+          "icon" : "enchantress_missileward",
+          "level" : 20,
+          "tooltipUrl" : "skill/enchantress/missile-ward",
+          "description" : "플레이어와 요술사가 이로운 효과를 받아 원거리 공격으로 받는 피해가 6% 감소합니다.",
+          "simpleDescription" : "플레이어와 요술사가 원거리 공격으로 받는 피해가 감소합니다.",
+          "skillCalcId" : "b"
+        }
+      }, {
+        "skill" : {
+          "slug" : "erosion",
+          "name" : "침식",
+          "icon" : "enchantress_scorchedearth",
+          "level" : 25,
+          "tooltipUrl" : "skill/enchantress/erosion",
+          "description" : "재사용 대기시간: 15초\r\n\r\n마력으로 땅을 뒤덮어 5초에 걸쳐 무기 공격력의 330%만큼 비전 피해를 줍니다. 영향을 받은 적은 추가 피해를 3% 받습니다.",
+          "simpleDescription" : "재사용 대기시간: 15초\r\n\r\n마력으로 땅을 뒤덮어 피해를 줍니다. 영향을 받은 적은 추가 피해를 받습니다.\r\n",
+          "skillCalcId" : "X"
+        }
+      }, {
+        "skill" : {
+          "slug" : "focused-mind",
+          "name" : "정신 집중",
+          "icon" : "enchantress_focusedmind",
+          "level" : 30,
+          "tooltipUrl" : "skill/enchantress/focused-mind",
+          "description" : "40미터의 오라가 생겨 플레이어와 요술사의 공격 속도가 3% 증가합니다.",
+          "simpleDescription" : "오라가 생겨 플레이어와 요술사의 공격 속도가 증가합니다.",
+          "skillCalcId" : "d"
+        }
+      } ]
+    }
+  },
+  "legendaryPowers" : [ {
+    "id" : "P4_Unique_HandXBow_001",
+    "name" : "새벽",
+    "icon" : "p4_unique_handxbow_001_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/dawn"
+  }, {
+    "id" : "P4_Unique_Chest_012",
+    "name" : "독수리 흉갑",
+    "icon" : "p4_unique_chest_012_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/aquila-cuirass"
+  }, {
+    "id" : "P4_Unique_Ring_02",
+    "name" : "종잡을 수 없는 반지",
+    "icon" : "p4_unique_ring_02_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/elusive-ring"
+  } ],
+  "stats" : {
+    "life" : 500958,
+    "damage" : 1213400.0,
+    "toughness" : 1.88541E7,
+    "healing" : 932942.0,
+    "attackSpeed" : 1.605,
+    "armor" : 13068,
+    "strength" : 77,
+    "dexterity" : 8016,
+    "vitality" : 5008,
+    "intelligence" : 77,
+    "physicalResist" : 1225,
+    "fireResist" : 923,
+    "coldResist" : 923,
+    "lightningResist" : 923,
+    "poisonResist" : 1208,
+    "arcaneResist" : 923,
+    "critDamage" : 5.11,
+    "damageIncrease" : 0.0,
+    "critChance" : 0.56000000075,
+    "damageReduction" : 0.0,
+    "lifeSteal" : 0.0,
+    "lifePerKill" : 14076.0,
+    "goldFind" : 1.0099999999999998,
+    "magicFind" : 0.0,
+    "thorns" : 2739.0,
+    "blockChance" : 0.0,
+    "blockAmountMin" : 0,
+    "blockAmountMax" : 0,
+    "lifeOnHit" : 0.0,
+    "primaryResource" : 125,
+    "secondaryResource" : 42
+  },
+  "progression" : {
+    "act1" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act2" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act3" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act4" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act5" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    }
+  },
+  "dead" : false,
+  "last-updated" : 1495966639
+}
+
+{
+  "id" : "Unique_Dagger_101_x1",
+  "name" : "카를레이의 주장",
+  "icon" : "unique_dagger_101_x1_demonhunter_male",
+  "displayColor" : "orange",
+  "tooltipParams" : "item/CowBCKmp1OgGEgcIBBUZHEbIHRtdz0Qdnk-D3B2cBgDLHdzx9mQdyvq8oDCL3gI47AJAAFASWARg8QJqLAoMCAAQjamLxYOAgOAPEhwIyv_2pA8SBwgEFUItN6kwj9ICOABAAVgEkAEKgAFGpQGcBgDLrQEWmWc7tQG-gk-yuAGlqaCqB8ABBoACAogClAEYzY_P-wZQAFgA",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "악마사냥꾼 카를레이와 말다툼을 하는 사람은, 그녀가 기가 막힐 만큼 주장을 확실히 관철시키는 사람이라는 사실을 곧바로 깨닫기 마련이었습니다.",
+  "typeName" : "고대 전설 단도",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Dagger"
+  },
+  "damageRange" : "무기 공격력 1432~2004",
+  "dps" : {
+    "min" : 2757.8073000000004,
+    "max" : 2757.8073000000004
+  },
+  "attacksPerSecond" : {
+    "min" : 1.605,
+    "max" : 1.605
+  },
+  "attacksPerSecondText" : "초당 공격 횟수 1.61",
+  "minDamage" : {
+    "min" : 113.42,
+    "max" : 113.42
+  },
+  "maxDamage" : {
+    "min" : 340.26,
+    "max" : 340.26
+  },
+  "elementalType" : "cold",
+  "slots" : [ "left-hand", "follower-left-hand", "right-hand", "follower-right-hand" ],
+  "augmentation" : "민첩 +370 (칼데산의 절망 74등급)",
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "냉기 무기 공격력 +1244~1570",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "피해 +6%",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "민첩 +887",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "공격 속도 7% 증가",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "적을 처치하고 얻는 경험치 +248",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ {
+      "color" : "orange",
+      "text" : "이미 투검이 적중한 적에게 투검이 적중하면 15의 증오가 반환됨",
+      "affixType" : "default"
+    } ]
+  },
+  "attributesRaw" : {
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Damage_Weapon_Percent_All" : {
+      "min" : 0.06,
+      "max" : 0.06
+    },
+    "Damage_Weapon_Min#Physical" : {
+      "min" : 107.0,
+      "max" : 107.0
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : -1.303412034E9,
+      "max" : -1.303412034E9
+    },
+    "CubeEnchantedGemRank" : {
+      "min" : 74.0,
+      "max" : 74.0
+    },
+    "Dexterity_Item" : {
+      "min" : 887.0,
+      "max" : 887.0
+    },
+    "Durability_Max" : {
+      "min" : 369.0,
+      "max" : 369.0
+    },
+    "Experience_Bonus" : {
+      "min" : 248.0,
+      "max" : 248.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Damage_Weapon_Delta#Cold" : {
+      "min" : 326.0,
+      "max" : 326.0
+    },
+    "Ancient_Rank" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Attacks_Per_Second_Item" : {
+      "min" : 1.5,
+      "max" : 1.5
+    },
+    "Item_Power_Passive#P4_ItemPassive_Unique_Ring_008" : {
+      "min" : 15.0,
+      "max" : 15.0
+    },
+    "Durability_Cur" : {
+      "min" : 364.0,
+      "max" : 364.0
+    },
+    "Sockets" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Damage_Weapon_Delta#Physical" : {
+      "min" : 214.0,
+      "max" : 214.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "CubeEnchantedGemType" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Damage_Weapon_Min#Cold" : {
+      "min" : 1244.0,
+      "max" : 1244.0
+    },
+    "ConsumableAddSockets" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Attacks_Per_Second_Item_Percent" : {
+      "min" : 0.07,
+      "max" : 0.07
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "x1_Emerald_10",
+      "name" : "온전한 왕실 에메랄드",
+      "icon" : "x1_emerald_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwIyv_2pA8SBwgEFUItN6kwj9ICOABAAVgEkAEKGPvKxuwK"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "극대화 피해 130.0% 증가",
+        "affixType" : "default"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Crit_Damage_Percent" : {
+        "min" : 1.3,
+        "max" : 1.3
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Helm_Set_14_x1",
+  "name" : "어둠의 가면",
+  "icon" : "unique_helm_set_14_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/CooBCLSl2aQLEgcIBBVzLESJHay801MdOLLA1R3qmxzaHZsGAMsdZiMGUB3J-rygMIvSAjizAkAAUBJYBGC4AmosCgwIABC6upjKg4CA4A8SHAicp57cChIHCAQVpL4cwjCL0gI4AEABWASQAQqAAUalAeqbHNqtAeYV2w21AX_5Tl24AZ22ztQJwAEPGJnO3usOUABYAKABmc7e6w6gAdnP7uAOoAHX78L7BaABiN2D-AGgAabR65QGoAH6jpGsDw",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "\"어둠은 그대의 동료이자 적의 악몽이다.\" - 악마사냥꾼 쿠나이",
+  "typeName" : "세트 투구",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Helm"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 736.0,
+    "max" : 736.0
+  },
+  "slots" : [ "head" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +717",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +719",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 6.0% 증가",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "물리 저항 +151",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "가시 피해 +2739",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Vitality_Item" : {
+      "min" : 719.0,
+      "max" : 719.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 1.565456767E9,
+      "max" : 1.565456767E9
+    },
+    "Resistance#Physical" : {
+      "min" : 151.0,
+      "max" : 151.0
+    },
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.06,
+      "max" : 0.06
+    },
+    "Durability_Cur" : {
+      "min" : 307.0,
+      "max" : 307.0
+    },
+    "Sockets" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Dexterity_Item" : {
+      "min" : 717.0,
+      "max" : 717.0
+    },
+    "Durability_Max" : {
+      "min" : 312.0,
+      "max" : 312.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Armor_Item" : {
+      "min" : 736.0,
+      "max" : 736.0
+    },
+    "Thorns_Fixed#Physical" : {
+      "min" : 2739.0,
+      "max" : 2739.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "x1_Diamond_10",
+      "name" : "온전한 왕실 다이아몬드",
+      "icon" : "x1_diamond_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwInKee3AoSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "모든 기술의 재사용 대기시간 12.5% 감소",
+        "affixType" : "utility"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Power_Cooldown_Reduction_Percent_All" : {
+        "min" : 0.125,
+        "max" : 0.125
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-mask"
+    }, {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-coil"
+    }, {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-heels"
+    }, {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-grasp"
+    }, {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-burden"
+    }, {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-bane"
+    } ],
+    "name" : "어둠의 어깨걸이",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1" : {
+          "min" : 12.0,
+          "max" : 12.0
+        }
+      }
+    }, {
+      "required" : 4,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1" : {
+          "min" : 1.0,
+          "max" : 1.0
+        }
+      }
+    }, {
+      "required" : 6,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002" : {
+          "min" : 400.0,
+          "max" : 400.0
+        }
+      }
+    } ],
+    "slug" : "the-shadows-mantle"
+  },
+  "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Pants_Set_14_x1",
+  "name" : "어둠의 똬리 바지",
+  "icon" : "unique_pants_set_14_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/CrgBCKPnp7wNEgcIBBVTdE0xHfHTatUdj5DKUB3FRGRTHTsnbyQdP_IJ2B1xi3fwMIvSAjiWA0AAUBJYBGCbA2osCgwIABCt5unRhoCAoC8SHAjlteDRCRIHCAQVpL4cwjCL0gI4AEABWASQAQpqLAoMCAAQuuXp0YaAgKAvEhwI2YiS2AkSBwgEFaS-HMIwi9ICOABAAVgEkAEKgAFGpQHFRGRTrQFDTkRRtQGfktWluAHwo5_eDMABCRim0euUBlAAWACgAZnO3usOoAHZz-7gDqAB1-_C-wWgAYjdg_gBoAGm0euUBqAB-o6RrA8",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "\"심연에 발을 내딛어라. 그곳을 반기고 자각하라. 이젠 너의 영역이니.\" - 악마사냥꾼 쿠나이",
+  "typeName" : "세트 바지",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Legs"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 670.0,
+    "max" : 670.0
+  },
+  "slots" : [ "legs" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +484",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +493",
+      "affixType" : "enchant"
+    }, {
+      "color" : "blue",
+      "text" : "모든 원소 저항 +97",
+      "affixType" : "default"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "적에게서 얻는 금화 +35%",
+      "affixType" : "utility"
+    }, {
+      "color" : "blue",
+      "text" : "생명의 구슬 및 금화 획득 반경 2미터 증가",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Durability_Max" : {
+      "min" : 411.0,
+      "max" : 411.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Gold_Find" : {
+      "min" : 0.35,
+      "max" : 0.35
+    },
+    "Durability_Cur" : {
+      "min" : 406.0,
+      "max" : 406.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Gold_PickUp_Radius" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : -1.512729953E9,
+      "max" : -1.512729953E9
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Armor_Item" : {
+      "min" : 670.0,
+      "max" : 670.0
+    },
+    "Dexterity_Item" : {
+      "min" : 484.0,
+      "max" : 484.0
+    },
+    "Sockets" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Vitality_Item" : {
+      "min" : 493.0,
+      "max" : 493.0
+    },
+    "Resistance_All" : {
+      "min" : 97.0,
+      "max" : 97.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "x1_Diamond_10",
+      "name" : "온전한 왕실 다이아몬드",
+      "icon" : "x1_diamond_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwI5bXg0QkSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "모든 원소 저항 +78",
+        "affixType" : "default"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Resistance_All" : {
+        "min" : 78.0,
+        "max" : 78.0
+      }
+    }
+  }, {
+    "item" : {
+      "id" : "x1_Diamond_10",
+      "name" : "온전한 왕실 다이아몬드",
+      "icon" : "x1_diamond_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwI2YiS2AkSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "모든 원소 저항 +78",
+        "affixType" : "default"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Resistance_All" : {
+        "min" : 78.0,
+        "max" : 78.0
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-mask"
+    }, {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-coil"
+    }, {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-heels"
+    }, {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-grasp"
+    }, {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-burden"
+    }, {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-bane"
+    } ],
+    "name" : "어둠의 어깨걸이",
+    "slug" : "the-shadows-mantle",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1" : {
+          "min" : 12.0,
+          "max" : 12.0
+        }
+      }
+    }, {
+      "required" : 4,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1" : {
+          "min" : 1.0,
+          "max" : 1.0
+        }
+      }
+    }, {
+      "required" : 6,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002" : {
+          "min" : 400.0,
+          "max" : 400.0
+        }
+      }
+    } ]
+  },
+  "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Shoulder_Set_14_x1",
+  "name" : "어둠의 짐",
+  "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/ClwInKfQ4g8SBwgEFRMs8okdcYt38B1yjh0hHbi8IHodQ05EUR07J28kHfHTatUwi9ICOKMDQABQElgEYKgDgAFGpQFyjh0hrQGs05k5tQHS-MgVuAHHmLq4B8ABBhjZz-7gDlAAWACgAZnO3usOoAHZz-7gDqAB1-_C-wWgAYjdg_gBoAGm0euUBqAB-o6RrA8",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "\"이 힘을 가벼이 여겨서는 안 된다. 의지가 박약한 자가 어둠 속에서 너무 오래 머물다 보면 길을 잃고 말 것이다.\" - 악마사냥꾼 쿠나이",
+  "typeName" : "세트 어깨 방어구",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Shoulders"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 587.0,
+    "max" : 587.0
+  },
+  "slots" : [ "shoulder" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +459",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +454",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "모든 원소 저항 +96",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "모든 기술의 재사용 대기시간 8.0% 감소",
+      "affixType" : "utility"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "생명의 구슬 및 금화 획득 반경 2미터 증가",
+      "affixType" : "utility"
+    }, {
+      "color" : "blue",
+      "text" : "생명의 구슬과 물약으로 회복되는 생명력 +27650",
+      "affixType" : "enchant"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Power_Cooldown_Reduction_Percent_All" : {
+      "min" : 0.07999999999999996,
+      "max" : 0.07999999999999996
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Health_Globe_Bonus_Health" : {
+      "min" : 27650.0,
+      "max" : 27650.0
+    },
+    "Durability_Max" : {
+      "min" : 424.0,
+      "max" : 424.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Durability_Cur" : {
+      "min" : 419.0,
+      "max" : 419.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Gold_PickUp_Radius" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 3.65492434E8,
+      "max" : 3.65492434E8
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Armor_Item" : {
+      "min" : 587.6666870117188,
+      "max" : 587.6666870117188
+    },
+    "Dexterity_Item" : {
+      "min" : 459.0,
+      "max" : 459.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Vitality_Item" : {
+      "min" : 454.0,
+      "max" : 454.0
+    },
+    "Resistance_All" : {
+      "min" : 96.0,
+      "max" : 96.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-mask"
+    }, {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-coil"
+    }, {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-heels"
+    }, {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-grasp"
+    }, {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-burden"
+    }, {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-bane"
+    } ],
+    "name" : "어둠의 어깨걸이",
+    "slug" : "the-shadows-mantle",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1" : {
+          "min" : 12.0,
+          "max" : 12.0
+        }
+      }
+    }, {
+      "required" : 4,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1" : {
+          "min" : 1.0,
+          "max" : 1.0
+        }
+      }
+    }, {
+      "required" : 6,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002" : {
+          "min" : 400.0,
+          "max" : 400.0
+        }
+      }
+    } ]
+  },
+  "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Amulet_008_x1",
+  "name" : "모험가의 서약",
+  "icon" : "unique_amulet_008_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/CpABCPu2oJENEgcIBBUddwpbHbHk6hEdrNOZOR2L8XpCHX5Wsy4dsMEJch3J-rygMIvSAji-AkAAUBJYBGDDAmoyCgwIABC0yIvFg4CA4A8SIgiGrO_ODRIHCAQVLjCkwTCL0gI4AEAAUBJYBJABCtgBoAGAAUalAcn6vKCtAWYjBlC1AbDFRGS4Aay-kcUHwAEHGLrc07ALUABYAKAB_aXV7AigAbrc07AL",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "모험의 부름은 거부할 수가 없습니다.",
+  "typeName" : "세트 목걸이",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Amulet"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "slots" : [ "neck", "follower-neck" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "피해 +79~159",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 피해 84.0% 증가",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 9.5% 증가",
+      "affixType" : "default"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "적 처치 시 생명력 +6723",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "생명의 구슬과 물약으로 회복되는 생명력 +29328",
+      "affixType" : "default"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.095,
+      "max" : 0.095
+    },
+    "Hitpoints_On_Kill" : {
+      "min" : 6723.0,
+      "max" : 6723.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Health_Globe_Bonus_Health" : {
+      "min" : 29328.0,
+      "max" : 29328.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Damage_Delta#Physical" : {
+      "min" : 80.0,
+      "max" : 80.0
+    },
+    "Crit_Damage_Percent" : {
+      "min" : 0.84,
+      "max" : 0.84
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 1.682228656E9,
+      "max" : 1.682228656E9
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Sockets" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Damage_Min#Physical" : {
+      "min" : 79.0,
+      "max" : 79.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "Unique_Gem_008_x1",
+      "name" : "신속의 곡옥",
+      "icon" : "unique_gem_008_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CiIIhqzvzg0SBwgEFS4wpMEwi9ICOABAAFASWASQAQrYAaABGKO_3uUH"
+    },
+    "isGem" : false,
+    "isJewel" : true,
+    "jewelRank" : 80,
+    "jewelSecondaryEffectUnlockRank" : 25,
+    "jewelSecondaryEffect" : "Item_Power_Passive#ItemPassive_Unique_Gem_008U_x1",
+    "attributes" : {
+      "primary" : [ ],
+      "secondary" : [ ],
+      "passive" : [ {
+        "color" : "orange",
+        "text" : "적중 시마다 신속 효과를 받아, 4초 동안 공격 속도 1% 증가 및 회피 확률 1.30% 증가. 최대 15회 중첩",
+        "affixType" : "default"
+      }, {
+        "color" : "orange",
+        "text" : "신속 중첩 1회당 재사용 대기시간 감소 1%",
+        "affixType" : "default"
+      } ]
+    },
+    "attributesRaw" : {
+      "Post_2_1_2_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Post_2_5_0_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Loot_2_0_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Post_2_1_2_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Jewel_Rank" : {
+        "min" : 80.0,
+        "max" : 80.0
+      },
+      "Season" : {
+        "min" : 10.0,
+        "max" : 10.0
+      },
+      "Item_Binding_Level_Override" : {
+        "min" : 2.0,
+        "max" : 2.0
+      },
+      "Item_Power_Passive#ItemPassive_Unique_Gem_008_x1" : {
+        "min" : 1.3,
+        "max" : 1.3
+      },
+      "Item_Power_Passive#ItemPassive_Unique_Gem_008U_x1" : {
+        "min" : 0.01,
+        "max" : 0.01
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Ring_013_x1",
+      "name" : "나침도",
+      "icon" : "unique_ring_013_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-compass-rose"
+    }, {
+      "id" : "Unique_Amulet_008_x1",
+      "name" : "모험가의 서약",
+      "icon" : "unique_amulet_008_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-travelers-pledge"
+    } ],
+    "name" : "끝없는 걸음",
+    "slug" : "endless-walk",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "가만히 서 있는 동안 공격력 최대 100% 증가",
+          "affixType" : "default"
+        }, {
+          "color" : "orange",
+          "text" : "이동하는 동안 받는 피해 최대 50% 감소",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_058" : {
+          "min" : 1.0,
+          "max" : 1.0
+        },
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_057" : {
+          "min" : 0.5,
+          "max" : 0.5
+        }
+      }
+    } ]
+  },
+  "setItemsEquipped" : [ "Unique_Ring_013_x1", "Unique_Amulet_008_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Ring_013_x1",
+  "name" : "나침도",
+  "icon" : "unique_ring_013_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/CpABCNPO_o0BEgcIBBWBVjW5HXKOHSEdZiMGUB0gjTdUHeYV2w0d6-LkBR3x02rVMIvSAjj-AUAAUBJYBGCDAmoyCgwIABC46eGMjYCAwDwSIgi75o68BBIHCAQV6OWgwTCL0gI4AEAAUBJYBJABCtgBogGAAUalASCNN1StAZinjsC1ATZVXUS4AbDUurILwAEVGP2l1ewIUABYAKAB_aXV7AigAbrc07AL",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "길은 끝없이 펼쳐집니다...",
+  "typeName" : "세트 반지",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Ring"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "slots" : [ "left-finger", "right-finger", "follower-left-finger", "follower-right-finger" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +423",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 피해 48.0% 증가",
+      "affixType" : "enchant"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 4.5% 증가",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "이동 속도 +11%",
+      "affixType" : "utility"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "적을 처치하고 얻는 경험치 +152",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.045,
+      "max" : 0.045
+    },
+    "Movement_Scalar" : {
+      "min" : 0.11,
+      "max" : 0.11
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Crit_Damage_Percent" : {
+      "min" : 0.48,
+      "max" : 0.48
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Experience_Bonus" : {
+      "min" : 152.0,
+      "max" : 152.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 1.14696735E9,
+      "max" : 1.14696735E9
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Sockets" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Dexterity_Item" : {
+      "min" : 423.0,
+      "max" : 423.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "Unique_Gem_002_x1",
+      "name" : "갇힌 자의 파멸",
+      "icon" : "unique_gem_002_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CiIIu-aOvAQSBwgEFejloMEwi9ICOABAAFASWASQAQrYAaIBGK_o-OUH"
+    },
+    "isGem" : false,
+    "isJewel" : true,
+    "jewelRank" : 81,
+    "jewelSecondaryEffectUnlockRank" : 25,
+    "jewelSecondaryEffect" : "Item_Power_Passive#ItemPassive_Unique_Gem_002U_x1",
+    "attributes" : {
+      "primary" : [ ],
+      "secondary" : [ ],
+      "passive" : [ {
+        "color" : "orange",
+        "text" : "제어 방해 효과의 영향을 받는 적에게 주는 피해 39.30% 증가",
+        "affixType" : "default"
+      }, {
+        "color" : "orange",
+        "text" : "15미터 내의 적들의 이동 속도를 30% 감소시키는 오라 생성",
+        "affixType" : "default"
+      } ]
+    },
+    "attributesRaw" : {
+      "Post_2_1_2_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Post_2_5_0_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Item_Power_Passive#ItemPassive_Unique_Gem_002_x1" : {
+        "min" : 3.9299999999999997,
+        "max" : 3.9299999999999997
+      },
+      "Item_Power_Passive#ItemPassive_Unique_Gem_002U_x1" : {
+        "min" : 0.3,
+        "max" : 0.3
+      },
+      "Loot_2_0_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Post_2_1_2_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Jewel_Rank" : {
+        "min" : 81.0,
+        "max" : 81.0
+      },
+      "Season" : {
+        "min" : 10.0,
+        "max" : 10.0
+      },
+      "Item_Binding_Level_Override" : {
+        "min" : 2.0,
+        "max" : 2.0
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Ring_013_x1",
+      "name" : "나침도",
+      "icon" : "unique_ring_013_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-compass-rose"
+    }, {
+      "id" : "Unique_Amulet_008_x1",
+      "name" : "모험가의 서약",
+      "icon" : "unique_amulet_008_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-travelers-pledge"
+    } ],
+    "name" : "끝없는 걸음",
+    "slug" : "endless-walk",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "가만히 서 있는 동안 공격력 최대 100% 증가",
+          "affixType" : "default"
+        }, {
+          "color" : "orange",
+          "text" : "이동하는 동안 받는 피해 최대 50% 감소",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_058" : {
+          "min" : 1.0,
+          "max" : 1.0
+        },
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_057" : {
+          "min" : 0.5,
+          "max" : 0.5
+        }
+      }
+    } ]
+  },
+  "setItemsEquipped" : [ "Unique_Ring_013_x1", "Unique_Amulet_008_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Gloves_Set_14_x1",
+  "name" : "어둠의 손아귀",
+  "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/ClsI7pzFHBIHCAQVvSPCeh0_8gnYHfPVR7QddEWniR1-dlWhHX5Wsy4dyfq8oDCL0gI43QJAAFASWARg4gKAAUalAXRFp4mtAZinjsC1AclbkqS4Adm4zOYKwAEMGPqOkawPUABYAKABmc7e6w6gAdnP7uAOoAHX78L7BaABiN2D-AGgAabR65QGoAH6jpGsDw",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "\"손댈 수 있는 것은 두려워하지 마라. 손댈 수 있다면 파괴할 수도 있다.\" - 악마사냥꾼 쿠나이",
+  "typeName" : "세트 장갑",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Gloves"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 524.0,
+    "max" : 524.0
+  },
+  "slots" : [ "hands" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +720",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "공격 속도 7.0% 증가",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 피해 49.0% 증가",
+      "affixType" : "enchant"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 9.0% 증가",
+      "affixType" : "default"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "독 저항 +141",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "적에게서 얻는 금화 +34%",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Attacks_Per_Second_Percent" : {
+      "min" : 0.07,
+      "max" : 0.07
+    },
+    "Crit_Damage_Percent" : {
+      "min" : 0.49,
+      "max" : 0.49
+    },
+    "Resistance#Poison" : {
+      "min" : 141.0,
+      "max" : 141.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : -1.533912119E9,
+      "max" : -1.533912119E9
+    },
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.09,
+      "max" : 0.09
+    },
+    "Durability_Cur" : {
+      "min" : 349.0,
+      "max" : 349.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Dexterity_Item" : {
+      "min" : 720.0,
+      "max" : 720.0
+    },
+    "Durability_Max" : {
+      "min" : 354.0,
+      "max" : 354.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Gold_Find" : {
+      "min" : 0.34,
+      "max" : 0.34
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Armor_Item" : {
+      "min" : 524.3333129882812,
+      "max" : 524.3333129882812
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-mask"
+    }, {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-coil"
+    }, {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-heels"
+    }, {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-grasp"
+    }, {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-burden"
+    }, {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-bane"
+    } ],
+    "name" : "어둠의 어깨걸이",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1" : {
+          "min" : 12.0,
+          "max" : 12.0
+        }
+      }
+    }, {
+      "required" : 4,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1" : {
+          "min" : 1.0,
+          "max" : 1.0
+        }
+      }
+    }, {
+      "required" : 6,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002" : {
+          "min" : 400.0,
+          "max" : 400.0
+        }
+      }
+    } ],
+    "slug" : "the-shadows-mantle"
+  },
+  "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "P5_Unique_Quiver_004_x1",
+  "name" : "성스러운 살상",
+  "icon" : "p5_unique_quiver_004_x1_demonhunter_male",
+  "displayColor" : "orange",
+  "tooltipParams" : "item/CmMIr4S8hA4SBwgEFdEoE1EdQA1VCx3K-rygHZwGAMsdXO-sPB2AZlxGHdxVUcEwi9oCONoCQABQElgEYN8CgAFGpQFc76w8rQF-VrMutQFU6r5buAHA5aW0BcABFIACAogCjgEYoqOZkQpQAFgA",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "구릉지의 떠돌이 사제가 무아지경에 빠져 만든 화살통으로, 안에 있는 화살에 축복을 내립니다.",
+  "typeName" : "고대 전설 화살통",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Quiver"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "elementalType" : "fire",
+  "slots" : [ "right-hand" ],
+  "augmentation" : "민첩 +355 (칼데산의 절망 71등급)",
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "화염 기술로 주는 피해 15% 증가",
+      "affixType" : "utility"
+    }, {
+      "color" : "blue",
+      "text" : "민첩 +875",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +843",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "공격 속도 16.0% 증가",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 10.0% 증가",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "최대 절제 +12 (악마사냥꾼 전용)",
+      "affixType" : "utility"
+    }, {
+      "color" : "blue",
+      "text" : "적중 시 이동 불가 확률 1.8%",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ {
+      "color" : "orange",
+      "text" : "투검을 쓰면 칼 두 개를 추가로 던짐",
+      "affixType" : "default"
+    } ]
+  },
+  "attributesRaw" : {
+    "Weapon_On_Hit_Immobilize_Proc_Chance" : {
+      "min" : 0.01770000000000005,
+      "max" : 0.01770000000000005
+    },
+    "Resource_Max_Bonus#Discipline" : {
+      "min" : 12.0,
+      "max" : 12.0
+    },
+    "CubeEnchantedGemType" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.1,
+      "max" : 0.1
+    },
+    "Item_Power_Passive#P5_ItemPassive_Unique_Ring_002" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Ancient_Rank" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "CubeEnchantedGemRank" : {
+      "min" : 71.0,
+      "max" : 71.0
+    },
+    "Attacks_Per_Second_Percent" : {
+      "min" : 0.16,
+      "max" : 0.16
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Quiver" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Damage_Dealt_Percent_Bonus#Fire" : {
+      "min" : 0.15,
+      "max" : 0.15
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 1.539238484E9,
+      "max" : 1.539238484E9
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Dexterity_Item" : {
+      "min" : 875.0,
+      "max" : 875.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Vitality_Item" : {
+      "min" : 843.0,
+      "max" : 843.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ ],
+  "socketEffects" : [ ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Bracer_106_x1",
+  "name" : "천벌의 손목 방어구",
+  "icon" : "unique_bracer_106_x1_demonhunter_male",
+  "displayColor" : "orange",
+  "tooltipParams" : "item/ClcI3cKbiAUSBwgEFWN2XTkdOLLA1R0gjTdUHT51eQUdOnXajB3x02rVMIvSAjjAAkAAUBJYBGDFAoABRqUBOnXajK0B5hXbDbUB2yzKy7gBndetiAXAARIYxtnrlQdQAFgA",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "이 팔보호구를 착용한다면 각별히 주의하십시오. 가장 굳센 모험가조차도 화를 입을 수 있습니다.",
+  "typeName" : "전설 손목 방어구",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Bracers"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "elementalType" : "lightning",
+  "armor" : {
+    "min" : 771.0,
+    "max" : 771.0
+  },
+  "slots" : [ "bracers" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "번개 기술로 주는 피해 19% 증가",
+      "affixType" : "utility"
+    }, {
+      "color" : "blue",
+      "text" : "민첩 +434",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "방어도 +381",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 6.0% 증가",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "물리 저항 +151",
+      "affixType" : "default"
+    } ],
+    "passive" : [ {
+      "color" : "orange",
+      "text" : "신단과 수정탑에 가면 적 용사 하나 소환",
+      "affixType" : "default"
+    } ]
+  },
+  "attributesRaw" : {
+    "Damage_Dealt_Percent_Bonus#Lightning" : {
+      "min" : 0.19,
+      "max" : 0.19
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : -8.75942693E8,
+      "max" : -8.75942693E8
+    },
+    "Resistance#Physical" : {
+      "min" : 151.0,
+      "max" : 151.0
+    },
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.06,
+      "max" : 0.06
+    },
+    "Durability_Cur" : {
+      "min" : 320.0,
+      "max" : 320.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Dexterity_Item" : {
+      "min" : 434.0,
+      "max" : 434.0
+    },
+    "Durability_Max" : {
+      "min" : 325.0,
+      "max" : 325.0
+    },
+    "Item_Power_Passive#ItemPassive_Unique_Ring_638_x1" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Armor_Item" : {
+      "min" : 390.6666564941406,
+      "max" : 390.6666564941406
+    },
+    "Armor_Bonus_Item" : {
+      "min" : 381.0,
+      "max" : 381.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ ],
+  "socketEffects" : [ ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Boots_Set_14_x1",
+  "name" : "어둠의 뾰족구두",
+  "icon" : "unique_boots_set_14_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/ClsI_bX12AMSBwgEFRSkR9Ad08wHYx0_8gnYHd6C_OUdXIlRdh2EA6HWHTKJx1owi9oCOP0CQABQElgEYP0CgAFGpQFciVF2rQGrDwKHtQGgRZt_uAGx9Zt7wAEBGNfvwvsFUABYAKABmc7e6w6gAdnP7uAOoAHX78L7BaABiN2D-AGgAabR65QGoAH6jpGsDw",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "\"어둠속을 거니는 그 모습이 바로 진정한 내 자신이다. 고요히 한 걸음을 내딛는 곳마다 나의 영역이 된다.\" - 악마사냥꾼 쿠나이",
+  "typeName" : "고대 세트 장화",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Boots"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 517.0,
+    "max" : 517.0
+  },
+  "slots" : [ "feet" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +599",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +596",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "모든 원소 저항 +111",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "투검으로 주는 피해 15% 증가 (악마사냥꾼 전용)",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "적에게서 얻는 금화 +32%",
+      "affixType" : "utility"
+    }, {
+      "color" : "blue",
+      "text" : "내구도 감소 무시",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Ancient_Rank" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Durability_Max" : {
+      "min" : 381.0,
+      "max" : 381.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Item_Indestructible" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Gold_Find" : {
+      "min" : 0.32,
+      "max" : 0.32
+    },
+    "Durability_Cur" : {
+      "min" : 381.0,
+      "max" : 381.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 2.140882336E9,
+      "max" : 2.140882336E9
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Armor_Item" : {
+      "min" : 517.3333129882812,
+      "max" : 517.3333129882812
+    },
+    "Dexterity_Item" : {
+      "min" : 599.0,
+      "max" : 599.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Power_Damage_Percent_Bonus#DemonHunter_Impale" : {
+      "min" : 0.15,
+      "max" : 0.15
+    },
+    "Vitality_Item" : {
+      "min" : 596.0,
+      "max" : 596.0
+    },
+    "Resistance_All" : {
+      "min" : 111.0,
+      "max" : 111.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-mask"
+    }, {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-coil"
+    }, {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-heels"
+    }, {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-grasp"
+    }, {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-burden"
+    }, {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-bane"
+    } ],
+    "name" : "어둠의 어깨걸이",
+    "slug" : "the-shadows-mantle",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1" : {
+          "min" : 12.0,
+          "max" : 12.0
+        }
+      }
+    }, {
+      "required" : 4,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1" : {
+          "min" : 1.0,
+          "max" : 1.0
+        }
+      }
+    }, {
+      "required" : 6,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002" : {
+          "min" : 400.0,
+          "max" : 400.0
+        }
+      }
+    } ]
+  },
+  "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "P4_Unique_Belt_01",
+  "name" : "어둠의 굴레",
+  "icon" : "p4_unique_belt_01_demonhunter_male",
+  "displayColor" : "orange",
+  "tooltipParams" : "item/ClcIyo_nuAsSBwgEFYDGMFgdtE-Jbh3egvzlHYyBXYUdhAOh1h0yicdaMIvaAjiBA0AAUBJYBGCGA4ABRqUBjIFdha0BZz7s5LUBwKdC1LgB48HhswvAAQYYgJqGgwtQAFgA",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "\"어떤 이는 쿠나이 같은 사냥꾼이 필멸자의 한계를 초월하는 위업을 달성하기 위해 어둠의 힘을 이용했다는 의견을 내세웠다. 터무니없기도 하지.\" - 압드 알하지르",
+  "typeName" : "고대 전설 허리띠",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "GenericBelt"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 488.0,
+    "max" : 488.0
+  },
+  "slots" : [ "waist" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +550",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +605",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "모든 원소 저항 +123",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "생명력 +15%",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "적 처치 시 생명력 +7353",
+      "affixType" : "default"
+    } ],
+    "passive" : [ {
+      "color" : "orange",
+      "text" : "투검을 사용한 후 2초 동안 도약이 자원을 소모하지 않음",
+      "affixType" : "default"
+    } ]
+  },
+  "attributesRaw" : {
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Hitpoints_On_Kill" : {
+      "min" : 7353.0,
+      "max" : 7353.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Ancient_Rank" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Vitality_Item" : {
+      "min" : 605.0,
+      "max" : 605.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : -7.33829184E8,
+      "max" : -7.33829184E8
+    },
+    "Item_Power_Passive#P4_ItemPassive_Unique_Ring_006" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Durability_Cur" : {
+      "min" : 385.0,
+      "max" : 385.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Resistance_All" : {
+      "min" : 123.0,
+      "max" : 123.0
+    },
+    "Dexterity_Item" : {
+      "min" : 550.0,
+      "max" : 550.0
+    },
+    "Durability_Max" : {
+      "min" : 390.0,
+      "max" : 390.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Armor_Item" : {
+      "min" : 488.0,
+      "max" : 488.0
+    },
+    "Hitpoints_Max_Percent_Bonus_Item" : {
+      "min" : 0.15,
+      "max" : 0.15
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ ],
+  "socketEffects" : [ ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "P2_Unique_Ring_04",
+  "name" : "원소의 회동",
+  "icon" : "p2_unique_ring_04_demonhunter_male",
+  "displayColor" : "orange",
+  "tooltipParams" : "item/CosBCLHgoNgIEgcIBBVq-dsYHfPVR7Qdi_F6Qh1mIwZQHeYV2w0d8dNq1TCL0gI4_AJAAFASWARggQNqMgoMCAAQ0fCXq4mAgOAeEiII8uKHuwwSBwgEFYdZoMEwi9ICOABAAFASWASQAQrYAZYBgAFGpQGL8XpCrQGYp47AtQE2VV1EuAHYnb-ZAsABTBjU5d-NA1AAWAA",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "오래전 눈보라가 치던 날 위대한 마법 대장장이 협회가 회동을 하여, 자신들의 힘을 하나의 유물에 불어넣어 강력한 반지를 만들었습니다. 이 반지는 착용자에게 모든 원소를 마음대로 부리는 힘을 부여합니다.",
+  "typeName" : "전설 반지",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "Ring"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "slots" : [ "left-finger", "right-finger", "follower-left-finger", "follower-right-finger" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +468",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 피해 50.0% 증가",
+      "affixType" : "enchant"
+    }, {
+      "color" : "blue",
+      "text" : "극대화 확률 6.0% 증가",
+      "affixType" : "default"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "독 저항 +144",
+      "affixType" : "default"
+    } ],
+    "passive" : [ {
+      "color" : "orange",
+      "text" : "4초 동안 단일 원소로 주는 피해가 154% 증가. 이 효과는 자기 직업에 해당하는 원소 중 비전, 냉기, 화염, 신성, 번개, 물리, 독의 순서로 순환",
+      "affixType" : "default"
+    } ]
+  },
+  "attributesRaw" : {
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Crit_Damage_Percent" : {
+      "min" : 0.5,
+      "max" : 0.5
+    },
+    "Resistance#Poison" : {
+      "min" : 144.0,
+      "max" : 144.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 1.14696735E9,
+      "max" : 1.14696735E9
+    },
+    "Crit_Percent_Bonus_Capped" : {
+      "min" : 0.06,
+      "max" : 0.06
+    },
+    "Sockets" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Dexterity_Item" : {
+      "min" : 468.0,
+      "max" : 468.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Power_Passive#P2_ItemPassive_Unique_Ring_038" : {
+      "min" : 1.54,
+      "max" : 1.54
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "Unique_Gem_001_x1",
+      "name" : "강한 자의 파멸",
+      "icon" : "unique_gem_001_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CiII8uKHuwwSBwgEFYdZoMEwi9ICOABAAFASWASQAQrYAZYBGPGZ_eUH"
+    },
+    "isGem" : false,
+    "isJewel" : true,
+    "jewelRank" : 75,
+    "jewelSecondaryEffectUnlockRank" : 25,
+    "jewelSecondaryEffect" : "Item_Power_Passive#ItemPassive_Unique_Gem_001U_x1",
+    "attributes" : {
+      "primary" : [ ],
+      "secondary" : [ ],
+      "passive" : [ {
+        "color" : "orange",
+        "text" : "정예 괴물 무리 처치 후 105.0초 동안 공격력 20% 증가",
+        "affixType" : "default"
+      }, {
+        "color" : "orange",
+        "text" : "정예 적에게 주는 피해 15% 증가, 정예 적에게 받는 피해 15% 감소",
+        "affixType" : "default"
+      } ]
+    },
+    "attributesRaw" : {
+      "Season" : {
+        "min" : 10.0,
+        "max" : 10.0
+      },
+      "Post_2_1_2_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Jewel_Rank" : {
+        "min" : 75.0,
+        "max" : 75.0
+      },
+      "Loot_2_0_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Post_2_1_2_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Item_Power_Passive#ItemPassive_Unique_Gem_001_x1" : {
+        "min" : 105.0,
+        "max" : 105.0
+      },
+      "Item_Binding_Level_Override" : {
+        "min" : 2.0,
+        "max" : 2.0
+      },
+      "Post_2_5_0_Drop" : {
+        "min" : 1.0,
+        "max" : 1.0
+      },
+      "Item_Power_Passive#ItemPassive_Unique_Gem_001U_x1" : {
+        "min" : 0.15,
+        "max" : 0.15
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+{
+  "id" : "Unique_Chest_Set_14_x1",
+  "name" : "어둠의 파멸",
+  "icon" : "unique_chest_set_14_x1_demonhunter_male",
+  "displayColor" : "green",
+  "tooltipParams" : "item/CuYBCJ_mjcUBEgcIBBVEd4APHWU61OAdcYt38B1DTkRRHRfvmm4dcyMGUB3x02rVMIvSAjj6AUAAUBJYBGD_AWosCgwIABDQupjKg4CA4A8SHAiY3ueABRIHCAQVpL4cwjCL0gI4AEABWASQAQpqLAoMCAAQubqYyoOAgOAPEhwI_ryJuQgSBwgEFaS-HMIwi9ICOABAAVgEkAEKaiwKDAgAELjm6dGGgICgLxIcCLqajLoMEgcIBBWkvhzCMIvSAjgAQAFYBJABCoABRqUBF--abq0BOydvJLUBMSIZYLgBkZaYsAnAARUYiN2D-AFQAFgAoAGZzt7rDqAB2c_u4A6gAdfvwvsFoAGI3YP4AaABptHrlAagAfqOkawP",
+  "requiredLevel" : 70,
+  "itemLevel" : 70,
+  "stackSizeMax" : 0,
+  "bonusAffixes" : 0,
+  "bonusAffixesMax" : 0,
+  "accountBound" : true,
+  "flavorText" : "공포의 땅에는 어둠과 하나가 될 수 있었던 무시무시한 악마사냥꾼, 쿠나이의 이야기가 전설로 전해 내려옵니다.",
+  "typeName" : "세트 가슴 방어구",
+  "type" : {
+    "twoHanded" : false,
+    "id" : "ChestArmor"
+  },
+  "damageRange" : "무기 공격력 0~0",
+  "armor" : {
+    "min" : 687.0,
+    "max" : 687.0
+  },
+  "slots" : [ "chest" ],
+  "attributes" : {
+    "primary" : [ {
+      "color" : "blue",
+      "text" : "민첩 +453",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "활력 +496",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "모든 원소 저항 +98",
+      "affixType" : "enchant"
+    } ],
+    "secondary" : [ {
+      "color" : "blue",
+      "text" : "원거리 공격으로 받는 피해 7.0% 감소",
+      "affixType" : "default"
+    }, {
+      "color" : "blue",
+      "text" : "생명의 구슬 및 금화 획득 반경 1미터 증가",
+      "affixType" : "utility"
+    } ],
+    "passive" : [ ]
+  },
+  "attributesRaw" : {
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Post_2_1_2_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Damage_Percent_Reduction_From_Ranged" : {
+      "min" : 0.07000000000000006,
+      "max" : 0.07000000000000006
+    },
+    "Post_2_5_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Vitality_Item" : {
+      "min" : 496.0,
+      "max" : 496.0
+    },
+    "Item_Legendary_Item_Base_Item" : {
+      "min" : 1.612259889E9,
+      "max" : 1.612259889E9
+    },
+    "Durability_Cur" : {
+      "min" : 250.0,
+      "max" : 250.0
+    },
+    "Sockets" : {
+      "min" : 3.0,
+      "max" : 3.0
+    },
+    "Season" : {
+      "min" : 0.0,
+      "max" : 0.0
+    },
+    "Item_LegendaryItem_Level_Override" : {
+      "min" : 70.0,
+      "max" : 70.0
+    },
+    "Gold_PickUp_Radius" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Dexterity_Item" : {
+      "min" : 453.0,
+      "max" : 453.0
+    },
+    "Resistance_All" : {
+      "min" : 98.0,
+      "max" : 98.0
+    },
+    "Durability_Max" : {
+      "min" : 255.0,
+      "max" : 255.0
+    },
+    "Loot_2_0_Drop" : {
+      "min" : 1.0,
+      "max" : 1.0
+    },
+    "Item_Binding_Level_Override" : {
+      "min" : 2.0,
+      "max" : 2.0
+    },
+    "Armor_Item" : {
+      "min" : 687.0,
+      "max" : 687.0
+    }
+  },
+  "randomAffixes" : [ ],
+  "gems" : [ {
+    "item" : {
+      "id" : "x1_Diamond_10",
+      "name" : "온전한 왕실 다이아몬드",
+      "icon" : "x1_diamond_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwImN7ngAUSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "모든 원소 저항 +78",
+        "affixType" : "default"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Resistance_All" : {
+        "min" : 78.0,
+        "max" : 78.0
+      }
+    }
+  }, {
+    "item" : {
+      "id" : "x1_Diamond_10",
+      "name" : "온전한 왕실 다이아몬드",
+      "icon" : "x1_diamond_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwI_ryJuQgSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "모든 원소 저항 +78",
+        "affixType" : "default"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Resistance_All" : {
+        "min" : 78.0,
+        "max" : 78.0
+      }
+    }
+  }, {
+    "item" : {
+      "id" : "x1_Diamond_10",
+      "name" : "온전한 왕실 다이아몬드",
+      "icon" : "x1_diamond_10_demonhunter_male",
+      "displayColor" : "blue",
+      "tooltipParams" : "item/ChwIupqMugwSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+    },
+    "isGem" : true,
+    "isJewel" : false,
+    "attributes" : {
+      "primary" : [ {
+        "color" : "blue",
+        "text" : "모든 원소 저항 +78",
+        "affixType" : "default"
+      } ],
+      "secondary" : [ ],
+      "passive" : [ ]
+    },
+    "attributesRaw" : {
+      "Resistance_All" : {
+        "min" : 78.0,
+        "max" : 78.0
+      }
+    }
+  } ],
+  "socketEffects" : [ ],
+  "set" : {
+    "items" : [ {
+      "id" : "Unique_Helm_Set_14_x1",
+      "name" : "어둠의 가면",
+      "icon" : "unique_helm_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-mask"
+    }, {
+      "id" : "Unique_Pants_Set_14_x1",
+      "name" : "어둠의 똬리 바지",
+      "icon" : "unique_pants_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-coil"
+    }, {
+      "id" : "Unique_Boots_Set_14_x1",
+      "name" : "어둠의 뾰족구두",
+      "icon" : "unique_boots_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-heels"
+    }, {
+      "id" : "Unique_Gloves_Set_14_x1",
+      "name" : "어둠의 손아귀",
+      "icon" : "unique_gloves_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-grasp"
+    }, {
+      "id" : "Unique_Shoulder_Set_14_x1",
+      "name" : "어둠의 짐",
+      "icon" : "unique_shoulder_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-burden"
+    }, {
+      "id" : "Unique_Chest_Set_14_x1",
+      "name" : "어둠의 파멸",
+      "icon" : "unique_chest_set_14_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/the-shadows-bane"
+    } ],
+    "name" : "어둠의 어깨걸이",
+    "ranks" : [ {
+      "required" : 2,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1" : {
+          "min" : 12.0,
+          "max" : 12.0
+        }
+      }
+    }, {
+      "required" : 4,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1" : {
+          "min" : 1.0,
+          "max" : 1.0
+        }
+      }
+    }, {
+      "required" : 6,
+      "attributes" : {
+        "primary" : [ ],
+        "secondary" : [ ],
+        "passive" : [ {
+          "color" : "orange",
+          "text" : "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+          "affixType" : "default"
+        } ]
+      },
+      "attributesRaw" : {
+        "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002" : {
+          "min" : 400.0,
+          "max" : 400.0
+        }
+      }
+    } ],
+    "slug" : "the-shadows-mantle"
+  },
+  "setItemsEquipped" : [ "Unique_Helm_Set_14_x1", "Unique_Pants_Set_14_x1", "Unique_Boots_Set_14_x1", "Unique_Gloves_Set_14_x1", "Unique_Shoulder_Set_14_x1", "Unique_Chest_Set_14_x1" ],
+  "craftedBy" : [ ],
+  "seasonRequiredToDrop" : -1,
+  "isSeasonRequiredToDrop" : false,
+  "description" : null,
+  "blockChance" : "방패막기 확률 +0.0%"
+}
+
+

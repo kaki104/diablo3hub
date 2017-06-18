@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using Template10.Mvvm;
 
 namespace Diablo3Hub.Models
 {
@@ -149,6 +151,24 @@ namespace Diablo3Hub.Models
 
     public class Items
     {
+        public IList<Equipment> Equipments => new List<Equipment>
+        {
+            MainHand,
+            OffHand,
+            Waist,
+            RightFinger,
+            LeftFinger,
+            Neck,
+            Torso,
+            Feet,
+            Hands,
+            Shoulders,
+            Legs,
+            Bracers,
+            Head,
+            Special
+        };
+
         [JsonProperty(PropertyName = "mainHand")]
         public Equipment MainHand { get; set; }
 
@@ -192,8 +212,13 @@ namespace Diablo3Hub.Models
         public Equipment Special { get; set; }
     }
 
-    public class Equipment
+    /// <summary>
+    ///     장비
+    /// </summary>
+    public class Equipment : BindableBase
     {
+        private ItemDetail _itemDetail;
+
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
@@ -211,6 +236,15 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "setItemsEquipped")]
         public string[] SetItemsEquipped { get; set; }
+
+        /// <summary>
+        ///     아이템 상세 정보
+        /// </summary>
+        public ItemDetail ItemDetail
+        {
+            get => _itemDetail;
+            set => Set(ref _itemDetail, value);
+        }
     }
 
 
