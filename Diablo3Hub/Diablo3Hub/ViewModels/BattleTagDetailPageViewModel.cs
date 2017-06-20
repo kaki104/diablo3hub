@@ -26,7 +26,7 @@ namespace Diablo3Hub.ViewModels
         public BattleTagDetailPageViewModel()
         {
             if (DesignMode.DesignModeEnabled)
-                CurrentBattleTag = CareerProfileData.GetCareerProfile();
+                CurrentBattleTag = DesignData.GetCareerProfile();
             else
                 Init();
         }

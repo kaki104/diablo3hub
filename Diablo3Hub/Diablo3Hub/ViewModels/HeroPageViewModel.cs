@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Windows.ApplicationModel;
 using Windows.UI.Xaml.Navigation;
 using Diablo3Hub.DesignDatas;
@@ -23,7 +24,7 @@ namespace Diablo3Hub.ViewModels
         public HeroPageViewModel()
         {
             if (DesignMode.DesignModeEnabled)
-                CurrentHeroProfile = HeroProfileData.GetHeroProfile();
+                CurrentHeroProfile = DesignData.GetHeroProfile();
             else
                 Init();
         }
@@ -51,7 +52,15 @@ namespace Diablo3Hub.ViewModels
         /// </summary>
         private void Init()
         {
+            ItemClickCommand = new DelegateCommand<object>(obj =>
+            {
+                
+            });
         }
+        /// <summary>
+        /// 아이템 클릭 커맨드
+        /// </summary>
+        public ICommand ItemClickCommand { get; set; }
 
         /// <summary>
         ///     네비게이션

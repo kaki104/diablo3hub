@@ -21,7 +21,7 @@ namespace Diablo3Hub.ViewModels
             if (DesignMode.DesignModeEnabled)
             {
                 //디자인 데이터
-                SelectedBattleTags = BattleTagData.GetBattleTags();
+                SelectedBattleTags = DesignData.GetBattleTags();
             }
             else
             {

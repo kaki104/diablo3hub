@@ -85,8 +85,14 @@ namespace Diablo3Hub.Models
         [JsonProperty(PropertyName = "maxDamage")]
         public MinMax MaxDamage { get; set; }
 
+        [JsonProperty(PropertyName = "elementalType")]
+        public string ElementalType { get; set; }
+
         [JsonProperty(PropertyName = "slots")]
         public string[] Slots { get; set; }
+        
+        [JsonProperty(PropertyName = "augmentation")]
+        public string Augmentation { get; set; }
 
         [JsonProperty(PropertyName = "attributes")]
         public Attributes Attributes { get; set; }
@@ -206,17 +212,39 @@ namespace Diablo3Hub.Models
         [JsonProperty(PropertyName = "Item_Legendary_Item_Base_Item")]
         public MinMax ItemLegendaryItemBaseItem { get; set; }
 
+        [JsonProperty(PropertyName = "CubeEnchantedGemRank")]
+        public MinMax CubeEnchantedGemRank { get; set; }
+
         [JsonProperty(PropertyName = "Damage_Weapon_Percent_All")]
         public MinMax DamageWeaponPercentAll { get; set; }
 
         [JsonProperty(PropertyName = "Dexterity_Item")]
         public MinMax DexterityItem { get; set; }
 
+        [JsonProperty(PropertyName = "Experience_Bonus")]
+        public MinMax ExperienceBonus { get; set; }
+
         [JsonProperty(PropertyName = "Loot_2_0_Drop")]
         public MinMax Loot20Drop { get; set; }
 
         [JsonProperty(PropertyName = "Crit_Damage_Percent")]
         public MinMax CritDamagePercent { get; set; }
+
+        [JsonProperty(PropertyName = "Damage_Weapon_Delta#Cold")]
+        public MinMax DamageWeaponDeltaCold { get; set; }
+
+        [JsonProperty(PropertyName = "Item_Power_Passive#P4_ItemPassive_Unique_Ring_008")]
+        public MinMax ItemPowerPassiveP4ItemPassiveUniqueRing008 { get; set; }
+
+        [JsonProperty(PropertyName = "CubeEnchantedGemType")]
+        public MinMax CubeEnchantedGemType { get; set; }
+
+        [JsonProperty(PropertyName = "Damage_Weapon_Min#Cold")]
+        public MinMax DamageWeaponMinCold { get; set; }
+
+        [JsonProperty(PropertyName = "Attacks_Per_Second_Item_Percent")]
+        public MinMax AttacksPerSecondItemPercent { get; set; }
+
     }
 
     public class Gem
