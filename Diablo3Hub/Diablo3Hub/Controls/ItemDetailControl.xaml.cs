@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Xaml.Controls;
+using Diablo3Hub.Models;
 using Diablo3Hub.ViewModels;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
@@ -10,6 +11,11 @@ namespace Diablo3Hub.Controls
         public ItemDetailControl()
         {
             InitializeComponent();
+        }
+
+        public ItemDetailControl(ItemDetail item) : this()
+        {
+            ViewModel.SetItem(item);
         }
 
         public ItemDetailControlViewModel ViewModel

@@ -3,7 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Navigation;
+using Diablo3Hub.Controls;
 using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
@@ -54,7 +56,19 @@ namespace Diablo3Hub.ViewModels
         {
             ItemClickCommand = new DelegateCommand<object>(obj =>
             {
-                
+                var id = obj as string;
+                if (string.IsNullOrEmpty(id)) return;
+                var clickedItem = CurrentItems.FirstOrDefault(p => p.Id == id);
+                if (clickedItem == null) return;
+
+                var content = new ItemDetailControl(clickedItem);
+                var rect = CommonStaticHelper.GetWindowBounds();
+                var popup = new Popup
+                {
+                    Child = content,
+                    IsOpen = true
+                };
+
             });
         }
         /// <summary>

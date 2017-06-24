@@ -9,8 +9,8 @@
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="Diablo3Hub.Controls.ItemDetailControl"
     mc:Ignorable="d"
-    d:DesignHeight="550"
-    d:DesignWidth="400">
+    Height="550"
+    Width="400">
 
     <UserControl.DataContext>
         <viewModels:ItemDetailControlViewModel/>
@@ -132,7 +132,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="DarkBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>

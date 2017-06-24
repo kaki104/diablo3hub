@@ -1,4 +1,5 @@
-﻿using Windows.ApplicationModel;
+﻿using System.Windows.Input;
+using Windows.ApplicationModel;
 using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
 using Template10.Mvvm;
@@ -34,6 +35,16 @@ namespace Diablo3Hub.ViewModels
         /// </summary>
         private void Init()
         {
+
+        }
+
+        public ICommand SaveCommand { get; set; }
+
+        public ICommand CloseCommand { get; set; }
+
+        public void SetItem(ItemDetail item)
+        {
+            CurrentItem = item;
         }
     }
 }

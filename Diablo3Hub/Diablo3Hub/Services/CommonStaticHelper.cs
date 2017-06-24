@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Windows.Foundation;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Microsoft.Toolkit.Uwp.UI.Extensions;
+using ApplicationView = Windows.UI.ViewManagement.ApplicationView;
 
 namespace Diablo3Hub.Services
 {
@@ -41,6 +45,20 @@ namespace Diablo3Hub.Services
 
             var result = await dialog.ShowAsync();
             return result.Id;
+        }
+        /// <summary>
+        /// 윈도우 바운드 반환
+        /// </summary>
+        /// <returns></returns>
+        public static Rect GetWindowBounds()
+        {
+            var view = ApplicationView.GetForCurrentView();
+            return view.VisibleBounds;
+        }
+
+        public static async Task ShowPopupAsync(FrameworkElement content, string okText, string cancelText)
+        {
+            
         }
     }
 }
