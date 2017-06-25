@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Diablo3Hub.Commons
 {
     /// <summary>
-    /// 팝업에 파라메터를 전달 할 경우 인터페이스
+    /// 팝업이 결과를 반환하는 경우 인터페이스
     /// </summary>
-    internal interface IPopupParam
+    interface IPopupResult
     {
-        void SetParam(object param);
+        object Result { get; set; }
     }
 }

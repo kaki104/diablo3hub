@@ -26,7 +26,7 @@
                 <TextBlock Grid.Column="1" Text="{Binding Text}" TextWrapping="Wrap"/>
             </Grid>
         </DataTemplate>
-        
+
         <Style x:Key="Padding2ItemContainerStyle" TargetType="ListBoxItem">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="TabNavigation" Value="Local"/>
@@ -132,124 +132,132 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Background="DarkBlue">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <Border BorderThickness="2" BorderBrush="#FF2E2925" >
+        <Grid Background="#FF000002" Padding="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <ScrollViewer>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="130"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <!--타이틀-->
-                <TextBlock Text="{Binding CurrentItem.Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <!--아이템 이미지-->
-                <Grid Grid.Row="1">
+            <ScrollViewer>
+                <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="130"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                    <!--타이틀-->
+                    <!--아이템 이미지-->
+                    <Border VerticalAlignment="Center" Margin="2" BorderThickness="1" BorderBrush="#FF3A280B">
+                        <TextBlock Text="{Binding CurrentItem.Name}" HorizontalAlignment="Center"/>
+                    </Border>
+                    <!--아이템 이미지-->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Border Grid.RowSpan="5" Margin="0 0 6 0"
+                        <Border Grid.RowSpan="5" Margin="0 0 6 0"
                             Background="{Binding CurrentItem.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
                             BorderBrush="#FF110A05">
-                        <Grid >
-                            <Image Source="{Binding CurrentItem.Icon, Converter={StaticResource IconToImageConverter}}" />
-                        </Grid>
-                    </Border>
-                    <TextBlock Grid.Column="1" Grid.Row="0" 
-                               Text="{Binding CurrentItem.TypeName}" />
-                    <TextBlock Grid.Column="2" Grid.Row="0" 
-                               Text="{Binding CurrentItem.Type.TwoHanded}" />
-                    <TextBlock Grid.Column="1" Grid.Row="1" 
-                               Text="{Binding CurrentItem.Dps.Max, ConverterParameter=\{0:N1\}, Converter={StaticResource StringFormatConverter}}" 
-                               FontSize="28" />
-                    <TextBlock Grid.Column="1" Grid.Row="2" Text="초당 공격력"/>
-                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding CurrentItem.DamageRange}"/>
-                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding CurrentItem.AttacksPerSecondText}"/>
-                </Grid>
-                <!--주요 속성-->
-                <StackPanel Grid.Row="2" Margin="10 0">
-                    <TextBlock Text="주요 속성"/>
-                    <ListBox ItemsSource="{Binding CurrentItem.Attributes.Primary}"
-                             ItemTemplate="{StaticResource AttributeItemTemplate}" 
-                             ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}"/>
-                    <TextBlock Margin="2 0">
-                        <Run Text="*"/>
-                        <Run Text="{Binding CurrentItem.Augmentation}"/>
-                    </TextBlock>
-                </StackPanel>
-                <!--보조 속성-->
-                <StackPanel Grid.Row="3" Margin="10 0">
-                    <TextBlock Text="보조 속성"/>
-                    <ListBox ItemsSource="{Binding CurrentItem.Attributes.Secondary}"
-                             ItemTemplate="{StaticResource AttributeItemTemplate}"
-                             ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}"/>
-                    <ListBox ItemsSource="{Binding CurrentItem.Attributes.Passive}"
-                             ItemTemplate="{StaticResource AttributeItemTemplate}"
-                             ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}"/>
-                </StackPanel>
-                <!--보석-->
-                <ListBox Grid.Row="4" ItemsSource="{Binding CurrentItem.Gems}"
-                         Margin="10 0"
-                         ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Image Width="25"
-                                       Source="{Binding Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
-                                <TextBlock Grid.Column="1" Text="*"/>
-                                <TextBlock Grid.Column="2" Text="{Binding Attributes.Primary[0].Text}"/>
+                            <Grid >
+                                <Image Source="{Binding CurrentItem.Icon, Converter={StaticResource IconToImageConverter}}" />
                             </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                        </Border>
+                        <TextBlock Grid.Column="1" Grid.Row="0" 
+                            Text="{Binding CurrentItem.TypeName}" />
+                        <TextBlock Grid.Column="2" Grid.Row="0" 
+                            Text="{Binding CurrentItem.Type.TwoHanded}" />
+                        <TextBlock Grid.Column="1" Grid.Row="1" 
+                            Text="{Binding CurrentItem.Dps.Max, ConverterParameter=\{0:N1\}, Converter={StaticResource StringFormatConverter}}" 
+                            FontSize="28" />
+                        <TextBlock Grid.Column="1" Grid.Row="2" Text="초당 공격력"/>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding CurrentItem.DamageRange}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding CurrentItem.AttacksPerSecondText}"/>
+                    </Grid>
+                    <!--주요 속성-->
+                    <StackPanel Grid.Row="2" Margin="10 0">
+                        <TextBlock Text="주요 속성"/>
+                        <ListBox ItemsSource="{Binding CurrentItem.Attributes.Primary}"
+                            ItemTemplate="{StaticResource AttributeItemTemplate}" 
+                            ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}" 
+                            Background="Black"/>
+                        <TextBlock Margin="2 0">
+                            <Run Text="*"/>
+                            <Run Text="{Binding CurrentItem.Augmentation}"/>
+                        </TextBlock>
+                    </StackPanel>
+                    <!--보조 속성-->
+                    <StackPanel Grid.Row="3" Margin="10 0">
+                        <TextBlock Text="보조 속성"/>
+                        <ListBox ItemsSource="{Binding CurrentItem.Attributes.Secondary}"
+                            ItemTemplate="{StaticResource AttributeItemTemplate}"
+                            ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}"
+                            Background="Black"/>
+                        <ListBox ItemsSource="{Binding CurrentItem.Attributes.Passive}"
+                            ItemTemplate="{StaticResource AttributeItemTemplate}"
+                            ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}"
+                            Background="Black"/>
+                    </StackPanel>
+                    <!--보석-->
+                    <ListBox Grid.Row="4" ItemsSource="{Binding CurrentItem.Gems}"
+                        Margin="10 0" Background="Black"
+                        ItemContainerStyle="{StaticResource Padding2ItemContainerStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="25"
+                                        Source="{Binding Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                    <TextBlock Grid.Column="1" Text="*"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Attributes.Primary[0].Text}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
 
-                <!--기본데이터-->
-                <StackPanel Grid.Row="5" Margin="10 0">
-                    <TextBlock>
-                        <Run Text="요구 레벨:"/>
-                        <Run Text="{Binding CurrentItem.RequiredLevel}"/>
-                    </TextBlock>
-                    <TextBlock Text="{Binding CurrentItem.AccountBound}"/>
-                </StackPanel>
+                    <!--기본데이터-->
+                    <StackPanel Grid.Row="5" Margin="10 0">
+                        <TextBlock>
+                            <Run Text="요구 레벨:"/>
+                            <Run Text="{Binding CurrentItem.RequiredLevel}"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding CurrentItem.AccountBound}"/>
+                    </StackPanel>
 
-                <!--아이템설명-->
-                <TextBlock Grid.Row="6" Margin="10 0"
-                           Text="{Binding CurrentItem.FlavorText}" TextWrapping="Wrap"/>
+                    <!--아이템설명-->
+                    <TextBlock Grid.Row="6" Margin="10 0"
+                        Text="{Binding CurrentItem.FlavorText}" TextWrapping="Wrap"/>
+                </Grid>
+            </ScrollViewer>
+
+            <!--버튼 부-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Save Gallery" HorizontalAlignment="Center"/>
+                <Button Grid.Column="1" Content="Close" HorizontalAlignment="Center"/>
             </Grid>
-        </ScrollViewer>
-
-        <!--버튼 부-->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Button Content="Save Gallery" HorizontalAlignment="Center"/>
-            <Button Grid.Column="1" Content="Close" HorizontalAlignment="Center"/>
         </Grid>
-    </Grid>
+    </Border>
 </UserControl>

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls.Primitives;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
 using ApplicationView = Windows.UI.ViewManagement.ApplicationView;
 
@@ -10,6 +13,15 @@ namespace Diablo3Hub.Services
 {
     public static class CommonStaticHelper
     {
+        /// <summary>
+        /// 여기서 관리하는 팝업
+        /// </summary>
+        private static Popup _singlePopup;
+        /// <summary>
+        /// 관리하는 팝업의 취소 토큰 소스
+        /// </summary>
+        private static CancellationTokenSource _singlePopupCTS;
+
         /// <summary>
         ///     공통 확인 창 출력 메서드 입니다.
         ///     상세 내용은 아래 페이지 참고
@@ -56,9 +68,48 @@ namespace Diablo3Hub.Services
             return view.VisibleBounds;
         }
 
-        public static async Task ShowPopupAsync(FrameworkElement content, string okText, string cancelText)
+        public static Task<object> ShowPopupAsync(FrameworkElement content, string okText, string cancelText)
         {
-            
+            if (content == null) return null;
+            if (double.IsNaN(content.Width) || double.IsNaN(content.Height)) return null;
+
+            var rect = GetWindowBounds();
+            var hoffset = Math.Ceiling(rect.Width / 2 - content.Width / 2);
+            var voffset = Math.Ceiling(rect.Height / 2 - content.Height / 2);
+
+            _singlePopup = new Popup
+            {
+                HorizontalOffset = hoffset,
+                VerticalOffset = voffset,
+                Child = content,
+                IsOpen = true
+            };
+            _singlePopup.Closed += _singlePopup_Closed;
+
+            _singlePopupCTS = new CancellationTokenSource();
+
+            return new Task<object>(() =>
+            {
+                //테스크가 완료되면 결과를 넣고 끝냄
+
+                return null;
+            }, _singlePopupCTS.Token);
+
+            //var cts = new CancellationTokenSource();
+            //return new Task();
+        }
+
+        public static void SetResult()
+        {
+            if (_singlePopupCTS == null) return;
+            _singlePopupCTS.
+        }
+
+        private static void _singlePopup_Closed(object sender, object e)
+        {
+            _singlePopup.Closed -= _singlePopup_Closed;
+
+            throw new NotImplementedException();
         }
     }
 }

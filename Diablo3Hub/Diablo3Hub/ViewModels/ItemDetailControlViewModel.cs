@@ -1,12 +1,13 @@
 ﻿using System.Windows.Input;
 using Windows.ApplicationModel;
+using Diablo3Hub.Commons;
 using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
 {
-    public class ItemDetailControlViewModel : ViewModelBase
+    public class ItemDetailControlViewModel : ViewModelBase, IPopupParam, IPopupResult
     {
         private ItemDetail _currentItem;
 
@@ -42,9 +43,17 @@ namespace Diablo3Hub.ViewModels
 
         public ICommand CloseCommand { get; set; }
 
-        public void SetItem(ItemDetail item)
+        /// <summary>
+        /// 파라메터 전달
+        /// </summary>
+        /// <param name="param"></param>
+        public void SetParam(object param)
         {
-            CurrentItem = item;
+            CurrentItem = param as ItemDetail;
         }
+        /// <summary>
+        /// 결과
+        /// </summary>
+        public object Result { get; set; }
     }
 }

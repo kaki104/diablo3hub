@@ -171,6 +171,7 @@
     <Compile Include="Behaviors\SelectedItemsBehavior.cs" />
     <Compile Include="Commons\CommonData.cs" />
     <Compile Include="Commons\IPopupParam.cs" />
+    <Compile Include="Commons\IPopupResult.cs" />
     <Compile Include="Controls\BattleTagItemDelConfirmDialog.xaml.cs">
       <DependentUpon>BattleTagItemDelConfirmDialog.xaml</DependentUpon>
     </Compile>
