@@ -61,7 +61,7 @@ namespace Diablo3Hub.ViewModels
                 var clickedItem = CurrentItems.FirstOrDefault(p => p.Id == id);
                 if (clickedItem == null) return;
 
-                var content = new ItemDetailControl(clickedItem);
+                var content = new ItemDetailControl();
                 var rect = CommonStaticHelper.GetWindowBounds();
                 var popup = new Popup
                 {

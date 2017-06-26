@@ -102,7 +102,7 @@ namespace Diablo3Hub.Services
         public static void SetResult()
         {
             if (_singlePopupCTS == null) return;
-            _singlePopupCTS.
+            
         }
 
         private static void _singlePopup_Closed(object sender, object e)
