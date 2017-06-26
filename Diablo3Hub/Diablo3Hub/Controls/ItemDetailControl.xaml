@@ -255,8 +255,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Save Gallery" HorizontalAlignment="Center"/>
-                <Button Grid.Column="1" Content="Close" HorizontalAlignment="Center"/>
+                <Button Content="Save Gallery" HorizontalAlignment="Center"
+                        Command="{Binding SaveCommand}"/>
+                <Button Grid.Column="1" Content="Close" HorizontalAlignment="Center"
+                        Command="{Binding CloseCommand}"/>
             </Grid>
         </Grid>
     </Border>

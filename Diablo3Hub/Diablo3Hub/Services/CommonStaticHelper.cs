@@ -3,9 +3,12 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
+using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Media;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
 using ApplicationView = Windows.UI.ViewManagement.ApplicationView;
 
@@ -21,6 +24,10 @@ namespace Diablo3Hub.Services
         /// 관리하는 팝업의 취소 토큰 소스
         /// </summary>
         private static CancellationTokenSource _singlePopupCTS;
+        /// <summary>
+        /// 싱글 팝업 테스크 컴플레이션 소스
+        /// </summary>
+        private static TaskCompletionSource<object> _singlePopupTCS;
 
         /// <summary>
         ///     공통 확인 창 출력 메서드 입니다.
@@ -67,49 +74,51 @@ namespace Diablo3Hub.Services
             var view = ApplicationView.GetForCurrentView();
             return view.VisibleBounds;
         }
-
+        /// <summary>
+        /// 싱글 팝업 출력
+        /// </summary>
         public static Task<object> ShowPopupAsync(FrameworkElement content, string okText, string cancelText)
         {
             if (content == null) return null;
             if (double.IsNaN(content.Width) || double.IsNaN(content.Height)) return null;
 
             var rect = GetWindowBounds();
-            var hoffset = Math.Ceiling(rect.Width / 2 - content.Width / 2);
-            var voffset = Math.Ceiling(rect.Height / 2 - content.Height / 2);
+            //var hoffset = Math.Ceiling(rect.Width / 2 - content.Width / 2);
+            //var voffset = Math.Ceiling(rect.Height / 2 - content.Height / 2);
+            var border = new Border
+            {
+                Background = new SolidColorBrush(Color.FromArgb(40, 0, 0, 0)),
+                Child = content,
+                Width = rect.Width,
+                Height = rect.Height
+            };
 
             _singlePopup = new Popup
             {
-                HorizontalOffset = hoffset,
-                VerticalOffset = voffset,
-                Child = content,
+                Child = border,
                 IsOpen = true
             };
-            _singlePopup.Closed += _singlePopup_Closed;
-
-            _singlePopupCTS = new CancellationTokenSource();
-
-            return new Task<object>(() =>
-            {
-                //테스크가 완료되면 결과를 넣고 끝냄
-
-                return null;
-            }, _singlePopupCTS.Token);
-
-            //var cts = new CancellationTokenSource();
-            //return new Task();
+            _singlePopupTCS = new TaskCompletionSource<object>();
+            return _singlePopupTCS.Task;
         }
-
-        public static void SetResult()
+        /// <summary>
+        /// 팝업 완료
+        /// </summary>
+        /// <param name="result"></param>
+        public static void SetResult(object result)
         {
-            if (_singlePopupCTS == null) return;
-            
+            if (_singlePopup == null || _singlePopupTCS == null) return;
+            _singlePopup.IsOpen = false;
+            _singlePopupTCS.SetResult(result);
         }
-
-        private static void _singlePopup_Closed(object sender, object e)
+        /// <summary>
+        /// 팝업 취소
+        /// </summary>
+        public static void SetCancel()
         {
-            _singlePopup.Closed -= _singlePopup_Closed;
-
-            throw new NotImplementedException();
+            if (_singlePopup == null || _singlePopupTCS == null) return;
+            _singlePopup.IsOpen = false;
+            _singlePopupTCS.SetCanceled();
         }
     }
 }

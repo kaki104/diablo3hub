@@ -54,7 +54,7 @@ namespace Diablo3Hub.ViewModels
         /// </summary>
         private void Init()
         {
-            ItemClickCommand = new DelegateCommand<object>(obj =>
+            ItemClickCommand = new DelegateCommand<object>(async obj =>
             {
                 var id = obj as string;
                 if (string.IsNullOrEmpty(id)) return;
@@ -62,13 +62,9 @@ namespace Diablo3Hub.ViewModels
                 if (clickedItem == null) return;
 
                 var content = new ItemDetailControl();
-                var rect = CommonStaticHelper.GetWindowBounds();
-                var popup = new Popup
-                {
-                    Child = content,
-                    IsOpen = true
-                };
-
+                content.SetParam(clickedItem);
+                var result = await CommonStaticHelper.ShowPopupAsync(content, "Save", "Close");
+                if (result == null) return;
             });
         }
         /// <summary>

@@ -3,6 +3,7 @@ using Windows.ApplicationModel;
 using Diablo3Hub.Commons;
 using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
+using Diablo3Hub.Services;
 using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
@@ -32,28 +33,43 @@ namespace Diablo3Hub.ViewModels
         }
 
         /// <summary>
-        ///     초기화
+        ///     저장 커맨드
         /// </summary>
-        private void Init()
-        {
-
-        }
-
         public ICommand SaveCommand { get; set; }
 
+        /// <summary>
+        ///     클로즈 커맨드
+        /// </summary>
         public ICommand CloseCommand { get; set; }
 
         /// <summary>
-        /// 파라메터 전달
+        ///     파라메터 전달
         /// </summary>
         /// <param name="param"></param>
         public void SetParam(object param)
         {
             CurrentItem = param as ItemDetail;
         }
+
         /// <summary>
-        /// 결과
+        ///     결과
         /// </summary>
         public object Result { get; set; }
+
+        /// <summary>
+        ///     초기화
+        /// </summary>
+        private void Init()
+        {
+            SaveCommand = new DelegateCommand(() =>
+            {
+                CommonStaticHelper.SetResult(nameof(SaveCommand));
+            });
+
+            CloseCommand = new DelegateCommand(() =>
+            {
+                CommonStaticHelper.SetResult(nameof(CloseCommand));
+            });
+        }
     }
 }
