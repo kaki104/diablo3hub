@@ -18,7 +18,7 @@ namespace Diablo3Hub.ViewModels
         public ItemDetailControlViewModel()
         {
             if (DesignMode.DesignModeEnabled)
-                CurrentItem = DesignData.GetItemDetail();
+                CurrentItem = DesignData.GetItemDetail(1);
             else
                 Init();
         }

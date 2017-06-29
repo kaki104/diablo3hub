@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using Diablo3Hub.Models;
-using Newtonsoft.Json;
 
 namespace Diablo3Hub.DesignDatas
 {
     internal class DesignData
     {
         /// <summary>
-        /// 배틀테그 디자인 타임 데이터
+        ///     배틀테그 디자인 타임 데이터
         /// </summary>
         /// <returns></returns>
         public static IList<BattleTag> GetBattleTags()
@@ -24,7 +22,7 @@ namespace Diablo3Hub.DesignDatas
         }
 
         /// <summary>
-        /// 케리어 프로파일 디자인 타임 데이터
+        ///     케리어 프로파일 디자인 타임 데이터
         /// </summary>
         /// <returns></returns>
         public static CareerProfile GetCareerProfile()
@@ -117,7 +115,7 @@ namespace Diablo3Hub.DesignDatas
         }
 
         /// <summary>
-        /// 히어로 디자인 타임 데이터
+        ///     히어로 디자인 타임 데이터
         /// </summary>
         /// <returns></returns>
         public static HeroProfile GetHeroProfile()
@@ -129,7 +127,7 @@ namespace Diablo3Hub.DesignDatas
                 Class = "demon-hunter",
                 Gender = 1,
                 Level = 70,
-                Kills = new Kills { Elites = 375 },
+                Kills = new Kills {Elites = 375},
                 ParagonLevel = 165,
                 Hardcore = true,
                 Seasonal = true,
@@ -289,266 +287,593 @@ namespace Diablo3Hub.DesignDatas
                 Lastupdated = 1496265207
             };
         }
+
         /// <summary>
-        /// 아이템 디자인 타임 데이터
+        ///     아이템 디자인 타임 데이터
         /// </summary>
         /// <returns></returns>
-        public static ItemDetail GetItemDetail()
+        public static ItemDetail GetItemDetail(int index)
         {
-            return new ItemDetail
+            var items = new List<ItemDetail>
             {
-                Id = "Unique_Dagger_101_x1",
-                Name = "카를레이의 주장",
-                Icon = "unique_dagger_101_x1_demonhunter_male",
-                DisplayColor = "orange",
-                RequiredLevel = 70,
-                ItemLevel = 70,
-                StackSizeMax = 0,
-                BonusAffixes = 0,
-                BonusAffixesMax = 0,
-                AccountBound = true,
-                FlavorText = "악마사냥꾼 카를레이와 말다툼을 하는 사람은, 그녀가 기가 막힐 만큼 주장을 확실히 관철시키는 사람이라는 사실을 곧바로 깨닫기 마련이었습니다.",
-                TypeName = "고대 전설 단도",
-                Type = new Type
+                new ItemDetail
                 {
-                    Id = "Dagger",
-                    TwoHanded = false
-                },
-                DamageRange = "무기 공격력 1432~2004",
-                Dps = new MinMax
-                {
-                    Min = 2757.8073000000004f,
-                    Max = 2757.8073000000004f
-                },
-                AttacksPerSecond = new MinMax
-                {
-                    Min = 1.605f,
-                    Max = 1.605f
-                },
-                AttacksPerSecondText = "초당 공격 횟수 1.61",
-                MinDamage = new MinMax
-                {
-                    Min = 113.42f,
-                    Max = 113.42f
-                },
-                MaxDamage = new MinMax
-                {
-                    Min = 340.26f,
-                    Max = 340.26f
-                },
-                ElementalType = "cold",
-                Augmentation = "민첩 +370 (칼데산의 절망 74등급)",
-                Attributes = new Attributes
-                {
-                    Primary = new Attribute[]
+                    Id = "Unique_Dagger_101_x1",
+                    Name = "카를레이의 주장",
+                    Icon = "unique_dagger_101_x1_demonhunter_male",
+                    DisplayColor = "orange",
+                    RequiredLevel = 70,
+                    ItemLevel = 70,
+                    StackSizeMax = 0,
+                    BonusAffixes = 0,
+                    BonusAffixesMax = 0,
+                    AccountBound = true,
+                    FlavorText = "악마사냥꾼 카를레이와 말다툼을 하는 사람은, 그녀가 기가 막힐 만큼 주장을 확실히 관철시키는 사람이라는 사실을 곧바로 깨닫기 마련이었습니다.",
+                    TypeName = "고대 전설 단도",
+                    Type = new Type
                     {
-                        new Attribute
+                        Id = "Dagger",
+                        TwoHanded = false
+                    },
+                    DamageRange = "무기 공격력 1432~2004",
+                    Dps = new MinMax
+                    {
+                        Min = 2757.8073000000004f,
+                        Max = 2757.8073000000004f
+                    },
+                    AttacksPerSecond = new MinMax
+                    {
+                        Min = 1.605f,
+                        Max = 1.605f
+                    },
+                    AttacksPerSecondText = "초당 공격 횟수 1.61",
+                    MinDamage = new MinMax
+                    {
+                        Min = 113.42f,
+                        Max = 113.42f
+                    },
+                    MaxDamage = new MinMax
+                    {
+                        Min = 340.26f,
+                        Max = 340.26f
+                    },
+                    ElementalType = "cold",
+                    Augmentation = "민첩 +370 (칼데산의 절망 74등급)",
+                    Attributes = new Attributes
+                    {
+                        Primary = new[]
                         {
-                            Color = "blue",
-                            Text = "냉기 무기 공격력 +1244~1570",
-                            AffixType = "default"
-                        },
-                        new Attribute
-                        {
-                            Color = "blue",
-                            Text = "피해 +6%",
-                            AffixType = "default"
-                        },
-                        new Attribute
-                        {
-                            Color = "blue",
-                            Text = "민첩 +887",
-                            AffixType = "default"
-                        },
-                        new Attribute
-                        {
-                            Color = "blue",
-                            Text = "공격 속도 7% 증가",
-                            AffixType = "enchant"
-                        }
-                    },
-                    Secondary = new Attribute[]
-                    {
-                        new Attribute
-                        {
-                            Color = "blue",
-                            Text = "적을 처치하고 얻는 경험치 +248",
-                            AffixType = "utility"
-                        }
-                    },
-                    Passive = new Attribute[]
-                    {
-                        new Attribute
-                        {
-                            Color = "blue",
-                            Text = "이미 투검이 적중한 적에게 투검이 적중하면 15의 증오가 반환됨",
-                            AffixType = "default"
-                        }
-                    }
-                },
-                AttributesRaw = new Attributesraw
-                {
-                    Post212Drop = new MinMax
-                    {
-                        Min = 1.0f,
-                        Max = 1.0f
-                    },
-                    DamageWeaponPercentAll = new MinMax
-                    {
-                        Min = 0.06f,
-                        Max = 0.06f
-                    },
-                    DamageWeaponMinPhysical = new MinMax
-                    {
-                        Min = 107.0f,
-                        Max = 107.0f
-                    },
-                    Post250Drop = new MinMax
-                    {
-                        Min = 1.0f,
-                        Max = 1.0f
-                    },
-                    ItemLegendaryItemBaseItem = new MinMax
-                    {
-                        Min = -1.303412034E9f,
-                        Max = -1.303412034E9f
-                    },
-                    CubeEnchantedGemRank = new MinMax
-                    {
-                        Min = 74.0f,
-                        Max = 74.0f
-                    },
-                    DexterityItem = new MinMax
-                    {
-                        Min = 887.0f,
-                        Max = 887.0f
-                    },
-                    DurabilityMax = new MinMax
-                    {
-                        Min = 369.0f,
-                        Max = 369.0f
-                    },
-                    ExperienceBonus = new MinMax
-                    {
-                        Min = 248.0f,
-                        Max = 248.0f
-                    },
-                    DamageWeaponDeltaCold = new MinMax
-                    {
-                        Min = 326.0f,
-                        Max = 326.0f
-                    },
-                    AncientRank = new MinMax
-                    {
-                        Min = 1.0f,
-                        Max = 1.0f
-                    },
-                    AttacksPerSecondItem = new MinMax
-                    {
-                        Min = 1.5f,
-                        Max = 1.5f
-                    },
-                    ItemPowerPassiveP4ItemPassiveUniqueRing008 = new MinMax
-                    {
-                        Min = 15.0f,
-                        Max = 15.0f
-                    },
-                    DurabilityCur = new MinMax
-                    {
-                        Min = 364.0f,
-                        Max = 364.0f
-                    },
-                    Sockets = new MinMax
-                    {
-                        Min = 1.0f,
-                        Max = 1.0f
-                    },
-                    DamageWeaponDeltaPhysical = new MinMax
-                    {
-                        Min = 214.0f,
-                        Max = 214.0f
-                    },
-                    Season = new MinMax
-                    {
-                        Min = 0.0f,
-                        Max = 0.0f
-                    },
-                    ItemLegendaryItemLevelOverride = new MinMax
-                    {
-                        Min = 70.0f,
-                        Max = 70.0f
-                    },
-                    Loot20Drop = new MinMax
-                    {
-                        Min = 1.0f,
-                        Max = 1.0f
-                    },
-                    CubeEnchantedGemType = new MinMax
-                    {
-                        Min = 2.0f,
-                        Max = 2.0f
-                    },
-                    DamageWeaponMinCold = new MinMax
-                    {
-                        Min = 1244.0f,
-                        Max = 1244.0f
-                    },
-                    ConsumableAddSockets = new MinMax
-                    {
-                        Min = 1.0f,
-                        Max = 1.0f
-                    },
-                    ItemBindingLevelOverride = new MinMax
-                    {
-                        Min = 2.0f,
-                        Max = 2.0f
-                    },
-                    AttacksPerSecondItemPercent = new MinMax
-                    {
-                        Min = 0.07f,
-                        Max = 0.07f
-                    }
-                },
-                Gems = new Gem[]
-                {
-                    new Gem
-                    {
-                        Item = new Item
-                        {
-                            Id = "x1_Emerald_10",
-                            Name = "온전한 왕실 에메랄드",
-                            Icon = "x1_emerald_10_demonhunter_male",
-                            DisplayColor = "blue",
-                            TooltipParams = "item/ChwIyv_2pA8SBwgEFUItN6kwj9ICOABAAVgEkAEKGPvKxuwK"
-                        },
-                        IsGem = true,
-                        IsJewel = false,
-                        Attributes = new Attributes()
-                        {
-                            Primary = new Attribute[]
+                            new Attribute
                             {
-                                new Attribute
+                                Color = "blue",
+                                Text = "냉기 무기 공격력 +1244~1570",
+                                AffixType = "default"
+                            },
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "피해 +6%",
+                                AffixType = "default"
+                            },
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "민첩 +887",
+                                AffixType = "default"
+                            },
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "공격 속도 7% 증가",
+                                AffixType = "enchant"
+                            }
+                        },
+                        Secondary = new[]
+                        {
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "적을 처치하고 얻는 경험치 +248",
+                                AffixType = "utility"
+                            }
+                        },
+                        Passive = new[]
+                        {
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "이미 투검이 적중한 적에게 투검이 적중하면 15의 증오가 반환됨",
+                                AffixType = "default"
+                            }
+                        }
+                    },
+                    AttributesRaw = new Attributesraw
+                    {
+                        Post212Drop = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        DamageWeaponPercentAll = new MinMax
+                        {
+                            Min = 0.06f,
+                            Max = 0.06f
+                        },
+                        DamageWeaponMinPhysical = new MinMax
+                        {
+                            Min = 107.0f,
+                            Max = 107.0f
+                        },
+                        Post250Drop = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        ItemLegendaryItemBaseItem = new MinMax
+                        {
+                            Min = -1.303412034E9f,
+                            Max = -1.303412034E9f
+                        },
+                        CubeEnchantedGemRank = new MinMax
+                        {
+                            Min = 74.0f,
+                            Max = 74.0f
+                        },
+                        DexterityItem = new MinMax
+                        {
+                            Min = 887.0f,
+                            Max = 887.0f
+                        },
+                        DurabilityMax = new MinMax
+                        {
+                            Min = 369.0f,
+                            Max = 369.0f
+                        },
+                        ExperienceBonus = new MinMax
+                        {
+                            Min = 248.0f,
+                            Max = 248.0f
+                        },
+                        DamageWeaponDeltaCold = new MinMax
+                        {
+                            Min = 326.0f,
+                            Max = 326.0f
+                        },
+                        AncientRank = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        AttacksPerSecondItem = new MinMax
+                        {
+                            Min = 1.5f,
+                            Max = 1.5f
+                        },
+                        ItemPowerPassiveP4ItemPassiveUniqueRing008 = new MinMax
+                        {
+                            Min = 15.0f,
+                            Max = 15.0f
+                        },
+                        DurabilityCur = new MinMax
+                        {
+                            Min = 364.0f,
+                            Max = 364.0f
+                        },
+                        Sockets = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        DamageWeaponDeltaPhysical = new MinMax
+                        {
+                            Min = 214.0f,
+                            Max = 214.0f
+                        },
+                        Season = new MinMax
+                        {
+                            Min = 0.0f,
+                            Max = 0.0f
+                        },
+                        ItemLegendaryItemLevelOverride = new MinMax
+                        {
+                            Min = 70.0f,
+                            Max = 70.0f
+                        },
+                        Loot20Drop = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        CubeEnchantedGemType = new MinMax
+                        {
+                            Min = 2.0f,
+                            Max = 2.0f
+                        },
+                        DamageWeaponMinCold = new MinMax
+                        {
+                            Min = 1244.0f,
+                            Max = 1244.0f
+                        },
+                        ConsumableAddSockets = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        ItemBindingLevelOverride = new MinMax
+                        {
+                            Min = 2.0f,
+                            Max = 2.0f
+                        },
+                        AttacksPerSecondItemPercent = new MinMax
+                        {
+                            Min = 0.07f,
+                            Max = 0.07f
+                        }
+                    },
+                    Gems = new[]
+                    {
+                        new Gem
+                        {
+                            Item = new Item
+                            {
+                                Id = "x1_Emerald_10",
+                                Name = "온전한 왕실 에메랄드",
+                                Icon = "x1_emerald_10_demonhunter_male",
+                                DisplayColor = "blue",
+                                TooltipParams = "item/ChwIyv_2pA8SBwgEFUItN6kwj9ICOABAAVgEkAEKGPvKxuwK"
+                            },
+                            IsGem = true,
+                            IsJewel = false,
+                            Attributes = new Attributes
+                            {
+                                Primary = new[]
                                 {
-                                    Color = "blue",
-                                    Text = "극대화 피해 130.0% 증가",
-                                    AffixType = "default"
+                                    new Attribute
+                                    {
+                                        Color = "blue",
+                                        Text = "극대화 피해 130.0% 증가",
+                                        AffixType = "default"
+                                    }
+                                }
+                            },
+                            AttributesRaw = new Attributesraw
+                            {
+                                CritDamagePercent = new MinMax
+                                {
+                                    Min = 1.3f,
+                                    Max = 1.3f
+                                }
+                            }
+                        }
+                    },
+                    SeasonRequiredToDrop = -1,
+                    IsSeasonRequiredToDrop = false,
+                    BlockChance = "방패막기 확률 +0.0%"
+                },
+                new ItemDetail
+                {
+                    Id = "Unique_Helm_Set_14_x1",
+                    Name = "어둠의 가면",
+                    Icon = "unique_helm_set_14_x1_demonhunter_male",
+                    DisplayColor = "green",
+                    RequiredLevel = 70,
+                    ItemLevel = 70,
+                    StackSizeMax = 0,
+                    BonusAffixes = 0,
+                    BonusAffixesMax = 0,
+                    AccountBound = true,
+                    FlavorText = "\"어둠은 그대의 동료이자 적의 악몽이다.\" - 악마사냥꾼 쿠나이",
+                    TypeName = "세트 투구",
+                    Type = new Type
+                    {
+                        Id = "Helm",
+                        TwoHanded = false
+                    },
+                    DamageRange = "무기 공격력 0~0",
+                    Armor = new MinMax
+                    {
+                        Min = 736.0f,
+                        Max = 736.0f
+                    },
+                    Attributes = new Attributes
+                    {
+                        Primary = new[]
+                        {
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "민첩 +717",
+                                AffixType = "default"
+                            },
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "활력 +719",
+                                AffixType = "default"
+                            },
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "극대화 확률 6.0% 증가",
+                                AffixType = "enchant"
+                            }
+                        },
+                        Secondary = new[]
+                        {
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "물리 저항 +151",
+                                AffixType = "default"
+                            },
+                            new Attribute
+                            {
+                                Color = "blue",
+                                Text = "가시 피해 +2739",
+                                AffixType = "utility"
+                            }
+                        }
+                    },
+                    AttributesRaw = new Attributesraw
+                    {
+                        Post212Drop = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        Post250Drop = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        VitalityItem = new MinMax
+                        {
+                            Min = 719.0f,
+                            Max = 719.0f
+                        },
+                        ItemLegendaryItemBaseItem = new MinMax
+                        {
+                            Min = 1.565456767E9f,
+                            Max = 1.565456767E9f
+                        },
+                        ResistancePhysical = new MinMax
+                        {
+                            Min = 151.0f,
+                            Max = 151.0f
+                        },
+                        CritPercentBonusCapped = new MinMax
+                        {
+                            Min = 0.06f,
+                            Max = 0.06f
+                        },
+                        DurabilityCur = new MinMax
+                        {
+                            Min = 307.0f,
+                            Max = 307.0f
+                        },
+                        Sockets = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        ItemLegendaryItemLevelOverride = new MinMax
+                        {
+                            Min = 70.0f,
+                            Max = 70.0f
+                        },
+                        DexterityItem = new MinMax
+                        {
+                            Min = 717.0f,
+                            Max = 717.0f
+                        },
+                        DurabilityMax = new MinMax
+                        {
+                            Min = 312.0f,
+                            Max = 312.0f
+                        },
+                        Loot20Drop = new MinMax
+                        {
+                            Min = 1.0f,
+                            Max = 1.0f
+                        },
+                        ItemBindingLevelOverride = new MinMax
+                        {
+                            Min = 2.0f,
+                            Max = 2.0f
+                        },
+                        ArmorItem = new MinMax
+                        {
+                            Min = 736.0f,
+                            Max = 736.0f
+                        },
+                        ThornsFixedPhysical = new MinMax
+                        {
+                            Min = 2739.0f,
+                            Max = 2739.0f
+                        }
+                    },
+                    Gems = new[]
+                    {
+                        new Gem
+                        {
+                            Item = new Item
+                            {
+                                Id = "x1_Diamond_10",
+                                Name = "온전한 왕실 다이아몬드",
+                                Icon = "x1_diamond_10_demonhunter_male",
+                                DisplayColor = "blue",
+                                TooltipParams = "item/ChwInKee3AoSBwgEFaS-HMIwi9ICOABAAVgEkAEKGLeFmt4H"
+                            },
+                            IsGem = true,
+                            IsJewel = false,
+                            Attributes = new Attributes
+                            {
+                                Primary = new[]
+                                {
+                                    new Attribute
+                                    {
+                                        Color = "blue",
+                                        Text = "모든 기술의 재사용 대기시간 12.5% 감소",
+                                        AffixType = "utility"
+                                    }
+                                }
+                            },
+                            AttributesRaw = new Attributesraw
+                            {
+                                PowerCooldownReductionPercentAlll = new MinMax
+                                {
+                                    Min = 0.125f,
+                                    Max = 0.125f
+                                }
+                            }
+                        }
+                    },
+                    Set = new SetItem
+                    {
+                        Items = new[]
+                        {
+                            new Item
+                            {
+                                Id = "Unique_Helm_Set_14_x1",
+                                Name = "어둠의 가면",
+                                Icon = "unique_helm_set_14_x1_demonhunter_male",
+                                DisplayColor = "green",
+                                TooltipParams = "item/the-shadows-mask"
+                            },
+                            new Item
+                            {
+                                Id = "Unique_Pants_Set_14_x1",
+                                Name = "어둠의 똬리 바지",
+                                Icon = "unique_pants_set_14_x1_demonhunter_male",
+                                DisplayColor = "green",
+                                TooltipParams = "item/the-shadows-coil"
+                            },
+                            new Item
+                            {
+                                Id = "Unique_Boots_Set_14_x1",
+                                Name = "어둠의 뾰족구두",
+                                Icon = "unique_boots_set_14_x1_demonhunter_male",
+                                DisplayColor = "green",
+                                TooltipParams = "item/the-shadows-heels"
+                            },
+                            new Item
+                            {
+                                Id = "Unique_Gloves_Set_14_x1",
+                                Name = "어둠의 손아귀",
+                                Icon = "unique_gloves_set_14_x1_demonhunter_male",
+                                DisplayColor = "green",
+                                TooltipParams = "item/the-shadows-grasp"
+                            },
+                            new Item
+                            {
+                                Id = "Unique_Shoulder_Set_14_x1",
+                                Name = "어둠의 짐",
+                                Icon = "unique_shoulder_set_14_x1_demonhunter_male",
+                                DisplayColor = "green",
+                                TooltipParams = "item/the-shadows-burden"
+                            },
+                            new Item
+                            {
+                                Id = "Unique_Chest_Set_14_x1",
+                                Name = "어둠의 파멸",
+                                Icon = "unique_chest_set_14_x1_demonhunter_male",
+                                DisplayColor = "green",
+                                TooltipParams = "item/the-shadows-bane"
+                            }
+                        },
+                        Name = "어둠의 어깨걸이",
+                        Ranks = new[]
+                        {
+                            new Rank
+                            {
+                                Required = 2,
+                                Attributes = new Attributes
+                                {
+                                    Passive = new[]
+                                    {
+                                        new Attribute
+                                        {
+                                            Color = "orange",
+                                            Text = "근접 무기와 함께 장비한 동안 공격력 1200% 증가",
+                                            AffixType = "default"
+                                        }
+                                    }
+                                },
+                                Attributesraw = new Attributesraw
+                                {
+                                    ItemPowerPassiveItemPassiveUniqueRing524X1 = new MinMax
+                                    {
+                                        Min = 12.0f,
+                                        Max = 12.0f
+                                    }
+                                }
+                            },
+                            new Rank
+                            {
+                                Required = 4,
+                                Attributes = new Attributes
+                                {
+                                    Passive = new[]
+                                    {
+                                        new Attribute
+                                        {
+                                            Color = "orange",
+                                            Text = "어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨",
+                                            AffixType = "default"
+                                        }
+                                    }
+                                },
+                                Attributesraw = new Attributesraw
+                                {
+                                    ItemPowerPassiveItemPassiveUniqueRing524X1 = new MinMax
+                                    {
+                                        Min = 12.0f,
+                                        Max = 12.0f
+                                    }
+                                }
+                            },
+                            new Rank
+                            {
+                                Required = 6,
+                                Attributes = new Attributes
+                                {
+                                    Passive = new[]
+                                    {
+                                        new Attribute
+                                        {
+                                            Color = "orange",
+                                            Text = "투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌",
+                                            AffixType = "default"
+                                        }
+                                    }
+                                },
+                                Attributesraw = new Attributesraw
+                                {
+                                    ItemPowerPassiveP4ItemPassiveUniqueRing002 = new MinMax
+                                    {
+                                        Min = 12.0f,
+                                        Max = 12.0f
+                                    }
                                 }
                             }
                         },
-                        AttributesRaw = new Attributesraw
-                        {
-                            CritDamagePercent = new MinMax
-                            {
-                                Min = 1.3f,
-                                Max = 1.3f
-                            }
-                        }
-                    }
-                },
-                SeasonRequiredToDrop = -1,
-                IsSeasonRequiredToDrop = false,
-                BlockChance = "방패막기 확률 +0.0%"
+                        Slug = "the-shadows-mantle"
+                    },
+                    SetItemsEquipped = new object[]
+                    {
+                        "Unique_Helm_Set_14_x1",
+                        "Unique_Pants_Set_14_x1",
+                        "Unique_Boots_Set_14_x1",
+                        "Unique_Gloves_Set_14_x1",
+                        "Unique_Shoulder_Set_14_x1",
+                        "Unique_Chest_Set_14_x1",
+                    },
+                    SeasonRequiredToDrop = -1,
+                    IsSeasonRequiredToDrop = false,
+                    BlockChance = "방패막기 확률 +0.0%"
+                }
             };
+            return items[index];
         }
     }
 }

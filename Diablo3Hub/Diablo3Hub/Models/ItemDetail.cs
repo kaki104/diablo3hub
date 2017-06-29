@@ -70,6 +70,9 @@ namespace Diablo3Hub.Models
         [JsonProperty(PropertyName = "damageRange")]
         public string DamageRange { get; set; }
 
+        [JsonProperty(PropertyName = "armor")]
+        public MinMax Armor { get; set; }
+
         [JsonProperty(PropertyName = "dps")]
         public MinMax Dps { get; set; }
 
@@ -90,7 +93,7 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "slots")]
         public string[] Slots { get; set; }
-        
+
         [JsonProperty(PropertyName = "augmentation")]
         public string Augmentation { get; set; }
 
@@ -108,6 +111,12 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "socketEffects")]
         public object[] SocketEffects { get; set; }
+
+        [JsonProperty(PropertyName = "set")]
+        public SetItem Set { get; set; }
+
+        [JsonProperty(PropertyName = "setItemsEquipped")]
+        public object[] SetItemsEquipped { get; set; }
 
         [JsonProperty(PropertyName = "craftedBy")]
         public object[] CraftedBy { get; set; }
@@ -245,6 +254,40 @@ namespace Diablo3Hub.Models
         [JsonProperty(PropertyName = "Attacks_Per_Second_Item_Percent")]
         public MinMax AttacksPerSecondItemPercent { get; set; }
 
+        [JsonProperty(PropertyName = "Vitality_Item")]
+        public MinMax VitalityItem { get; set; }
+
+        [JsonProperty(PropertyName = "Resistance#Physical")]
+        public MinMax ResistancePhysical { get; set; }
+
+        [JsonProperty(PropertyName = "Crit_Percent_Bonus_Capped")]
+        public MinMax CritPercentBonusCapped { get; set; }
+
+        [JsonProperty(PropertyName = "Armor_Item")]
+        public MinMax ArmorItem { get; set; }
+
+        [JsonProperty(PropertyName = "Thorns_Fixed#Physical")]
+        public MinMax ThornsFixedPhysical { get; set; }
+
+        [JsonProperty(PropertyName = "Power_Cooldown_Reduction_Percent_All")]
+        public MinMax PowerCooldownReductionPercentAlll { get; set; }
+
+        /// <summary>
+        /// 근접 무기와 함께 장비한 동안 공격력 1200% 증가
+        /// </summary>
+        [JsonProperty(PropertyName = "Item_Power_Passive#ItemPassive_Unique_Ring_524_x1")]
+        public MinMax ItemPowerPassiveItemPassiveUniqueRing524X1 { get; set; }
+        /// <summary>
+        /// 어둠의 힘이 모든 룬의 효과를 발휘하고 계속 지속됨
+        /// </summary>
+        [JsonProperty(PropertyName = "Item_Power_Passive#ItemPassive_Unique_Ring_680_x1")]
+        public MinMax ItemPowerPassiveItemPassiveUniqueRing680X1 { get; set; }
+        /// <summary>
+        /// 투검이 처음으로 적중한 적에게 무기 공격력의  40000%만큼 추가 피해를 줌
+        /// </summary>
+        [JsonProperty(PropertyName = "Item_Power_Passive#P4_ItemPassive_Unique_Ring_002")]
+        public MinMax ItemPowerPassiveP4ItemPassiveUniqueRing002 { get; set; }
+
     }
 
     public class Gem
@@ -281,5 +324,32 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "tooltipParams")]
         public string TooltipParams { get; set; }
+    }
+
+    public class Rank
+    {
+        [JsonProperty(PropertyName = "required")]
+        public int Required { get; set; }
+
+        [JsonProperty(PropertyName = "attributes")]
+        public Attributes Attributes { get; set; }
+
+        [JsonProperty(PropertyName = "attributesraw")]
+        public Attributesraw Attributesraw { get; set; }
+    }
+
+    public class SetItem
+    {
+        [JsonProperty(PropertyName = "items")]
+        public Item[] Items { get; set; }
+
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "rank")]
+        public Rank[] Ranks { get; set; }
+
+        [JsonProperty(PropertyName = "slug")]
+        public string Slug { get; set; }
     }
 }
