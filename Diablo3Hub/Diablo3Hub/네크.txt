@@ -1,0 +1,470 @@
+﻿{
+  "id" : 64143446,
+  "name" : "kakiNec",
+  "class" : "necromancer",
+  "gender" : 0,
+  "level" : 70,
+  "kills" : {
+    "elites" : 710
+  },
+  "paragonLevel" : 838,
+  "hardcore" : false,
+  "seasonal" : false,
+  "seasonCreated" : 0,
+  "skills" : {
+    "active" : [ {
+      "skill" : {
+        "slug" : "skeletal-mage",
+        "name" : "해골 마법학자",
+        "icon" : "p6_necro_raisedead",
+        "level" : 5,
+        "categorySlug" : "secondary",
+        "tooltipUrl" : "skill/necromancer/skeletal-mage",
+        "description" : "소모: 정수 40\r\n\r\n지면에서 해골을 일으켜 적을 공격하게 합니다. 해골은 두 번의 공격에 걸쳐 무기 공격력의 400%만큼 물리 피해를 줍니다. 2초 동안 지속됩니다.",
+        "simpleDescription" : "소모: 정수 40\r\n\r\n지면에서 해골을 일으켜 적을 공격하게 합니다.",
+        "skillCalcId" : "c"
+      },
+      "rune" : {
+        "slug" : "skeletal-mage-b",
+        "type" : "b",
+        "name" : "특이점",
+        "level" : 29,
+        "description" : "정수를 모두 소모하여 강력한 졸개를 소환합니다. 소모한 정수당 졸개의 공격력이 3% 증가합니다.",
+        "simpleDescription" : "정수를 모두 소모하여 강력한 졸개를 소환합니다.",
+        "tooltipParams" : "rune/skeletal-mage/b",
+        "skillCalcId" : "Y",
+        "order" : 3
+      }
+    }, {
+      "skill" : {
+        "slug" : "grim-scythe",
+        "name" : "사신의 낫",
+        "icon" : "p6_necro_grimscythe",
+        "level" : 3,
+        "categorySlug" : "primary",
+        "tooltipUrl" : "skill/necromancer/grim-scythe",
+        "description" : "생성: 맞힌 적 하나당 정수 12\r\n\r\n소환한 낫으로 전방의 적을 베어 무기 공격력의 150%만큼 물리 피해를 줍니다.",
+        "simpleDescription" : "생성: 맞힌 적 하나당 정수 12\r\n\r\n소환한 낫으로 전방의 적을 베어 주위의 적에게 피해를 줍니다.",
+        "skillCalcId" : "b"
+      },
+      "rune" : {
+        "slug" : "grim-scythe-e",
+        "type" : "e",
+        "name" : "저주받은 낫",
+        "level" : 33,
+        "description" : "낫에 맞은 적이 15% 확률로 무작위 저주에 걸립니다.\r\n\r\n사신의 낫으로 주는 피해가 독 피해로 바뀝니다.",
+        "simpleDescription" : "적이 일정 확률로 무작위 저주에 걸립니다.",
+        "tooltipParams" : "rune/grim-scythe/e",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    }, {
+      "skill" : {
+        "slug" : "blood-rush",
+        "name" : "피의 질주",
+        "icon" : "p6_necro_bloodrush",
+        "level" : 30,
+        "categorySlug" : "blood-bone",
+        "tooltipUrl" : "skill/necromancer/blood-rush",
+        "description" : "소모: 생명력 5%\r\n재사용 대기시간: 5초\r\n\r\n필멸의 육신을 벗어 던지고 최대 50미터 떨어진 곳에 다시 나타납니다.",
+        "simpleDescription" : "소모: 생명력 5%\r\n재사용 대기시간: 5초\r\n\r\n필멸의 육신을 벗어 던지고 다른 장소에서 다시 나타납니다.",
+        "skillCalcId" : "j"
+      },
+      "rune" : {
+        "slug" : "blood-rush-d",
+        "type" : "d",
+        "name" : "증폭",
+        "level" : 34,
+        "description" : "시전 후 2초 동안 방어도가 100% 증가합니다.",
+        "simpleDescription" : "시전 후 잠시 동안 방어도가 증가합니다.",
+        "tooltipParams" : "rune/blood-rush/d",
+        "skillCalcId" : "a",
+        "order" : 0
+      }
+    }, {
+      "skill" : {
+        "slug" : "bone-spirit",
+        "name" : "뼈 영혼",
+        "icon" : "p6_necro_bonespirit",
+        "level" : 25,
+        "categorySlug" : "blood-bone",
+        "tooltipUrl" : "skill/necromancer/bone-spirit",
+        "description" : "뼈 영혼을 내보내 적을 추적하게 합니다. 적과 충돌하면 무기 공격력의 4000%만큼 물리 피해를 줍니다.\r\n\r\n15초마다 1회 충전되며, 최대 3회까지 충전됩니다. 시체를 섭취할 때마다 재충전 시간이 1초 감소합니다.",
+        "simpleDescription" : "뼈 영혼을 내보내 적을 추적하게 합니다. 적과 충돌하면 피해를 줍니다.\r\n\r\n15초마다 1회 충전되며, 최대 3회까지 충전됩니다. 시체를 섭취할 때마다 재충전 시간이 감소합니다.",
+        "skillCalcId" : "R"
+      },
+      "rune" : {
+        "slug" : "bone-spirit-b",
+        "type" : "b",
+        "name" : "공황 발작",
+        "level" : 37,
+        "description" : "뼈 영혼이 폭발하면 2초 동안 10미터 내에 있는 적이 공포에 휩싸입니다. 적에게 주는 피해가 독 피해로 바뀝니다.",
+        "simpleDescription" : "뼈 영혼이 폭발하면 대상 주위에 있는 적이 공포에 휩싸입니다.",
+        "tooltipParams" : "rune/bone-spirit/b",
+        "skillCalcId" : "Z",
+        "order" : 1
+      }
+    }, {
+      "skill" : {
+        "slug" : "bone-armor",
+        "name" : "뼈 갑옷",
+        "icon" : "p6_necro_bonearmor",
+        "level" : 19,
+        "categorySlug" : "blood-bone",
+        "tooltipUrl" : "skill/necromancer/bone-armor",
+        "description" : "소모: 정수 10\r\n재사용 대기시간: 10초\r\n\r\n주위의 적에게서 뼈를 뜯어내 무기 공격력의 125%만큼 물리 피해를 주고, 적 최대 10마리까지 뼈를 뜯어낸 적 하나당 받는 피해를 3%만큼 감소시키는 갑옷을 생성합니다. 60초 동안 지속됩니다.",
+        "simpleDescription" : "소모: 정수 10\r\n재사용 대기시간: 10초\r\n\r\n주위의 적에게서 뼈를 뜯어내 피해를 주고, 뼈를 뜯어낸 적의 수에 따라 받는 피해를 감소시키는 갑옷을 생성합니다.",
+        "skillCalcId" : "T"
+      },
+      "rune" : {
+        "slug" : "bone-armor-c",
+        "type" : "c",
+        "name" : "탈골",
+        "level" : 29,
+        "description" : "뼈를 뜯긴 적이 2초 동안 기절합니다.\r\n\r\n뼈 갑옷으로 주는 피해가 독 피해로 바뀝니다.",
+        "simpleDescription" : "뼈를 뜯긴 적이 기절합니다.",
+        "tooltipParams" : "rune/bone-armor/c",
+        "skillCalcId" : "Z",
+        "order" : 1
+      }
+    }, {
+      "skill" : {
+        "slug" : "corpse-lance",
+        "name" : "시체 창",
+        "icon" : "p6_necro_corpselance",
+        "level" : 8,
+        "categorySlug" : "corpses",
+        "tooltipUrl" : "skill/necromancer/corpse-lance",
+        "description" : "적을 대상으로 선택하면 주위에 있는 시체에서 투사체가 날아가 대상에게 무기 공격력의 1750%만큼 물리 피해를 줍니다.",
+        "simpleDescription" : "적을 대상으로 선택하면 주위에 있는 시체에서 투사체가 날아가 대상에게 피해를 줍니다.",
+        "skillCalcId" : "X"
+      },
+      "rune" : {
+        "slug" : "corpse-lance-a",
+        "type" : "a",
+        "name" : "튕기기",
+        "level" : 34,
+        "description" : "시체 창이 20% 확률로 튕겨 대상 하나를 추가로 공격합니다.\r\n\r\n시체 창으로 주는 피해가 독 피해로 바뀝니다.",
+        "simpleDescription" : "시체 창이 일정 확률로 튕겨 대상 하나를 추가로 공격합니다.",
+        "tooltipParams" : "rune/corpse-lance/a",
+        "skillCalcId" : "b",
+        "order" : 2
+      }
+    } ],
+    "passive" : [ {
+      "skill" : {
+        "slug" : "stand-alone",
+        "name" : "홀로서기",
+        "icon" : "p6_necro_passive_standalone",
+        "level" : 14,
+        "tooltipUrl" : "skill/necromancer/stand-alone",
+        "description" : "방어도가 100% 증가하고, 졸개가 하나 활성화될 때마다 10% 감소합니다.",
+        "flavor" : "\"우리의 길을 선택한 자들에게서 변하지 않는 건 고독뿐이다.\" - 고위 강령술사 요스탄",
+        "skillCalcId" : "b"
+      }
+    }, {
+      "skill" : {
+        "slug" : "swift-harvesting",
+        "name" : "빠른 수확",
+        "icon" : "p6_necro_passive_builderattackspeed",
+        "level" : 20,
+        "tooltipUrl" : "skill/necromancer/swift-harvesting",
+        "description" : "뼈 쐐기, 피 흡수, 사신의 낫의 공격 속도가 15% 증가합니다.",
+        "flavor" : "\"내 목숨을 바쳐 이리 봉사하는 건, 네가 느릿느릿 싸우는 꼴을 보려던 게 아니다.\" - 고위 강령술사 레저",
+        "skillCalcId" : "c"
+      }
+    }, {
+      "skill" : {
+        "slug" : "rigor-mortis",
+        "name" : "사후 경직",
+        "icon" : "p6_necro_passive_rigormortis",
+        "level" : 27,
+        "tooltipUrl" : "skill/necromancer/rigor-mortis",
+        "description" : "독 능력이 5초 동안 적의 이동 속도를 30%, 공격 속도를 30% 감소시킵니다.",
+        "flavor" : "\"중요한 건 기대를 충족시키는 주문을 시전하는 게 아니라, 기대를 깨뜨리는 것이다.\" - 죽음예언자 마이칸",
+        "skillCalcId" : "W"
+      }
+    }, {
+      "skill" : {
+        "slug" : "overwhelming-essence",
+        "name" : "압도적인 정수",
+        "icon" : "p6_necro_passive_maxessence",
+        "level" : 30,
+        "tooltipUrl" : "skill/necromancer/overwhelming-essence",
+        "description" : "최대 정수가 40 증가합니다.",
+        "flavor" : "정수는 살아 있는 모든 것들을 빛나게 하는 불꽃입니다.",
+        "skillCalcId" : "e"
+      }
+    } ]
+  },
+  "items" : {
+    "mainHand" : {
+      "id" : "Unique_Sword_2H_104_x1",
+      "name" : "타락한 파멸의 인도자",
+      "icon" : "unique_sword_2h_104_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CokBCNbe6LcCEgcIBBV6zfjEHSgTN-cdFplnOx0Z3hXKHdy0ivsd3tP1oh1uUJAFMIvWAjiKA0AAUBJYBGCiA2osCgwIABCkxMe-iYCA4CQSHAi6v8-1CBIHCAQVQi03qTCP0gI4AEABWASQAQCAAUalASgTN-etAZ5Pg9y1ATwCL_K4AZfUiEDAAQIYi8q5sAdQDFgA"
+    },
+    "waist" : {
+      "id" : "Unique_Belt_009_x1",
+      "name" : "한밤의 마술사",
+      "icon" : "unique_belt_009_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClwIooLJxg8SBwgEFR3dj2kdHaONxB3ZP9SfHZuG9uIdQ05EUR1-dlWhHZinjsAwi9ICOJgBQABQElgEYL4CgAFGpQGYp47ArQGYp47AtQHAp0LUuAHilJHlB8ABAxi69P6YDVAMWAA"
+    },
+    "rightFinger" : {
+      "id" : "P2_Unique_Ring_04",
+      "name" : "원소의 회동",
+      "icon" : "p2_unique_ring_04_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/CnUI5ozqnQ0SBwgEFWr52xgd89VHtB1-dlWhHWYjBlAd5hXbDR2bhvbiMIvSAjjtAUAAUBJYBGCqA2oyCgwIABC46eGMjYCAwDwSIgi75o68BBIHCAQV6OWgwTCL0gI4AEAAUBJYBJABCtgBogGAAUa1ATZVXUQY1OXfjQNQDFgA"
+    },
+    "leftFinger" : {
+      "id" : "Unique_Ring_013_x1",
+      "name" : "나침도",
+      "icon" : "unique_ring_013_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/Co8BCP_shoQLEgcIBBWBVjW5Hay801MdQ05EUR2L8XpCHZinjsAd6-LkBR2pIDa6MIvSAjioAUAAUBJYBGDXAmoxCgwIABCv8f-hiYCAwCcSIQjFi56YBxIHCAQVyoqzwTCL0gI4AEAAUBJYBJABCtgBOIABRqUBqSA2uq0BZiMGULUBNlVdRLgB38qW8AzAAQMY_aXV7AhQDFgAoAH9pdXsCKAButzTsAs",
+      "setItemsEquipped" : [ "Unique_Ring_013_x1", "Unique_Amulet_008_x1" ]
+    },
+    "neck" : {
+      "id" : "Unique_Amulet_008_x1",
+      "name" : "모험가의 서약",
+      "icon" : "unique_amulet_008_x1_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CpABCKTQsrIPEgcIBBUddwpbHZc_ndodAWAtsR1-VrMuHTid5AQdsMEJch3zcAetMIvSAjjFAUAAUBJYBGCAA2oyCgwIABD5s_nmgYCAwBISIgiQ2Y-OAxIHCAQVLjCkwTCL0gI4AEAAUBJYBJABCtgBmgGAAUalATid5AStAWYjBlC1AbDFRGS4AYqfoLgCwAEFGLrc07ALUAxYAKAB_aXV7AigAbrc07AL",
+      "setItemsEquipped" : [ "Unique_Ring_013_x1", "Unique_Amulet_008_x1" ]
+    },
+    "torso" : {
+      "id" : "P6_Necro_Set_3_Chest",
+      "name" : "이나리우스의 신념",
+      "icon" : "p6_necro_set_3_chest_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CuYBCL7_sesDEgcIBBVvxBEwHZuG9uIdcyMGUB1DTkRRHTtrK8gdHaONxB1xi3fwMIvSAjieAUAAUBJYBGC6AmosCgwIABC_ifbihoCA4CsSHAj3haTcBhIHCAQV9gpf_jCL0gI4AEABWASQAQBqLAoMCAAQwIn24oaAgOArEhwI6rKSog4SBwgEFfYKX_4wi9ICOABAAVgEkAEAaiwKDAgAEMKJ9uKGgIDgKxIcCKPggpMCEgcIBBX2Cl_-MIvSAjgAQAFYBJABAIABRqUBO2sryK0B6WWlVrUBMSIZYLgB1Z7R_g_AAQMY3pGOgQZQDFgAoAHD9Yy2DKAB4s3fEKAB_rSdgAagAd6RjoEGoAH8ysqPBqAB0Pfmvgc",
+      "setItemsEquipped" : [ "P6_Necro_Set_3_Shoulders", "P6_Necro_Set_3_Chest", "P6_Necro_Set_3_Gloves", "P6_Necro_Set_3_Helm", "P6_Necro_Set_3_Boots", "P6_Necro_Set_3_Pants" ]
+    },
+    "feet" : {
+      "id" : "P6_Necro_Set_3_Boots",
+      "name" : "이나리우스의 인고",
+      "icon" : "p6_necro_set_3_boots_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClsIjOattgUSBwgEFT-tAzAdcYt38B0BYC2xHaLPFFYd6-LkBR1DTkRRHZuG9uIwi9ICOHZAAFASWARggAKAAUalAaLPFFatASCNN1S1AaBFm3-4AceX3aQPwAECGP60nYAGUAxYAKABw_WMtgygAeLN3xCgAf60nYAGoAHekY6BBqAB_MrKjwagAdD35r4H",
+      "setItemsEquipped" : [ "P6_Necro_Set_3_Shoulders", "P6_Necro_Set_3_Chest", "P6_Necro_Set_3_Gloves", "P6_Necro_Set_3_Helm", "P6_Necro_Set_3_Boots", "P6_Necro_Set_3_Pants" ]
+    },
+    "hands" : {
+      "id" : "P6_Necro_Set_3_Gloves",
+      "name" : "이나리우스의 의지",
+      "icon" : "p6_necro_set_3_gloves_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClwIwqHXvAMSBwgEFejd7Dsd9HAHrR1-VrMuHZwGAMsdfnZVoR0EBj61HT_yCdgwi9oCOOQBQABQElgEYJ4DgAFGpQGcBgDLrQGYp47AtQHJW5KkuAGd743yCcABARjQ9-a-B1AMWACgAcP1jLYMoAHizd8QoAH-tJ2ABqAB3pGOgQagAfzKyo8GoAHQ9-a-Bw",
+      "setItemsEquipped" : [ "P6_Necro_Set_3_Shoulders", "P6_Necro_Set_3_Chest", "P6_Necro_Set_3_Gloves", "P6_Necro_Set_3_Helm", "P6_Necro_Set_3_Boots", "P6_Necro_Set_3_Pants" ]
+    },
+    "shoulders" : {
+      "id" : "P6_Necro_Set_3_Shoulders",
+      "name" : "이나리우스의 순교",
+      "icon" : "p6_necro_set_3_shoulders_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/ClwI4vH99Q4SBwgEFXHzCwEdG13PRB3SxzB7Hb1VhNMdE9bq5h24vCB6Hdw7U2gwi9oCOO4BQABQElgEYK4DgAFGpQG9VYTTrQGEA6HWtQHS-MgVuAHkoMvrAcABBxjizd8QUAxYAKABw_WMtgygAeLN3xCgAf60nYAGoAHekY6BBqAB_MrKjwagAdD35r4H",
+      "setItemsEquipped" : [ "P6_Necro_Set_3_Shoulders", "P6_Necro_Set_3_Chest", "P6_Necro_Set_3_Gloves", "P6_Necro_Set_3_Helm", "P6_Necro_Set_3_Boots", "P6_Necro_Set_3_Pants" ]
+    },
+    "legs" : {
+      "id" : "P6_Necro_Set_3_Pants",
+      "name" : "이나리우스의 침묵",
+      "icon" : "p6_necro_set_3_pants_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CrgBCJeC6oYEEgcIBBW-UvkwHZuG9uIdj5DKUB1dCmPcHTid5AQdf46HzB1xi3fwMIvSAjjTAUAAUBJYBGCHA2osCgwIABDEifbihoCA4CsSHAj7_unaDRIHCAQV9gpf_jCL0gI4AEABWASQAQBqLAoMCAAQ_Y_SnoSAgMArEhwIyaOIuQkSBwgEFfYKX_4wi9ICOABAAVgEkAEAgAFGpQFdCmPcrQFbEb41tQGfktWluAG6vo_FAsABDxj8ysqPBlAMWACgAcP1jLYMoAHizd8QoAH-tJ2ABqAB3pGOgQagAfzKyo8GoAHQ9-a-Bw",
+      "setItemsEquipped" : [ "P6_Necro_Set_3_Shoulders", "P6_Necro_Set_3_Chest", "P6_Necro_Set_3_Gloves", "P6_Necro_Set_3_Helm", "P6_Necro_Set_3_Boots", "P6_Necro_Set_3_Pants" ]
+    },
+    "bracers" : {
+      "id" : "Unique_Bracer_105_x1",
+      "name" : "유혈 완갑",
+      "icon" : "unique_bracer_105_x1_demonhunter_male",
+      "displayColor" : "orange",
+      "tooltipParams" : "item/ClcI09jdyQgSBwgEFQLqXDkdhAOh1h1XItWqHQdendMd5hXbDR3q1ZI_MIvaAji2AUAAUBJYBGDrAoABRqUB6tWSP60B3DtTaLUB2yzKy7gBkY7Q2QjAAQQYhKjnlQdQDFgA"
+    },
+    "head" : {
+      "id" : "P6_Necro_Set_3_Helm",
+      "name" : "이나리우스의 이해",
+      "icon" : "p6_necro_set_3_helm_demonhunter_male",
+      "displayColor" : "green",
+      "tooltipParams" : "item/CooBCL2o8ZkNEgcIBBWeYp6cHfRwB60dZiMGUB3mFdsNHf5ZGPQdbhfHex0bXc9EMIvaAjirAUAAUBJYBGDNAmosCgwIABCqwIGehICAwCsSHAjM3MKLBBIHCAQVpL4cwjCL0gI4AEABWASQAQCAAUalAf5ZGPStAZwGAMu1AX_5Tl24AcKj7twJwAEBGMP1jLYMUAxYAKABw_WMtgygAeLN3xCgAf60nYAGoAHekY6BBqAB_MrKjwagAdD35r4H",
+      "setItemsEquipped" : [ "P6_Necro_Set_3_Shoulders", "P6_Necro_Set_3_Chest", "P6_Necro_Set_3_Gloves", "P6_Necro_Set_3_Helm", "P6_Necro_Set_3_Boots", "P6_Necro_Set_3_Pants" ]
+    }
+  },
+  "followers" : {
+    "templar" : {
+      "slug" : "templar",
+      "level" : 70,
+      "items" : {
+        "mainHand" : {
+          "id" : "Unique_Sword_1H_101_x1",
+          "name" : "우레폭풍 - 바람추적자의 성검",
+          "icon" : "unique_sword_1h_101_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/ClcIjuy1og4SBwgEFVa3elAdco4dIR2bBgDLHWYjBlAdj1jWHh3J-rygMIvSAjiYAkAAUBJYBGDKAoABRqUByfq8oK0Bnk-D3LUBm9nZ77gBtNKarAHAAQYYrN3Vhwo"
+        },
+        "offHand" : {
+          "id" : "Unique_Shield_008_x1",
+          "name" : "각성의 벽",
+          "icon" : "unique_shield_008_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkYI1dm-ygwSBwgEFU6hnwkdrNOZOR10RaeJHX5Wsy4dYZUW4B1XItWqHfNwB60wi9ICOIUDQABQElgEYIUDgAFGtQETDDtsGJyF_ZkB"
+        },
+        "rightFinger" : {
+          "id" : "Unique_Ring_010_x1",
+          "name" : "화합의 반지",
+          "icon" : "unique_ring_010_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CjwIso-j8gMSBwgEFV6xM7kdP_IJ2B2Yp47AHeYV2w0d8dNq1TCL0gI47gJAAFASWARg7gKAAUa1ATZVXUQYw7ri7Ag"
+        },
+        "leftFinger" : {
+          "id" : "Unique_Ring_017_p4",
+          "name" : "눈동자 반지",
+          "icon" : "unique_ring_017_p4_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkEIy__uvQgSBwgEFQCHN7kdAWAtsR10RaeJHeYV2w0duLwgeh1mIwZQMIvSAjjjAkAAUBJYBGDjAoABRrUBNlVdRBj_48PsCA"
+        },
+        "neck" : {
+          "id" : "Unique_Amulet_104_x1",
+          "name" : "요한의 정수",
+          "icon" : "unique_amulet_104_x1_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkAI4rqYcBIHCAQVOm5dXR1LtflLHTsnbyQdfnZVoR24vCB6HfNwB60wi9ICOKYCQABQElgEYKYCgAFGtQGwxURkGPS469UL"
+        },
+        "special" : {
+          "id" : "x1_FollowerItem_Templar_Legendary_01",
+          "name" : "마력 깃든 호의",
+          "icon" : "x1_followeritem_templar_legendary_01_demonhunter_male",
+          "displayColor" : "orange",
+          "tooltipParams" : "item/CkEIl9vZvQMSBwgEFY9EW9IdgYHGxB2bBgDLHXWNeDwdOydvJB1yjh0hMIvSAjiXA0AAUBJYBGCXA4ABRrUB7AtjRBjh7aXaBQ"
+        }
+      },
+      "stats" : {
+        "experienceBonus" : 74,
+        "goldFind" : 7,
+        "magicFind" : 0
+      },
+      "skills" : [ {
+        "skill" : {
+          "slug" : "heal",
+          "name" : "치유",
+          "icon" : "templar_heal_110",
+          "level" : 5,
+          "tooltipUrl" : "skill/templar/heal",
+          "description" : "재사용 대기시간: 30초\r\n\r\n플레이어와 기사단원의 생명력을 193112 회복합니다.",
+          "simpleDescription" : "재사용 대기시간: 30초\r\n\r\n플레이어와 기사단원의 생명력을 회복합니다.",
+          "skillCalcId" : "a"
+        }
+      }, {
+        "skill" : {
+          "slug" : "loyalty",
+          "name" : "충성",
+          "icon" : "templar_loyalty",
+          "level" : 10,
+          "tooltipUrl" : "skill/templar/loyalty",
+          "description" : "영웅과 기사단원의 생명력이 매초 6437씩 회복됩니다.",
+          "simpleDescription" : "영웅과 기사단원의 생명력이 지속적으로 회복됩니다.",
+          "skillCalcId" : "b"
+        }
+      }, {
+        "skill" : {
+          "slug" : "onslaught",
+          "name" : "맹습",
+          "icon" : "templar_onslaught",
+          "level" : 15,
+          "tooltipUrl" : "skill/templar/onslaught",
+          "description" : "재사용 대기시간: 10초\r\n\r\n적에게 강력한 일격을 가해 무기 공격력의 800%만큼 피해를 줍니다.",
+          "simpleDescription" : "재사용 대기시간: 10초\r\n\r\n적에게 강력한 일격을 가합니다.",
+          "skillCalcId" : "X"
+        }
+      }, {
+        "skill" : {
+          "slug" : "inspire",
+          "name" : "고취",
+          "icon" : "templar_inspire",
+          "level" : 20,
+          "tooltipUrl" : "skill/templar/inspire",
+          "description" : "플레이어의 자원 생성량이 증가합니다.\r\n\r\n마나: 초당 7 생성\r\n증오: 초당 1 생성\r\n진노: 초당 1.1 생성\r\n비전력: 초당 1.4 생성\r\n분노: 10% 추가 생성\r\n공력: 10% 추가 생성\r\n정수: 10% 추가 생성",
+          "simpleDescription" : "자원 생성량이 증가합니다.",
+          "skillCalcId" : "d"
+        }
+      } ]
+    }
+  },
+  "legendaryPowers" : [ {
+    "id" : "P6_Unique_Scythe2H_04",
+    "name" : "나이르의 검은 죽음",
+    "icon" : "p6_unique_scythe2h_04_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/nayrs-black-death"
+  }, {
+    "id" : "Unique_Pants_006_p1",
+    "name" : "도굴꾼 바지",
+    "icon" : "unique_pants_006_p1_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/depth-diggers"
+  }, {
+    "id" : "Unique_Ring_010_x1",
+    "name" : "화합의 반지",
+    "icon" : "unique_ring_010_x1_demonhunter_male",
+    "displayColor" : "orange",
+    "tooltipParams" : "item/unity"
+  } ],
+  "stats" : {
+    "life" : 423416,
+    "damage" : 1341570.0,
+    "toughness" : 8969430.0,
+    "healing" : 392324.0,
+    "attackSpeed" : 1.230499974489212,
+    "armor" : 5819,
+    "strength" : 77,
+    "dexterity" : 77,
+    "vitality" : 4731,
+    "intelligence" : 8810,
+    "physicalResist" : 862,
+    "fireResist" : 1344,
+    "coldResist" : 1348,
+    "lightningResist" : 1006,
+    "poisonResist" : 1205,
+    "arcaneResist" : 862,
+    "critDamage" : 4.720000000000001,
+    "blockChance" : 0.0,
+    "blockAmountMin" : 0,
+    "blockAmountMax" : 0,
+    "damageIncrease" : 0.0,
+    "critChance" : 0.39500000074999997,
+    "damageReduction" : 0.0,
+    "thorns" : 5887.0,
+    "lifeSteal" : 0.0,
+    "lifePerKill" : 15515.0,
+    "goldFind" : 1.0899999999999999,
+    "magicFind" : 0.0,
+    "lifeOnHit" : 0.0,
+    "primaryResource" : 240,
+    "secondaryResource" : 0
+  },
+  "progression" : {
+    "act1" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act2" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act3" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act4" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    },
+    "act5" : {
+      "completed" : false,
+      "completedQuests" : [ ]
+    }
+  },
+  "dead" : false,
+  "last-updated" : 1498868825
+}
