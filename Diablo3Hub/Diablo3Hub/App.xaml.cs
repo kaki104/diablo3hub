@@ -32,6 +32,7 @@ namespace Diablo3Hub
 
             #endregion
             //현재 앱이 사용 중인 로컬 폴더 경로 출력 - DB 삭제 및 기타 용도로 사용할 때 필요
+            //C:\Users\kaki1\AppData\Local\Packages\92211ab1-5481-4a1a-9111-a3dd87b81b72_8zmgqd0netmce\LocalState
             Debug.WriteLine(ApplicationData.Current.LocalFolder.Path);
         }
         /// <summary>

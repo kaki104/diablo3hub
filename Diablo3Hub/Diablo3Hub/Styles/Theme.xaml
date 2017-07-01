@@ -8,8 +8,13 @@
 
     <converters:BooleanToReverseConverter x:Key="BooleanToReverseConverter"/>
     <converters:LongToDateTimeConverter x:Key="LongToDateTimeConverter"/>
+    <converters:AnyDataToVisibilityConverter x:Key="AnyDataToVisibilityConverter"/>
+    <converters:DisplayColorToColorBrushConverter x:Key="DisplayColorToColorBrushConverter"/>
+    <converters:IconToImageConverter x:Key="IconToImageConverter"/>
+    <converters:TypeToTextConverter x:Key="TypeToTextConverter"/>
+    <converters:AccountBoundToTextConverer x:Key="AccountBoundToTextConverer"/>
+    
     <convertersT10:StringFormatConverter x:Key="ValueConverter" Format="{}{0:N0}"/>
-    <convertersToolkit:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     <convertersT10:ValueWhenConverter x:Key="TrueWhenRedColorConverter">
         <convertersT10:ValueWhenConverter.When>
             <x:Boolean>True</x:Boolean>
@@ -21,9 +26,10 @@
             <SolidColorBrush>Black</SolidColorBrush>
         </convertersT10:ValueWhenConverter.Otherwise>
     </convertersT10:ValueWhenConverter>
-    <converters:DisplayColorToColorBrushConverter x:Key="DisplayColorToColorBrushConverter"/>
-    <converters:IconToImageConverter x:Key="IconToImageConverter"/>
     <convertersT10:StringFormatConverter x:Key="StringFormatConverter"/>
+
+    <convertersToolkit:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
 
     <x:Double x:Key="NarrowMinWidth">0</x:Double>
     <x:Double x:Key="NormalMinWidth">521</x:Double>

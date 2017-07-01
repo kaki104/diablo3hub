@@ -178,10 +178,13 @@
     <Compile Include="Controls\ItemDetailControl.xaml.cs">
       <DependentUpon>ItemDetailControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\AccountBoundToTextConverer.cs" />
     <Compile Include="Converters\BooleanToReverseConverter.cs" />
+    <Compile Include="Converters\AnyDataToVisibilityConverter.cs" />
     <Compile Include="Converters\DisplayColorToColorBrushConverter.cs" />
     <Compile Include="Converters\IconToImageConverter.cs" />
     <Compile Include="Converters\LongToDateTimeConverter.cs" />
+    <Compile Include="Converters\TypeToTextConverter.cs" />
     <Compile Include="DesignDatas\DesignData.cs" />
     <Compile Include="Models\ApiCacheData.cs" />
     <Compile Include="Models\ItemDetail.cs" />

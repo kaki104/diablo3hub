@@ -106,7 +106,9 @@ namespace Diablo3Hub.ViewModels
             //기존 히어로 아이템 정보에 아이템 상세를 
             foreach (var itemD in CurrentItems)
             {
-                var oItem = CurrentHeroProfile.Items.Equipments.FirstOrDefault(p => p.Id == itemD.Id);
+                var oItem = CurrentHeroProfile.Items.Equipments
+                    .Where(p => p != null)
+                    .FirstOrDefault(p => p.Id == itemD.Id);
                 if (oItem != null)
                 {
                     oItem.ItemDetail = itemD;

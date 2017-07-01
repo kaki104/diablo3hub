@@ -25,6 +25,16 @@ namespace Diablo3Hub.Models
 
     public class ItemDetail
     {
+        /// <summary>
+        /// 기본 생성자
+        /// </summary>
+        public ItemDetail()
+        {
+            //2가지는 꼭 넣어 놓는다. - 그래야 이넘이 무기인지 방어구인지 확인할 수 있으니..
+            Dps = new MinMax();
+            Armor = new MinMax();
+        }
+
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
