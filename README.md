@@ -13,10 +13,8 @@ Diablo 3 hub for uwp app
 
 
 ##### 1. Template 10 - MVVM pattern
-* 현재 VS 2017 - Extensions에서는 검색이 않되므로
-* https://github.com/Windows-XAML/Template10/issues/1442 주소로 이동해서 Jerry Nixon 아저씨가 처음에 작성한 글의 
-* https://1drv.ms/f/s!Aq5BEHo6GlC-t7Nq2MfoysgSaZknJA 원드라이브 링크를 다운로드 받아서 설치합니다.
-
+* Visual Studio 2017 -> Tools -> Extensions and Updates ... -> Online -> Template10으로 검색하셔서 설치하시면 됩니다.
+* http://kaki104.tistory.com/521 참고하세요
 
 ##### 2. ApiKeys.publishsettings 파일 내용 구성 (아래 각 라인에서 [ ]는 삭제)
 * ApiKeys.publishsettings.temp 파일을 이용합니다. 파일명에서 .temp 삭제
