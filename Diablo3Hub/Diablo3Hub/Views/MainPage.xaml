@@ -138,7 +138,11 @@
                 RelativePanel.Below="careerProfileButton" Margin="16,16,16,0"
                 Content="Hero Profile"
                 Command="{Binding HeroProfileCommand}"/>
-            
+
+            <Button x:Name="juhoButton" 
+                RelativePanel.Below="heroProfileButton" Margin="16,16,16,0"
+                Content="Juho Button" />
+
             <!--  태스트  -->
             <!--<Rectangle Margin="0,357,-196,-525" HorizontalAlignment="Right" Width="83" Fill="#FFD63E3E"/>
 
