@@ -155,7 +155,7 @@ namespace Diablo3Hub.DesignDatas
                 },
                 Followers = new Followers
                 {
-                    Enchantress = new Enchantress
+                    Enchantress = new Follower
                     {
                         Slug = "enchantress",
                         Level = 70,
