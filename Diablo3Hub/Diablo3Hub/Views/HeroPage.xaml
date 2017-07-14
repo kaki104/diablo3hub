@@ -287,54 +287,108 @@
                                     <Border x:Name="Shoulders" Width="75" Height="100"
                                             Background="{Binding CurrentHeroProfile.Items.Shoulders.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="36" Canvas.Top="48">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Shoulders.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Shoulders.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Neck" Width="64" Height="64"
                                             Background="{Binding CurrentHeroProfile.Items.Neck.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="227" Canvas.Top="71">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Neck.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Torso" Width="94" Height="132"
                                             Background="{Binding CurrentHeroProfile.Items.Torso.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="100">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Torso.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Torso.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Hands" Width="76" Height="100"
                                             Background="{Binding CurrentHeroProfile.Items.Hands.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="6" Canvas.Top="162">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Hands.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Hands.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Bracers" Width="76" Height="100"
                                             Background="{Binding CurrentHeroProfile.Items.Bracers.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="162">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Bracers.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Bracers.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Waist" Width="94" Height="38"
                                             Background="{Binding CurrentHeroProfile.Items.Waist.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="238">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Waist.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Waist.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="LeftFinger" Width="47" Height="47"
                                             Background="{Binding CurrentHeroProfile.Items.LeftFinger.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="20" Canvas.Top="277">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.LeftFinger.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="RightFinger" Width="47" Height="47"
                                             Background="{Binding CurrentHeroProfile.Items.RightFinger.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="269" Canvas.Top="277">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.RightFinger.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Legs" Width="76" Height="101"
                                             Background="{Binding CurrentHeroProfile.Items.Legs.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="280">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Legs.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Legs.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
@@ -342,18 +396,36 @@
                                             Background="{Binding CurrentHeroProfile.Items.MainHand.DisplayColor}"
                                             BorderBrush="#FF110A05" BorderThickness="1"
                                             Canvas.Left="6" Canvas.Top="339">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.MainHand.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="OffHand" Width="74" Height="149"
                                             Background="{Binding CurrentHeroProfile.Items.OffHand.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="339">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.OffHand.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
                                     <Border x:Name="Feet" Width="76" Height="101"
                                             Background="{Binding CurrentHeroProfile.Items.Feet.DisplayColor}"
                                             BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="386">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="PointerPressed">
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding CurrentHeroProfile.Items.Feet.Id}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
                                         <Image
                                             Source="{Binding CurrentHeroProfile.Items.Feet.Icon, Converter={StaticResource IconToImageConverter}}" />
                                     </Border>
