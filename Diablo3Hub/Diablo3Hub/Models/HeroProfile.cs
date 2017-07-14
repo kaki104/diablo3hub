@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using Template10.Mvvm;
 
@@ -167,7 +168,7 @@ namespace Diablo3Hub.Models
             Bracers,
             Head,
             Special
-        };
+        }.Where(p => p != null).ToList();
 
         [JsonProperty(PropertyName = "mainHand")]
         public Equipment MainHand { get; set; }
@@ -247,14 +248,26 @@ namespace Diablo3Hub.Models
         }
     }
 
-
     public class Followers
     {
         [JsonProperty(PropertyName = "enchantress")]
-        public Enchantress Enchantress { get; set; }
+        public Follower Enchantress { get; set; }
+
+        [JsonProperty(PropertyName = "templar")]
+        public Follower Templar { get; set; }
+
+        [JsonProperty(PropertyName = "scoundrel")]
+        public Follower Scoundrel { get; set; }
+
+        public IList<Follower> Items => new List<Follower>
+        {
+            Enchantress,
+            Scoundrel,
+            Templar
+        }.Where(p => p != null).ToList();
     }
 
-    public class Enchantress
+    public class Follower
     {
         [JsonProperty(PropertyName = "slug")]
         public string Slug { get; set; }

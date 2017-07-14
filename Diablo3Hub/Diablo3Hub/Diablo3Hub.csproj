@@ -149,6 +149,10 @@
     <Content Include="DesignDatas\barbarian-male.jpg" />
     <Content Include="DesignDatas\demon-hunter-female.jpg" />
     <Content Include="DesignDatas\demon-hunter-male.jpg" />
+    <Content Include="DesignDatas\follower01.png" />
+    <Content Include="DesignDatas\follower02.png" />
+    <Content Include="DesignDatas\follower03.png" />
+    <Content Include="DesignDatas\grid.png" />
     <Content Include="DesignDatas\monk-female.jpg" />
     <Content Include="DesignDatas\monk-male.jpg" />
     <Content Include="DesignDatas\witch-doctor-female.jpg" />

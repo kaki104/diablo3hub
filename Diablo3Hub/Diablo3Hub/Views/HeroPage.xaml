@@ -79,7 +79,6 @@
                                  RelativePanel.AlignRightWithPanel="True"
                                  RelativePanel.AlignTopWithPanel="True"
                                  Text="{Binding CurrentHeroProfile.Name}" />
-
             <Pivot RelativePanel.Below="pageHeader"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
@@ -462,7 +461,85 @@
                         </StackPanel>
                     </ScrollViewer>
                 </PivotItem>
-                <PivotItem Header="Followers" />
+                <PivotItem Header="Followers">
+                    <ListView ItemsSource="{Binding CurrentHeroProfile.Followers.Items}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="320" Height="400">
+                                    <Grid.Background>
+                                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///DesignDatas/grid.png"/>
+                                    </Grid.Background>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="120"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="80"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0" Margin="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="41*"/>
+                                            <ColumnDefinition Width="115*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock TextWrapping="Wrap" Text="요술사" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower01.png" HorizontalAlignment="Right" Margin="0,0,35,0"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="121*"/>
+                                            <ColumnDefinition Width="199*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="51*"/>
+                                                <ColumnDefinition Width="70*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Margin="21,10,5,0" Height="24" VerticalAlignment="Top" 
+                                                   Source="{Binding Skills[0].Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                            <Image Margin="21,49,5,0" Height="24" VerticalAlignment="Top"
+                                                   Source="{Binding Skills[1].Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                            <Image Margin="21,85,5,91" Height="24" VerticalAlignment="Bottom"
+                                                   Source="{Binding Skills[2].Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                            <Image Margin="21,0,5,52" Height="24" VerticalAlignment="Bottom"
+                                                   Source="{Binding Skills[3].Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                            <TextBlock Grid.Column="1" Height="20" Margin="5,11,10,0" 
+                                                       Text="{Binding Skills[0].Name}" VerticalAlignment="Top"/>
+                                            <TextBlock Grid.Column="1" Height="20" Margin="5,50,10,0" 
+                                                       Text="{Binding Skills[1].Name}" VerticalAlignment="Top"/>
+                                            <TextBlock Grid.Column="1" Margin="5,88,10,92" 
+                                                       Text="{Binding Skills[2].Name}" />
+                                            <TextBlock Grid.Column="1" Margin="5,0,10,55" 
+                                                       Text="{Binding Skills[3].Name}" Height="20" VerticalAlignment="Bottom"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1" Margin="10,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="65*"/>
+                                                <ColumnDefinition Width="60*"/>
+                                                <ColumnDefinition Width="54*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="59*"/>
+                                                <RowDefinition Height="40*"/>
+                                                <RowDefinition Height="70*"/>
+                                                <RowDefinition Height="31*"/>
+                                            </Grid.RowDefinitions>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Margin="10,5,10,10" Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="86*"/>
+                                            <ColumnDefinition Width="95*"/>
+                                            <ColumnDefinition Width="119*"/>
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </PivotItem>
             </Pivot>
         </RelativePanel>
     </Grid>
