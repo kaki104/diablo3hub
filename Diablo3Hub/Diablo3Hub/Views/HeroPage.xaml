@@ -587,17 +587,97 @@
                                                        Text="{Binding Skills[3].Name}" Height="20" VerticalAlignment="Bottom"/>
                                         </Grid>
                                         <Grid Grid.Column="1" Margin="10,0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="65*"/>
-                                                <ColumnDefinition Width="60*"/>
-                                                <ColumnDefinition Width="54*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="59*"/>
-                                                <RowDefinition Height="40*"/>
-                                                <RowDefinition Height="70*"/>
-                                                <RowDefinition Height="31*"/>
-                                            </Grid.RowDefinitions>
+                                            <Border x:Name="Special" Height="46"
+                                                Background="{Binding Items.Special.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                BorderBrush="#FF110A05" Margin="48,7,84,0" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition">
+                                                <interactivity:Interaction.Behaviors>
+                                                    <core:EventTriggerBehavior EventName="PointerPressed">
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                                          CommandParameter="{Binding Items.Special.Id}" />
+                                                    </core:EventTriggerBehavior>
+                                                </interactivity:Interaction.Behaviors>
+                                                <Grid>
+                                                    <Image Source="{Binding Items.Special.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                           Source="{Binding Items.Special.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                </Grid>
+                                            </Border>
+                                            <Border x:Name="Neck" Height="46"
+                                                Background="{Binding Items.Neck.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                BorderBrush="#FF110A05" Margin="0,7,32,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="47">
+                                                <interactivity:Interaction.Behaviors>
+                                                    <core:EventTriggerBehavior EventName="PointerPressed">
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                            CommandParameter="{Binding Items.Neck.Id}" />
+                                                    </core:EventTriggerBehavior>
+                                                </interactivity:Interaction.Behaviors>
+                                                <Grid>
+                                                    <Image Source="{Binding Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                        Source="{Binding Items.Neck.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                </Grid>
+                                            </Border>
+                                            <Border x:Name="MainHand"
+                                                Background="{Binding Items.MainHand.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                BorderBrush="#FF110A05" Margin="10,61,0,31" HorizontalAlignment="Left" Width="55" d:LayoutOverrides="TopPosition, BottomPosition">
+                                                <interactivity:Interaction.Behaviors>
+                                                    <core:EventTriggerBehavior EventName="PointerPressed">
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                            CommandParameter="{Binding Items.MainHand.Id}" />
+                                                    </core:EventTriggerBehavior>
+                                                </interactivity:Interaction.Behaviors>
+                                                <Grid>
+                                                    <Image Source="{Binding Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                        Source="{Binding Items.MainHand.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                </Grid>
+                                            </Border>
+                                            <Border x:Name="OffHand"
+                                                Background="{Binding Items.OffHand.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                BorderBrush="#FF110A05" Margin="70,61,54,31" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
+                                                <interactivity:Interaction.Behaviors>
+                                                    <core:EventTriggerBehavior EventName="PointerPressed">
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                            CommandParameter="{Binding Items.OffHand.Id}" />
+                                                    </core:EventTriggerBehavior>
+                                                </interactivity:Interaction.Behaviors>
+                                                <Grid>
+                                                    <Image Source="{Binding Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                        Source="{Binding Items.OffHand.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                </Grid>
+                                            </Border>
+                                            <Border x:Name="LeftFinger"
+                                                Background="{Binding Items.LeftFinger.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                BorderBrush="#FF110A05" Margin="0,61,14,0" HorizontalAlignment="Right" Width="34" Height="34" VerticalAlignment="Top">
+                                                <interactivity:Interaction.Behaviors>
+                                                    <core:EventTriggerBehavior EventName="PointerPressed">
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                            CommandParameter="{Binding Items.LeftFinger.Id}" />
+                                                    </core:EventTriggerBehavior>
+                                                </interactivity:Interaction.Behaviors>
+                                                <Grid>
+                                                    <Image Source="{Binding Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                        Source="{Binding Items.LeftFinger.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                </Grid>
+                                            </Border>
+                                            <Border x:Name="LeftFinger_Copy"
+                                                Background="{Binding Items.RightFinger.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                BorderBrush="#FF110A05" Margin="0,0,14,62" HorizontalAlignment="Right" Width="34" Height="34" VerticalAlignment="Bottom">
+                                                <interactivity:Interaction.Behaviors>
+                                                    <core:EventTriggerBehavior EventName="PointerPressed">
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                            CommandParameter="{Binding Items.RightFinger.Id}" />
+                                                    </core:EventTriggerBehavior>
+                                                </interactivity:Interaction.Behaviors>
+                                                <Grid>
+                                                    <Image Source="{Binding Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                        Source="{Binding Items.RightFinger.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                </Grid>
+                                            </Border>
+
                                         </Grid>
                                     </Grid>
                                     <Grid Margin="10,5,10,10" Grid.Row="2">
@@ -606,6 +686,27 @@
                                             <ColumnDefinition Width="95*"/>
                                             <ColumnDefinition Width="119*"/>
                                         </Grid.ColumnDefinitions>
+                                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock>
+                                                <Run Text="{Binding Stats.GoldFind}"/>
+                                                <Run Text="%"/>
+                                            </TextBlock>
+                                            <TextBlock Text="금화발견"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock>
+                                                <Run Text="{Binding Stats.MagicFind}"/>
+                                                <Run Text="%"/>
+                                            </TextBlock>
+                                            <TextBlock Text="마법 아이템 발견" TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock>
+                                                <Run Text="+"/>
+                                                <Run Text="{Binding Stats.ExperienceBonus}"/>
+                                            </TextBlock>
+                                            <TextBlock Text="경험치" TextWrapping="Wrap"/>
+                                        </StackPanel>
                                     </Grid>
                                 </Grid>
                             </DataTemplate>
