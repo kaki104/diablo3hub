@@ -69,6 +69,10 @@ namespace Diablo3Hub.Models
 
         [JsonProperty(PropertyName = "passive")]
         public Passive[] Passive { get; set; }
+
+        [JsonProperty(PropertyName = "skill")]
+        public Skill Skill { get; set; }
+
     }
 
     public class Active
@@ -282,7 +286,7 @@ namespace Diablo3Hub.Models
         public Stats Stats { get; set; }
 
         [JsonProperty(PropertyName = "skills")]
-        public Skill[] Skills { get; set; }
+        public Skills[] Skills { get; set; }
     }
 
 

@@ -210,18 +210,21 @@ namespace Diablo3Hub.DesignDatas
                             GoldFind = 6,
                             MagicFind = 8
                         },
-                        Skills = new[]
+                        Skills = new Skills[]
                         {
-                            new Skill
+                            new Skills
                             {
-                                Slug = "charm",
-                                Name = "매혹",
-                                Icon = "enchantress_charm",
-                                Level = 15,
-                                TooltipUrl = "skill/enchantress/charm",
-                                Description = "재사용 대기시간: 18초\r\n\r\n적을 매혹시켜 8초 동안 플레이어를 위해 싸우게 합니다.",
-                                SimpleDescription = "재사용 대기시간: 18초\r\n\r\n일시적으로 적을 매혹시켜 영웅을 위해 싸우게 합니다.",
-                                SkillCalcId = "a"
+                                Skill = new Skill
+                                {
+                                    Slug = "charm",
+                                    Name = "매혹",
+                                    Icon = "enchantress_charm",
+                                    Level = 15,
+                                    TooltipUrl = "skill/enchantress/charm",
+                                    Description = "재사용 대기시간: 18초\r\n\r\n적을 매혹시켜 8초 동안 플레이어를 위해 싸우게 합니다.",
+                                    SimpleDescription = "재사용 대기시간: 18초\r\n\r\n일시적으로 적을 매혹시켜 영웅을 위해 싸우게 합니다.",
+                                    SkillCalcId = "a"
+                                }
                             }
                         }
                     }

@@ -1036,7 +1036,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FFF3E6D0" />
+        <Setter Property="FontFamily" Value="Segoe UI Light" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="10 5 10 0" />
+    </Style>
     <ResourceDictionary.ThemeDictionaries>
 
         <!--<ResourceDictionary x:Key="Default">
@@ -1160,5 +1165,7 @@
         </ResourceDictionary>-->
 
     </ResourceDictionary.ThemeDictionaries>
+
+
 </ResourceDictionary>
 
