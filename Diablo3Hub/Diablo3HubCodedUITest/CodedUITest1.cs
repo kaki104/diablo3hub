@@ -11,6 +11,7 @@ using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 
 namespace Diablo3HubCodedUITest
 {
+
     /// <summary>
     /// Summary description for CodedUITest1
     /// </summary>

@@ -67,7 +67,7 @@ namespace Diablo3Hub.ViewModels
             CareerProfileCommand = new DelegateCommand(async () =>
             {
                 var result = await ApiHelper.Instance.GetCareerProfileAsync(InputBattleTag);
-                if (result == null) return;
+                if (result == null) return;  //result가 null이 아니라, result 가 가진 property가 null인 경우 처리가 필요함.
                 var cls = result.Heroes.First().Class;
             });
 
