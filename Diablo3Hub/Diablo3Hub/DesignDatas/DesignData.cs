@@ -163,41 +163,68 @@ namespace Diablo3Hub.DesignDatas
                         {
                             MainHand = new Equipment
                             {
-                                Id = "P41_Unique_Dagger_102_x1",
-                                Name = "그린스톤 경의 부채",
-                                Icon = "p41_unique_dagger_102_x1_demonhunter_male",
+                                Id = "Unique_Sword_1H_101_x1",
+                                Name = "우레폭풍 - 바람추적자의 성검",
+                                Icon = "unique_sword_1h_101_x1_demonhunter_male",
                                 DisplayColor = "orange",
                                 TooltipParams =
-                                    "item/CkEIxLym7AkSBwgEFc4oGgAdTLTSZR2bBgDLHZ5Pg9wdO8mhYh3J-rygMIvSAjiYAkAAUBJYBGCYAoABRrUBvoJPshico9EB"
+                                    "item/CoUBCL6cnugFEgcIBBVWt3pQHXKOHSEdmwYAyx1mIwZQHY9Y1h4d83AHrTCL0gI47wFAAFASWARgigJqLAoMCAAQ-tiX9YKAgKAoEhwIrKK02woSBwgEFUItN6kwj9ICOABAAVgEkAEKgAFGpQGbBgDLrQEWmWc7tQGb2dnvuAGj87P8AcABDxis3dWHCg"
+                            },
+                            RightFinger = new Equipment
+                            {
+                                Id = "Unique_Ring_102_p2",
+                                Name = "운명막이",
+                                Icon = "unique_ring_102_p2_demonhunter_male",
+                                DisplayColor = "orange",
+                                TooltipParams = "item/CooBCNCc1KoIEgcIBBU52Xe7HfPVR7QdmKeOwB3mFdsNHRAvyiodqSA2ujCL0gI4vANAAFASWARgvANqMQoMCAAQ6vT-5Y2AgMA-EiEIhe7EzwUSBwgEFQuLosEwi9ICOABAAFASWASQAQrYATKAAUalAakgNrqtAWYjBlC1ATZVXUS4AfrJgJENwAEEGI2bwcgI"
+                            },
+                            LeftFinger = new Equipment
+                            {
+                                Id = "Unique_Ring_017_p4",
+                                Name = "눈동자 반지",
+                                Icon = "unique_ring_017_p4_demonhunter_male",
+                                DisplayColor = "orange",
+                                TooltipParams = "item/CokBCMy9i8gNEgcIBBUAhze5HUV7xt0d8dNq1R2Yp47AHUNORFEdZiMGUDCL0gI4ggJAAFASWARgmAJqMAoMCAAQv8r55oGAgMASEiAIpvGVERIHCAQVqv6hwTCL0gI4AEAAUBJYBJABCtgBMoABRqUBQ05EUa0B5hXbDbUBNlVdRLgB8rHQ6gHAAQMY_-PD7Ag"
+                            },
+                            Neck = new Equipment
+                            {
+                                Id = "Unique_Amulet_104_x1",
+                                Name = "요한의 정수",
+                                Icon = "unique_amulet_104_x1_demonhunter_male",
+                                DisplayColor = "orange",
+                                TooltipParams = "item/CooBCJ-Ul7kDEgcIBBU6bl1dHfPVR7QdfnZVoR1qSWnqHbi8IHodyfq8oDCL0gI45wJAAFASWARg5wJqMQoMCAAQrfXp0YaAgKAvEiEIx_Ln3QESBwgEFWn-ssEwi9ICOABAAFASWASQAQrYAQqAAUalAcn6vKCtAWYjBlC1AbDFRGS4AZHavvwLwAEGGPS469UL"
                             },
                             Special = new Equipment
                             {
-                                Id = "Enchantress_Special_206",
-                                Name = "신화 여행자의",
-                                Icon = "enchantress_special_206_demonhunter_male",
+                                Id = "x1_FollowerItem_Enchantress_Legendary_01",
+                                Name = "연기나는 향로",
+                                Icon = "x1_followeritem_enchantress_legendary_01_demonhunter_male",
                                 DisplayColor = "yellow",
                                 TooltipParams =
-                                    "item/CkMI2cHCKxIHCAQVNaNiLR3A3IcbHZoGAMsd8nAHrR1pSWnqHU8ZrAwd6XAvuyILCAEVckIDABgiICIwjdICOABAAFAQGOqMldYF"
+                                    "item/CkEIjP6K8AcSBwgEFfgkI-Udco4dIR1qSWnqHZsGAMsdOydvJB3zcAetMIvSAjjIAkAAUBJYBGDIAoABRrUBNaNiLRiP7OatAw"
                             }
                         },
                         Stats = new Stats
                         {
-                            ExperienceBonus = 22,
+                            ExperienceBonus = 68,
                             GoldFind = 6,
-                            MagicFind = 0
+                            MagicFind = 8
                         },
-                        Skills = new[]
+                        Skills = new Skills[]
                         {
-                            new Skill
+                            new Skills
                             {
-                                Slug = "charm",
-                                Name = "매혹",
-                                Icon = "enchantress_charm",
-                                Level = 15,
-                                TooltipUrl = "skill/enchantress/charm",
-                                Description = "재사용 대기시간: 18초\r\n\r\n적을 매혹시켜 8초 동안 플레이어를 위해 싸우게 합니다.",
-                                SimpleDescription = "재사용 대기시간: 18초\r\n\r\n일시적으로 적을 매혹시켜 영웅을 위해 싸우게 합니다.",
-                                SkillCalcId = "a"
+                                Skill = new Skill
+                                {
+                                    Slug = "charm",
+                                    Name = "매혹",
+                                    Icon = "enchantress_charm",
+                                    Level = 15,
+                                    TooltipUrl = "skill/enchantress/charm",
+                                    Description = "재사용 대기시간: 18초\r\n\r\n적을 매혹시켜 8초 동안 플레이어를 위해 싸우게 합니다.",
+                                    SimpleDescription = "재사용 대기시간: 18초\r\n\r\n일시적으로 적을 매혹시켜 영웅을 위해 싸우게 합니다.",
+                                    SkillCalcId = "a"
+                                }
                             }
                         }
                     }
