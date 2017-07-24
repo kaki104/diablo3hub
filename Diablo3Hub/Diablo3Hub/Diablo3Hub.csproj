@@ -92,6 +92,8 @@
     <Content Include="ApiKeys.publishsettings" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.jpg" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.png" />
+    <Content Include="Assets\Heads\necromancer_female.png" />
+    <Content Include="Assets\Heads\necromancer_male.png" />
     <Content Include="Assets\Images\body-bg-1680px-900px.jpg" />
     <Content Include="Assets\Images\game-logo-d3.png" />
     <Content Include="Assets\Images\Icons\barbarian_female.png" />
