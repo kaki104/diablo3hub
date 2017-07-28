@@ -79,6 +79,7 @@
                                  RelativePanel.AlignRightWithPanel="True"
                                  RelativePanel.AlignTopWithPanel="True"
                                  Text="{Binding CurrentHeroProfile.Name}" />
+            
             <Pivot RelativePanel.Below="pageHeader"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"

@@ -73,7 +73,7 @@
                 RelativePanel.AlignLeftWithPanel="True"
                 RelativePanel.AlignRightWithPanel="True"
                 RelativePanel.AlignTopWithPanel="True" 
-                Text="HOME">
+                Text="HOME" Content="{Binding [home], Source={StaticResource DRes}}">
 
                 <!--  secondary commands  -->
                 <controls:PageHeader.SecondaryCommands>

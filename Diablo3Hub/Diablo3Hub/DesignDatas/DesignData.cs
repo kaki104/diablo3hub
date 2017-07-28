@@ -13,9 +13,16 @@ namespace Diablo3Hub.DesignDatas
         {
             return new List<BattleTag>
             {
-                new BattleTag {Tag = "aaaaasdf#123"},
+                new BattleTag {Tag = "aaaaasdf#123", Server = "KR", Locale = "KO", BestHeroId = ""},
                 new BattleTag {Tag = "aaaasdfa#123"},
                 new BattleTag {Tag = "aaaasdfa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
+                new BattleTag {Tag = "aaasfdaa#123"},
                 new BattleTag {Tag = "aaasfdaa#123"},
                 new BattleTag {Tag = "aaaasfa#123"}
             };
