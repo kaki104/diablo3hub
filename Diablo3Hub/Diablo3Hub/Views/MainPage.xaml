@@ -1,31 +1,31 @@
 ﻿<Page x:Class="Diablo3Hub.Views.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:Behaviors="using:Template10.Behaviors"
-      xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
-      xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:behaviors="using:Template10.Behaviors"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:controls="using:Template10.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:vm="using:Diablo3Hub.ViewModels" 
+      xmlns:vm="using:Diablo3Hub.ViewModels"
       mc:Ignorable="d"
       Foreground="White">
 
     <Page.Resources>
-        <DataTemplate x:Key="HeaderTemplate">
-            <TextBlock Text="{Binding}" Foreground="White"/>
+        <!--<DataTemplate x:Key="HeaderTemplate">
+            <TextBlock Text="{Binding}" Foreground="White" />
         </DataTemplate>
-        
+
         <Style TargetType="TextBox">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="HeaderTemplate" Value="{StaticResource HeaderTemplate}"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="HeaderTemplate" Value="{StaticResource HeaderTemplate}" />
         </Style>
-        
+
         <Style TargetType="Button">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderBrush" Value="White"/>
-        </Style>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="White" />
+        </Style>-->
     </Page.Resources>
 
     <Page.DataContext>
@@ -33,10 +33,12 @@
     </Page.DataContext>
 
     <Grid x:Name="Root">
-        <Image Margin="0" Stretch="UniformToFill" 
-               Source="ms-appx:///Assets/Images/body-bg-1680px-900px.jpg" />
-        <RelativePanel>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" 
+                        ImageSource="ms-appx:///Assets/Images/body-bg-1680px-900px.jpg"/>
+        </Grid.Background>
 
+        <RelativePanel>
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
                     <VisualState x:Name="VisualStateNarrow">
@@ -69,11 +71,11 @@
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
 
-            <controls:PageHeader x:Name="pageHeader" 
-                RelativePanel.AlignLeftWithPanel="True"
-                RelativePanel.AlignRightWithPanel="True"
-                RelativePanel.AlignTopWithPanel="True" 
-                Text="HOME" Content="{Binding [home], Source={StaticResource DRes}}">
+            <controls:PageHeader x:Name="pageHeader"
+                                 RelativePanel.AlignLeftWithPanel="True"
+                                 RelativePanel.AlignRightWithPanel="True"
+                                 RelativePanel.AlignTopWithPanel="True"
+                                 Text="HOME" Content="{Binding [home], Source={StaticResource DRes}}">
 
                 <!--  secondary commands  -->
                 <controls:PageHeader.SecondaryCommands>
@@ -107,41 +109,41 @@
             </controls:Resizer>-->
 
             <Button x:Name="submitButton"
-                RelativePanel.AlignBottomWith="pageHeader"
-                RelativePanel.RightOf="pageHeader" 
-                Content="Submit" 
-                Click="{x:Bind ViewModel.GotoDetailsPage}" />
-            
+                    RelativePanel.AlignBottomWith="pageHeader"
+                    RelativePanel.RightOf="pageHeader"
+                    Content="Submit"
+                    Click="{x:Bind ViewModel.GotoDetailsPage}" />
+
             <TextBlock x:Name="stateTextBox" Margin="16,16,0,0"
-                RelativePanel.AlignLeftWith="pageHeader"
-                RelativePanel.Below="pageHeader"
-                Text="Current Visual State" />
+                       RelativePanel.AlignLeftWith="pageHeader"
+                       RelativePanel.Below="pageHeader"
+                       Text="Current Visual State" />
 
-            <TextBox x:Name="battleTagTextBox" 
-                RelativePanel.Below="stateTextBox" Margin="16,16,16,0"
-                Header="Input Battle Tag"
-                Text="{Binding InputBattleTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="battleTagTextBox"
+                     RelativePanel.Below="stateTextBox" Margin="16,16,16,0"
+                     Header="Input Battle Tag"
+                     Text="{Binding InputBattleTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBox x:Name="heroIdTextBox" 
-                RelativePanel.Below="stateTextBox" 
-                RelativePanel.AlignRightWith="" Margin="16,16,16,0"
-                Header="Input Hero Id" 
-                Text="{Binding InputHeroId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                RelativePanel.RightOf="battleTagTextBox"/>
+            <TextBox x:Name="heroIdTextBox"
+                     RelativePanel.Below="stateTextBox"
+                     RelativePanel.AlignRightWith="" Margin="16,16,16,0"
+                     Header="Input Hero Id"
+                     Text="{Binding InputHeroId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     RelativePanel.RightOf="battleTagTextBox" />
 
-            <Button x:Name="careerProfileButton" 
-                RelativePanel.Below="battleTagTextBox" Margin="16,16,16,0"
-                Content="Career Profile"
-                Command="{Binding CareerProfileCommand}"/>
+            <Button x:Name="careerProfileButton"
+                    RelativePanel.Below="battleTagTextBox" Margin="16,16,16,0"
+                    Content="Career Profile"
+                    Command="{Binding CareerProfileCommand}" />
 
-            <Button x:Name="heroProfileButton" 
-                RelativePanel.Below="careerProfileButton" Margin="16,16,16,0"
-                Content="Hero Profile"
-                Command="{Binding HeroProfileCommand}"/>
+            <Button x:Name="heroProfileButton"
+                    RelativePanel.Below="careerProfileButton" Margin="16,16,16,0"
+                    Content="Hero Profile"
+                    Command="{Binding HeroProfileCommand}" />
 
-            <Button x:Name="juhoButton" 
-                RelativePanel.Below="heroProfileButton" Margin="16,16,16,0"
-                Content="Juho Button" />
+            <Button x:Name="juhoButton"
+                    RelativePanel.Below="heroProfileButton" Margin="16,16,16,0"
+                    Content="Juho Button" />
 
             <!--  태스트  -->
             <!--<Rectangle Margin="0,357,-196,-525" HorizontalAlignment="Right" Width="83" Fill="#FFD63E3E"/>
