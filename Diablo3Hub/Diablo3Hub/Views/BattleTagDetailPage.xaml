@@ -48,7 +48,7 @@
                RelativePanel.AlignLeftWithPanel="True"
                RelativePanel.AlignRightWithPanel="True">
             <PivotItem Header="General">
-                <ScrollViewer>
+                <ScrollViewer Margin="0 0 0 10">
                     <StackPanel Margin="0 0 10 0">
                         <!--Total-->
                         <uwpControls:Expander Margin="0 0 0 10" Header="Total" IsExpanded="True"

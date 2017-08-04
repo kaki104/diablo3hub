@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Diablo3Hub.Commons;
 using Diablo3Hub.Controls;
+using Diablo3Hub.DesignDatas;
 using Diablo3Hub.Models;
 using Diablo3Hub.Services;
 using Diablo3Hub.Views;
@@ -28,16 +29,7 @@ namespace Diablo3Hub.ViewModels
             if (!DesignMode.DesignModeEnabled)
                 Init();
             else
-                BattleTags = new List<BattleTag>
-                {
-                    new BattleTag
-                    {
-                        Server = GameConfigs.ServerKR,
-                        Locale = GameConfigs.LocaleKR,
-                        Tag = "SuperOwl-1417",
-                        Description = "카키입니다."
-                    }
-                };
+                BattleTags = DesignData.GetBattleTags();
         }
 
         /// <summary>

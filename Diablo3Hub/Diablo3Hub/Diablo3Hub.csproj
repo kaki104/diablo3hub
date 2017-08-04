@@ -92,6 +92,8 @@
     <Content Include="ApiKeys.publishsettings" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.jpg" />
     <Content Include="Assets\Backgrounds\demon-hunter-female-item.png" />
+    <Content Include="Assets\Heads\necromancer_female.png" />
+    <Content Include="Assets\Heads\necromancer_male.png" />
     <Content Include="Assets\Images\body-bg-1680px-900px.jpg" />
     <Content Include="Assets\Images\game-logo-d3.png" />
     <Content Include="Assets\Images\Icons\barbarian_female.png" />
@@ -168,6 +170,8 @@
     <Content Include="Assets\Fonts\Exocet Heavy.ttf" />
     <Content Include="Assets\Fonts\Exocet Light.ttf" />
     <None Include="Diabol3 Hub.pptx" />
+    <PRIResource Include="Strings\ko-KR\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -175,6 +179,7 @@
     </Compile>
     <Compile Include="Behaviors\SelectedItemsBehavior.cs" />
     <Compile Include="Commons\CommonData.cs" />
+    <Compile Include="Commons\DynamicResource.cs" />
     <Compile Include="Commons\IPopupParam.cs" />
     <Compile Include="Commons\IPopupResult.cs" />
     <Compile Include="Controls\BattleTagItemDelConfirmDialog.xaml.cs">
@@ -381,6 +386,7 @@
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

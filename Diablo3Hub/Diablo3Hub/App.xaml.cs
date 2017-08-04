@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
+using Windows.Globalization;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
@@ -54,6 +56,9 @@ namespace Diablo3Hub
         public override async Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
             // TODO: add your long-running task here
+
+            //ApplicationLanguages.PrimaryLanguageOverride = "ko-KR";
+            ApplicationLanguages.PrimaryLanguageOverride = "en-US";
 
             //db 초기화
             await DBHelper.Instance.InitAsync();
