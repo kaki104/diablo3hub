@@ -3,8 +3,7 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:common="using:Template10.Common"
                      xmlns:vm="using:Diablo3Hub.ViewModels"
-                     xmlns:commons="using:Diablo3Hub.Commons"
-                     RequestedTheme="Dark">
+                     xmlns:commons="using:Diablo3Hub.Commons">
 
     <Application.Resources>
         <ResourceDictionary>

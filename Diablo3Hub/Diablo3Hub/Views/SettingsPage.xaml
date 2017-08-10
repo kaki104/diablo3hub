@@ -92,13 +92,13 @@
                                       RelativePanel.AlignLeftWithPanel="True"
                                       RelativePanel.AlignTopWithPanel="True" />
 
-                        <ToggleSwitch x:Name="UseLightThemeToggleSwitch"
+                        <!--<ToggleSwitch x:Name="UseLightThemeToggleSwitch"
                                       Header="Requested Application Theme"
                                       IsOn="{Binding UseLightThemeButton, Mode=TwoWay}"
                                       OffContent="Current theme is Dark"
                                       OnContent="Current theme is Light"
                                       RelativePanel.AlignLeftWithPanel="True"
-                                      RelativePanel.Below="UseShellDrawnBackButtonToggleSwtich" />
+                                      RelativePanel.Below="UseShellDrawnBackButtonToggleSwtich" />-->
 
                         <ToggleSwitch x:Name="ShowHamburgerButtonToggleSwitch"
                                       Header="Diablo3Hub Button Visibility"
@@ -107,7 +107,7 @@
                                       OffContent="Diablo3Hub Button is hidden"
                                       OnContent="Diablo3Hub Button is visible"
                                       RelativePanel.AlignLeftWithPanel="True"
-                                      RelativePanel.Below="UseLightThemeToggleSwitch" />
+                                      RelativePanel.Below="UseShellDrawnBackButtonToggleSwtich" />
 
                         <ToggleSwitch x:Name="IsFullScreenToggleSwitch"
                                       Header="Page content is Full Screen"
@@ -117,7 +117,7 @@
                                       RelativePanel.AlignLeftWithPanel="True"
                                       RelativePanel.Below="ShowHamburgerButtonToggleSwitch" />
 
-                        <TextBox x:Name="BusyTextTextBox"
+                        <!--<TextBox x:Name="BusyTextTextBox"
                                  Width="200"
                                  Margin="0,12,0,0"
                                  HorizontalAlignment="Left"
@@ -130,7 +130,7 @@
                                 Command="{x:Bind ViewModel.SettingsPartViewModel.ShowBusyCommand}"
                                 Content="Show Busy"
                                 RelativePanel.AlignBottomWith="BusyTextTextBox"
-                                RelativePanel.RightOf="BusyTextTextBox" />
+                                RelativePanel.RightOf="BusyTextTextBox" />-->
 
                     </RelativePanel>
 

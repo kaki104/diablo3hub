@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
-using Template10.Mvvm;
-using Template10.Services.SettingsService;
+using Windows.ApplicationModel;
 using Windows.UI.Xaml;
+using Diablo3Hub.Services.SettingsServices;
+using Diablo3Hub.Views;
+using Template10.Mvvm;
 
 namespace Diablo3Hub.ViewModels
 {
@@ -15,60 +16,67 @@ namespace Diablo3Hub.ViewModels
 
     public class SettingsPartViewModel : ViewModelBase
     {
-        Services.SettingsServices.SettingsService _settings;
+        private readonly SettingsService _settings;
+        private string _BusyText = "Please wait...";
+
+        private DelegateCommand _ShowBusyCommand;
 
         public SettingsPartViewModel()
         {
-            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
+            if (DesignMode.DesignModeEnabled)
             {
                 // designtime
             }
             else
             {
-                _settings = Services.SettingsServices.SettingsService.Instance;
+                _settings = SettingsService.Instance;
             }
         }
 
         public bool ShowHamburgerButton
         {
-            get { return _settings.ShowHamburgerButton; }
-            set { _settings.ShowHamburgerButton = value; base.RaisePropertyChanged(); }
+            get => _settings.ShowHamburgerButton;
+            set
+            {
+                _settings.ShowHamburgerButton = value;
+                RaisePropertyChanged();
+            }
         }
 
         public bool IsFullScreen
         {
-            get { return _settings.IsFullScreen; }
+            get => _settings.IsFullScreen;
             set
             {
                 _settings.IsFullScreen = value;
-                base.RaisePropertyChanged();
-                if (value)
-                {
-                    ShowHamburgerButton = false;
-                }
-                else
-                {
-                    ShowHamburgerButton = true;
-                }
+                RaisePropertyChanged();
+                ShowHamburgerButton = !value;
             }
         }
 
         public bool UseShellBackButton
         {
-            get { return _settings.UseShellBackButton; }
-            set { _settings.UseShellBackButton = value; base.RaisePropertyChanged(); }
+            get => _settings.UseShellBackButton;
+            set
+            {
+                _settings.UseShellBackButton = value;
+                RaisePropertyChanged();
+            }
         }
 
         public bool UseLightThemeButton
         {
-            get { return _settings.AppTheme.Equals(ApplicationTheme.Light); }
-            set { _settings.AppTheme = value ? ApplicationTheme.Light : ApplicationTheme.Dark; base.RaisePropertyChanged(); }
+            get => _settings.AppTheme.Equals(ApplicationTheme.Light);
+            set
+            {
+                _settings.AppTheme = value ? ApplicationTheme.Light : ApplicationTheme.Dark;
+                RaisePropertyChanged();
+            }
         }
 
-        private string _BusyText = "Please wait...";
         public string BusyText
         {
-            get { return _BusyText; }
+            get => _BusyText;
             set
             {
                 Set(ref _BusyText, value);
@@ -76,29 +84,28 @@ namespace Diablo3Hub.ViewModels
             }
         }
 
-        DelegateCommand _ShowBusyCommand;
         public DelegateCommand ShowBusyCommand
             => _ShowBusyCommand ?? (_ShowBusyCommand = new DelegateCommand(async () =>
             {
-                Views.Busy.SetBusy(true, _BusyText);
+                Busy.SetBusy(true, _BusyText);
                 await Task.Delay(5000);
-                Views.Busy.SetBusy(false);
+                Busy.SetBusy(false);
             }, () => !string.IsNullOrEmpty(BusyText)));
     }
 
     public class AboutPartViewModel : ViewModelBase
     {
-        public Uri Logo => Windows.ApplicationModel.Package.Current.Logo;
+        public Uri Logo => Package.Current.Logo;
 
-        public string DisplayName => Windows.ApplicationModel.Package.Current.DisplayName;
+        public string DisplayName => Package.Current.DisplayName;
 
-        public string Publisher => Windows.ApplicationModel.Package.Current.PublisherDisplayName;
+        public string Publisher => Package.Current.PublisherDisplayName;
 
         public string Version
         {
             get
             {
-                var v = Windows.ApplicationModel.Package.Current.Id.Version;
+                var v = Package.Current.Id.Version;
                 return $"{v.Major}.{v.Minor}.{v.Build}.{v.Revision}";
             }
         }

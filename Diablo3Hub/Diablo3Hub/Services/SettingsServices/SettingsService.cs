@@ -1,22 +1,26 @@
 ﻿using System;
-using Template10.Common;
-using Template10.Utils;
 using Windows.UI.Xaml;
+using Diablo3Hub.Views;
+using Template10.Common;
+using Template10.Services.SettingsService;
+using Template10.Utils;
 
 namespace Diablo3Hub.Services.SettingsServices
 {
     public class SettingsService
     {
-        public static SettingsService Instance { get; } = new SettingsService();
-        Template10.Services.SettingsService.ISettingsHelper _helper;
+        private readonly ISettingsHelper _helper;
+
         private SettingsService()
         {
-            _helper = new Template10.Services.SettingsService.SettingsHelper();
+            _helper = new SettingsHelper();
         }
+
+        public static SettingsService Instance { get; } = new SettingsService();
 
         public bool UseShellBackButton
         {
-            get { return _helper.Read<bool>(nameof(UseShellBackButton), true); }
+            get => _helper.Read(nameof(UseShellBackButton), true);
             set
             {
                 _helper.Write(nameof(UseShellBackButton), value);
@@ -27,26 +31,25 @@ namespace Diablo3Hub.Services.SettingsServices
                 });
             }
         }
-
+        /// <summary>
+        /// 무조건 다크 테마만 적용되도록 수정
+        /// </summary>
         public ApplicationTheme AppTheme
         {
-            get
-            {
-                var theme = ApplicationTheme.Light;
-                var value = _helper.Read<string>(nameof(AppTheme), theme.ToString());
-                return Enum.TryParse<ApplicationTheme>(value, out theme) ? theme : ApplicationTheme.Dark;
-            }
+            get => ApplicationTheme.Dark;
             set
             {
                 _helper.Write(nameof(AppTheme), value.ToString());
-                (Window.Current.Content as FrameworkElement).RequestedTheme = value.ToElementTheme();
-                Views.Shell.HamburgerMenu.RefreshStyles(value, true);
+                var frameworkElement = Window.Current.Content as FrameworkElement;
+                if (frameworkElement != null)
+                    frameworkElement.RequestedTheme = value.ToElementTheme();
+                Shell.HamburgerMenu.RefreshStyles(value, true);
             }
         }
 
         public TimeSpan CacheMaxDuration
         {
-            get { return _helper.Read<TimeSpan>(nameof(CacheMaxDuration), TimeSpan.FromDays(2)); }
+            get => _helper.Read(nameof(CacheMaxDuration), TimeSpan.FromDays(2));
             set
             {
                 _helper.Write(nameof(CacheMaxDuration), value);
@@ -56,21 +59,21 @@ namespace Diablo3Hub.Services.SettingsServices
 
         public bool ShowHamburgerButton
         {
-            get { return _helper.Read<bool>(nameof(ShowHamburgerButton), true); }
+            get => _helper.Read(nameof(ShowHamburgerButton), true);
             set
             {
                 _helper.Write(nameof(ShowHamburgerButton), value);
-                Views.Shell.HamburgerMenu.HamburgerButtonVisibility = value ? Visibility.Visible : Visibility.Collapsed;
+                Shell.HamburgerMenu.HamburgerButtonVisibility = value ? Visibility.Visible : Visibility.Collapsed;
             }
         }
 
         public bool IsFullScreen
         {
-            get { return _helper.Read<bool>(nameof(IsFullScreen), false); }
+            get => _helper.Read(nameof(IsFullScreen), false);
             set
             {
                 _helper.Write(nameof(IsFullScreen), value);
-                Views.Shell.HamburgerMenu.IsFullScreen = value;
+                Shell.HamburgerMenu.IsFullScreen = value;
             }
         }
     }

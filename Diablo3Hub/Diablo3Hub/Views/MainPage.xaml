@@ -8,25 +8,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:Diablo3Hub.ViewModels"
-      mc:Ignorable="d"
-      Foreground="White">
+      mc:Ignorable="d">
 
-    <Page.Resources>
-        <!--<DataTemplate x:Key="HeaderTemplate">
-            <TextBlock Text="{Binding}" Foreground="White" />
-        </DataTemplate>
-
-        <Style TargetType="TextBox">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="HeaderTemplate" Value="{StaticResource HeaderTemplate}" />
-        </Style>
-
-        <Style TargetType="Button">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="BorderBrush" Value="White" />
-        </Style>-->
-    </Page.Resources>
 
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
