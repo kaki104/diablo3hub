@@ -7,7 +7,7 @@
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
     xmlns:controls="using:Template10.Controls"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core" 
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:behaviors="using:Template10.Behaviors"
     xmlns:controls1="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:Converters="using:Diablo3Hub.Converters"
@@ -46,35 +46,35 @@
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
                              RelativePanel.AlignTopWithPanel="True">
-            <AppBarButton Icon="Add" Command="{Binding AddBattleTagCommand}"/>
-            <AppBarButton Icon="Delete" Command="{Binding DeleteSelectedBattleTagsCommand}"/>
-            <AppBarToggleButton Icon="Bullets" 
-                                IsChecked="{Binding IsChecked, Mode=TwoWay}" 
-                                Command="{Binding SelectCommand}"/>
+            <AppBarButton Icon="Add" Command="{Binding AddBattleTagCommand}" />
+            <AppBarButton Icon="Delete" Command="{Binding DeleteSelectedBattleTagsCommand}" />
+            <AppBarToggleButton Icon="Bullets"
+                                IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                Command="{Binding SelectCommand}" />
         </controls:PageHeader>
 
         <!--  content  -->
-        <ListView x:Name="ListView" 
-                  Padding="12,8,4,0" 
+        <ListView x:Name="ListView"
+                  Padding="12,8,4,0"
                   RelativePanel.AlignBottomWithPanel="True"
                   RelativePanel.AlignLeftWithPanel="True"
                   RelativePanel.AlignRightWithPanel="True"
                   RelativePanel.Below="pageHeader"
-                  ItemsSource="{Binding BattleTags}" 
-                  SelectionMode="{Binding SelectionMode, Mode=TwoWay}" 
+                  ItemsSource="{Binding BattleTags}"
+                  SelectionMode="{Binding SelectionMode, Mode=TwoWay}"
                   IsItemClickEnabled="{Binding IsChecked, Converter={StaticResource BooleanToReverseConverter}}">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="ItemClick">
-                    <core:InvokeCommandAction Command="{Binding ItemClickCommand}"/>
+                    <core:InvokeCommandAction Command="{Binding ItemClickCommand}" />
                 </core:EventTriggerBehavior>
-                <Behaviors:SelectedItemsBehavior SelectedItems="{Binding SelectedBattleTags}"/>
+                <Behaviors:SelectedItemsBehavior SelectedItems="{Binding SelectedBattleTags}" />
                 <core:EventTriggerBehavior EventName="SelectionChanged">
-                    <core:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                    <core:InvokeCommandAction Command="{Binding SelectionChangedCommand}" />
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
 
             <ListView.Header>
-                <controls1:ScrollHeader TargetListViewBase="{x:Bind ListView}" 
+                <controls1:ScrollHeader TargetListViewBase="{x:Bind ListView}"
                                         Mode="QuickReturn">
                     <Grid x:Name="MyHeaderGrid" MinHeight="88"
                           Background="{StaticResource Brush-Blue-01}">
@@ -96,32 +96,32 @@
                     <Grid Height="30">
                         <FlyoutBase.AttachedFlyout>
                             <MenuFlyout>
-                                <MenuFlyoutItem Text="Edit" 
+                                <MenuFlyoutItem Text="Edit"
                                                 Command="{Binding ViewModel.EditBattleTagCommand, ElementName=rootPage}"
-                                                CommandParameter="{Binding}"/>
-                                <MenuFlyoutItem Text="Delete" 
+                                                CommandParameter="{Binding}" />
+                                <MenuFlyoutItem Text="Delete"
                                                 Command="{Binding ViewModel.DeleteBattleTagCommand, ElementName=rootPage}"
-                                                CommandParameter="{Binding}"/>
+                                                CommandParameter="{Binding}" />
                             </MenuFlyout>
                         </FlyoutBase.AttachedFlyout>
                         <interactivity:Interaction.Behaviors>
                             <core:EventTriggerBehavior EventName="Holding">
-                                <behaviors:OpenFlyoutAction/>
+                                <behaviors:OpenFlyoutAction />
                             </core:EventTriggerBehavior>
                             <core:EventTriggerBehavior EventName="RightTapped">
-                                <behaviors:OpenFlyoutAction/>
+                                <behaviors:OpenFlyoutAction />
                             </core:EventTriggerBehavior>
                         </interactivity:Interaction.Behaviors>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0" Text="{Binding Tag}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Server}" Margin="6 0"/>
-                        <TextBlock Grid.Column="2" Text="{Binding Locale}" Margin="6 0"/>
+                        <TextBlock Grid.Column="0" Text="{Binding Tag}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Server}" Margin="6 0" />
+                        <TextBlock Grid.Column="2" Text="{Binding Locale}" Margin="6 0" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -128,10 +128,10 @@
                                                    VerticalAlignment="Center"
                                                    Visibility="{Binding Seasonal, Converter={StaticResource BoolToVisibilityConverter}}" />
                                             <TextBlock Grid.Column="3" Text="{Binding Level}"
-                                                       VerticalAlignment="Center" 
+                                                       VerticalAlignment="Center"
                                                        Foreground="{Binding Hardcore, Converter={StaticResource TrueWhenRedColorConverter}}" />
                                             <TextBlock Grid.Column="4" Text="{Binding Class}"
-                                                       VerticalAlignment="Center" Margin="4 0 0 0" 
+                                                       VerticalAlignment="Center" Margin="4 0 0 0"
                                                        Foreground="{Binding Hardcore, Converter={StaticResource TrueWhenRedColorConverter}}" />
                                             <TextBlock Grid.Column="5"
                                                        Text="{Binding Kills.Elites, Converter={StaticResource ValueConverter}}"

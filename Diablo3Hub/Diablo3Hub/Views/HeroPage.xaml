@@ -6,7 +6,7 @@
     xmlns:controls="using:Template10.Controls"
     xmlns:viewModels="using:Diablo3Hub.ViewModels"
     xmlns:controlsToolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    xmlns:interactivity="using:Microsoft.Xaml.Interactivity" 
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="Diablo3Hub.Views.HeroPage"
     mc:Ignorable="d">
@@ -23,7 +23,7 @@
                 </Grid.RowDefinitions>
                 <Image
                     Source="{Binding Icon, ConverterParameter=items|large, Converter={StaticResource IconToImageConverter}}" />
-                <TextBlock Grid.Row="1" Text="{Binding Name}" Style="{StaticResource TextBlockBaseStyle}"/>
+                <TextBlock Grid.Row="1" Text="{Binding Name}" />
             </Grid>
         </DataTemplate>
 
@@ -39,8 +39,8 @@
                 </Grid.ColumnDefinitions>
                 <Image Grid.RowSpan="2"
                        Source="{Binding Skill.Icon, ConverterParameter=skills|64, Converter={StaticResource IconToImageConverter}}" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Skill.Name}" Style="{StaticResource TextBlockBaseStyle}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Rune.Name}" Style="{StaticResource TextBlockBaseStyle}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Skill.Name}" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Rune.Name}" />
             </Grid>
         </DataTemplate>
     </Page.Resources>
@@ -79,7 +79,7 @@
                                  RelativePanel.AlignRightWithPanel="True"
                                  RelativePanel.AlignTopWithPanel="True"
                                  Text="{Binding CurrentHeroProfile.Name}" />
-            
+
             <Pivot RelativePanel.Below="pageHeader"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
@@ -111,30 +111,30 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Level" Style="{StaticResource TextBlockBaseStyle}" />
-                                    <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Level" />
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
                                                HorizontalAlignment="Right">
                                         <Run Text="{Binding CurrentHeroProfile.Level}" />
                                         <Run
                                             Text="{Binding CurrentHeroProfile.ParagonLevel, ConverterParameter=(\{0:N0\}), Converter={StaticResource StringFormatConverter}}"
                                             Foreground="Blue" />
                                     </TextBlock>
-                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Strength" Style="{StaticResource TextBlockBaseStyle}" />
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Strength" />
                                     <TextBlock Grid.Column="1" Grid.Row="1"
                                                Text="{Binding CurrentHeroProfile.Stats.Strength, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
-                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Dexterity" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Dexterity" />
                                     <TextBlock Grid.Column="1" Grid.Row="2"
                                                Text="{Binding CurrentHeroProfile.Stats.Dexterity, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
-                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Intelligence" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Intelligence" />
                                     <TextBlock Grid.Column="1" Grid.Row="3"
                                                Text="{Binding CurrentHeroProfile.Stats.Intelligence, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
-                                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Vitality" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Vitality" />
                                     <TextBlock Grid.Column="1" Grid.Row="4"
                                                Text="{Binding CurrentHeroProfile.Stats.Vitality, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
 
                                     <Rectangle Grid.ColumnSpan="2" Grid.Row="5" Margin="0,10,0,5"
                                                Height="1">
@@ -151,18 +151,18 @@
                                         </Rectangle.Fill>
                                     </Rectangle>
 
-                                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Damage" Style="{StaticResource TextBlockBaseStyle}" />
+                                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Damage" />
                                     <TextBlock Grid.Column="1" Grid.Row="6"
                                                Text="{Binding CurrentHeroProfile.Stats.Damage, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
-                                    <TextBlock Grid.Column="0" Grid.Row="7" Text="Toughness" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="0" Grid.Row="7" Text="Toughness" />
                                     <TextBlock Grid.Column="1" Grid.Row="7"
                                                Text="{Binding CurrentHeroProfile.Stats.Toughness, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
-                                    <TextBlock Grid.Column="0" Grid.Row="8" Text="Healing" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
+                                    <TextBlock Grid.Column="0" Grid.Row="8" Text="Healing" />
                                     <TextBlock Grid.Column="1" Grid.Row="8"
                                                Text="{Binding CurrentHeroProfile.Stats.Healing, ConverterParameter=\{0:N0\}, Converter={StaticResource StringFormatConverter}}"
-                                               HorizontalAlignment="Right" Style="{StaticResource TextBlockBaseStyle}" />
+                                               HorizontalAlignment="Right" />
                                 </Grid>
                             </controlsToolkit:Expander>
 
@@ -188,52 +188,41 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="민첩으로 증가하는 공격력" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="민첩으로 증가하는 공격력" />
+                                    <TextBlock Grid.Column="1" Grid.Row="0"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="기술로 증가하는 공격력" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="기술로 증가하는 공격력" />
+                                    <TextBlock Grid.Column="1" Grid.Row="1"
                                                Text="{Binding CurrentHeroProfile.Stats.DamageIncrease, ConverterParameter=\{0:P2\}, Converter={StaticResource StringFormatConverter}}"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="정예에게 주는 추가 피해" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="2" Text="정예에게 주는 추가 피해" />
+                                    <TextBlock Grid.Column="1" Grid.Row="2"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="초당 공격 횟수" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="3" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="3" Text="초당 공격 횟수" />
+                                    <TextBlock Grid.Column="1" Grid.Row="3"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="4" Text="공격 속도 증가" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="4" Text="공격 속도 증가" />
+                                    <TextBlock Grid.Column="1" Grid.Row="4"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="5" Text="극대화 확률" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="5" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="5" Text="극대화 확률" />
+                                    <TextBlock Grid.Column="1" Grid.Row="5"
                                                Text="{Binding CurrentHeroProfile.Stats.CritChance, ConverterParameter=\{0:P\}, Converter={StaticResource StringFormatConverter}}"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="6" Text="극대화 피해" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="6" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="6" Text="극대화 피해" />
+                                    <TextBlock Grid.Column="1" Grid.Row="6"
                                                Text="{Binding CurrentHeroProfile.Stats.CritDamage, ConverterParameter=\{0:P\}, Converter={StaticResource StringFormatConverter}}"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="7" Text="광역 피해" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="7" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="7" Text="광역 피해" />
+                                    <TextBlock Grid.Column="1" Grid.Row="7"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="8" Text="재사용 대기시간 감소" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="8" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="8" Text="재사용 대기시간 감소" />
+                                    <TextBlock Grid.Column="1" Grid.Row="8"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="9" Text="물리 피해 증가" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="9" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="9" Text="물리 피해 증가" />
+                                    <TextBlock Grid.Column="1" Grid.Row="9"
                                                HorizontalAlignment="Right" />
-                                    <TextBlock Grid.Column="0" Grid.Row="10" Text="다발 사격 피해 증가" 
-                                               Style="{StaticResource TextBlockBaseStyle}"/>
-                                    <TextBlock Grid.Column="1" Grid.Row="10" Style="{StaticResource TextBlockBaseStyle}"
+                                    <TextBlock Grid.Column="0" Grid.Row="10" Text="다발 사격 피해 증가" />
+                                    <TextBlock Grid.Column="1" Grid.Row="10"
                                                HorizontalAlignment="Right" />
 
                                 </Grid>
@@ -269,7 +258,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="131" Canvas.Top="20">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Head.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -286,7 +275,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="36" Canvas.Top="48">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Shoulders.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -298,7 +287,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="227" Canvas.Top="71">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Neck.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -310,7 +299,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="100">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Torso.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -322,7 +311,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="6" Canvas.Top="162">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Hands.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -334,7 +323,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="162">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Bracers.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -346,7 +335,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="121" Canvas.Top="238">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Waist.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -358,7 +347,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="20" Canvas.Top="277">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.LeftFinger.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -370,7 +359,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="269" Canvas.Top="277">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.RightFinger.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -382,7 +371,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="280">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Legs.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -395,7 +384,7 @@
                                             Canvas.Left="6" Canvas.Top="339">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.MainHand.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -407,7 +396,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="255" Canvas.Top="339">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.OffHand.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -419,7 +408,7 @@
                                             BorderBrush="#FF110A05" Canvas.Left="130" Canvas.Top="386">
                                         <interactivity:Interaction.Behaviors>
                                             <core:EventTriggerBehavior EventName="PointerPressed">
-                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
+                                                <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
                                                                           CommandParameter="{Binding CurrentHeroProfile.Items.Feet.Id}" />
                                             </core:EventTriggerBehavior>
                                         </interactivity:Interaction.Behaviors>
@@ -535,148 +524,174 @@
                             <DataTemplate>
                                 <Grid Width="320" Height="400">
                                     <Grid.Background>
-                                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///DesignDatas/grid.png"/>
+                                        <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///DesignDatas/grid.png" />
                                     </Grid.Background>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*" />
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="120"/>
-                                        <RowDefinition Height="1*"/>
-                                        <RowDefinition Height="80"/>
+                                        <RowDefinition Height="120" />
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="80" />
                                     </Grid.RowDefinitions>
 
                                     <Grid Grid.Row="0" Margin="4">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="41*"/>
-                                            <ColumnDefinition Width="115*"/>
+                                            <ColumnDefinition Width="41*" />
+                                            <ColumnDefinition Width="115*" />
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding Slug}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" 
-                                                   Style="{StaticResource TextBlockBaseStyle}" />
-                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower01.png" HorizontalAlignment="Right" Margin="0,0,35,0" 
-                                               Visibility="{Binding Slug, ConverterParameter=enchantress|nor, Converter={StaticResource AnyDataToVisibilityConverter}}"/>
-                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower02.png" HorizontalAlignment="Right" Margin="0,0,35,0" 
-                                               Visibility="{Binding Slug, ConverterParameter=scoundrel|nor, Converter={StaticResource AnyDataToVisibilityConverter}}"/>
-                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower03.png" HorizontalAlignment="Right" Margin="0,0,35,0" 
-                                               Visibility="{Binding Slug, ConverterParameter=templar|nor, Converter={StaticResource AnyDataToVisibilityConverter}}"/>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding Slug}"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   FontSize="18" />
+                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower01.png"
+                                               HorizontalAlignment="Right" Margin="0,0,35,0"
+                                               Visibility="{Binding Slug, ConverterParameter=enchantress|nor, Converter={StaticResource AnyDataToVisibilityConverter}}" />
+                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower02.png"
+                                               HorizontalAlignment="Right" Margin="0,0,35,0"
+                                               Visibility="{Binding Slug, ConverterParameter=scoundrel|nor, Converter={StaticResource AnyDataToVisibilityConverter}}" />
+                                        <Image Grid.Column="1" Source="ms-appx:///DesignDatas/follower03.png"
+                                               HorizontalAlignment="Right" Margin="0,0,35,0"
+                                               Visibility="{Binding Slug, ConverterParameter=templar|nor, Converter={StaticResource AnyDataToVisibilityConverter}}" />
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="121*"/>
-                                            <ColumnDefinition Width="199*"/>
+                                            <ColumnDefinition Width="121*" />
+                                            <ColumnDefinition Width="199*" />
                                         </Grid.ColumnDefinitions>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="51*"/>
-                                                <ColumnDefinition Width="70*"/>
+                                                <ColumnDefinition Width="51*" />
+                                                <ColumnDefinition Width="70*" />
                                             </Grid.ColumnDefinitions>
 
-                                            <Image Margin="21,10,5,0" Height="24" VerticalAlignment="Top" 
-                                                   Source="{Binding Skills[0].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                            <Image Margin="21,10,5,0" Height="24" VerticalAlignment="Top"
+                                                   Source="{Binding Skills[0].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}" />
                                             <Image Margin="21,49,5,0" Height="24" VerticalAlignment="Top"
-                                                   Source="{Binding Skills[1].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                                   Source="{Binding Skills[1].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}" />
                                             <Image Margin="21,85,5,91" Height="24" VerticalAlignment="Bottom"
-                                                   Source="{Binding Skills[2].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
+                                                   Source="{Binding Skills[2].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}" />
                                             <Image Margin="21,0,5,52" Height="24" VerticalAlignment="Bottom"
-                                                   Source="{Binding Skills[3].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}"/>
-                                            <TextBlock Grid.Column="1" Height="20" Margin="5,11,10,0" Style="{StaticResource TextBlockBaseStyle}"
-                                                       Text="{Binding Skills[0].Skill.Name}" VerticalAlignment="Top"/>
-                                            <TextBlock Grid.Column="1" Height="20" Margin="5,50,10,0" Style="{StaticResource TextBlockBaseStyle}"
-                                                       Text="{Binding Skills[1].Skill.Name}" VerticalAlignment="Top"/>
-                                            <TextBlock Grid.Column="1" Margin="5,88,10,92" Style="{StaticResource TextBlockBaseStyle}"
+                                                   Source="{Binding Skills[3].Skill.Icon, ConverterParameter=skills|21, Converter={StaticResource IconToImageConverter}}" />
+                                            <TextBlock Grid.Column="1" Height="20" Margin="5,11,10,0"
+                                                       Text="{Binding Skills[0].Skill.Name}" VerticalAlignment="Top" />
+                                            <TextBlock Grid.Column="1" Height="20" Margin="5,50,10,0"
+                                                       Text="{Binding Skills[1].Skill.Name}" VerticalAlignment="Top" />
+                                            <TextBlock Grid.Column="1" Margin="5,88,10,92"
                                                        Text="{Binding Skills[2].Skill.Name}" />
-                                            <TextBlock Grid.Column="1" Margin="5,0,10,55" Style="{StaticResource TextBlockBaseStyle}"
-                                                       Text="{Binding Skills[3].Skill.Name}" Height="20" VerticalAlignment="Bottom"/>
+                                            <TextBlock Grid.Column="1" Margin="5,0,10,55"
+                                                       Text="{Binding Skills[3].Skill.Name}" Height="20"
+                                                       VerticalAlignment="Bottom" />
                                         </Grid>
                                         <Grid Grid.Column="1" Margin="10,0">
                                             <Border x:Name="Special" Height="46"
-                                                Background="{Binding Items.Special.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
-                                                BorderBrush="#FF110A05" Margin="48,7,84,0" VerticalAlignment="Top" d:LayoutOverrides="LeftPosition, RightPosition">
+                                                    Background="{Binding Items.Special.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                    BorderBrush="#FF110A05" Margin="48,7,84,0" VerticalAlignment="Top"
+                                                    d:LayoutOverrides="LeftPosition, RightPosition">
                                                 <interactivity:Interaction.Behaviors>
                                                     <core:EventTriggerBehavior EventName="PointerPressed">
-                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
-                                                                          CommandParameter="{Binding Items.Special.Id}" />
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
+                                                                                  CommandParameter="{Binding Items.Special.Id}" />
                                                     </core:EventTriggerBehavior>
                                                 </interactivity:Interaction.Behaviors>
                                                 <Grid>
-                                                    <Image Source="{Binding Items.Special.Icon, Converter={StaticResource IconToImageConverter}}" />
-                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                           Source="{Binding Items.Special.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                    <Image
+                                                        Source="{Binding Items.Special.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Source="{Binding Items.Special.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}" />
                                                 </Grid>
                                             </Border>
                                             <Border x:Name="Neck" Height="46"
-                                                Background="{Binding Items.Neck.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
-                                                BorderBrush="#FF110A05" Margin="0,7,32,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="47">
+                                                    Background="{Binding Items.Neck.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                    BorderBrush="#FF110A05" Margin="0,7,32,0" VerticalAlignment="Top"
+                                                    HorizontalAlignment="Right" Width="47">
                                                 <interactivity:Interaction.Behaviors>
                                                     <core:EventTriggerBehavior EventName="PointerPressed">
-                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
-                                                            CommandParameter="{Binding Items.Neck.Id}" />
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
+                                                                                  CommandParameter="{Binding Items.Neck.Id}" />
                                                     </core:EventTriggerBehavior>
                                                 </interactivity:Interaction.Behaviors>
                                                 <Grid>
-                                                    <Image Source="{Binding Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
-                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                        Source="{Binding Items.Neck.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                    <Image
+                                                        Source="{Binding Items.Neck.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Source="{Binding Items.Neck.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}" />
                                                 </Grid>
                                             </Border>
                                             <Border x:Name="MainHand"
-                                                Background="{Binding Items.MainHand.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
-                                                BorderBrush="#FF110A05" Margin="10,61,0,31" HorizontalAlignment="Left" Width="55" d:LayoutOverrides="TopPosition, BottomPosition">
+                                                    Background="{Binding Items.MainHand.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                    BorderBrush="#FF110A05" Margin="10,61,0,31"
+                                                    HorizontalAlignment="Left" Width="55"
+                                                    d:LayoutOverrides="TopPosition, BottomPosition">
                                                 <interactivity:Interaction.Behaviors>
                                                     <core:EventTriggerBehavior EventName="PointerPressed">
-                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
-                                                            CommandParameter="{Binding Items.MainHand.Id}" />
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
+                                                                                  CommandParameter="{Binding Items.MainHand.Id}" />
                                                     </core:EventTriggerBehavior>
                                                 </interactivity:Interaction.Behaviors>
                                                 <Grid>
-                                                    <Image Source="{Binding Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
-                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                        Source="{Binding Items.MainHand.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                    <Image
+                                                        Source="{Binding Items.MainHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Source="{Binding Items.MainHand.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}" />
                                                 </Grid>
                                             </Border>
                                             <Border x:Name="OffHand"
-                                                Background="{Binding Items.OffHand.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
-                                                BorderBrush="#FF110A05" Margin="70,61,54,31" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
+                                                    Background="{Binding Items.OffHand.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                    BorderBrush="#FF110A05" Margin="70,61,54,31"
+                                                    d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
                                                 <interactivity:Interaction.Behaviors>
                                                     <core:EventTriggerBehavior EventName="PointerPressed">
-                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
-                                                            CommandParameter="{Binding Items.OffHand.Id}" />
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
+                                                                                  CommandParameter="{Binding Items.OffHand.Id}" />
                                                     </core:EventTriggerBehavior>
                                                 </interactivity:Interaction.Behaviors>
                                                 <Grid>
-                                                    <Image Source="{Binding Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
-                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                        Source="{Binding Items.OffHand.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                    <Image
+                                                        Source="{Binding Items.OffHand.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Source="{Binding Items.OffHand.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}" />
                                                 </Grid>
                                             </Border>
                                             <Border x:Name="LeftFinger"
-                                                Background="{Binding Items.LeftFinger.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
-                                                BorderBrush="#FF110A05" Margin="0,61,14,0" HorizontalAlignment="Right" Width="34" Height="34" VerticalAlignment="Top">
+                                                    Background="{Binding Items.LeftFinger.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                    BorderBrush="#FF110A05" Margin="0,61,14,0"
+                                                    HorizontalAlignment="Right" Width="34" Height="34"
+                                                    VerticalAlignment="Top">
                                                 <interactivity:Interaction.Behaviors>
                                                     <core:EventTriggerBehavior EventName="PointerPressed">
-                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
-                                                            CommandParameter="{Binding Items.LeftFinger.Id}" />
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
+                                                                                  CommandParameter="{Binding Items.LeftFinger.Id}" />
                                                     </core:EventTriggerBehavior>
                                                 </interactivity:Interaction.Behaviors>
                                                 <Grid>
-                                                    <Image Source="{Binding Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
-                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                        Source="{Binding Items.LeftFinger.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                    <Image
+                                                        Source="{Binding Items.LeftFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Source="{Binding Items.LeftFinger.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}" />
                                                 </Grid>
                                             </Border>
                                             <Border x:Name="LeftFinger_Copy"
-                                                Background="{Binding Items.RightFinger.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
-                                                BorderBrush="#FF110A05" Margin="0,0,14,62" HorizontalAlignment="Right" Width="34" Height="34" VerticalAlignment="Bottom">
+                                                    Background="{Binding Items.RightFinger.DisplayColor, Converter={StaticResource DisplayColorToColorBrushConverter}}"
+                                                    BorderBrush="#FF110A05" Margin="0,0,14,62"
+                                                    HorizontalAlignment="Right" Width="34" Height="34"
+                                                    VerticalAlignment="Bottom">
                                                 <interactivity:Interaction.Behaviors>
                                                     <core:EventTriggerBehavior EventName="PointerPressed">
-                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}" 
-                                                            CommandParameter="{Binding Items.RightFinger.Id}" />
+                                                        <core:InvokeCommandAction Command="{Binding ItemClickCommand}"
+                                                                                  CommandParameter="{Binding Items.RightFinger.Id}" />
                                                     </core:EventTriggerBehavior>
                                                 </interactivity:Interaction.Behaviors>
                                                 <Grid>
-                                                    <Image Source="{Binding Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
-                                                    <Image Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                                        Source="{Binding Items.RightFinger.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}"/>
+                                                    <Image
+                                                        Source="{Binding Items.RightFinger.Icon, Converter={StaticResource IconToImageConverter}}" />
+                                                    <Image Width="20" HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Source="{Binding Items.RightFinger.Special.Gems[0].Item.Icon, ConverterParameter=items|small, Converter={StaticResource IconToImageConverter}}" />
                                                 </Grid>
                                             </Border>
 
@@ -684,30 +699,32 @@
                                     </Grid>
                                     <Grid Margin="10,5,10,10" Grid.Row="2">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="86*"/>
-                                            <ColumnDefinition Width="95*"/>
-                                            <ColumnDefinition Width="119*"/>
+                                            <ColumnDefinition Width="86*" />
+                                            <ColumnDefinition Width="95*" />
+                                            <ColumnDefinition Width="119*" />
                                         </Grid.ColumnDefinitions>
                                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <TextBlock Style="{StaticResource TextBlockBaseStyle}">
-                                                <Run Text="{Binding Stats.GoldFind}"/>
-                                                <Run Text="%"/>
+                                            <TextBlock>
+                                                <Run Text="{Binding Stats.GoldFind}" />
+                                                <Run Text="%" />
                                             </TextBlock>
-                                            <TextBlock Text="금화발견" Style="{StaticResource TextBlockBaseStyle}"/>
+                                            <TextBlock Text="금화발견" />
                                         </StackPanel>
-                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <TextBlock Style="{StaticResource TextBlockBaseStyle}">
-                                                <Run Text="{Binding Stats.MagicFind}"/>
-                                                <Run Text="%"/>
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center">
+                                            <TextBlock>
+                                                <Run Text="{Binding Stats.MagicFind}" />
+                                                <Run Text="%" />
                                             </TextBlock>
-                                            <TextBlock Text="마법 아이템 발견" TextWrapping="Wrap" Style="{StaticResource TextBlockBaseStyle}"/>
+                                            <TextBlock Text="마법 아이템 발견" TextWrapping="Wrap" />
                                         </StackPanel>
-                                        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <TextBlock Style="{StaticResource TextBlockBaseStyle}">
-                                                <Run Text="+"/>
-                                                <Run Text="{Binding Stats.ExperienceBonus}"/>
+                                        <StackPanel Grid.Column="2" VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center">
+                                            <TextBlock>
+                                                <Run Text="+" />
+                                                <Run Text="{Binding Stats.ExperienceBonus}" />
                                             </TextBlock>
-                                            <TextBlock Text="경험치" TextWrapping="Wrap" Style="{StaticResource TextBlockBaseStyle}"/>
+                                            <TextBlock Text="경험치" TextWrapping="Wrap" />
                                         </StackPanel>
                                     </Grid>
                                 </Grid>

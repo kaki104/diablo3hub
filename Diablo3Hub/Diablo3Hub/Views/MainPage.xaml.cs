@@ -1,9 +1,5 @@
-﻿using System;
-using Diablo3Hub.ViewModels;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using System.Collections.ObjectModel;
 
 namespace Diablo3Hub.Views
 {
@@ -12,7 +8,7 @@ namespace Diablo3Hub.Views
         public MainPage()
         {
             InitializeComponent();
-            NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+            NavigationCacheMode = NavigationCacheMode.Enabled;
         }
     }
 }

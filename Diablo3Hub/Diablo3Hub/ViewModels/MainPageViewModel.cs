@@ -21,7 +21,10 @@ namespace Diablo3Hub.ViewModels
         public MainPageViewModel()
         {
             if (DesignMode.DesignModeEnabled)
+            {
                 Value = "Designtime value";
+                InputBattleTag = "kaki104";
+            }
             else
                 Init();
         }
