@@ -161,6 +161,7 @@
     <Content Include="DesignDatas\witch-doctor-male.jpg" />
     <Content Include="DesignDatas\wizard-female.jpg" />
     <Content Include="DesignDatas\wizard-male.jpg" />
+    <Content Include="diablo3sale.png" />
     <Content Include="네크.txt" />
     <Content Include="카키디.txt" />
     <None Include="..\..\README.md">
