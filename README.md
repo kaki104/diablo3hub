@@ -27,10 +27,7 @@ Diablo 3 hub for uwp app
 * SQLite for Universal Windows Platform 3.18.0 -> Extensions 수동으로 설치가 필요합니다.
 * Nugget Package sqlite-net-pcl 버전으로 사용 -> 자동 설치됩니다.
 
-
-##### 4. 언어 리소스 관리
-* Multilingual App Toolkit 4.0.6799.0 버전 사용 예정 -> 미설치시 오류가 발생할 수 있으니 미리 설치 필요합니다.
-
+##### 4. 언어 관련 변경 사항 없음
 
 ##### 5. 작업(To do)
 * 작업을 하시려면 https://github.com/kaki104/diablo3hub/projects/1 페이지를 엽니다.
