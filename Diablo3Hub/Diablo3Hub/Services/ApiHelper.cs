@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
-using Windows.Storage;
 using Windows.UI.Popups;
 using Diablo3Hub.Commons;
 using Diablo3Hub.Models;
@@ -13,6 +13,9 @@ using Template10.Services.NetworkAvailableService;
 
 namespace Diablo3Hub.Services
 {
+    /// <summary>
+    /// API Helper
+    /// </summary>
     public class ApiHelper
     {
         private static ApiHelper _instance;
@@ -61,20 +64,27 @@ namespace Diablo3Hub.Services
         {
             _network = new NetworkAvailableService();
 
-            var uri = new Uri("ms-appx:///ApiKeys.publishsettings");
+
             try
             {
-                var apiFile = await StorageFile.GetFileFromApplicationUriAsync(uri);
-                var content = await FileIO.ReadTextAsync(apiFile);
+                //임베디드 리소스 파일 불러오기
+                var assembly = typeof(App).GetTypeInfo().Assembly;
+                var textStreamReader =
+                    new StreamReader(assembly.GetManifestResourceStream("Diablo3Hub.ApiKeys.publishsettings"));
+                if (textStreamReader.Peek() == -1) return;
+                var content = textStreamReader.ReadLine();
                 string[] stringSeparators = {"\r\n"};
                 var lines = content.Split(stringSeparators, StringSplitOptions.None);
+                //Apikey 파일 편집시 new line이 들어가는 경우, outofbound Exception이 발생하여 이 부분을 처리하였습니다.
                 _apiKeys = (from kkk in lines
-                    where kkk.Length > 0 //Apikey 파일 편집시 new line이 들어가는 경우, outofbound Exception이 발생하여 이 부분을 처리하였습니다.
+                    where kkk.Length > 0
                     let key = kkk.Split('=')
                     select new KeyValuePair<string, string>(key[0], key[1])).ToList();
             }
             catch (FileNotFoundException)
             {
+                //ApiKeys.publishsettings 파일을 프로젝트에 추가해서 사용해야 합니다.
+                //블리자드(https://dev.battle.net/)에서 발급받은 API Key와 Secret을 입력하시면 됩니다.
                 await new MessageDialog("ApiKeys 파일을 찾지 못햇습니다. \n다시 확인해 주세요.").ShowAsync();
                 return;
             }
